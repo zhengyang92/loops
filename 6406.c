@@ -1,0 +1,17 @@
+#include <stdint.h>
+#include <stdio.h>
+
+
+
+
+typedef __uint8_t uint8_t;
+
+int
+fn (int w, int i, uint8_t * dst, uint8_t * src, int left)
+{
+  for (i = 0; i < w; i++)
+    {
+      const int temp = src[i];
+      dst[i] = temp - left;
+      left = temp;
+}}

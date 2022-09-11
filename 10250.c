@@ -1,0 +1,16 @@
+#include <stdint.h>
+#include <stdio.h>
+
+
+
+
+
+
+int
+fn (float mean, float *input, int i, int size, int n, int s, float *binary)
+{
+  for (i = 0; i < n; ++i)
+    {
+      binary[i * size + s] = (input[i * size + s] > 0) ? mean : -mean;
+    }
+}
