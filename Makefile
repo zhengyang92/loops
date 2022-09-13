@@ -1,15 +1,23 @@
 
-SRCS = $(wildcard *.c)
+SRCS = $(shell cat compilable)
 
-OPT_PROGS = $(patsubst %.c,%.minotaur.ll,$(SRCS))
-ORG_PROGS = $(patsubst %.c,%.origin.ll,$(SRCS))
+OPT_PROGS = $(patsubst %.c,loops.minotaur/%.minotaur.ll,$(SRCS))
+BSL_PROGS = $(patsubst %.c,loops.baseline/%.baseline.ll,$(SRCS))
+
+prepare:
+	mkdir -p loops.minotaur loops.baseline
 
 minotaur: $(OPT_PROGS)
 
-origin: $(ORG_PROGS)
+baseline: $(BSL_PROGS)
 
-%.minotaur.ll: %.c
-	$(CC) -O3 -march=native -c  -o $@.minotaur.ll $<
+loops.minotaur/%.minotaur.ll: srcs/%.c
+	$(CC) -O3 -march=native -c  -o $@ $<
 
-%.origin.ll: %.c
-	$(CC) -O3 -march=native -c  -o $@.origin.ll $<
+loops.baseline/%.baseline.ll: srcs/%.c
+	$(CC) -O3 -march=native -c  -o $@ $<
+
+
+clean:
+	rm -f loops.minotaur/*.ll
+	rm -f loops.baseline/*.ll
