@@ -7,7 +7,7 @@ BSL_PROGS = $(patsubst %.c,loops.baseline.asm/%.baseline.S,$(SRCS))
 BSL_LLVMS = $(patsubst %.c,loops.baseline.llvm/%.baseline.ll,$(SRCS))
 
 prepare:
-	mkdir -p loops.minotaur.asm loops.baseline.asm loops.minotaur.llvm loops.baseline.llvm
+	mkdir -p loops.minotaur.asm loops.baseline.asm loops.minotaur.llvm loops.baseline.llvm loops.minotaur.mca loops.baseline.mca
 
 minotaur: $(OPT_PROGS) $(OPT_LLVMS)
 
@@ -27,4 +27,4 @@ loops.baseline.llvm/%.baseline.ll: srcs/%.c
 
 
 clean:
-	rm -rf loops.minotaur.asm loops.baseline.asm loops.minotaur.llvm loops.baseline.llvm
+	rm -rf loops.minotaur.asm loops.baseline.asm loops.minotaur.llvm loops.baseline.llvm loops.minotaur.mca loops.baseline.mca 
