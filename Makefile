@@ -11,11 +11,16 @@ VEG_LLVMS = $(patsubst %.c,loops.vegen.llvm/%.vegen.ll,$(SRCS))
 prepare:
 	mkdir -p loops.minotaur.asm loops.baseline.asm loops.vegen.asm loops.minotaur.llvm loops.baseline.llvm loops.vegen.llvm loops.minotaur.mca loops.baseline.mca loops.vegen.mca
 
-minotaur: $(OPT_PROGS) $(OPT_LLVMS)
+minotaur.asm: $(OPT_PROGS) 
 
-baseline: $(BSL_PROGS) $(BSL_LLVMS)
+minotaur.ll: $(OPT_LLVMS)
 
-vegen: $(VEG_PROGS) $(VEG_LLVMS)
+baseline.asm: $(BSL_PROGS)
+
+baseline.ll: $(BSL_LLVMS)
+
+vegen.asm: $(VEG_PROGS)
+vegen.ll: $(VEG_LLVMS)
 
 loops.minotaur.asm/%.minotaur.S: srcs/%.c
 	$(CC) -O3 -march=native -S  -o $@ $<
