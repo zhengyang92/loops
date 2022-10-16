@@ -22,23 +22,25 @@ baseline.ll: $(BSL_LLVMS)
 vegen.asm: $(VEG_PROGS)
 vegen.ll: $(VEG_LLVMS)
 
+CFLAGS = -O3 -march=native -mllvm -force-vector-width=4 -mllvm -force-vector-interleave=1
+
 loops.minotaur.asm/%.minotaur.S: srcs/%.c
-	$(CC) -O3 -march=native -S  -o $@ $<
+	$(CC) $(CFLAGS) -S  -o $@ $<
 
 loops.minotaur.llvm/%.minotaur.ll : srcs/%.c
-	$(CC) -O3 -march=native -S -emit-llvm  -o $@ $<
+	$(CC) $(CFLAGS) -S -emit-llvm  -o $@ $<
 
 loops.baseline.asm/%.baseline.S: srcs/%.c
-	$(CC) -O3 -march=native -S  -o $@ $<
+	$(CC) $(CFLAGS) -S  -o $@ $<
 
 loops.baseline.llvm/%.baseline.ll: srcs/%.c
-	$(CC) -O3 -march=native -S -emit-llvm -o $@ $<
+	$(CC) $(CFLAGS) -S -emit-llvm -o $@ $<
 
 loops.vegen.asm/%.vegen.S: srcs/%.c
-	$(CC) -O3 -march=native -S  -o $@ $<
+	$(CC) $(CFLAGS) -S  -o $@ $<
 
 loops.vegen.llvm/%.vegen.ll: srcs/%.c
-	$(CC) -O3 -march=native -S -emit-llvm -o $@ $<
+	$(CC) $(CFLAGS) -S -emit-llvm -o $@ $<
 
 
 clean:
