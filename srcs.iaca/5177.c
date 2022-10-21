@@ -13,8 +13,8 @@ fn (ptrdiff_t stride, int k, int16_t * ptr, int16_t * tmp,
     unsigned int scaled_height)
 {
   for (k = 0; k < scaled_height; k++)
-    {
+     { IACA_START
       tmp[k] = *ptr;
       ptr += stride;
-    }
+     } IACA_END
 }

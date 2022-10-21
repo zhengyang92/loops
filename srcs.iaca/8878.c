@@ -15,7 +15,7 @@ fn (const uint8_t * block, int y, int bias, int dist, ptrdiff_t stride, int x,
   int bits = 0;
   int mask = 0;
   for (x = 0; x < 4; x++)
-    {
+     { IACA_START
       int alp = block[3 + x * 4 + y * stride] * 7 + bias;
       int ind, tmp;
       tmp = (alp >= dist4) ? -1 : 0;
@@ -35,5 +35,5 @@ fn (const uint8_t * block, int y, int bias, int dist, ptrdiff_t stride, int x,
 	  mask >>= 8;
 	  bits -= 8;
 	}
-    }
+     } IACA_END
 }

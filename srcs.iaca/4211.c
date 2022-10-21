@@ -17,7 +17,7 @@ fn (int cvv, int w, int cyv, const int rnd, int y_off_in, uint16_t * dst2,
     const int uv_off_out, int cyy)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int y00 = src0[x << 1] - y_off_in;
       int y01 = src0[2 * x + 1] - y_off_in;
       int y10 = src0[src_stride[0] / sizeof (uint16_t) + 2 * x] - y_off_in;
@@ -33,5 +33,5 @@ fn (int cvv, int w, int cyv, const int rnd, int y_off_in, uint16_t * dst2,
 	av_clip_uintp2_c ((cyy * y11 + uv_val) >> sh, 12);
       dst1[x] = av_clip_uintp2_c ((u * cuu + v * cuv + uv_off_out) >> sh, 12);
       dst2[x] = av_clip_uintp2_c ((u * cvu + v * cvv + uv_off_out) >> sh, 12);
-    }
+     } IACA_END
 }

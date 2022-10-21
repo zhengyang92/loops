@@ -12,8 +12,8 @@ fn (int i, int width, uint8_t * alpha, uint8_t alpha_mask,
     const uint8_t * argb)
 {
   for (i = 0; i < width; ++i)
-    {
+     { IACA_START
       const uint8_t alpha_value = argb[4 * i];
       alpha[i] = alpha_value;
       alpha_mask &= alpha_value;
-}}
+} IACA_END }

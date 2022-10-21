@@ -13,7 +13,7 @@ fn (float *field, char *line, char *end, char *p, char *c)
   int done = 0;
   int count = 0;
   for (c = line, p = line; !done; ++c)
-    {
+     { IACA_START
       done = (*c == '\0');
       if (*c == ',' || done)
 	{
@@ -26,5 +26,5 @@ fn (float *field, char *line, char *end, char *p, char *c)
 	  p = c + 1;
 	  ++count;
 	}
-    }
+     } IACA_END
 }

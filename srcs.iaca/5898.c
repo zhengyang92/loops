@@ -12,7 +12,7 @@ fn (int y, int y3, uint8_t ** data, int x, int entry_size, int plane, int y2,
     int *linesize, int k, int *base, int x3, int j, int x2)
 {
   for (k = 0; k < entry_size; k++, j++)
-    {
+     { IACA_START
       plane = k >= 4 ? k - 3 : 0;
       if (k >= 4)
 	{
@@ -25,5 +25,5 @@ fn (int y, int y3, uint8_t ** data, int x, int entry_size, int plane, int y2,
 	  y3 = y + y2 + (k >> 1);
 	}
       base[j] = data[plane][x3 + y3 * linesize[plane]];
-    }
+     } IACA_END
 }

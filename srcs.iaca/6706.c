@@ -14,7 +14,7 @@ fn (uint32_t state, int i, const uint8_t * buf, int *header_len,
 {
   int payload_len = 0;
   for (i = 0; i < buf_size - 2; i++)
-    {
+     { IACA_START
       state = (state << 8) | payload[i];
       if ((state & 0xFFE0) == 0x7FE0)
 	{
@@ -24,5 +24,5 @@ fn (uint32_t state, int i, const uint8_t * buf, int *header_len,
 	  start_found = 1;
 	  break;
 	}
-    }
+     } IACA_END
 }

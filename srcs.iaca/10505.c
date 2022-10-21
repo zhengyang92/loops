@@ -116,7 +116,7 @@ int
 fn (long k)
 {
   for (k = 0; k < spaces_.N; k++)
-    {
+     { IACA_START
       spacer_.Q += space1_.Z[k] * space1_.X[k];
-    }
+     } IACA_END
 }

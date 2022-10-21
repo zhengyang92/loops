@@ -12,7 +12,7 @@ fn (unsigned int res, const int *data, int i)
 {
   int b = 10;
   for (i = 0; i < 10; i++)
-    {
+     { IACA_START
       res = (((0x1000000 - data[i] * data[i]) >> 12) * res) >> 12;
       if (res == 0)
 	return 0;
@@ -21,5 +21,5 @@ fn (unsigned int res, const int *data, int i)
 	  b++;
 	  res <<= 2;
 	}
-    }
+     } IACA_END
 }

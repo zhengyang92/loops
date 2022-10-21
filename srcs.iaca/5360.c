@@ -11,7 +11,7 @@ int
 fn (float *ang, int i, intptr_t blocksize, float *mag)
 {
   for (i = 0; i < blocksize; i++)
-    {
+     { IACA_START
       if (mag[i] > 0.0)
 	{
 	  if (ang[i] > 0.0)
@@ -35,4 +35,4 @@ fn (float *ang, int i, intptr_t blocksize, float *mag)
 	      float temp = ang[i];
 	      ang[i] = mag[i];
 	      mag[i] -= temp;
-}}}}
+} IACA_END }}}

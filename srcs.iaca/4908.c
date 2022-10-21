@@ -13,7 +13,7 @@ fn (ptrdiff_t stride, uint8_t * src, int i)
 {
   int dc = 0;
   for (i = 0; i < 16; i++)
-    {
+     { IACA_START
       dc += src[i - stride];
-    }
+     } IACA_END
 }

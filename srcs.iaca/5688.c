@@ -11,7 +11,7 @@ int
 fn (const int8_t * par, int8_t * par_mapped, int b)
 {
   for (; b >= 0; b--)
-    {
+     { IACA_START
       par_mapped[2 * b + 1] = par_mapped[2 * b] = par[b];
-    }
+     } IACA_END
 }

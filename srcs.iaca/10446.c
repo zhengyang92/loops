@@ -11,7 +11,7 @@ int
 fn (stbi__uint16 * dest, stbi__uint16 * src, unsigned int x, int i)
 {
   for (i = x - 1; i >= 0; --i, src += 4, dest += 1)
-    {
+     { IACA_START
       dest[0] = stbi__compute_y_16 (src[0], src[1], src[2]);
-    }
+     } IACA_END
 }

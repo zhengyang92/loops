@@ -11,9 +11,9 @@ int
 fn (int output_bytes, int k, stbi_uc * raw, int filter_bytes, stbi_uc * cur)
 {
   for (k = 0; k < filter_bytes; ++k)
-    {
+     { IACA_START
       cur[k] =
 	((stbi_uc)
 	 ((raw[k] + stbi__paeth (cur[k - output_bytes], 0, 0)) & 255));
-    }
+     } IACA_END
 }

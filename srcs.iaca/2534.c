@@ -13,7 +13,7 @@ fn (int8_t (*out)[64], const uint8_t deblock_coeff)
 {
   int y = 0;
   for (int x = 0; x < 64; x++)
-    {
+     { IACA_START
       out[y + 0][x] = (out[y + 0][x] * deblock_coeff) >> 7;
       out[y + 7][x] = (out[y + 7][x] * deblock_coeff) >> 7;
-}}
+} IACA_END }

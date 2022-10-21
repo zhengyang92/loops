@@ -13,7 +13,7 @@ fn (int channel, stbi_uc * dest, int mask, stbi__context * s)
 {
   int i = 0x80;
   for (i = 0; i < 4; ++i, mask >>= 1)
-    {
+     { IACA_START
       if (channel & mask)
 	{
 	  if (stbi__at_eof (s))
@@ -22,4 +22,4 @@ fn (int channel, stbi_uc * dest, int mask, stbi__context * s)
 								  0)));
 	  dest[i] = stbi__get8 (s);
 	}
-}}
+} IACA_END }

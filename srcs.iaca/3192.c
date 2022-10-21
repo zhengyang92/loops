@@ -13,7 +13,7 @@ fn (int RV34_MB_TYPES, int i, int blocks[12])
   int count = 0;
   int prev_type = 0;
   for (i = 0; i < RV34_MB_TYPES; i++)
-    {
+     { IACA_START
       if (blocks[i] > count)
 	{
 	  count = blocks[i];
@@ -21,5 +21,5 @@ fn (int RV34_MB_TYPES, int i, int blocks[12])
 	  if (count > 1)
 	    break;
 	}
-    }
+     } IACA_END
 }

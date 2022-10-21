@@ -12,8 +12,8 @@ int
 fn (stbi_uc * cur, stbi__uint32 x, int q)
 {
   for (q = x - 1; q >= 0; --q)
-    {
+     { IACA_START
       cur[q * 2 + 1] = 255;
       cur[q * 2 + 0] = cur[q];
-    }
+     } IACA_END
 }

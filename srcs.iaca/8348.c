@@ -12,7 +12,7 @@ fn (float cum_2pi, int work_len, float *pi_wraps, float prev_angle2, int i,
     float prev_angle1, float cum_1pi, float *work)
 {
   for (i = 0; i <= work_len; i += 2)
-    {
+     { IACA_START
       float angle = atan2f (work[i + 1], work[i]);
       float detect = 2 * 3.14159265358979323846;
       float delta = angle - prev_angle2;
@@ -32,4 +32,4 @@ fn (float cum_2pi, int work_len, float *pi_wraps, float prev_angle2, int i,
 		  (((work[i]) * (work[i])) +
 		   ((work[i + 1]) * (work[i + 1]))));
       work[i + 1] = 0;
-}}
+} IACA_END }

@@ -40,7 +40,7 @@ fn (struct ws_interval *in, int i, struct wavesynth_context *ws, int *last,
     int64_t ts)
 {
   for (i = ws->next_inter; i < ws->nb_inter; i++)
-    {
+     { IACA_START
       in = &ws->inter[i];
       if (ts < in->ts_start)
 	break;
@@ -51,5 +51,5 @@ fn (struct ws_interval *in, int i, struct wavesynth_context *ws, int *last,
       in->phi = in->phi0;
       in->dphi = in->dphi0;
       in->amp = in->amp0;
-    }
+     } IACA_END
 }

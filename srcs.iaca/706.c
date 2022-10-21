@@ -17,7 +17,7 @@ fn (int gamuts, int UCS, int w, int i, uint16_t * pixels, int XYY, int h,
     int cie, int LUV)
 {
   for (i = 0; i < NB_CS; i++)
-    {
+     { IACA_START
       const struct ColorSystem *cs = &color_systems[i];
       int rx, ry, gx, gy, bx, by;
       if (!((1 << i) & gamuts))
@@ -73,5 +73,5 @@ fn (int gamuts, int UCS, int w, int i, uint16_t * pixels, int XYY, int h,
       draw_rline (pixels, linesize, rx, ry, gx, gy, w, h);
       draw_rline (pixels, linesize, gx, gy, bx, by, w, h);
       draw_rline (pixels, linesize, bx, by, rx, ry, w, h);
-    }
+     } IACA_END
 }

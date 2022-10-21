@@ -14,7 +14,7 @@ fn (int i, uint32_t ncolors, uint8_t blue, uint8_t green, uint8_t red,
     GetByteContext gb, uint32_t * dst)
 {
   for (i = 0; i < ncolors; i++)
-    {
+     { IACA_START
       bytestream2_skipu (&gb, 4);
       red = bytestream2_get_byteu (&gb);
       bytestream2_skipu (&gb, 1);
@@ -23,5 +23,5 @@ fn (int i, uint32_t ncolors, uint8_t blue, uint8_t green, uint8_t red,
       blue = bytestream2_get_byteu (&gb);
       bytestream2_skipu (&gb, 3);
       dst[i] = red << 16 | green << 8 | blue;
-    }
+     } IACA_END
 }

@@ -12,8 +12,8 @@ fn (int i, float *decode_buffer, int j, float *mlt_buffer_right,
     float *mlt_buffer_left)
 {
   for (j = 0; j < 20; j++)
-    {
+     { IACA_START
       mlt_buffer_left[i * 20 + j] = decode_buffer[i * 40 + j];
       mlt_buffer_right[i * 20 + j] = decode_buffer[i * 40 + 20 + j];
-    }
+     } IACA_END
 }

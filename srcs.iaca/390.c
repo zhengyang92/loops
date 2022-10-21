@@ -15,7 +15,7 @@ fn (unsigned int rdiff, int thrb, unsigned int ldiff, unsigned int rsumdiff,
   int r = 0;
   int x = 0;
   for (int j = mid - 1, i = mid + 1; j >= 0 && i < size; j--, i++)
-    {
+     { IACA_START
       srcjx = srcf[j][x];
       ldiff = ((srcx - srcjx) >= 0 ? (srcx - srcjx) : (-(srcx - srcjx)));
       lsumdiff += ldiff;
@@ -30,5 +30,5 @@ fn (unsigned int rdiff, int thrb, unsigned int ldiff, unsigned int rsumdiff,
 	break;
       r++;
       sum += srcix;
-    }
+     } IACA_END
 }

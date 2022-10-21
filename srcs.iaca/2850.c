@@ -13,7 +13,7 @@ fn (uint32_t ff_table_4_3_value[32828], const double exp2_lut[4],
     int8_t ff_table_4_3_exp[32828], double pow43_val)
 {
   for (int i = 1; i < ((8191 + 16) * 4); i++)
-    {
+     { IACA_START
       double f, fm;
       int e, m;
       double value = i / 4;
@@ -25,5 +25,5 @@ fn (uint32_t ff_table_4_3_value[32828], const double exp2_lut[4],
       e += 23 - 31 + 5 - 100;
       ff_table_4_3_value[i] = m;
       ff_table_4_3_exp[i] = -e;
-    }
+     } IACA_END
 }

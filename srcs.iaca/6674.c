@@ -11,7 +11,7 @@ int
 fn (int *ptr, int i)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       const int t0 = -39409 * ptr[7 * 8] - 58980 * ptr[1 * 8];
       const int t1 = 39410 * ptr[1 * 8] - 58980 * ptr[7 * 8];
       const int t2 = -33410 * ptr[5 * 8] - 167963 * ptr[3 * 8];
@@ -33,4 +33,4 @@ fn (int *ptr, int i)
       ptr[6 * 8] = (-(t3 + t7) + t8 + tA) >> 22;
       ptr[7 * 8] = (-(t1 + t6) + t9 + tB) >> 22;;
       ptr++;
-}}
+} IACA_END }

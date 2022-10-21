@@ -11,8 +11,8 @@ int
 fn (uint16_t * r, uint16_t * b, uint16_t * g, int width, int k, const int max)
 {
   for (k = 0; k < width; k++)
-    {
+     { IACA_START
       b[k] = (b[k] + g[k]) & max;
       r[k] = (r[k] + g[k]) & max;
-    }
+     } IACA_END
 }

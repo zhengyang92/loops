@@ -11,7 +11,7 @@ int
 fn (uint8_t * dst, int k, int bits)
 {
   for (k = 0; k < 32; k++)
-    {
+     { IACA_START
       int mask_bit = !!(bits & 0x80000000);
       switch (dst[0] * 2 + mask_bit)
 	{
@@ -35,5 +35,5 @@ fn (uint8_t * dst, int k, int bits)
 	}
       dst += 4;
       bits <<= 1;
-    }
+     } IACA_END
 }

@@ -14,7 +14,7 @@ fn (int y, int64_t (*sum0)[4], const uint8_t * main_data, int width, int z,
     const int ref_stride)
 {
   for (; z <= y; z++)
-    {
+     { IACA_START
       do
 	{
 	  void *SWAP_tmp = sum1;
@@ -25,5 +25,5 @@ fn (int y, int64_t (*sum0)[4], const uint8_t * main_data, int width, int z,
       ssim_4x4xn_16bit (&main_data[4 * z * main_stride], main_stride,
 			&ref_data[4 * z * ref_stride], ref_stride, sum0,
 			width);
-    }
+     } IACA_END
 }

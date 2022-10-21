@@ -15,7 +15,7 @@ fn (const float srintensity, uint8_t * ptr, const int step, const float scale,
     const uint8_t boffset, const uint8_t roffset)
 {
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       float g = ptr[x * step + goffset] * scale;
       float b = ptr[x * step + boffset] * scale;
       float r = ptr[x * step + roffset] * scale;
@@ -37,4 +37,4 @@ fn (const float srintensity, uint8_t * ptr, const int step, const float scale,
       ptr[x * step + goffset] = av_clip_uint8_c (g * 255.f);
       ptr[x * step + boffset] = av_clip_uint8_c (b * 255.f);
       ptr[x * step + roffset] = av_clip_uint8_c (r * 255.f);
-}}
+} IACA_END }

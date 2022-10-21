@@ -18,7 +18,7 @@ fn (const uint8_t * block, int y, int at1_r, uint32_t cm, ptrdiff_t stride,
   int at1_b = 0;
   int akku = 0;
   for (x = 0; x < 4; x++)
-    {
+     { IACA_START
       int step = cm & 3;
       int w1 = w1tab[step];
       int r = block[0 + x * 4 + y * stride];
@@ -32,4 +32,4 @@ fn (const uint8_t * block, int y, int at1_r, uint32_t cm, ptrdiff_t stride,
       at2_g += g;
       at2_b += b;
       cm >>= 2;
-}}
+} IACA_END }

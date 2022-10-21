@@ -11,7 +11,7 @@ int
 fn (const char *str, const char *p, int i, uint16_t * dest)
 {
   for (i = 0;; i++)
-    {
+     { IACA_START
       dest[i] = atoi (p);
       if (i == 63)
 	break;
@@ -23,4 +23,4 @@ fn (const char *str, const char *p, int i, uint16_t * dest)
 	  exit_program (1);
 	}
       p++;
-}}
+} IACA_END }

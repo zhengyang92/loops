@@ -18,7 +18,7 @@ fn (uint16_t vlc_run[528], uint32_t vlc_bits[528], unsigned int j,
     const uint32_t * table_vlc_bits)
 {
   for (i = 0, j = 0; i < bound; i++, j++)
-    {
+     { IACA_START
       vlc_bits[j] = table_vlc_bits[i];
       vlc_len[j] = table_vlc_len[i];
       vlc_run[j] = table_vlc_run[i];
@@ -33,5 +33,5 @@ fn (uint16_t vlc_run[528], uint32_t vlc_bits[528], unsigned int j,
 	  vlc_run[j] = table_vlc_run[i];
 	  vlc_level[j] = -table_vlc_level[i];
 	}
-    }
+     } IACA_END
 }

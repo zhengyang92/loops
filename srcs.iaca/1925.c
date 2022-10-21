@@ -14,7 +14,7 @@ fn (int max_v, int i, const int16_t lwc_gain_tab[11][7], int k, int j,
   int thr = 0;
   int max_j = 0;
   for (j = ((i - 3) > (0) ? (i - 3) : (0)), k = 0; j <= i + 3; j++, k++)
-    {
+     { IACA_START
       int v = msk_val[j] + lwc_gain_tab[i][k];
       if (v > max_v)
 	{
@@ -22,5 +22,5 @@ fn (int max_v, int i, const int16_t lwc_gain_tab[11][7], int k, int j,
 	  max_v = v;
 	}
       thr = log_add (thr, v);
-    }
+     } IACA_END
 }

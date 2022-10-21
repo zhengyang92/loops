@@ -13,10 +13,10 @@ fn (int top, int width, int x, int lefttop, ptrdiff_t fake_stride,
     uint8_t * dst, int left)
 {
   for (x = 1; x < width; x++)
-    {
+     { IACA_START
       top = dst[x - fake_stride];
       lefttop = dst[x - (fake_stride + 1)];
       left += top - lefttop + dst[x];
       dst[x] = left;
-    }
+     } IACA_END
 }

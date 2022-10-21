@@ -11,8 +11,8 @@ int
 fn (int j, int signs[22], int i, int t)
 {
   for (j = 0; j < 11; j++)
-    {
+     { IACA_START
       signs[i * 11 + j] = (t & 1) * 2 - 1 << 14;
       t >>= 1;
-    }
+     } IACA_END
 }

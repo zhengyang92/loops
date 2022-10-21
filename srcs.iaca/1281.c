@@ -12,7 +12,7 @@ fn (const char *p, int64_t offset)
 {
   int in_brackets = 0;
   for (;;)
-    {
+     { IACA_START
       if (p[offset] == ' ' || p[offset] == '\t')
 	{
 	  offset++;
@@ -37,5 +37,5 @@ fn (const char *p, int64_t offset)
 	{
 	  break;
 	}
-    }
+     } IACA_END
 }

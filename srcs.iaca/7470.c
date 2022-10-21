@@ -14,8 +14,8 @@ fn (const int ry, uint16_t * dg, const int bh, const int w,
     const int rh)
 {
   for (int x = 0; x < w; x++)
-    {
+     { IACA_START
       dr[x] = sr[av_clip_c (x - rh, 0, w - 1) + ry];
       dg[x] = sg[av_clip_c (x - gh, 0, w - 1) + gy];
       db[x] = sb[av_clip_c (x - bh, 0, w - 1) + by];
-}}
+} IACA_END }

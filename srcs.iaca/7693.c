@@ -15,9 +15,9 @@ fn (VLC wl_vlc_tabs[4], const uint8_t atrac3p_wl_cbs[4][12],
 {
   int tab_offset = 0;
   for (int i = 0; i < 4; i++)
-    {
+     { IACA_START
       build_canonical_huff (atrac3p_wl_cbs[i], &xlats, &tab_offset,
 			    &wl_vlc_tabs[i]);
       build_canonical_huff (atrac3p_ct_cbs[i], &xlats, &tab_offset,
 			    &ct_vlc_tabs[i]);
-}}
+} IACA_END }

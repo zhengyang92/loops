@@ -13,7 +13,7 @@ fn (int y, const int in_linesize, const int w, const int y1,
     uint8_t * dst)
 {
   for (int x = 0; x < w; x++)
-    {
+     { IACA_START
       const int x0 = ((x - 1) > (0) ? (x - 1) : (0));
       const int x1 = ((x + 1) > (w1) ? (w1) : (x + 1));
       int a = src[y0 * in_linesize + x0];
@@ -85,4 +85,4 @@ fn (int y, const int in_linesize, const int w, const int y1,
       dst[x] =
 	av_clip_uint8_c (((b + d + f + h) * weight + e) / (1.f +
 							   4.f * weight));
-}}
+} IACA_END }

@@ -13,7 +13,7 @@ fn (int i, const int nb_match_blocks, int k, float *bufferz,
 {
   int retained = 0;
   for (k = 0; k < nb_match_blocks; k++)
-    {
+     { IACA_START
       const float thresh = threshold[(j == 0) + (i == 0) + (k == 0)];
       if (bufferz[k] > thresh || bufferz[k] < -thresh)
 	{
@@ -23,5 +23,5 @@ fn (int i, const int nb_match_blocks, int k, float *bufferz,
 	{
 	  bufferz[k] = 0;
 	}
-    }
+     } IACA_END
 }

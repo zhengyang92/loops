@@ -11,9 +11,9 @@ int
 fn (int width, int16_t * high, int16_t * low)
 {
   for (int i = 0; i < width; i++)
-    {
+     { IACA_START
       int even = (low[i] - high[i]) / 2;
       int odd = (low[i] + high[i]) / 2;
       low[i] = even;
       high[i] = odd;
-}}
+} IACA_END }

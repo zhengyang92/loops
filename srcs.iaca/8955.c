@@ -13,7 +13,7 @@ fn (int32_t gy, int32_t by, const int chromWidth, int i, uint8_t * ydst,
     const uint8_t * src, int32_t ry)
 {
   for (i = 0; i < chromWidth; i++)
-    {
+     { IACA_START
       unsigned int b = src[6 * i + 0];
       unsigned int g = src[6 * i + 1];
       unsigned int r = src[6 * i + 2];
@@ -24,4 +24,4 @@ fn (int32_t gy, int32_t by, const int chromWidth, int i, uint8_t * ydst,
       r = src[6 * i + 5];
       Y = ((ry * r + gy * g + by * b) >> 15) + 16;
       ydst[2 * i + 1] = Y;
-}}
+} IACA_END }

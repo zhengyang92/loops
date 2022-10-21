@@ -11,7 +11,8 @@ int
 fn (uint8_t * in_buf, int x, unsigned int width, unsigned int depth,
     unsigned int bytes_per_channel, uint8_t * encode_buf, unsigned int put_be)
 {
-  for (x = 0; x < width * bytes_per_channel; x += bytes_per_channel)
+  for (x = 0; x < width * bytes_per_channel; x += bytes_per_channel) {
+	  IACA_START
     if (bytes_per_channel == 1)
       {
 	encode_buf[x] = in_buf[depth * x];
@@ -26,4 +27,5 @@ fn (uint8_t * in_buf, int x, unsigned int width, unsigned int depth,
 	encode_buf[x] = in_buf[depth * x];
 	encode_buf[x + 1] = in_buf[depth * x + 1];
       }
+  } IACA_END
 }

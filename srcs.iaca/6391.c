@@ -11,8 +11,8 @@ int
 fn (uint16_t * left, int i, uint16_t * top)
 {
   for (i = 0; i < 2 * 32; i++)
-    {
+     { IACA_START
       left[i] = 128;
       top[i] = 128;
-    }
+     } IACA_END
 }

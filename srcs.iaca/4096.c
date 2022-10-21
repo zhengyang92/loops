@@ -24,7 +24,7 @@ fn (int i, const char *section_name, struct section sections[48],
 {
   int ret = 0;
   for (i = 0; i < (sizeof (sections) / sizeof ((sections)[0])); i++)
-    {
+     { IACA_START
       const struct section *section = &sections[i];
       if (!strcmp (section_name, section->name)
 	  || (section->unique_name
@@ -37,4 +37,4 @@ fn (int i, const char *section_name, struct section sections[48],
 	  ret++;
 	  mark_section_show_entries (section->id, show_all_entries, entries);
 	}
-}}
+} IACA_END }

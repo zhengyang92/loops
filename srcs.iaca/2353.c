@@ -11,9 +11,9 @@ int
 fn (int V, const uint8_t * src2, int k, const uint8_t * src1, int stride)
 {
   for (; k <= 8; ++k)
-    {
+     { IACA_START
       src1 += stride;
       src2 -= stride;
       V += k * (src1[0] - src2[0]);
-    }
+     } IACA_END
 }

@@ -15,7 +15,7 @@ fn (PixelI * pY, const size_t cShift, const U8 * pSrc, size_t iPos,
     const size_t cPixelStride, const U8 idxCC[16][16], PixelI * pU)
 {
   for (iColumn = 0; iColumn < cColumn; iColumn++, pSrc += cPixelStride)
-    {
+     { IACA_START
       PixelI iExp = (PixelI) pSrc[3];
       PixelI r = forwardRGBE (pSrc[0], iExp) << cShift;
       PixelI g = forwardRGBE (pSrc[1], iExp) << cShift;
@@ -23,5 +23,5 @@ fn (PixelI * pY, const size_t cShift, const U8 * pSrc, size_t iPos,
       (b -= r, r += ((b + 1) >> 1) - g, g += ((r + 0) >> 1));
       iPos = ((iColumn >> 4) << 8) + idxCC[iRow][iColumn & 0xf];
       pU[iPos] = -r, pV[iPos] = b, pY[iPos] = g;
-    }
+     } IACA_END
 }

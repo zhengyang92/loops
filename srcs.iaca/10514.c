@@ -74,7 +74,7 @@ int
 fn (long k)
 {
   for (k = 0; k < spaces_.N; k++)
-    {
+     { IACA_START
       space1_.X[k] = space1_.Y[k + 1] - space1_.Y[k];
-    }
+     } IACA_END
 }

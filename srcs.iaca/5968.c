@@ -14,10 +14,10 @@ fn (MacroBlock mb, SuperBlock sb, unsigned int mask,
     const uint16_t mask_matrix[16], unsigned int i)
 {
   for (i = 0; i < 16; i++)
-    {
+     { IACA_START
       if (mask & mask_matrix[i])
 	{
 	  insert_mb_into_sb (&sb, mb, i);
 	}
-    }
+     } IACA_END
 }

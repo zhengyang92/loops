@@ -13,7 +13,7 @@ fn (int w, const uint8_t * yp, const uint8_t * up, const uint8_t * vp,
     uint8_t * d, x86_reg x)
 {
   for (; x < w; x++)
-    {
+     { IACA_START
       const int x2 = x << 2;
       d[8 * x + 0] = yp[x2];
       d[8 * x + 1] = up[x];
@@ -23,4 +23,4 @@ fn (int w, const uint8_t * yp, const uint8_t * up, const uint8_t * vp,
       d[8 * x + 5] = up[x];
       d[8 * x + 6] = yp[x2 + 3];
       d[8 * x + 7] = vp[x];
-}}
+} IACA_END }

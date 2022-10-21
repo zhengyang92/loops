@@ -13,7 +13,7 @@ fn (ptrdiff_t stride, int x, uint16_t * src, const uint16_t * top, int size,
     const uint16_t * left)
 {
   for (x = 0; x < size; x += 4)
-    {
+     { IACA_START
       src[(x) + stride * (0)] =
 	av_clip_uintp2_c (left[0] + ((top[x] - top[-1]) >> 1), 10);
       src[(x + 1) + stride * (0)] =
@@ -22,5 +22,5 @@ fn (ptrdiff_t stride, int x, uint16_t * src, const uint16_t * top, int size,
 	av_clip_uintp2_c (left[0] + ((top[x + 2] - top[-1]) >> 1), 10);
       src[(x + 3) + stride * (0)] =
 	av_clip_uintp2_c (left[0] + ((top[x + 3] - top[-1]) >> 1), 10);
-    }
+     } IACA_END
 }

@@ -13,8 +13,8 @@ int
 fn (const uint32_t model, size_t i, const uint8_t kSlowModels[6])
 {
   for (i = 0; i < sizeof (kSlowModels) / sizeof (kSlowModels[0]); ++i)
-    {
+     { IACA_START
       if (model == kSlowModels[i])
 	return 1;
-    }
+     } IACA_END
 }

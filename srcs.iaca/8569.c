@@ -15,7 +15,7 @@ fn (const float CLIPPED_ESCAPE, int i, const float *vec, float *out,
 {
   float rd = 0.0f;
   for (j = 0; j < dim; j++)
-    {
+     { IACA_START
       float t = fabsf (in[i + j]);
       float di;
       if (BT_ESC && vec[j] == 64.0f)
@@ -42,5 +42,5 @@ fn (const float CLIPPED_ESCAPE, int i, const float *vec, float *out,
 	curbits++;
       qenergy += quantized * quantized;
       rd += di * di;
-    }
+     } IACA_END
 }

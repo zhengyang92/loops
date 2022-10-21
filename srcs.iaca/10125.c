@@ -20,7 +20,7 @@ fn (Int k, PixelI * pCoeffs, CAdaptiveScan * pScan, Int aRLCoeffs[32],
 {
   Int iIndex = 0;
   for (k = 0; k < iNumNonzero; k++)
-    {
+     { IACA_START
       iIndex += aRLCoeffs[k * 2];
       pCoeffs[pScan[iIndex].uScan] = aRLCoeffs[k * 2 + 1];
       pScan[iIndex].uTotal++;
@@ -31,5 +31,5 @@ fn (Int k, PixelI * pCoeffs, CAdaptiveScan * pScan, Int aRLCoeffs[32],
 	  pScan[iIndex - 1] = cTemp;
 	}
       iIndex++;
-    }
+     } IACA_END
 }

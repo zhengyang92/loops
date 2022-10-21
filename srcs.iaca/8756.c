@@ -23,11 +23,11 @@ fn (ptrdiff_t dstep, int i, struct FFIIRFilterState *s, const float *src0,
     ptrdiff_t sstep, const struct FFIIRFilterCoeffs *c, float *dst0, int size)
 {
   for (i = 0; i < size; i++)
-    {
+     { IACA_START
       float in = *src0 * c->gain + s->x[0] * c->cy[0] + s->x[1] * c->cy[1];
       *dst0 = s->x[0] + in + s->x[1] * c->cx[1];
       s->x[0] = s->x[1];
       s->x[1] = in;
       src0 += sstep;
       dst0 += dstep;
-}}
+} IACA_END }

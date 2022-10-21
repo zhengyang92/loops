@@ -12,7 +12,7 @@ fn (int w, int i, IDWTELEM * ref, IDWTELEM * dst, int add, int shift, int mul,
     IDWTELEM * src)
 {
   for (; i < w; i++)
-    {
+     { IACA_START
       dst[i] = src[i] - ((mul * (ref[i] + ref[i + 1]) + add) >> shift);
-    }
+     } IACA_END
 }

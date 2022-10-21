@@ -20,7 +20,7 @@ fn (int CCSET_BASIC_AMERICAN, int j, int i, struct Screen *screen)
 {
   int tab = 0;
   for (i = 0; screen->row_used && i < 15; i++)
-    {
+     { IACA_START
       if (((screen->row_used) & (1 << (i))))
 	{
 	  const char *row = screen->characters[i];
@@ -31,5 +31,5 @@ fn (int CCSET_BASIC_AMERICAN, int j, int i, struct Screen *screen)
 	  if (!tab || j < tab)
 	    tab = j;
 	}
-    }
+     } IACA_END
 }

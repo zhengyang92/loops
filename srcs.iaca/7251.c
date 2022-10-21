@@ -11,10 +11,10 @@ int
 fn (int x, const uint8_t ** src, int width, uint8_t * dest)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       *dest++ = src[0][x];
       *dest++ = src[1][x];
       *dest++ = src[2][x];
       *dest++ = 0xff;
-    }
+     } IACA_END
 }

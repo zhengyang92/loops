@@ -18,11 +18,11 @@ fn (const struct error_entry *entry, int errnum,
 {
   int i = 0;
   for (i = 0; i < (sizeof (error_entries) / sizeof ((error_entries)[0])); i++)
-    {
+     { IACA_START
       if (errnum == error_entries[i].num)
 	{
 	  entry = &error_entries[i];
 	  break;
 	}
-    }
+     } IACA_END
 }

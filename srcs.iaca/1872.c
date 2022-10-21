@@ -12,7 +12,7 @@ fn (int16_t * b2, int16_t * b5, int16_t * b1, int16_t * b4, int16_t * dst,
     int i, int width, int16_t * b6, int16_t * b3, int16_t * b7, int16_t * b0)
 {
   for (i = 0; i < width; i++)
-    {
+     { IACA_START
       dst[i] =
 	((unsigned) dst[i] -
 	 ((int)
@@ -20,4 +20,4 @@ fn (int16_t * b2, int16_t * b5, int16_t * b1, int16_t * b4, int16_t * dst,
 	   46 * (b2[i] + (unsigned) b5[i]) + 161 * (b3[i] +
 						    (unsigned) b4[i]) +
 	   128) >> 8));
-}}
+} IACA_END }

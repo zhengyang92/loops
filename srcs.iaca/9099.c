@@ -11,7 +11,7 @@ int
 fn (int linesize, int temp[64], int i, uint8_t * dest)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       {
 	const int a0 = ((&temp[8 * i]))[0] + ((&temp[8 * i]))[4];
 	const int a1 = ((&temp[8 * i]))[0] - ((&temp[8 * i]))[4];
@@ -36,4 +36,4 @@ fn (int linesize, int temp[64], int i, uint8_t * dest)
 	((&dest[i * linesize]))[6] = (((a1 + a3 - a2 - b2) + 0x7F) >> 8);
 	((&dest[i * linesize]))[7] = (((a0 + a2 - b0) + 0x7F) >> 8);
       };
-}}
+} IACA_END }

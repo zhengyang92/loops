@@ -13,9 +13,9 @@ fn (int i, uint64_t diff, const uint16_t * ref, int len, uint16_t * dst,
     const uint16_t * src)
 {
   for (i = 0; i < len; ++i)
-    {
+     { IACA_START
       const int diff_y = ref[i] - src[i];
       const int new_y = (int) dst[i] + diff_y;
       dst[i] = clip_y (new_y);
       diff += (uint64_t) abs (diff_y);
-}}
+} IACA_END }

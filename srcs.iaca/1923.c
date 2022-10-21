@@ -13,8 +13,8 @@ fn (uint16_t * pix, int j, int bw)
   int sum = 0;
   int sqsum = 0;
   for (j = 0; j < bw; ++j)
-    {
+     { IACA_START
       const int sample = (unsigned) pix[j] >> 6;
       sum += sample;
       sqsum += sample * sample;
-}}
+} IACA_END }

@@ -11,7 +11,7 @@ int
 fn (int i, int frequency[512], int min_freq[2], int smallest[2], int j)
 {
   for (i = 0; i < j; i++)
-    {
+     { IACA_START
       if (frequency[i] == 0)
 	continue;
       if (frequency[i] < min_freq[1])
@@ -29,5 +29,5 @@ fn (int i, int frequency[512], int min_freq[2], int smallest[2], int j)
 	      smallest[1] = i;
 	    }
 	}
-    }
+     } IACA_END
 }

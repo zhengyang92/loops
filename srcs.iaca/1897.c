@@ -172,9 +172,11 @@ int
 fn (int maxframes, DiracFrame ** framelist, DiracFrame * frame, int i)
 {
   for (i = 0; i < maxframes; i++)
+  { IACA_START
     if (!framelist[i])
       {
 	framelist[i] = frame;
 	return 0;
       }
+  } IACA_END
 }

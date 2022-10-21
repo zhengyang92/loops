@@ -12,7 +12,7 @@ fn (int w, int i, int h, const uint8_t * src, int size, int src_stride,
     uint8_t * dst)
 {
   for (i = 0; i < h; ++i)
-    {
+     { IACA_START
       memcpy (dst, src, w);
       if (w < size)
 	{
@@ -20,5 +20,5 @@ fn (int w, int i, int h, const uint8_t * src, int size, int src_stride,
 	}
       dst += 32;
       src += src_stride;
-    }
+     } IACA_END
 }

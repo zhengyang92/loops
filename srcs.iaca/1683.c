@@ -20,9 +20,9 @@ fn (int num_codes, const int8_t mantissa_vlc_tab[18], int i,
     GetBitContext * gb)
 {
   for (i = 0; i < num_codes; i++)
-    {
+     { IACA_START
       huff_symb = get_vlc2 (gb, spectral_coeff_tab[selector - 1].table, 8, 1);
       mantissas[i * 2] = mantissa_vlc_tab[huff_symb * 2];
       mantissas[i * 2 + 1] = mantissa_vlc_tab[huff_symb * 2 + 1];
-    }
+     } IACA_END
 }

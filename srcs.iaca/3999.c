@@ -15,8 +15,8 @@ int
 fn (const char *str, const struct channel_name channel_names[41], int i)
 {
   for (i = 0; i < (sizeof (channel_names) / sizeof ((channel_names)[0])); i++)
-    {
+     { IACA_START
       if (channel_names[i].name && !strcmp (str, channel_names[i].name))
 	return i;
-    }
+     } IACA_END
 }

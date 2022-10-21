@@ -15,7 +15,7 @@ fn (int y, int w, uint32_t acc, ptrdiff_t linesize, int offx, uint32_t * dst,
     const int s1y, ptrdiff_t dst_linesize_32)
 {
   for (int x = startx; x < startx + w; x++)
-    {
+     { IACA_START
       const int s1x = av_clip_c (x - r, 0, sw - 1);
       const int s2x = av_clip_c (x - (r + offx), 0, sw - 1);
       const uint8_t v1 = src[s1y * linesize + s1x];
@@ -23,4 +23,4 @@ fn (int y, int w, uint32_t acc, ptrdiff_t linesize, int offx, uint32_t * dst,
       const int d = v1 - v2;
       acc += d * d;
       dst[y * dst_linesize_32 + x] = dst[(y - 1) * dst_linesize_32 + x] + acc;
-}}
+} IACA_END }

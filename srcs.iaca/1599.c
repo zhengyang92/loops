@@ -11,7 +11,7 @@ int
 fn (const float *coef1, int i, float *sum, int len, const float *coef0)
 {
   for (i = 0; i < len; i++)
-    {
+     { IACA_START
       float lt = coef0[i];
       float rt = coef1[i];
       float md = lt + rt;
@@ -20,4 +20,4 @@ fn (const float *coef1, int i, float *sum, int len, const float *coef0)
       sum[1] += rt * rt;
       sum[2] += md * md;
       sum[3] += sd * sd;
-}}
+} IACA_END }

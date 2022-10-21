@@ -19,7 +19,7 @@ fn (TXSample t3, const TXSample * wim, TXComplex * z, TXSample t6,
     TXSample i1)
 {
   for (int i = 0; i < len; i += 4)
-    {
+     { IACA_START
       do
 	{
 	  do
@@ -583,5 +583,5 @@ fn (TXSample t3, const TXSample * wim, TXComplex * z, TXSample t6,
       z += 2 * 4;
       cos += 2 * 4;
       wim -= 2 * 4;
-    }
+     } IACA_END
 }

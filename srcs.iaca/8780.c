@@ -14,7 +14,7 @@ fn (int32_t tmp1, int32_t tmp12, int32_t d6, int32_t tmp3, int32_t tmp0,
     int16_t * dataptr, int32_t d4, int32_t tmp13, int32_t tmp10, int32_t tmp2)
 {
   for (rowctr = 4 - 1; rowctr >= 0; rowctr--)
-    {
+     { IACA_START
       d0 = dataptr[8 * 0];
       d2 = dataptr[8 * 1];
       d4 = dataptr[8 * 2];
@@ -69,5 +69,5 @@ fn (int32_t tmp1, int32_t tmp12, int32_t d6, int32_t tmp3, int32_t tmp0,
       dataptr[8 * 2] = tmp12 >> (13 + 2 + 3);
       dataptr[8 * 3] = tmp13 >> (13 + 2 + 3);
       dataptr++;
-    }
+     } IACA_END
 }

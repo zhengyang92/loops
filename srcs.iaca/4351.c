@@ -11,6 +11,6 @@ int
 fn (float total, const int w, const uint16_t * src)
 {
   for (int x = 0; x < w; x++)
-    {
+     { IACA_START
       total += src[x];
-}}
+} IACA_END }

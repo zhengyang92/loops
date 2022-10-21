@@ -11,7 +11,7 @@ int
 fn (int g, int i, int r, int a, int size, uint8_t * dst, uint8_t * src, int b)
 {
   for (; i < size; i += 4)
-    {
+     { IACA_START
       dst[i + 0] = r = r + src[i + 0];
       if (4 == 1)
 	continue;
@@ -22,5 +22,5 @@ fn (int g, int i, int r, int a, int size, uint8_t * dst, uint8_t * src, int b)
       if (4 == 3)
 	continue;
       dst[i + 3] = a = a + src[i + 3];
-    }
+     } IACA_END
 }

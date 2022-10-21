@@ -13,8 +13,8 @@ int
 fn (int y, uint64_t a, ptrdiff_t stride, uint8_t * left, uint8_t * d)
 {
   for (y = 0; y < 8; y++)
-    {
+     { IACA_START
       a = left[y + 1] * 0x0101010101010101ULL;
       *((uint64_t *) (d + y * stride)) = a;
-    }
+     } IACA_END
 }

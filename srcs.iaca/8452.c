@@ -13,7 +13,7 @@ fn (const uint8_t * xsrc, int y, int x, const int w, const int h,
     const uint8_t * ysrc)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int Y = y + ysrc[x] - 128;
       int X = x + xsrc[x] - 128;
       if (Y < 0)
@@ -25,5 +25,5 @@ fn (const uint8_t * xsrc, int y, int x, const int w, const int h,
       if (X >= w)
 	X = w - (X % w) - 1;
       dst[x] = src[Y * slinesize + X];
-    }
+     } IACA_END
 }

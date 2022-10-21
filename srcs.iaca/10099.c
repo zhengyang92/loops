@@ -12,7 +12,7 @@ fn (int i, uint32_t count, uint32_t * const counts, uint32_t k,
     uint32_t stride)
 {
   for (k = 0; k < stride; ++k)
-    {
+     { IACA_START
       counts[i - k - 1] = count;
-    }
+     } IACA_END
 }

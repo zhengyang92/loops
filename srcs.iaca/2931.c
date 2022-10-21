@@ -12,7 +12,7 @@ fn (int s, uint8_t * pix)
 {
   int j = 0;
   for (j = 0; j < 16; j += 8)
-    {
+     { IACA_START
       s += pix[0];
       s += pix[1];
       s += pix[2];
@@ -22,5 +22,5 @@ fn (int s, uint8_t * pix)
       s += pix[6];
       s += pix[7];
       pix += 8;
-    }
+     } IACA_END
 }

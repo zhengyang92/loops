@@ -13,7 +13,7 @@ fn (int i, const int vChrFilterSize, int16_t * vChrFilter, const int chrDstY,
     const int16_t ** chrUSrcPtr, int s, int32_t * chrMmxFilter)
 {
   for (i = 0; i < vChrFilterSize; i += 2)
-    {
+     { IACA_START
       *(const void * *) &chrMmxFilter[s * i] = chrUSrcPtr[i];
       *(const void * *) &chrMmxFilter[s * i + 8 / 4] =
 	chrUSrcPtr[i + (vChrFilterSize > 1)];
@@ -24,4 +24,4 @@ fn (int i, const int vChrFilterSize, int16_t * vChrFilter, const int chrDstY,
 								   + i +
 								   1] *
 						    (1 << 16) : 0);
-}}
+} IACA_END }

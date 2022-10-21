@@ -80,7 +80,7 @@ int
 fn (PutBitContext pbc, int i, struct eac3_info *info)
 {
   for (i = 0; i <= info->num_ind_sub; i++)
-    {
+     { IACA_START
       put_bits (&pbc, 2, info->substream[i].fscod);
       put_bits (&pbc, 5, info->substream[i].bsid);
       put_bits (&pbc, 1, 0);
@@ -98,5 +98,5 @@ fn (PutBitContext pbc, int i, struct eac3_info *info)
 	{
 	  put_bits (&pbc, 9, info->substream[i].chan_loc);
 	}
-    }
+     } IACA_END
 }

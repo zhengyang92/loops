@@ -13,10 +13,10 @@ fn (int w, int i, int hsub1, int *dst_linesize, int x, int h, int plane,
     int *pixelstep)
 {
   for (i = 0; i < (h >> vsub1); i++)
-    {
+     { IACA_START
       memcpy (p + (x >> hsub1) * pixelstep[plane],
 	      src[plane] + src_linesize[plane] * (i + (y2 >> vsub1)),
 	      (w >> hsub1) * pixelstep[plane]);
       p += dst_linesize[plane];
-    }
+     } IACA_END
 }

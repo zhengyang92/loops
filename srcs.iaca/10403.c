@@ -12,7 +12,7 @@ fn (int j, float *y, unsigned char *text, int i, float *x, int batch,
     int characters, size_t len, int steps, size_t *offsets)
 {
   for (j = 0; j < steps; ++j)
-    {
+     { IACA_START
       unsigned char curr = text[(offsets[i]) % len];
       unsigned char next = text[(offsets[i] + 1) % len];
       x[(j * batch + i) * characters + curr] = 1;
@@ -22,5 +22,5 @@ fn (int j, float *y, unsigned char *text, int i, float *x, int batch,
 	{
 	  error ("Bad char");
 	}
-    }
+     } IACA_END
 }

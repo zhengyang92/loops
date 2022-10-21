@@ -42,7 +42,7 @@ int
 fn (long k, double som)
 {
   for (k = 0; k < alpha_.Mk; k++)
-    {
+     { IACA_START
       som += space0_.Flopn[k] * space0_.Total[k];
-    }
+     } IACA_END
 }

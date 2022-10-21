@@ -12,7 +12,7 @@ int
 fn (char *str, uint64_t * opt_block_list, size_t count)
 {
   for (size_t i = 0; i < count; ++i)
-    {
+     { IACA_START
       char *p = strchr (str, ',');
       if (p != ((void *) 0))
 	*p = '\0';
@@ -34,5 +34,5 @@ fn (char *str, uint64_t * opt_block_list, size_t count)
 	    }
 	}
       str = p + 1;
-    }
+     } IACA_END
 }

@@ -11,9 +11,9 @@ int
 fn (uint64_t random_seed, float delta, float noise_table[4116], int i)
 {
   for (i = 0; i < 4096; i++)
-    {
+     { IACA_START
       random_seed = random_seed * 214013 + 2531011;
       noise_table[i] =
 	(delta * (float) (((int32_t) random_seed >> 16) & 0x00007FFF) -
 	 1.0) * 1.3;
-}}
+} IACA_END }

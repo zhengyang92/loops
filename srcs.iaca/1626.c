@@ -12,7 +12,7 @@ int
 fn (int shift[4], GetByteContext gb, int coeff[2][4], int16_t * s)
 {
   for (int n = 0; n < 4; n++, s += 32)
-    {
+     { IACA_START
       int level, pred;
       int byte = bytestream2_get_byteu (&gb);
       level = sign_extend (byte >> 4, 4) * (1 << shift[n]);
@@ -21,4 +21,4 @@ fn (int shift[4], GetByteContext gb, int coeff[2][4], int16_t * s)
       level = sign_extend (byte, 4) * (1 << shift[n]);
       pred = s[0] * coeff[0][n] + s[-1] * coeff[1][n];
       s[1] = av_clip_int16_c ((level + pred + 0x80) >> 8);
-}}
+} IACA_END }

@@ -14,7 +14,7 @@ fn (int i, ptrdiff_t stride, int t3, int t2, int16_t * src, int t1, int t4,
     uint8_t * dest)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       t1 = 17 * (src[0] + src[16]) + 64;
       t2 = 17 * (src[0] - src[16]) + 64;
       t3 = 22 * src[8] + 10 * src[24];
@@ -29,5 +29,5 @@ fn (int i, ptrdiff_t stride, int t3, int t2, int16_t * src, int t1, int t4,
 	av_clip_uint8_c (dest[3 * stride] + ((t1 - t3) >> 7));
       src++;
       dest++;
-    }
+     } IACA_END
 }

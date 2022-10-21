@@ -14,10 +14,10 @@ int
 fn (UInt16 s, UInt32 * ftab, UInt32 * ptr, Int32 i, Int32 j, UChar * block)
 {
   for (; i >= 0; i--)
-    {
+     { IACA_START
       s = (s >> 8) | (block[i] << 8);
       j = ftab[s] - 1;
       ftab[s] = j;
       ptr[j] = i;
-    }
+     } IACA_END
 }

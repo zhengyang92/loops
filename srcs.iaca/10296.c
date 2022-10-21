@@ -11,7 +11,7 @@ int
 fn (int k, stbi_uc * prior, stbi_uc * raw, int filter_bytes, stbi_uc * cur)
 {
   for (k = 0; k < filter_bytes; ++k)
-    {
+     { IACA_START
       cur[k] = ((stbi_uc) ((raw[k] + prior[k]) & 255));
-    }
+     } IACA_END
 }

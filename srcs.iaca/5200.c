@@ -12,7 +12,7 @@ fn (int offset, int code, uint8_t * out, int j, int pix, int step)
 {
   int pos = 0;
   for (j = 0; j < 257 - code; j++)
-    {
+     { IACA_START
       if (pos < offset)
 	out[pos] = pix;
       pos += step;
@@ -21,5 +21,5 @@ fn (int offset, int code, uint8_t * out, int j, int pix, int step)
 	  pos -= offset;
 	  pos++;
 	}
-    }
+     } IACA_END
 }

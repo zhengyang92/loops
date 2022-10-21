@@ -11,8 +11,8 @@ int
 fn (int *buf, int i, int *out_ptr)
 {
   for (i = 0; i < 6; i++)
-    {
+     { IACA_START
       *out_ptr = buf[4 * i];
       out_ptr += 32;
-    }
+     } IACA_END
 }

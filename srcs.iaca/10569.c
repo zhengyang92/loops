@@ -14,9 +14,9 @@ int
 fn (UInt16 * quadrant, UInt32 * ftab, Int32 i, Int32 j, UChar * block)
 {
   for (; i >= 0; i--)
-    {
+     { IACA_START
       quadrant[i] = 0;
       j = (j >> 8) | (((UInt16) block[i]) << 8);
       ftab[j]++;
-    }
+     } IACA_END
 }

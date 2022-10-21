@@ -13,7 +13,7 @@ fn (uint32_t sum, int w, uint32_t * dst, const uint8_t * src,
     int dst_linesize)
 {
   for (int x = 1; x < w; x++)
-    {
+     { IACA_START
       sum += src[x - 1];
       dst[x] = sum + dst[x - dst_linesize];
-}}
+} IACA_END }

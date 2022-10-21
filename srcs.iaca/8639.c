@@ -13,11 +13,11 @@ fn (int32_t * b6, int32_t * dst, int i, int32_t * b5, int32_t * b3,
     int32_t * b7)
 {
   for (i = 0; i < width; i++)
-    {
+     { IACA_START
       dst[i] =
 	((unsigned) dst[i] +
 	 ((int)
 	  (-2 * (b0[i] + (unsigned) b7[i]) + 10 * (b1[i] + (unsigned) b6[i]) -
 	   25 * (b2[i] + (unsigned) b5[i]) + 81 * (b3[i] + (unsigned) b4[i]) +
 	   128) >> 8));
-}}
+} IACA_END }

@@ -11,7 +11,7 @@ int
 fn (int i, double f, int e, int k, int j, int is_table_lsf[2][2][16])
 {
   for (j = 0; j < 2; j++)
-    {
+     { IACA_START
       e = -(j + 1) * ((i + 1) >> 1);
       f = exp2 (e / 4.0);
       k = i & 1;
@@ -25,5 +25,5 @@ fn (int i, double f, int e, int k, int j, int is_table_lsf[2][2][16])
 		    (float) is_table_lsf[j][1][i]);
 	}
       while (0);
-    }
+     } IACA_END
 }

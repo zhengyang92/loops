@@ -116,7 +116,7 @@ int
 fn (long k)
 {
   for (k = 0; k < spaces_.N; k++)
-    {
+     { IACA_START
       spacer_.Di = space1_.Y[k] - space1_.G[k] / (space1_.Xx[k] + spacer_.Dk);
       spacer_.Dn = 0.2;
       if (spacer_.Di)
@@ -132,5 +132,5 @@ fn (long k)
 	 space1_.U[k]) / (space1_.Vx[k] + space1_.V[k] * spacer_.Dn);
       space1_.Xx[k + 1] =
 	(space1_.X[k] - space1_.Xx[k]) * spacer_.Dn + space1_.Xx[k];
-    }
+     } IACA_END
 }

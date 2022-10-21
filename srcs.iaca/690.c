@@ -13,7 +13,7 @@ fn (const int cbh, int uy, const int w, uint16_t * du, const uint16_t * sv,
     const int crh, const int svlinesize)
 {
   for (int x = 0; x < w; x++)
-    {
+     { IACA_START
       int ux = (x - cbh) % w;
       int vx = (x - crh) % w;
       if (ux < 0)
@@ -22,5 +22,5 @@ fn (const int cbh, int uy, const int w, uint16_t * du, const uint16_t * sv,
 	vx += w;
       du[x] = su[ux + uy * sulinesize];
       dv[x] = sv[vx + vy * svlinesize];
-    }
+     } IACA_END
 }

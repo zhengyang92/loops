@@ -12,7 +12,7 @@ fn (uint16_t * const pixels, int e2, int dy, int err, int x0, int y1, int sy,
     int sx, int y0, int dx, int x1, int linesize)
 {
   for (;;)
-    {
+     { IACA_START
       pixels[y0 * linesize + x0 * 4 + 0] =
 	65535 - pixels[y0 * linesize + x0 * 4 + 0];
       pixels[y0 * linesize + x0 * 4 + 1] =
@@ -33,5 +33,5 @@ fn (uint16_t * const pixels, int e2, int dy, int err, int x0, int y1, int sy,
 	  err += dx;
 	  y0 += sy;
 	}
-    }
+     } IACA_END
 }

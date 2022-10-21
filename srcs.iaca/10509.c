@@ -116,7 +116,7 @@ int
 fn (long k)
 {
   for (k = 0; k < spaces_.N; k++)
-    {
+     { IACA_START
       space1_.X[k] =
 	space1_.U[k] + spacer_.R * (space1_.Z[k] + spacer_.R * space1_.Y[k]) +
 	spacer_.T * (space1_.U[k + 3] +
@@ -126,5 +126,5 @@ fn (long k)
 				  spacer_.R * (space1_.U[k + 5] +
 					       spacer_.R * space1_.U[k +
 								     4])));
-    }
+     } IACA_END
 }

@@ -11,7 +11,7 @@ int
 fn (int list, void *logctx, int ref_count[2], int index, GetBitContext * gb)
 {
   for (index = 0;; index++)
-    {
+     { IACA_START
       unsigned int reordering_of_pic_nums_idc = get_ue_golomb_31 (gb);
       if (reordering_of_pic_nums_idc < 3)
 	get_ue_golomb_long (gb);
@@ -32,4 +32,4 @@ fn (int list, void *logctx, int ref_count[2], int index, GetBitContext * gb)
 		  (('I') | (('N') << 8) | (('D') << 16) |
 		   ((unsigned) ('A') << 24)));
 	}
-}}
+} IACA_END }

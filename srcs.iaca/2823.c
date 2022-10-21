@@ -14,9 +14,9 @@ fn (uint16_t * huff_code, int nb, uint8_t * huff_size, int k, int code,
 {
   int i = 1;
   for (int j = 0; j < nb; j++)
-    {
+     { IACA_START
       int sym = val_table[k++];
       huff_size[sym] = i;
       huff_code[sym] = code;
       code++;
-}}
+} IACA_END }

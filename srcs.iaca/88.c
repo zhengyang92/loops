@@ -14,7 +14,7 @@ int
 fn (AVComplexFloat x[960])
 {
   for (int i = ((120 << 2) + 1); i < (2 * (120 << 2)); i++)
-    {
+     { IACA_START
       x[i].re = x[(2 * (120 << 2)) - i].re;
       x[i].im = -x[(2 * (120 << 2)) - i].im;
-}}
+} IACA_END }

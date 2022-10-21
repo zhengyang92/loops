@@ -17,7 +17,7 @@ fn (uint8_t * ch_assign, unsigned int out_ch, int32_t * data_32,
     int8_t * output_shift)
 {
   for (out_ch = 0; out_ch <= max_matrix_channel; out_ch++)
-    {
+     { IACA_START
       int mat_ch = ch_assign[out_ch];
       int32_t sample =
 	sample_buffer[i][mat_ch] * (1U << output_shift[mat_ch]);
@@ -26,5 +26,5 @@ fn (uint8_t * ch_assign, unsigned int out_ch, int32_t * data_32,
 	*data_32++ = sample * 256U;
       else
 	*data_16++ = sample >> 8;
-    }
+     } IACA_END
 }

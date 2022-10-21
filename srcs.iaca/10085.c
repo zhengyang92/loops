@@ -16,8 +16,8 @@ fn (VP8LBitWriter * const bw, int i, HuffmanTree * const huff_tree,
 {
   int histogram_image_size = 0;
   for (i = 0; i < 5 * histogram_image_size; ++i)
-    {
+     { IACA_START
       HuffmanTreeCode *const codes = &huffman_codes[i];
       StoreHuffmanCode (bw, huff_tree, tokens, codes);
       ClearHuffmanTreeIfOnlyOneSymbol (codes);
-}}
+} IACA_END }

@@ -12,7 +12,7 @@ fn (int32_t coeffs[256], int32_t sign, int32_t dotprod, int32_t delay[256],
     int j, int order)
 {
   for (j = 0; j < order; j++)
-    {
+     { IACA_START
       dotprod += delay[j] * (unsigned) coeffs[j];
       coeffs[j] += ((delay[j] >> 31) | 1) * sign;
-}}
+} IACA_END }

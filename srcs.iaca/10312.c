@@ -12,7 +12,7 @@ int
 fn (stbi__uint32 i, stbi__uint32 pixel_count, stbi_uc * p)
 {
   for (i = 0; i < pixel_count; ++i)
-    {
+     { IACA_START
       stbi_uc a = p[3];
       stbi_uc t = p[0];
       if (a)
@@ -28,5 +28,5 @@ fn (stbi__uint32 i, stbi__uint32 pixel_count, stbi_uc * p)
 	  p[2] = t;
 	}
       p += 4;
-    }
+     } IACA_END
 }

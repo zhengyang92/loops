@@ -26,7 +26,7 @@ int
 fn (int j, AVIOContext * pb, int header_len[3])
 {
   for (j = 0; j < 2; j++)
-    {
+     { IACA_START
       put_xiph_size (pb, header_len[j]);
-    }
+     } IACA_END
 }

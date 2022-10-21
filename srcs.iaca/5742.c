@@ -11,9 +11,9 @@ int
 fn (int i, int nb_groups, int k, uint8_t * exp, int cpl)
 {
   for (i = nb_groups, k = (nb_groups * 2) - cpl; i > 0; i--)
-    {
+     { IACA_START
       uint8_t exp1 = exp[i - cpl];
       exp[k--] = exp1;
       exp[k--] = exp1;
-    }
+     } IACA_END
 }

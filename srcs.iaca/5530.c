@@ -13,7 +13,7 @@ fn (const uint8_t SBOX4[256], int i, uint64_t z, const uint8_t SBOX2[256],
     const uint8_t SBOX3[256], const uint8_t SBOX1[256], uint64_t SP[8][256])
 {
   for (i = 0; i < 256; i++)
-    {
+     { IACA_START
       z = SBOX1[i];
       SP[0][i] = (z << 56) ^ (z << 48) ^ (z << 40) ^ (z << 24) ^ z;
       SP[7][i] =
@@ -28,5 +28,5 @@ fn (const uint8_t SBOX4[256], int i, uint64_t z, const uint8_t SBOX2[256],
       SP[3][i] = (z << 56) ^ (z << 48) ^ (z << 32) ^ (z << 8) ^ z;
       SP[6][i] =
 	(z << 56) ^ (z << 48) ^ (z << 32) ^ (z << 24) ^ (z << 16) ^ z;
-    }
+     } IACA_END
 }

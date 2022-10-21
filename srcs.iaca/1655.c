@@ -12,7 +12,7 @@ fn (long k, unsigned long j, long nbits_aligned, unsigned long acc,
     unsigned char *larray)
 {
   for (k = 0; k < nbits_aligned / 8; ++k)
-    {
+     { IACA_START
       acc = (acc << 8) + larray[j++];
-    }
+     } IACA_END
 }

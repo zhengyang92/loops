@@ -10,7 +10,8 @@
 int
 fn (int j, int8_t (*coding_method)[30][64], int sb, int ch)
 {
-  for (j = 0; j < 64; j++)
+  for (j = 0; j < 64; j++) {
+	  IACA_START
     if (sb >= 10)
       {
 	if (coding_method[ch][sb][j] < 10)
@@ -29,4 +30,5 @@ fn (int j, int8_t (*coding_method)[30][64], int sb, int ch)
 	      coding_method[ch][sb][j] = 30;
 	  }
       }
+  } IACA_END
 }

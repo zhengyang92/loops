@@ -11,7 +11,7 @@ int
 fn (int i, uint8_t * pd)
 {
   for (i--; i >= 0; i--)
-    {
+     { IACA_START
       pd[8 * i + 7] = pd[i] & 1;
       pd[8 * i + 6] = (pd[i] >> 1) & 1;
       pd[8 * i + 5] = (pd[i] >> 2) & 1;
@@ -20,5 +20,5 @@ fn (int i, uint8_t * pd)
       pd[8 * i + 2] = (pd[i] >> 5) & 1;
       pd[8 * i + 1] = (pd[i] >> 6) & 1;
       pd[8 * i + 0] = pd[i] >> 7;
-    }
+     } IACA_END
 }

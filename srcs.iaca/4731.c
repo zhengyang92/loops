@@ -14,7 +14,7 @@ fn (int num_values, int g_add, int y, int b_add, int i, int cr, uint8_t g,
     const uint8_t * cm, uint8_t b, uint8_t r, int r_add)
 {
   for (i = num_values; i > 0; i--)
-    {
+     { IACA_START
       y = *ycbcr++;
       cr = *ycbcr++;
       cb = *ycbcr++;
@@ -39,4 +39,4 @@ fn (int num_values, int g_add, int y, int b_add, int i, int cr, uint8_t g,
 	b = cm[(y + b_add) >> 10];
       };
       *rgba++ = ((unsigned) *alpha++ << 24) | (r << 16) | (g << 8) | b;
-}}
+} IACA_END }

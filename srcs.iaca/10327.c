@@ -10,5 +10,5 @@
 int
 fn (int j, unsigned short lengthc[30], int best)
 {
-  for (j = 0; best > lengthc[j + 1] - 1; ++j);
+  for (j = 0; best > lengthc[j + 1] - 1; ++j) {IACA_START} ; IACA_END
 }

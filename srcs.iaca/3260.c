@@ -14,11 +14,11 @@ fn (int max_rate_categories[28], const uint8_t expected_bits_table[8],
     int *absolute_region_power_index)
 {
   for (region = 0; region < number_of_regions; region++)
-    {
+     { IACA_START
       i = (offset - absolute_region_power_index[region]) >> 1;
       i = av_clip_uintp2_c (i, 3);
       max_rate_categories[region] = min_rate_categories[region] =
 	power_categories[region] = i;
       expected_number_of_code_bits += expected_bits_table[i];
-    }
+     } IACA_END
 }

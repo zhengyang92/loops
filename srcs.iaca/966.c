@@ -12,7 +12,7 @@ fn (int w, const uint8_t * msrc, int offset, int x, const uint8_t * asrc,
     uint8_t * dst)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       if (asrc[x] > 0 && asrc[x] < 255)
 	dst[x] =
 	  ((((msrc[x] - offset) >
@@ -22,5 +22,5 @@ fn (int w, const uint8_t * msrc, int offset, int x, const uint8_t * asrc,
 	       (0) ? (msrc[x] - offset) : (0)) * 255 / asrc[x] + offset));
       else
 	dst[x] = msrc[x];
-    }
+     } IACA_END
 }

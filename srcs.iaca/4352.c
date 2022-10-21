@@ -12,7 +12,7 @@ fn (int VAR_C, double *var_values, AVExpr * expr, float tmp_block2[64],
     int sigma_th, unsigned int i)
 {
   for (i = 0; i < 8 * 8; i++)
-    {
+     { IACA_START
       float *b = &tmp_block2[i];
       if (expr)
 	{
@@ -24,5 +24,5 @@ fn (int VAR_C, double *var_values, AVExpr * expr, float tmp_block2[64],
 	  if (fabsf (*b) < sigma_th)
 	    *b = 0;
 	}
-    }
+     } IACA_END
 }

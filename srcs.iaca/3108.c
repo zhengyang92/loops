@@ -11,7 +11,7 @@ int
 fn (uint32_t * lut)
 {
   for (int i = 0; i < 32; i += 2)
-    {
+     { IACA_START
       lut[i] = 0x68000;
       lut[i + 1] = 0;
-}}
+} IACA_END }

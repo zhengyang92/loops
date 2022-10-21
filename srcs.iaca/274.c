@@ -11,7 +11,7 @@ int
 fn (int x, uint8_t * dst, int w)
 {
   for (x = 0; x < w; x += 40)
-    {
+     { IACA_START
       dst[x] = 200;
-    }
+     } IACA_END
 }

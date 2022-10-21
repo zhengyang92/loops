@@ -12,7 +12,7 @@ fn (int i, int16_t * const lut, const int delta, const int threshold1,
     const int threshold2, const int max_threshold)
 {
   for (i = 1; i <= ((1 << (8 + 2)) - 1); ++i)
-    {
+     { IACA_START
       int c =
 	(i <= threshold2) ? (i << 0) : (i <
 					threshold1) ? max_threshold *
@@ -20,4 +20,4 @@ fn (int i, int16_t * const lut, const int delta, const int threshold1,
       c >>= 2;
       lut[+i] = +c;
       lut[-i] = -c;
-}}
+} IACA_END }

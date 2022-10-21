@@ -12,7 +12,7 @@ fn (int i, int dstStride, int srcStride, uint16_t * dst, const uint16_t * src)
 {
   const int h = 8;
   for (i = 0; i < h; i++)
-    {
+     { IACA_START
       dst[0] =
 	(((dst[0]) +
 	  av_clip_uintp2_c ((((src[0] + src[1]) * 20 -
@@ -48,5 +48,5 @@ fn (int i, int dstStride, int srcStride, uint16_t * dst, const uint16_t * src)
 			      (src[5] + src[10])) + 16) >> 5, 14) + 1) >> 1);
       dst += dstStride;
       src += srcStride;
-    }
+     } IACA_END
 }

@@ -14,7 +14,7 @@ fn (int pass, int i, const uint16_t * min_delta, int16_t * nlsf, int k,
 {
   int min_diff = 0;
   for (i = 0; i < order + 1; i++)
-    {
+     { IACA_START
       int low = i != 0 ? nlsf[i - 1] : 0;
       int high = i != order ? nlsf[i] : 32768;
       int diff = (high - low) - (min_delta[i]);
@@ -25,5 +25,5 @@ fn (int pass, int i, const uint16_t * min_delta, int16_t * nlsf, int k,
 	  if (pass == 20)
 	    break;
 	}
-    }
+     } IACA_END
 }

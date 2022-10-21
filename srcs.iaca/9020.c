@@ -190,11 +190,11 @@ fn (struct fmt_map fmt_conversion_table[16], enum AVCodecID codec_id, int i,
        i <
        (sizeof (fmt_conversion_table) / sizeof ((fmt_conversion_table)[0]));
        i++)
-    {
+     { IACA_START
       if (fmt_conversion_table[i].v4l2_fmt == v4l2_fmt
 	  && fmt_conversion_table[i].codec_id == codec_id)
 	{
 	  return fmt_conversion_table[i].ff_fmt;
 	}
-    }
+     } IACA_END
 }

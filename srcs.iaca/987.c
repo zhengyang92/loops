@@ -14,7 +14,7 @@ fn (int end_posx, int i, unsigned int divisor,
     int ***mask, int j, int start_posy, int mask_size)
 {
   for (i = start_posx; i <= end_posx; i++)
-    {
+     { IACA_START
       if (!(*mask_read_position)
 	  && mask[mask_size][i - start_posx][j - start_posy])
 	{
@@ -23,5 +23,5 @@ fn (int end_posx, int i, unsigned int divisor,
 	}
       image_read_position++;
       mask_read_position++;
-    }
+     } IACA_END
 }

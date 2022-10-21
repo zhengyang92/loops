@@ -12,7 +12,7 @@ fn (int *histo, int x, int green_to_red, const uint32_t * argb,
     int tile_width)
 {
   for (x = 0; x < tile_width; ++x)
-    {
+     { IACA_START
       ++histo[TransformColorRed (green_to_red, argb[x])];
-    }
+     } IACA_END
 }

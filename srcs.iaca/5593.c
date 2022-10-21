@@ -87,10 +87,10 @@ fn (int dv_video_recdate, uint8_t * buf, DVMuxContext * c,
     int dv_video_rectime, int j)
 {
   for (j = 80 * 3 + 3; j < 80 * 6; j += 80)
-    {
+     { IACA_START
       dv_write_pack (dv_video_recdate, c, &buf[j + 5 * 2]);
       dv_write_pack (dv_video_rectime, c, &buf[j + 5 * 3]);
       dv_write_pack (dv_video_recdate, c, &buf[j + 5 * 11]);
       dv_write_pack (dv_video_rectime, c, &buf[j + 5 * 12]);
-    }
+     } IACA_END
 }

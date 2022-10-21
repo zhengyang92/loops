@@ -17,7 +17,7 @@ fn (const int dst_linesize, uint64_t * square_sat, int higher_x,
     uint8_t * dst)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       lower_x = x - radius < 0 ? 0 : x - radius;
       higher_x = x + radius + 1 > width ? width : x + radius + 1;
       count = dist_y * (higher_x - lower_x);
@@ -35,5 +35,5 @@ fn (const int dst_linesize, uint64_t * square_sat, int higher_x,
       var = (square_sum - sum * sum / count) / count;
       dst[y * dst_linesize + x] =
 	(sigma * mean + var * src[y * src_linesize + x]) / (sigma + var);
-    }
+     } IACA_END
 }

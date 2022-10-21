@@ -12,9 +12,9 @@ fn (int i, const uint8_t * transp_color, const uint8_t * buf, int n,
     int pitch)
 {
   for (i = 0; i < n; i++)
-    {
+     { IACA_START
       if (!transp_color[*buf])
 	return 0;
       buf += pitch;
-    }
+     } IACA_END
 }

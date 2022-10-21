@@ -11,7 +11,7 @@ int
 fn (uint8_t * p, uint8_t * end)
 {
   for (; p < end - 3; p += 4)
-    {
+     { IACA_START
       uint32_t x = *(uint32_t *) p;
       if (x & (~(x + 0x01010101)) & 0x80808080)
 	{
@@ -32,5 +32,5 @@ fn (uint8_t * p, uint8_t * end)
 	      return p + 3;
 	    }
 	}
-    }
+     } IACA_END
 }

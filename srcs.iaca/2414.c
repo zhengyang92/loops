@@ -12,7 +12,7 @@ int
 fn (int i, uint16_t * src, const int32_t * block, uint16_t pix[8], int stride)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       uint16_t v = pix[i];
       src[0] = v += block[0];
       src[1] = v += block[1];
@@ -24,5 +24,5 @@ fn (int i, uint16_t * src, const int32_t * block, uint16_t pix[8], int stride)
       src[7] = v + block[7];
       src += stride;
       block += 8;
-    }
+     } IACA_END
 }

@@ -14,7 +14,7 @@ fn (const uint16_t * c0_data, const int mid, uint16_t * dst_data,
     const uint16_t * c1_data)
 {
   for (x = 0; x < src_w; x++)
-    {
+     { IACA_START
       const int sum =
 	((((c0_data[x >> c0_shift_w] - mid) >=
 	   0 ? (c0_data[x >> c0_shift_w] -
@@ -40,5 +40,5 @@ fn (const uint16_t * c0_data, const int mid, uint16_t * dst_data,
 	  target = dst_data + sum;
 	  update16 (target, max, intensity, limit);
 	}
-    }
+     } IACA_END
 }

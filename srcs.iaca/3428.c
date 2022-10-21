@@ -12,7 +12,7 @@ fn (int prev, int i, uint16_t * dest, int width, int use_pred, int fsym,
     int pix)
 {
   for (i = 0; i < width; i++)
-    {
+     { IACA_START
       pix = fsym;
       if (use_pred)
 	{
@@ -21,5 +21,5 @@ fn (int prev, int i, uint16_t * dest, int width, int use_pred, int fsym,
 	  pix = prev;
 	}
       dest[i] = pix;
-    }
+     } IACA_END
 }

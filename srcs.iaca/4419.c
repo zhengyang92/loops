@@ -14,7 +14,7 @@ fn (int y, int w, const float scaler, int h, const int ddepth,
     uint8_t * dst, const float minr)
 {
   for (int x = 0; x < w; x++)
-    {
+     { IACA_START
       const float radiusf =
 	minr +
 	(((0.f) >
@@ -44,4 +44,4 @@ fn (int y, int w, const float scaler, int h, const int ddepth,
       uint32_t p0 = (br + tl - bl - tr) / div;
       uint32_t n0 = (nbr + ntl - nbl - ntr) / ndiv;
       dst[x] = av_clip_uintp2_c (lrintf (lerpf (p0, n0, factor)), ddepth);
-}}
+} IACA_END }

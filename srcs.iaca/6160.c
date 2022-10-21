@@ -12,7 +12,7 @@ fn (int y, int offset, int log2_denom, int weights, uint16_t * src,
     int weightd, uint16_t * dst, int height, int stride)
 {
   for (y = 0; y < height; y++, dst += stride, src += stride)
-    {
+     { IACA_START
       dst[0] =
 	av_clip_uintp2_c ((src[0] * weights + dst[0] * weightd +
 			   offset) >> (log2_denom + 1), 10);
@@ -67,5 +67,5 @@ fn (int y, int offset, int log2_denom, int weights, uint16_t * src,
       dst[15] =
 	av_clip_uintp2_c ((src[15] * weights + dst[15] * weightd +
 			   offset) >> (log2_denom + 1), 10);
-    }
+     } IACA_END
 }

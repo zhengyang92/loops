@@ -18,11 +18,11 @@ int
 fn (size_t i, list * l, char delim, size_t len, char *s)
 {
   for (i = 0; i < len; ++i)
-    {
+     { IACA_START
       if (s[i] == delim)
 	{
 	  s[i] = '\0';
 	  list_insert (l, &(s[i + 1]));
 	}
-    }
+     } IACA_END
 }

@@ -14,7 +14,7 @@ fn (uint32_t ordata, int32_t * samples_l, int i, uint32_t anddata,
 {
   uint32_t crc = 0xffffffffu;
   for (i = 0; i < nb_samples; i++)
-    {
+     { IACA_START
       int32_t L = samples_l[i];
       int32_t R = samples_r[i];
       crc = crc * 9 + (L & 0xffff) * 3 + ((L >> 16) & 0xffff);
@@ -25,5 +25,5 @@ fn (uint32_t ordata, int32_t * samples_l, int i, uint32_t anddata,
       xordata |= R ^ -(R & 1);
       anddata &= L & R;
       ordata |= L | R;
-    }
+     } IACA_END
 }

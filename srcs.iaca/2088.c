@@ -11,7 +11,7 @@ int
 fn (int min_dist, int j, int temp, int16_t * cur_lsp)
 {
   for (j = 1; j < 10; j++)
-    {
+     { IACA_START
       temp = min_dist + cur_lsp[j - 1] - cur_lsp[j];
       if (temp > 0)
 	{
@@ -19,5 +19,5 @@ fn (int min_dist, int j, int temp, int16_t * cur_lsp)
 	  cur_lsp[j - 1] -= temp;
 	  cur_lsp[j] += temp;
 	}
-    }
+     } IACA_END
 }

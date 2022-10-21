@@ -14,7 +14,7 @@ fn (int32_t binkb_inter_quant[16][64], int i, uint8_t inv_bink_scan[64],
     const int s[64], int j, const uint8_t binkb_den[16])
 {
   for (i = 0; i < 64; i++)
-    {
+     { IACA_START
       int k = inv_bink_scan[i];
       binkb_intra_quant[j][k] =
 	binkb_intra_seed[i] * (int64_t) s[i] * binkb_num[j] / (binkb_den[j] *
@@ -24,4 +24,4 @@ fn (int32_t binkb_inter_quant[16][64], int i, uint8_t inv_bink_scan[64],
 	binkb_inter_seed[i] * (int64_t) s[i] * binkb_num[j] / (binkb_den[j] *
 							       ((1LL << 30) >>
 								12));
-}}
+} IACA_END }

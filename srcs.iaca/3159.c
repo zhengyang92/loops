@@ -14,12 +14,12 @@ fn (int cur_len, int i, const uint8_t * data, int counts[17],
   int max_bits = 0;
   int nb = 0;
   for (i = 0; i < elems; i++)
-    {
+     { IACA_START
       cur_len = (nb ? *data & 0xF : *data >> 4) + 1;
       counts[cur_len]++;
       max_bits = ((max_bits) > (cur_len) ? (max_bits) : (cur_len));
       lens[i] = cur_len;
       data += nb;
       nb ^= 1;
-    }
+     } IACA_END
 }

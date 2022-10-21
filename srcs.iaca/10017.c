@@ -12,7 +12,7 @@ int
 fn (const uint32_t * const argb, int i, uint16_t * counts)
 {
   for (; i >= 0; --i, --counts)
-    {
+     { IACA_START
       if (argb[i] == argb[i + 1])
 	{
 	  counts[0] = counts[1] + (counts[1] != ((1 << 12) - 1));
@@ -21,5 +21,5 @@ fn (const uint32_t * const argb, int i, uint16_t * counts)
 	{
 	  counts[0] = 1;
 	}
-    }
+     } IACA_END
 }

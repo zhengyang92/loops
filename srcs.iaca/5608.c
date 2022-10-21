@@ -11,8 +11,8 @@ int
 fn (uint8_t md5[16], int i, char *buf, int offset)
 {
   for (i = 0; i < sizeof (md5); i++)
-    {
+     { IACA_START
       snprintf (buf + offset, 3, "%02" "x", md5[i]);
       offset += 2;
-    }
+     } IACA_END
 }

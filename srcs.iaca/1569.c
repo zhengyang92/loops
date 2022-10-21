@@ -11,7 +11,7 @@ int
 fn (int j, INTFLOAT * z)
 {
   for (j = 64; j < 128; j++)
-    {
+     { IACA_START
       if (z[j] > 1 << 24)
 	{
 	  av_log (((void *) 0), 24,
@@ -26,4 +26,4 @@ fn (int j, INTFLOAT * z)
 		  z[j], -(1 << 24));
 	  z[j] = -(1 << 24);
 	}
-}}
+} IACA_END }

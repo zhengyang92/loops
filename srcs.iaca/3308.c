@@ -11,7 +11,7 @@ int
 fn (const int qmul, const int qadd, const int w, int x, IDWTELEM * line)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int i = line[x];
       if (i < 0)
 	{
@@ -21,4 +21,4 @@ fn (const int qmul, const int qadd, const int w, int x, IDWTELEM * line)
 	{
 	  line[x] = ((i * (unsigned) qmul + qadd) >> ((7 - 4 + 8)));
 	}
-}}
+} IACA_END }

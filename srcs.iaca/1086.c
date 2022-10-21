@@ -12,11 +12,11 @@ fn (int y, int offset, const int start, int x, int *emax, const int end,
     uint16_t * dst, const int bg)
 {
   for (x = end - 1; x >= start && x >= emax[y - offset]; x--)
-    {
+     { IACA_START
       if (dst[x] != bg)
 	{
 	  emax[y - offset] = x;
 	  break;
 	}
-    }
+     } IACA_END
 }

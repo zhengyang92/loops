@@ -12,7 +12,7 @@ int
 fn (int amp, VP8Random * const rg, uint8_t dither[64], int i)
 {
   for (i = 0; i < 8 * 8; ++i)
-    {
+     { IACA_START
       dither[i] = VP8RandomBits2 (rg, 7 + 1, amp);
-    }
+     } IACA_END
 }

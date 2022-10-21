@@ -14,7 +14,7 @@ fn (const int iwd, const int dlinesize, const int w, const int max,
     const uint16_t * spx, const int intensity)
 {
   for (j = 0; j < w; j++)
-    {
+     { IACA_START
       const int x = ((spx[iwx + j]) > (max) ? (max) : (spx[iwx + j]));
       const int y = ((spy[iwy + j]) > (max) ? (max) : (spy[iwy + j]));
       const int z = spd[iwd + j];
@@ -23,5 +23,5 @@ fn (const int iwd, const int dlinesize, const int w, const int max,
 	continue;
       dpd[pos] =
 	((dpd[pos] + intensity) > (max) ? (max) : (dpd[pos] + intensity));
-    }
+     } IACA_END
 }

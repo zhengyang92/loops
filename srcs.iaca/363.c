@@ -12,7 +12,7 @@ fn (int i, int mask, const char *txt, uint8_t * color, uint8_t * p,
     const uint8_t * font, int font_height, int char_y)
 {
   for (mask = 0x80; mask; mask >>= 1)
-    {
+     { IACA_START
       if (font[txt[i] * font_height + char_y] & mask)
 	{
 	  p[0] = color[0];
@@ -20,5 +20,5 @@ fn (int i, int mask, const char *txt, uint8_t * color, uint8_t * p,
 	  p[2] = color[2];
 	}
       p += 4;
-    }
+     } IACA_END
 }

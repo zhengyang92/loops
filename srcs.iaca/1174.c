@@ -13,7 +13,7 @@ fn (const int nb_inputs, uint8_t ** srcf, uint16_t values[256])
 {
   int x = 0;
   for (int i = 0; i < nb_inputs; i++)
-    {
+     { IACA_START
       const uint16_t *src = (const uint16_t *) srcf[i];
       values[i] = src[x];
-}}
+} IACA_END }

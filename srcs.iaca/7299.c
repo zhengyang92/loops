@@ -12,9 +12,9 @@ int
 fn (const uint8_t * key, int key_len, int k, uint32_t data, int j)
 {
   for (k = 0; k < 4; k++)
-    {
+     { IACA_START
       data = (data << 8) | key[j];
       if (++j >= key_len)
 	j = 0;
-    }
+     } IACA_END
 }

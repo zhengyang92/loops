@@ -12,7 +12,7 @@ int
 fn (uint32 * v, uint32 i, uint16 * va)
 {
   for (i = 0; i < *v; i++)
-    {
+     { IACA_START
       if (va[i] > 2)
 	{
 	  if (va[i] == 999)
@@ -20,5 +20,5 @@ fn (uint32 * v, uint32 i, uint16 * va)
 	  else
 	    return 0;
 	}
-    }
+     } IACA_END
 }

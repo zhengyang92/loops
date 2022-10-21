@@ -13,7 +13,7 @@ fn (int i, ptrdiff_t stride, int h, const int D, const int A, const int B,
     const int C, uint8_t * dst, uint8_t * src)
 {
   for (i = 0; i < h; i++)
-    {
+     { IACA_START
       dst[0] =
 	(((dst[0]) +
 	  ((((A * src[0] + B * src[1] + C * src[stride + 0] +
@@ -48,5 +48,5 @@ fn (int i, ptrdiff_t stride, int h, const int D, const int A, const int B,
 	      D * src[stride + 8])) + 32) >> 6) + 1) >> 1);
       dst += stride;
       src += stride;
-    }
+     } IACA_END
 }

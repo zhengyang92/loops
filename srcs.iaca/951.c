@@ -21,9 +21,9 @@ int
 fn (struct cached_color *e, uint32_t color, int i, struct cache_node *node)
 {
   for (i = 0; i < node->nb_entries; i++)
-    {
+     { IACA_START
       e = &node->entries[i];
       if (e->color == color)
 	return e->pal_entry;
-    }
+     } IACA_END
 }

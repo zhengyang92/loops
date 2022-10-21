@@ -11,7 +11,7 @@ int
 fn (float *data, int mid, float x, int low, int hi)
 {
   for (;;)
-    {
+     { IACA_START
       do
 	{
 	  if (!(x >= data[low]))
@@ -49,5 +49,5 @@ fn (float *data, int mid, float x, int low, int hi)
 	hi = mid;
       else
 	low = mid;
-    }
+     } IACA_END
 }

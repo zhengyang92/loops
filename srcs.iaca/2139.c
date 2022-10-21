@@ -11,7 +11,7 @@ int
 fn (int x, uint8_t * dst, int w, const uint8_t * src)
 {
   for (x = 0; x < w - 7; x += 8)
-    {
+     { IACA_START
       dst[x + 0] = src[2 * x + 0];
       dst[x + 1] = src[2 * x + 2];
       dst[x + 2] = src[2 * x + 4];
@@ -20,5 +20,5 @@ fn (int x, uint8_t * dst, int w, const uint8_t * src)
       dst[x + 5] = src[2 * x + 10];
       dst[x + 6] = src[2 * x + 12];
       dst[x + 7] = src[2 * x + 14];
-    }
+     } IACA_END
 }

@@ -15,8 +15,8 @@ int
 fn (int i, union av_intfloat32 *xi)
 {
   for (i = 1; i < 64; i += 4)
-    {
+     { IACA_START
       xi[i + 0].i ^= 1U << 31;
       xi[i + 2].i ^= 1U << 31;
-    }
+     } IACA_END
 }

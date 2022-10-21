@@ -16,8 +16,8 @@ fn (const char mov_mdhd_language_map[139][4], int mp4, int i,
        && i <
        (sizeof (mov_mdhd_language_map) / sizeof ((mov_mdhd_language_map)[0]));
        i++)
-    {
+     { IACA_START
       if (!strcmp (lang, mov_mdhd_language_map[i]))
 	return i;
-    }
+     } IACA_END
 }

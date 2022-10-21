@@ -11,7 +11,7 @@ int
 fn (int *tmp, int i, uint8_t * dst)
 {
   for (i = 0; i < 4; ++i)
-    {
+     { IACA_START
       const int dc = tmp[0] + 4;
       const int a = dc + tmp[8];
       const int b = dc - tmp[8];
@@ -26,4 +26,4 @@ fn (int *tmp, int i, uint8_t * dst)
       dst[(3) + (0) * 32] = clip_8b (dst[(3) + (0) * 32] + ((a - d) >> 3));
       tmp++;
       dst += 32;
-}}
+} IACA_END }

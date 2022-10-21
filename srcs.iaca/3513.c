@@ -13,7 +13,7 @@ fn (int Fd, int Dd, int Bdd, int16_t * ip, int E, int Cd, int Bd, int G,
     int Ed, int F)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       if (ip[0 * 8] | ip[1 * 8] | ip[2 * 8] | ip[3 * 8])
 	{
 	  A = ((int) ((unsigned) (64277) * (ip[1 * 8])) >> 16);
@@ -44,4 +44,4 @@ fn (int Fd, int Dd, int Bdd, int16_t * ip, int E, int Cd, int Bd, int G,
 	  ip[6 * 8] = Fd - Bdd;
 	}
       ip += 1;
-}}
+} IACA_END }

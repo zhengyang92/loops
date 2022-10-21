@@ -12,7 +12,7 @@ int
 fn (int16_t * src, uint8_t * dst, int i, int stride)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       dst[0] += (unsigned) src[0];
       dst[1] += (unsigned) src[1];
       dst[2] += (unsigned) src[2];
@@ -23,4 +23,4 @@ fn (int16_t * src, uint8_t * dst, int i, int stride)
       dst[7] += (unsigned) src[7];
       dst += stride;
       src += 8;
-}}
+} IACA_END }

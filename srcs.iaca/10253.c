@@ -11,7 +11,7 @@ int
 fn (int i, int size, float *delta, int b, int n, float *bias_updates)
 {
   for (i = 0; i < n; ++i)
-    {
+     { IACA_START
       bias_updates[i] += sum_array (delta + size * (i + b * n), size);
-    }
+     } IACA_END
 }

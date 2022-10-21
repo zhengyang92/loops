@@ -12,7 +12,7 @@ fn (int i, int val, int alpha_val, int idx, const int decode_precision,
     uint16_t * dst)
 {
   for (i = 0; i < val; i++)
-    {
+     { IACA_START
       if (decode_precision == 10)
 	{
 	  dst[idx++] = ((alpha_val << 2) | (alpha_val >> 6));
@@ -21,5 +21,5 @@ fn (int i, int val, int alpha_val, int idx, const int decode_precision,
 	{
 	  dst[idx++] = ((alpha_val << 4) | (alpha_val >> 4));
 	}
-    }
+     } IACA_END
 }

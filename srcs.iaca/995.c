@@ -14,7 +14,7 @@ fn (const int height, const float shy, int y, const float wy, const int hsub,
     const uint16_t * src)
 {
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       const float sx = x + vsub * shx * y / hsub - wx;
       const float sy = y + hsub * shy * x / vsub - wy;
       if (sx >= 0 && sx < width - 1 && sy >= 0 && sy < height - 1)
@@ -32,4 +32,4 @@ fn (const int height, const float shy, int y, const float wy, const int hsub,
 	  sum += (du) * (dv) * src[by * src_linesize + bx];
 	  dst[x] = av_clip_uintp2_c (lrintf (sum), depth);
 	}
-}}
+} IACA_END }

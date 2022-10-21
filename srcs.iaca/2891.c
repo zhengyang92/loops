@@ -13,7 +13,7 @@ fn (float t3, int i, float *buf, float *out, float s0, const float icos36[9],
     const float icos36h[9], float t2, int j, float s1, float t0)
 {
   for (j = 0; j < 4; j++)
-    {
+     { IACA_START
       t0 = tmp[i];
       t1 = tmp[i + 2];
       s0 = t1 + t0;
@@ -44,5 +44,5 @@ fn (float t3, int i, float *buf, float *out, float s0, const float icos36[9],
       buf[4 * (j)] =
 	((1) * (win[(((36) + (2 * 4) - 1) & ~((2 * 4) - 1)) / 2 + j]) * (t0));
       i += 4;
-    }
+     } IACA_END
 }

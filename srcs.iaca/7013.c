@@ -12,7 +12,7 @@ int
 fn (int w, int i, int p, int be, int bpp, uint8_t * dst, GetByteContext * gb)
 {
   for (i = 0; i < w; i++)
-    {
+     { IACA_START
       p = vmnc_get_pixel (gb, bpp, be);
       switch (bpp)
 	{
@@ -26,5 +26,5 @@ fn (int w, int i, int p, int be, int bpp, uint8_t * dst, GetByteContext * gb)
 	  ((uint32_t *) dst)[i] = p;
 	  break;
 	}
-    }
+     } IACA_END
 }

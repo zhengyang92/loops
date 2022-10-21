@@ -15,7 +15,7 @@ fn (float *grad, int grad_linesize, int h, int period)
   float nonblock = 0.0f;
   int nonblock_count = 0;
   for (int j = 3; j < h - 4; j++)
-    {
+     { IACA_START
       if ((j % period) == (period - 1))
 	{
 	  block +=
@@ -37,5 +37,5 @@ fn (float *grad, int grad_linesize, int h, int period)
 	  nonblock += grad[j * grad_linesize];
 	  nonblock_count++;
 	}
-    }
+     } IACA_END
 }

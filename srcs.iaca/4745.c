@@ -13,7 +13,7 @@ fn (int y, int left_damage, int offset, ptrdiff_t stride, int right_damage,
     const uint8_t * cm, uint8_t * dst)
 {
   for (y = 0; y < 8; y++)
-    {
+     { IACA_START
       int a, b, c, d;
       a = dst[offset + 7 + y * stride] - dst[offset + 6 + y * stride];
       b = dst[offset + 8 + y * stride] - dst[offset + 7 + y * stride];
@@ -51,5 +51,5 @@ fn (int y, int left_damage, int offset, ptrdiff_t stride, int right_damage,
 	  dst[offset + 11 + y * stride] =
 	    cm[dst[offset + 11 + y * stride] - ((d * 1) >> 4)];
 	}
-    }
+     } IACA_END
 }

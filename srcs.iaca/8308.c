@@ -255,7 +255,7 @@ fn (enum AVPixelFormat pix_fmt, enum AVCodecID codec_id, int i,
     const struct fmt_map ff_fmt_conversion_table[34])
 {
   for (i = 0; ff_fmt_conversion_table[i].codec_id != AV_CODEC_ID_NONE; i++)
-    {
+     { IACA_START
       if ((codec_id == AV_CODEC_ID_NONE
 	   || ff_fmt_conversion_table[i].codec_id == codec_id)
 	  && (pix_fmt == AV_PIX_FMT_NONE
@@ -263,5 +263,5 @@ fn (enum AVPixelFormat pix_fmt, enum AVCodecID codec_id, int i,
 	{
 	  return ff_fmt_conversion_table[i].v4l2_fmt;
 	}
-    }
+     } IACA_END
 }

@@ -92,7 +92,7 @@ fn (struct sbg_string ostr, struct sbg_parser *p, double v, int r, char mode,
     struct sbg_string oarg, char *tptr)
 {
   for (; ostr.s < ostr.e; ostr.s++)
-    {
+     { IACA_START
       char opt = *ostr.s;
       switch (opt)
 	{
@@ -256,4 +256,4 @@ fn (struct sbg_string ostr, struct sbg_parser *p, double v, int r, char mode,
 	  return (-(int)
 		  (('I') | (('N') << 8) | (('D') << 16) |
 		   ((unsigned) ('A') << 24)));
-}}}
+} IACA_END }}

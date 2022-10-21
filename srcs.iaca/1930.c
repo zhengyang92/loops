@@ -11,9 +11,9 @@ int
 fn (int i, float mantissa_tab1[17][4])
 {
   for (i = 2; i < 16; i++)
-    {
+     { IACA_START
       mantissa_tab1[i][1] = 1.0f / ((1 << i) - 1);
       mantissa_tab1[i][2] = 0.5f / ((1 << i) - 1);
       mantissa_tab1[i][3] = 0.25f / ((1 << i) - 1);
-    }
+     } IACA_END
 }

@@ -11,8 +11,8 @@ int
 fn (int s, int j, uint8_t * pix, int w)
 {
   for (j = 0; j < w; j++)
-    {
+     { IACA_START
       s += pix[0];
       pix++;
-    }
+     } IACA_END
 }

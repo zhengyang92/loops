@@ -14,7 +14,7 @@ fn (I32 x, const I32 iWidth, const float fltCvtFactor, const I16 * piSrcPixel,
     U8 * piDstPixel)
 {
   for (x = 0; x < iWidth; x++)
-    {
+     { IACA_START
       piDstPixel[x] = Convert_Float_To_U8 (piSrcPixel[x] * fltCvtFactor);
-    }
+     } IACA_END
 }

@@ -11,7 +11,7 @@ int
 fn (int x, int w, int bpp, void *line)
 {
   for (x = 0; x < w >> 1; x++)
-    {
+     { IACA_START
       switch (bpp)
 	{
 	case 32:
@@ -67,5 +67,5 @@ fn (int x, int w, int bpp, void *line)
 	    }
 	  while (0);
 	}
-    }
+     } IACA_END
 }

@@ -11,8 +11,8 @@ int
 fn (int w, uint8_t * buf, int h, int sy, int sx, int color, int stride)
 {
   for (int y = sy; y < sy + h; y++)
-    {
+     { IACA_START
       buf[sx] = color;
       buf[sx + w - 1] = color;
       buf += stride;
-}}
+} IACA_END }

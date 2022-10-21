@@ -19,7 +19,7 @@ fn (int16_t cross_corr_sg_mod_max, int16_t * rp_beg, int32_t new_crit,
     int16_t maxlag, int16_t energy_scale, int16_t subl)
 {
   for (k = 0; k < searchLen; k++)
-    {
+     { IACA_START
       tp = target;
       rp = &regressor[pos];
       cross_corr = scale_dot_product (tp, rp, subl, shifts);
@@ -69,4 +69,4 @@ fn (int16_t cross_corr_sg_mod_max, int16_t * rp_beg, int32_t new_crit,
 	(unsigned) step *((*rp_end * *rp_end - *rp_beg * *rp_beg) >> shifts);
       rp_beg += step;
       rp_end += step;
-}}
+} IACA_END }

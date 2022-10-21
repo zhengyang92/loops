@@ -14,7 +14,7 @@ fn (unsigned int half_pi, unsigned int s, unsigned int step, int16_t * sin,
     unsigned int c, unsigned int new_k)
 {
   for (i = 0; i < half_pi / 2; i += step)
-    {
+     { IACA_START
       s = sin[i] + sin[i + step];
       c = sin[half_pi - i] + sin[half_pi - i - step];
       n2 = s * s + c * c;
@@ -27,5 +27,5 @@ fn (unsigned int half_pi, unsigned int s, unsigned int step, int16_t * sin,
 	}
       sin[i + step / 2] = (k * s + 0x7FFF) >> 16;
       sin[half_pi - i - step / 2] = (k * c + 0x8000) >> 16;
-    }
+     } IACA_END
 }

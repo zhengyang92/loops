@@ -11,7 +11,7 @@ int
 fn (int w, int h, int i, stbi_uc * out)
 {
   for (i = 0; i < w * h; ++i)
-    {
+     { IACA_START
       unsigned char *pixel = out + 4 * i;
       if (pixel[3] != 0 && pixel[3] != 255)
 	{
@@ -22,4 +22,4 @@ fn (int w, int h, int i, stbi_uc * out)
 	  pixel[1] = (unsigned char) (pixel[1] * ra + inv_a);
 	  pixel[2] = (unsigned char) (pixel[2] * ra + inv_a);
 	}
-}}
+} IACA_END }

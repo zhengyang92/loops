@@ -14,7 +14,7 @@ int
 fn (AVComplexFloat * X, float normf[481])
 {
   for (int i = 0; i < ((120 << 2) + 1); i++)
-    {
+     { IACA_START
       X[i].re *= normf[i];
       X[i].im *= normf[i];
-}}
+} IACA_END }

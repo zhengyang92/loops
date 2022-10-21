@@ -12,7 +12,7 @@ fn (int rp, int i, uint32_t x[128], int z, int k, uint32_t carry, int a)
 {
   int sh = 1;
   for (k = a; k != z; k = (k + 1 & (128 - 1)))
-    {
+     { IACA_START
       uint32_t tmp = x[k] & (1 << sh) - 1;
       x[k] = (x[k] >> sh) + carry;
       carry = (1000000000 >> sh) * tmp;
@@ -22,5 +22,5 @@ fn (int rp, int i, uint32_t x[128], int z, int k, uint32_t carry, int a)
 	  i--;
 	  rp -= 9;
 	}
-    }
+     } IACA_END
 }

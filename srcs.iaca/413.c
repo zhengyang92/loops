@@ -13,10 +13,10 @@ fn (ptrdiff_t width, const float opacity, const uint8_t * top, uint8_t * dst,
     const uint8_t * bottom)
 {
   for (int j = 0; j < width; j++)
-    {
+     { IACA_START
       dst[j] =
 	top[j] +
 	(((av_clip_uint8_c
 	   ((top[j] - 128) * bottom[j] / (0.125f * (1 << 8)) + 128))) -
 	 top[j]) * opacity;
-}}
+} IACA_END }

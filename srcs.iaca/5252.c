@@ -12,7 +12,7 @@ fn (int i, int start, int end, int (*X_high)[2], int alpha[4], int64_t accu,
     const int (*X_low)[2])
 {
   for (i = start; i < end; i++)
-    {
+     { IACA_START
       accu = (int64_t) X_low[i][0] * 0x20000000;
       accu += (int64_t) X_low[i - 2][0] * alpha[0];
       accu -= (int64_t) X_low[i - 2][1] * alpha[1];
@@ -25,4 +25,4 @@ fn (int i, int start, int end, int (*X_high)[2], int alpha[4], int64_t accu,
       accu += (int64_t) X_low[i - 1][1] * alpha[2];
       accu += (int64_t) X_low[i - 1][0] * alpha[3];
       X_high[i][1] = (int) ((accu + 0x10000000) >> 29);
-}}
+} IACA_END }

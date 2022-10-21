@@ -12,7 +12,7 @@ fn (int i, int filter2Size, int min, const int64_t fone, int j,
     int64_t * filter2, int64_t cutOff)
 {
   for (j = filter2Size - 1; j > 0; j--)
-    {
+     { IACA_START
       cutOff +=
 	((filter2[i * filter2Size + j]) >=
 	 0 ? (filter2[i * filter2Size + j])
@@ -20,5 +20,5 @@ fn (int i, int filter2Size, int min, const int64_t fone, int j,
       if (cutOff > 0.002 * fone)
 	break;
       min--;
-    }
+     } IACA_END
 }

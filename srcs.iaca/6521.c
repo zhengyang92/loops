@@ -15,7 +15,7 @@ fn (ptrdiff_t stride, uint32_t * sq, int h, uint8_t * pix1, uint8_t * pix2,
 {
   int i = 0;
   for (i = 0; i < h; i++)
-    {
+     { IACA_START
       s += sq[pix1[0] - pix2[0]];
       s += sq[pix1[1] - pix2[1]];
       s += sq[pix1[2] - pix2[2]];
@@ -34,5 +34,5 @@ fn (ptrdiff_t stride, uint32_t * sq, int h, uint8_t * pix1, uint8_t * pix2,
       s += sq[pix1[15] - pix2[15]];
       pix1 += stride;
       pix2 += stride;
-    }
+     } IACA_END
 }

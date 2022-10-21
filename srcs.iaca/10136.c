@@ -16,11 +16,11 @@ fn (const size_t rShiftY, const U8 idxCC[16][16], size_t iColumn, size_t iRow,
     const U8 nLen, size_t iChannel, I32 * pDst)
 {
   for (iChannel = 0; iChannel < cChannel; iChannel++)
-    {
+     { IACA_START
       PixelI p =
 	((pChannel[iChannel & 15]
 	  [((iColumn >> 4) << 8) +
 	   idxCC[iRow][iColumn & 15]] * cMul) >> rShiftY) << nLen;
       pDst[iChannel] = (I32) (p);
-    }
+     } IACA_END
 }

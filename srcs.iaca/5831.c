@@ -11,7 +11,7 @@ int
 fn (int nb, int n, int16_t (*table)[2], int k, int symbol, int j, int inc)
 {
   for (k = 0; k < nb; k++)
-    {
+     { IACA_START
       do
 	{
 	}
@@ -24,5 +24,5 @@ fn (int nb, int n, int16_t (*table)[2], int k, int symbol, int j, int inc)
       table[j][1] = n;
       table[j][0] = symbol;
       j += inc;
-    }
+     } IACA_END
 }

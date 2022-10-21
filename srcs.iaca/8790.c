@@ -11,8 +11,8 @@ int
 fn (int arr1[16], uint8_t * top, int bottommost, int r6, int size, int shift)
 {
   for (int x = 0; x < size; x++)
-    {
+     { IACA_START
       int val = top[x];
       arr1[x] =
 	adjust (((bottommost - val) * (1 << shift)) + r6 * (x + 1), size);
-}}
+} IACA_END }

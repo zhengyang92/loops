@@ -14,7 +14,7 @@ fn (int offset, int code, uint8_t * out, GetByteContext * gbc, int j, int pix,
 {
   int pos = 0;
   for (j = 0; j < code + 1; j++)
-    {
+     { IACA_START
       pix = bytestream2_get_byte (gbc);
       if (pos < offset)
 	out[pos] = pix;
@@ -24,5 +24,5 @@ fn (int offset, int code, uint8_t * out, GetByteContext * gbc, int j, int pix,
 	  pos -= offset;
 	  pos++;
 	}
-    }
+     } IACA_END
 }

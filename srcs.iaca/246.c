@@ -11,8 +11,8 @@ int
 fn (float *work, int work_len, int i)
 {
   for (i = 1; i < work_len / 2; i++)
-    {
+     { IACA_START
       work[i] *= 2;
       work[i + work_len / 2] = 0;
-    }
+     } IACA_END
 }

@@ -26,8 +26,8 @@ fn (AacPsyBand * band, int g, int i, const float *coefs,
   float form_factor = 0.0f;
   int start = 0;
   for (i = 0; i < band_sizes[g]; i++)
-    {
+     { IACA_START
       band->energy += coefs[start + i] * coefs[start + i];
       form_factor += sqrtf (fabs (coefs[start + i]));
-    }
+     } IACA_END
 }

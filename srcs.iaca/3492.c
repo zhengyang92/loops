@@ -13,7 +13,7 @@ fn (int nb, int n, int16_t (*table)[2], int symbol, int j)
   int inc = 1;
   int i = 0;
   for (int k = 0; k < nb; k++)
-    {
+     { IACA_START
       int bits = table[j][1];
       int oldsym = table[j][0];
       do
@@ -32,4 +32,4 @@ fn (int nb, int n, int16_t (*table)[2], int symbol, int j)
       table[j][1] = n;
       table[j][0] = symbol;
       j += inc;
-}}
+} IACA_END }

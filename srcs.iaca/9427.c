@@ -12,7 +12,7 @@ fn (int *in, int *tmp1, int tmp[18], int *in1, int t3, int j, int t0, int t1,
     int t2)
 {
   for (j = 0; j < 2; j++)
-    {
+     { IACA_START
       tmp1 = tmp + j;
       in1 = in + j;
       t2 = in1[2 * 4] + in1[2 * 8] - in1[2 * 2];
@@ -52,4 +52,4 @@ fn (int *in, int *tmp1, int tmp[18], int *in1, int t3, int j, int t0, int t1,
       tmp1[0] = t2 + t3 + t0;
       tmp1[12] = t2 + t1 - t0;
       tmp1[8] = t3 - t1 - t0;
-}}
+} IACA_END }

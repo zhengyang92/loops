@@ -11,7 +11,7 @@ int
 fn (int tap_count, double *tab, int16_t * filter, int i)
 {
   for (i = 0; i < tap_count; i++)
-    {
+     { IACA_START
       filter[i] = av_clip_int16_c (lrint (tab[i] * (1 << 15)));
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ int
 fn (int length, uint32_t pattern, uint8_t * dst, int i)
 {
   for (i = 0; i < (length >> 2); ++i)
-    {
+     { IACA_START
       ((uint32_t *) dst)[i] = pattern;
-    }
+     } IACA_END
 }

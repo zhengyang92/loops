@@ -11,7 +11,7 @@ int
 fn (float (*output)[4], int i, float AL2, ptrdiff_t len, float AL1)
 {
   for (i = 12; i < len - 1; i++)
-    {
+     { IACA_START
       float a = output[i][3] * AL1;
       float b = output[i + 1][0] * AL1;
       output[i][3] += b - a;
@@ -20,4 +20,4 @@ fn (float (*output)[4], int i, float AL2, ptrdiff_t len, float AL1)
       b = output[i + 1][1] * AL2;
       output[i][2] += b - a;
       output[i + 1][1] -= b + a;
-}}
+} IACA_END }

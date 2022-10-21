@@ -11,8 +11,8 @@ int
 fn (uint64_t ms, const int tc_divs[3], int i, int *tc)
 {
   for (i = 0; i < 3; i++)
-    {
+     { IACA_START
       tc[i] = ms % tc_divs[i];
       ms /= tc_divs[i];
-    }
+     } IACA_END
 }

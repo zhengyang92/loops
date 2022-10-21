@@ -11,7 +11,7 @@ int
 fn (uint8_t * const new_data, const int final_num_colors, int i)
 {
   for (; i < 4 * final_num_colors; ++i)
-    {
+     { IACA_START
       new_data[i] = 0;
-    }
+     } IACA_END
 }

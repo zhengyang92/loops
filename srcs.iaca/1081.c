@@ -12,11 +12,11 @@ fn (const int start, int x, const int limit, const int end, uint16_t * dst,
     const int bg)
 {
   for (x = start; x < end; x++)
-    {
+     { IACA_START
       if (dst[x] != bg)
 	{
 	  dst[x] = limit;
 	  break;
 	}
-    }
+     } IACA_END
 }

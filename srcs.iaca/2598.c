@@ -14,12 +14,12 @@ fn (int16_t * src2, int offset, int x, int width, const int8_t * filter,
     uint16_t * src, int shift, uint16_t * dst)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       dst[x] =
 	av_clip_uintp2_c ((((filter[0] * src[x - 1] + filter[1] * src[x] +
 			     filter[2] * src[x + 1] + filter[3] * src[x +
 								      2 *
 								      1]) >>
 			    (12 - 8)) + src2[x] + offset) >> shift, 12);
-    }
+     } IACA_END
 }

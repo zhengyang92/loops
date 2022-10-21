@@ -11,8 +11,8 @@ int
 fn (const uint8_t * uid, int i, const uint8_t * key, int len)
 {
   for (i = 0; i < len; i++)
-    {
+     { IACA_START
       if (i != 7 && key[i] != uid[i])
 	return 0;
-    }
+     } IACA_END
 }

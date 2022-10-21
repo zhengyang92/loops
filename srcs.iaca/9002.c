@@ -13,10 +13,10 @@ fn (const int table_plane_size, int i, uint8_t * y_table, int gbase,
     int64_t cy, int rbase, int bbase, int64_t yb)
 {
   for (i = 0; i < table_plane_size - 38; i++)
-    {
+     { IACA_START
       int yval = av_clip_uint8_c ((yb + 0x8000) >> 16);
       y_table[i + 16] = ((yval + 18) / 36) << rbase;
       y_table[i + 16 + table_plane_size] = ((yval + 18) / 36) << gbase;
       y_table[i + 37 + 2 * table_plane_size] = ((yval + 43) / 85) << bbase;
       yb += cy;
-}}
+} IACA_END }

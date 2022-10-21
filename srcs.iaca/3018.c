@@ -29,6 +29,7 @@ fn (OpusRangeCoder * rc, int i, int coded_channels,
     int duration_ms)
 {
   for (i = 0; i < coded_channels; i++)
+  { IACA_START
     if (redundancy[i] && duration_ms > 20)
       {
 	redundancy[i] =
@@ -37,4 +38,5 @@ fn (OpusRangeCoder * rc, int i, int coded_channels,
 			      40 ? ff_silk_model_lbrr_flags_40 :
 			      ff_silk_model_lbrr_flags_60);
       }
+  } IACA_END
 }

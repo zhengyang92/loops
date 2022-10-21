@@ -12,7 +12,7 @@ fn (int scratch_linesize[4], int i, int32_t g, uint8_t * scratch_data[4],
     int32_t gg, int32_t bb, int32_t r, uint8_t * ir[2], int32_t b, int32_t rr)
 {
   for (i = 0; i < 4; ++i)
-    {
+     { IACA_START
       int i1, i2;
       i1 = (i & 1);
       i2 = (i >= 2);
@@ -28,5 +28,5 @@ fn (int scratch_linesize[4], int i, int32_t g, uint8_t * scratch_data[4],
       else if (rr > 255)
 	rr = 255;
       scratch_data[0][i1 + i2 * scratch_linesize[0]] = rr;
-    }
+     } IACA_END
 }

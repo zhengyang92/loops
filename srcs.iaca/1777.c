@@ -13,7 +13,7 @@ fn (int AV1_NUM_REF_FRAMES, int i, int earliest_order_hint, int ref,
     int cur_frame_hint, int16_t shifted_order_hints[8], int8_t used_frame[8])
 {
   for (i = 0; i < AV1_NUM_REF_FRAMES; i++)
-    {
+     { IACA_START
       int hint = shifted_order_hints[i];
       if (!used_frame[i] && hint >= cur_frame_hint
 	  && (ref < 0 || hint < earliest_order_hint))
@@ -21,5 +21,5 @@ fn (int AV1_NUM_REF_FRAMES, int i, int earliest_order_hint, int ref,
 	  ref = i;
 	  earliest_order_hint = hint;
 	}
-    }
+     } IACA_END
 }

@@ -14,7 +14,7 @@ fn (uint32_t state, int VC1_CODE_SEQHDR, int i, const uint8_t * buf,
 {
   int charged = 0;
   for (i = 0; i < buf_size; i++)
-    {
+     { IACA_START
       state = (state << 8) | buf[i];
       if ((((state) & ~0xFF) == VC1_CODE_RES0))
 	{
@@ -27,5 +27,5 @@ fn (uint32_t state, int VC1_CODE_SEQHDR, int i, const uint8_t * buf,
 	      return i - 3;
 	    }
 	}
-    }
+     } IACA_END
 }

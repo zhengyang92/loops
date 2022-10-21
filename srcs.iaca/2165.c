@@ -14,8 +14,8 @@ fn (int i, int level[16], int16_t * block, int total_coeff,
     const uint8_t * scantable, const uint32_t * qmul)
 {
   for (; i < total_coeff; i++)
-    {
+     { IACA_START
       scantable--;
       ((int32_t *) block)[*scantable] =
 	((int) (level[i] * qmul[*scantable] + 32)) >> 6;
-}}
+} IACA_END }

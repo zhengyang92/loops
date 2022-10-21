@@ -12,7 +12,7 @@ int
 fn (int w, int x, uint8_t * dst, ptrdiff_t src_linesize, uint8_t * src)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int64_t v =
 	(((uint64_t) ((const uint8_t *) (src + x * src_linesize))[0] << 40) |
 	 ((uint64_t) ((const uint8_t *) (src + x * src_linesize))[1] << 32) |
@@ -31,5 +31,5 @@ fn (int w, int x, uint8_t * dst, ptrdiff_t src_linesize, uint8_t * src)
 	  ((uint8_t *) (dst + 6 * x))[0] = (d) >> 40;
 	}
       while (0);
-    }
+     } IACA_END
 }

@@ -11,7 +11,7 @@ int
 fn (uint8_t * dst, int tblk[16], int i, int stride)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       dst[0] =
 	((5 * ((tblk[i * 4 + 0]) + (tblk[i * 4 + 1]) + (tblk[i * 4 + 2])) +
 	  2 * (tblk[i * 4 + 3])) + 0x20) >> 6;
@@ -25,5 +25,5 @@ fn (uint8_t * dst, int tblk[16], int i, int stride)
 	((5 * ((tblk[i * 4 + 0]) - (tblk[i * 4 + 1]) + (tblk[i * 4 + 2])) -
 	  2 * (tblk[i * 4 + 3])) + 0x20) >> 6;;
       dst += stride;
-    }
+     } IACA_END
 }

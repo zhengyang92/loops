@@ -13,8 +13,8 @@ fn (int x, const int16_t * src, int w, uint8_t * dst)
 {
   int m = 0;
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int t = src[x] + 128;
       dst[x] = t;
       m |= t;
-}}
+} IACA_END }

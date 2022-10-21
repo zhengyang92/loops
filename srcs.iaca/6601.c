@@ -11,7 +11,7 @@ int
 fn (int ff_mdct_win_fixed[8][40], int j, int i)
 {
   for (j = 0; j < 4; j++)
-    {
+     { IACA_START
       double d;
       if (j == 2 && i % 3 != 1)
 	continue;
@@ -45,4 +45,4 @@ fn (int ff_mdct_win_fixed[8][40], int j, int i)
 	    18 ? i : i + ((((36) + (2 * 4) - 1) & ~((2 * 4) - 1)) / 2 - 18);
 	  ff_mdct_win_fixed[j][idx] =
 	    ((int) (((d / (1 << 5))) * (1LL << 32) + 0.5));
-}}}
+} IACA_END }}

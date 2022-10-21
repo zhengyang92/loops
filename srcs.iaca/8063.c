@@ -13,11 +13,11 @@ int
 fn (GetByteContext gb, int32_t * dst32, uint8_t t, int i)
 {
   for (i = 2; i; i--)
-    {
+     { IACA_START
       dst32[0] = bytestream2_get_be16u (&gb) << 16;
       dst32[1] = bytestream2_get_be16u (&gb) << 16;
       t = bytestream2_get_byteu (&gb);
       *dst32++ += (t & 0xf0) << 8;
       *dst32++ += (t & 0x0f) << 12;
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ fn (int scale_low, uint16_t * dest, int x, int width, int scale_high,
     const uint16_t ** src)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       *dest++ =
 	av_bswap16 (src[0][x]) << scale_high | av_bswap16 (src[0][x]) >>
 	scale_low;
@@ -22,5 +22,5 @@ fn (int scale_low, uint16_t * dest, int x, int width, int scale_high,
       *dest++ =
 	av_bswap16 (src[2][x]) << scale_high | av_bswap16 (src[2][x]) >>
 	scale_low;
-    }
+     } IACA_END
 }

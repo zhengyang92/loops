@@ -11,7 +11,7 @@ int
 fn (uint8_t * bufp, int end_x, int x, int block_w)
 {
   for (x = end_x; x < block_w; x++)
-    {
+     { IACA_START
       bufp[x] = bufp[end_x - 1];
-    }
+     } IACA_END
 }

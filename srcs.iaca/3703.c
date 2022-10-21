@@ -12,7 +12,7 @@ fn (const uint8_t ff_reverse[256], uint8_t * ptr, int lineout, uint8_t * buf,
     int commas, int linesize, int j, int l)
 {
   for (j = 0; j < linesize; j++)
-    {
+     { IACA_START
       buf += snprintf (buf, 6, " 0x%02X", ff_reverse[*ptr++]);
       if (--commas <= 0)
 	{
@@ -25,5 +25,5 @@ fn (const uint8_t ff_reverse[256], uint8_t * ptr, int lineout, uint8_t * buf,
 	  buf += snprintf (buf, 2, "\n");
 	  l = lineout;
 	}
-    }
+     } IACA_END
 }

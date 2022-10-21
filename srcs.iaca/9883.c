@@ -11,7 +11,7 @@ int
 fn (uint32_t * const ptr, int x, int width, int inverse)
 {
   for (x = 0; x < width; ++x)
-    {
+     { IACA_START
       const uint32_t argb = ptr[x];
       if (argb < 0xff000000u)
 	{
@@ -29,4 +29,4 @@ fn (uint32_t * const ptr, int x, int width, int inverse)
 	      out |= Mult (argb >> 16, scale) << 16;
 	      ptr[x] = out;
 	}}
-}}
+} IACA_END }

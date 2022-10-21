@@ -17,7 +17,7 @@ fn (const int len2, TXComplex tmp, TXComplex * z, TXComplex * exp,
     TXSample * src, const int *sub_map, const int len3)
 {
   for (int i = 0; i < len2; i++)
-    {
+     { IACA_START
       const int k = 2 * i;
       const int idx = sub_map[i];
       if (k < len2)
@@ -36,5 +36,5 @@ fn (const int len2, TXComplex tmp, TXComplex * z, TXComplex * exp,
 	  (z[idx].re) = (tmp.re) * (exp[i].im) + (tmp.im) * (exp[i].re);
 	}
       while (0);
-    }
+     } IACA_END
 }

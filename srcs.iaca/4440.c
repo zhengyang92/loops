@@ -15,7 +15,7 @@ fn (int i, int radius, const uint16_t * filter, int k, const uint8_t * src,
 {
   int sum = 0;
   for (k = 0; k < filt_w; k++)
-    {
+     { IACA_START
       sum += filter[k] * src[(i - radius + k) * src_stride + j];
-    }
+     } IACA_END
 }

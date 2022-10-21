@@ -14,7 +14,7 @@ fn (const float srintensity, const float rintensity, const float scale,
     const float sbintensity, const float sgintensity, const float gintensity)
 {
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       float g = gptr[x] * scale;
       float b = bptr[x] * scale;
       float r = rptr[x] * scale;
@@ -36,4 +36,4 @@ fn (const float srintensity, const float rintensity, const float scale,
       gptr[x] = av_clip_uint8_c (g * 255.f);
       bptr[x] = av_clip_uint8_c (b * 255.f);
       rptr[x] = av_clip_uint8_c (r * 255.f);
-}}
+} IACA_END }

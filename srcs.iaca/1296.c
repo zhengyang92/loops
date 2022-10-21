@@ -11,7 +11,7 @@ int
 fn (uint32_t palette[16], int count, int i)
 {
   for (i = 0; i < count; i++)
-    {
+     { IACA_START
       palette[i] = rgb_to_yuv (palette[i]);
-    }
+     } IACA_END
 }

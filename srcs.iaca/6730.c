@@ -12,8 +12,8 @@ fn (uint8_t linear_to_ulaw[16384], int v, unsigned char *dst, int n,
     const short *samples)
 {
   for (; n > 0; n--)
-    {
+     { IACA_START
       v = *samples++;
       *dst++ = linear_to_ulaw[(v + 32768) >> 2];
-    }
+     } IACA_END
 }

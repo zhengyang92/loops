@@ -11,7 +11,7 @@ int
 fn (int b1, int i, int d1, int16_t * block, int c1, int16_t tmp[16], int a1)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       a1 = (block[i * 4 + 0] + block[i * 4 + 2]) * 23170;
       b1 = (block[i * 4 + 0] - block[i * 4 + 2]) * 23170;
       c1 = block[i * 4 + 1] * 12540 - block[i * 4 + 3] * 30274;
@@ -24,5 +24,5 @@ fn (int b1, int i, int d1, int16_t * block, int c1, int16_t tmp[16], int a1)
       tmp[i * 4 + 3] = (a1 - d1) >> 14;
       tmp[i * 4 + 1] = (b1 + c1) >> 14;
       tmp[i * 4 + 2] = (b1 - c1) >> 14;
-    }
+     } IACA_END
 }

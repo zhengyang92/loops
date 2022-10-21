@@ -13,7 +13,7 @@ fn (int bits, int dy, const int w, uint8_t * dst, int pos, const int h,
     const int l, GetByteContext * gb)
 {
   for (int i = 0; i < 4; i++)
-    {
+     { IACA_START
       switch (bits & 3)
 	{
 	case 0:
@@ -47,5 +47,5 @@ fn (int bits, int dy, const int w, uint8_t * dst, int pos, const int h,
 	    return 0;
 	}
       bits >>= 2;
-    }
+     } IACA_END
 }

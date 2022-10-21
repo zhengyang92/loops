@@ -13,7 +13,7 @@ fn (int col, unsigned int pixel_ptr, unsigned char y1q, unsigned int width,
     unsigned char vq)
 {
   for (col = 0; col < width / 2; col++)
-    {
+     { IACA_START
       encoded[pixel_ptr] = yq -= encoded[pixel_ptr];
       encoded[pixel_ptr + 1] = yq -= encoded[pixel_ptr + 1];
       encoded[pixel_ptr + 2] = y1q -= encoded[pixel_ptr + 2];
@@ -21,5 +21,5 @@ fn (int col, unsigned int pixel_ptr, unsigned char y1q, unsigned int width,
       encoded[pixel_ptr + 4] = uq -= encoded[pixel_ptr + 4];
       encoded[pixel_ptr + 5] = vq -= encoded[pixel_ptr + 5];
       pixel_ptr += 6;
-    }
+     } IACA_END
 }

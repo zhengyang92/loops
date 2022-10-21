@@ -11,7 +11,7 @@ int
 fn (char *keyword, const uint8_t * ptr8, int i)
 {
   for (i = 0; i < 8 && ptr8[i] != ' '; i++)
-    {
+     { IACA_START
       keyword[i] = ptr8[i];
-    }
+     } IACA_END
 }

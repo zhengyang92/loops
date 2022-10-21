@@ -10,5 +10,5 @@
 int
 fn (double freq, int j, double freqmid[32])
 {
-  for (j = 0; j < 32 && freq >= freqmid[j]; j++);
+  for (j = 0; j < 32 && freq >= freqmid[j]; j++) {IACA_START}; IACA_END
 }

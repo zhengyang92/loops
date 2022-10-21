@@ -74,8 +74,8 @@ int
 fn (double temp, long j, long lw)
 {
   for (j = 4; j < spaces_.N; j = j + 5)
-    {
+     { IACA_START
       temp -= space1_.X[lw] * space1_.Y[j];
       lw++;
-    }
+     } IACA_END
 }

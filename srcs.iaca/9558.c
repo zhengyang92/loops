@@ -12,7 +12,7 @@ int
 fn (int x, ptrdiff_t stride, int y, uint8_t * dst)
 {
   for (x = 0; x < 4; x++)
-    {
+     { IACA_START
       uint8_t *p = dst + x * 4 + y * stride;
       do
 	{
@@ -21,5 +21,5 @@ fn (int x, ptrdiff_t stride, int y, uint8_t * dst)
 	  p[0] = SWAP_tmp;
 	}
       while (0);
-    }
+     } IACA_END
 }

@@ -14,8 +14,8 @@ fn (int y, int offset_val, uint16_t * src, ptrdiff_t stride_src,
 {
   int height = 0;
   for (y = 0; y < height; y++)
-    {
+     { IACA_START
       dst[y * stride_dst] =
 	av_clip_uintp2_c (src[y * stride_src] + offset_val, 12);
-    }
+     } IACA_END
 }

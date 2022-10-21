@@ -14,7 +14,7 @@ fn (const int max_asample, int32_t * samples, int count, int i, int pe_level,
 {
   int shft = 0x5981;
   for (i = 0; i < count; i++)
-    {
+     { IACA_START
       int32_t sample = samples[i * stride];
       int32_t asample = abs (sample) - pe_level;
       if (asample >= 0)
@@ -34,5 +34,5 @@ fn (const int max_asample, int32_t * samples, int count, int i, int pe_level,
       else
 	sample *= (1 << shft);
       samples[i * stride] = sample;
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ int
 fn (int i, integer len, int *coeffp, int32_t ** out, const int32_t ** in)
 {
   for (i = 0; i < len; i++)
-    {
+     { IACA_START
       int64_t t =
 	in[2][i] * (int64_t) coeffp[0 * 8 + 2] +
 	in[3][i] * (int64_t) coeffp[0 * 8 + 3];
@@ -24,5 +24,5 @@ fn (int i, integer len, int *coeffp, int32_t ** out, const int32_t ** in)
 	(((t + in[1][i] * (int64_t) coeffp[1 * 8 + 1] +
 	   in[5][i] * (int64_t) coeffp[1 * 8 + 5] +
 	   in[7][i] * (int64_t) coeffp[1 * 8 + 7]) + 16384) >> 15);
-    }
+     } IACA_END
 }

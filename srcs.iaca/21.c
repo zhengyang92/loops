@@ -12,6 +12,6 @@ fn (const float *src, const float dc, int nb_samples, float *dst,
     const int64_t N)
 {
   for (int n = 0; n < nb_samples; n++)
-    {
+     { IACA_START
       dst[n] = src[n] + dc * ((((N + n) >> 8) & 1) ? -1.f : 1.f);
-}}
+} IACA_END }

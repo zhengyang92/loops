@@ -12,7 +12,7 @@ int
 fn (int i, int width, uint32_t * pal, const uint8_t * src, uint8_t * dst)
 {
   for (i = 0; i < width; i++)
-    {
+     { IACA_START
       int d = src[i];
       dst[i] = pal[d] & 0xFF;
-}}
+} IACA_END }

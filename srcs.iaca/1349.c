@@ -22,7 +22,7 @@ fn (const char *p, int i, const char filters[2][2][8],
     char filters_buf[1000], char host[500])
 {
   for (i = 0; i < (sizeof (filters) / sizeof ((filters)[0])); i++)
-    {
+     { IACA_START
       if (av_find_info_tag
 	  (filters_buf, sizeof (filters_buf), filters[i][0], p))
 	{
@@ -33,4 +33,4 @@ fn (const char *p, int i, const char filters[2][2][8],
 		      filters[i][1], addr.ss_family == 2 ? 4 : 6, host,
 		      filters_buf);
 	}
-}}
+} IACA_END }

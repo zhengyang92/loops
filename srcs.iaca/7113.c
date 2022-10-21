@@ -12,7 +12,7 @@ int
 fn (x86_reg i, int16_t * basis, int16_t * rem, int scale)
 {
   for (i = 0; i < 8 * 8; i++)
-    {
+     { IACA_START
       rem[i] += (basis[i] * scale + (1 << (16 - 6 - 1))) >> (16 - 6);
-    }
+     } IACA_END
 }

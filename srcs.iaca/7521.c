@@ -21,12 +21,12 @@ int
 fn (struct color_ref *e, struct hist_node *node, int i, uint32_t color)
 {
   for (i = 0; i < node->nb_entries; i++)
-    {
+     { IACA_START
       e = &node->entries[i];
       if (e->color == color)
 	{
 	  e->count++;
 	  return 0;
 	}
-    }
+     } IACA_END
 }

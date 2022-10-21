@@ -21,7 +21,7 @@ fn (int32_t * decoded, struct CParam code, int i, BitstreamContext * bc,
     int len)
 {
   for (i = 0; i < len; i++)
-    {
+     { IACA_START
       int x = bitstream_read (bc, code.init);
       if (x >= code.escape && bitstream_read_bit (bc))
 	{
@@ -52,5 +52,5 @@ fn (int32_t * decoded, struct CParam code, int i, BitstreamContext * bc,
 	    x -= code.escape;
 	}
       decoded[i] = (x >> 1) ^ -(x & 1);
-    }
+     } IACA_END
 }

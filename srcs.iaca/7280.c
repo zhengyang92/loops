@@ -11,7 +11,7 @@ int
 fn (int end, int i, const int16_t ** chrUSrcPtr, const int16_t ** tmpU)
 {
   for (; i < end; i++)
-    {
+     { IACA_START
       tmpU[i] = chrUSrcPtr[i];
-    }
+     } IACA_END
 }

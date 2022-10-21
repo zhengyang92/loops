@@ -13,9 +13,9 @@ fn (int arr1[16], uint8_t * top, int arr2[16], uint8_t * left,
 {
   int y = 0;
   for (int x = 0; x < size; x++)
-    {
+     { IACA_START
       block[x] =
 	(((top[x] + left[0] +
 	   ((arr1[x] * (y + 1) + arr2[y] * (x + 1)) >> 2 * shift)) +
 	  1) / 2) & 0xFF;
-}}
+} IACA_END }

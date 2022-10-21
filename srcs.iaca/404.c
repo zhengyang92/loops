@@ -12,8 +12,8 @@ fn (const int slice_start, const int slice_end, const int width,
     float *img_out_f, float *map_factor_b, float *ypy, int h1)
 {
   for (int x = 0, k = 0; x < slice_end - slice_start; x++)
-    {
+     { IACA_START
       int idx = h1 * width + x;
       img_out_f[idx] =
 	(img_out_f[idx] + ypy[k++]) / map_factor_b[h1 * width + x];
-}}
+} IACA_END }

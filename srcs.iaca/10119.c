@@ -14,11 +14,11 @@ fn (uint32_t colors[1024], uint8_t in_use[1024], uint32_t * const palette,
 {
   int num_colors = 0;
   for (i = 0; i < (256 * 4); ++i)
-    {
+     { IACA_START
       if (in_use[i])
 	{
 	  palette[num_colors] = colors[i];
 	  ++num_colors;
 	}
-    }
+     } IACA_END
 }

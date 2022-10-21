@@ -13,7 +13,7 @@ fn (unsigned int shift, const uint16_t * srcPtr2, uint8_t * dstPtr,
     int length, int j)
 {
   for (; j < length; j++)
-    {
+     { IACA_START
       dstPtr[j] = (av_bswap16 (srcPtr2[j]) >> shift);
-    }
+     } IACA_END
 }

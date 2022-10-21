@@ -14,9 +14,9 @@ fn (const char *const chroma_location_names[7], const char *name, int i)
        i <
        (sizeof (chroma_location_names) / sizeof ((chroma_location_names)[0]));
        i++)
-    {
+     { IACA_START
       size_t len = strlen (chroma_location_names[i]);
       if (!strncmp (chroma_location_names[i], name, len))
 	return i;
-    }
+     } IACA_END
 }

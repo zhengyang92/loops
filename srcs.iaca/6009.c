@@ -15,12 +15,12 @@ fn (int i, RiceContext * rc, int opt_porder, int pmin, int n,
     int pred_order)
 {
   for (i = pmin; i <= pmax; i++)
-    {
+     { IACA_START
       bits[i] = calc_optimal_rice_params (&tmp_rc, i, sums[i], n, pred_order);
       if (bits[i] <= bits[opt_porder])
 	{
 	  opt_porder = i;
 	  *rc = tmp_rc;
 	}
-    }
+     } IACA_END
 }

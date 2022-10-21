@@ -13,7 +13,7 @@ int
 fn (int i, int16_t * srcy, uint16_t * dsty, size_t w, int depth)
 {
   for (i = 0; i < w; i++)
-    {
+     { IACA_START
       if (srcy[i] <= 0)
 	dsty[i] = 0;
       else if (srcy[i] > ((1 << depth) - 1))
@@ -22,5 +22,5 @@ fn (int i, int16_t * srcy, uint16_t * dsty, size_t w, int depth)
 	dsty[i] =
 	  ((int64_t) srcy[i] * srcy[i] * 65535) / ((1 << depth) -
 						   1) / ((1 << depth) - 1);
-    }
+     } IACA_END
 }

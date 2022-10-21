@@ -12,7 +12,7 @@ fn (int g, int i, uint8_t * last, int r, int a, int size, uint8_t * dst,
     uint8_t * src, int b)
 {
   for (; i < size; i += 1)
-    {
+     { IACA_START
       dst[i + 0] = r = (((r + last[i + 0]) >> 1) + src[i + 0]) & 0xff;
       if (1 == 1)
 	continue;
@@ -23,5 +23,5 @@ fn (int g, int i, uint8_t * last, int r, int a, int size, uint8_t * dst,
       if (1 == 3)
 	continue;
       dst[i + 3] = a = (((a + last[i + 3]) >> 1) + src[i + 3]) & 0xff;
-    }
+     } IACA_END
 }

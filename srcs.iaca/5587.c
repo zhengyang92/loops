@@ -53,8 +53,8 @@ int
 fn (uint16_t buflen[5], int i, AVIOContext * pb, uint16_t len[5])
 {
   for (i = 0; i < 5; i++)
-    {
+     { IACA_START
       len[i] = avio_rl16 (pb);
       buflen[i] = 2 * len[i] + 1;
-    }
+     } IACA_END
 }

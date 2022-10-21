@@ -12,7 +12,7 @@ fn (int y, int y3, uint8_t ** data, int x, int plane, int j, int y2,
     int *linesize, int *base, int x3, int shift, int x2)
 {
   for (x2 = 0; x2 < 4; x2 += 2, j++)
-    {
+     { IACA_START
       plane = y2 < 4 ? 0 : 1 + (x2 >> 1);
       shift = y2 < 4 ? 0 : 1;
       x3 = shift ? 0 : x2;
@@ -26,5 +26,5 @@ fn (int y, int y3, uint8_t ** data, int x, int plane, int j, int y2,
 		     (((y + y3) >> shift) + 1) * linesize[plane]] +
 	 data[plane][((x + x3) >> shift) + 1 +
 		     (((y + y3) >> shift) + 1) * linesize[plane]]) >> 2;
-    }
+     } IACA_END
 }

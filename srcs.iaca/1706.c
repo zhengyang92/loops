@@ -17,8 +17,8 @@ int
 fn (Tree * tree, int i, uint8_t tmp1[16], int len, GetBitContext * gb)
 {
   for (i = 0; i <= len; i++)
-    {
+     { IACA_START
       tree->syms[i] = get_bits (gb, 4);
       tmp1[tree->syms[i]] = 1;
-    }
+     } IACA_END
 }

@@ -11,8 +11,8 @@ int
 fn (int i, int width, uint8_t * bsrc, int A, int step)
 {
   for (i = step; i < width * step; i += step)
-    {
+     { IACA_START
       bsrc[i] += A;
       A = bsrc[i];
-    }
+     } IACA_END
 }

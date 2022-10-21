@@ -16,7 +16,7 @@ fn (const int fill_color, uint16_t * out, int i, const int w, const int depth,
     const int ycenter, const int h, const int32_t * correction)
 {
   for (int j = 0; j < w; j++)
-    {
+     { IACA_START
       const int off_x = j - xcenter;
       const int64_t radius_mult = correction[j + i * w];
       const int x = xcenter + ((radius_mult * off_x + (1 << 23)) >> 24);
@@ -49,5 +49,5 @@ fn (const int fill_color, uint16_t * out, int i, const int w, const int depth,
 	{
 	  out[j] = fill_color;
 	}
-    }
+     } IACA_END
 }

@@ -11,7 +11,7 @@ int
 fn (float *coeffp, int i, integer len, float **out, const float **in)
 {
   for (i = 0; i < len; i++)
-    {
+     { IACA_START
       float t =
 	in[2][i] * (float) coeffp[0 * 8 + 2] +
 	in[3][i] * (float) coeffp[0 * 8 + 3];
@@ -23,4 +23,4 @@ fn (float *coeffp, int i, integer len, float **out, const float **in)
 	t + in[1][i] * (float) coeffp[1 * 8 + 1] +
 	in[5][i] * (float) coeffp[1 * 8 + 5] +
 	in[7][i] * (float) coeffp[1 * 8 + 7];
-}}
+} IACA_END }

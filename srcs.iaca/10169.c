@@ -12,9 +12,9 @@ int
 fn (Int k, Int j, PixelI * pOrg)
 {
   for (j = 48; j > 0; j -= 16)
-    {
+     { IACA_START
       pOrg[k + j + 10] -= pOrg[k + j + 10 - 16];
       pOrg[k + j + 2] -= pOrg[k + j + 2 - 16];
       pOrg[k + j + 9] -= pOrg[k + j + 9 - 16];
-    }
+     } IACA_END
 }

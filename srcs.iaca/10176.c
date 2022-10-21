@@ -24,7 +24,7 @@ fn (size_t iCh, size_t cCh, U8 cChMode, size_t iPos, Bool bScaledArith,
     Bool bShiftedUV, CWMIQuantizer ** pQuantizer)
 {
   for (iCh = 0; iCh < cCh; iCh++)
-    {
+     { IACA_START
       if (iCh > 0)
 	if (cChMode == 0)
 	  pQuantizer[iCh][iPos] = pQuantizer[0][iPos];
@@ -32,5 +32,5 @@ fn (size_t iCh, size_t cCh, U8 cChMode, size_t iPos, Bool bScaledArith,
 	  pQuantizer[iCh][iPos] = pQuantizer[1][iPos];
       remapQP (pQuantizer[iCh] + iPos,
 	       (iCh > 0 && bShiftedUV == 1) ? 1 - 1 : 1, bScaledArith);
-    }
+     } IACA_END
 }

@@ -13,7 +13,7 @@ fn (const int gamma_tab[276], int HB[46][8][4], int c2, int idx,
     const int alpha_tab[276], int iid)
 {
   for (icc = 0; icc < 8; icc++)
-    {
+     { IACA_START
       {
 	int alpha, beta;
 	int ca, sa, cb, sb;
@@ -49,5 +49,5 @@ fn (const int gamma_tab[276], int HB[46][8][4], int c2, int idx,
 	  (int) (((int64_t) alpha_c_int * gamma_s_int + 0x20000000) >> 30);
       } if (icc < 5 || icc > 6)
 	idx++;
-    }
+     } IACA_END
 }

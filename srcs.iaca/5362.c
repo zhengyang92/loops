@@ -15,7 +15,7 @@ fn (int Fd, int Dd, ptrdiff_t stride, int Bdd, int16_t * ip, int E, int Cd,
     int type, int Add, int i, int H, int Ed, int F, uint8_t * dst)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       if (ip[1] | ip[2] | ip[3] | ip[4] | ip[5] | ip[6] | ip[7])
 	{
 	  A =
@@ -109,4 +109,4 @@ fn (int Fd, int Dd, ptrdiff_t stride, int Bdd, int16_t * ip, int E, int Cd,
 		}
 	}} ip += 8;
       dst++;
-}}
+} IACA_END }

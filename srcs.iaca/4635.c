@@ -16,7 +16,7 @@ fn (int mode_list[128], int list_start, int coef_list[128], int i, int mask,
 {
   int nz_coeff_count = 0;
   for (i = 0; i < 4; i++, ccoef++)
-    {
+     { IACA_START
       if (get_bits1 (gb))
 	{
 	  coef_list[--list_start] = ccoef;
@@ -31,5 +31,5 @@ fn (int mode_list[128], int list_start, int coef_list[128], int i, int mask,
 	  if (masks_count < 0)
 	    return 0;
 	}
-    }
+     } IACA_END
 }

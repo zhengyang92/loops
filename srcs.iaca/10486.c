@@ -12,7 +12,7 @@ fn (int j, float *y, int i, float *x, int batch, int characters, size_t len,
     int *tokens, int steps, size_t *offsets)
 {
   for (j = 0; j < steps; ++j)
-    {
+     { IACA_START
       int curr = tokens[(offsets[i]) % len];
       int next = tokens[(offsets[i] + 1) % len];
       x[(j * batch + i) * characters + curr] = 1;
@@ -22,5 +22,5 @@ fn (int j, float *y, int i, float *x, int batch, int characters, size_t len,
 	{
 	  error ("Bad char");
 	}
-    }
+     } IACA_END
 }

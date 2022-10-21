@@ -12,7 +12,7 @@ fn (int in_bps, int ch, const uint8_t * in, int is, uint8_t ** out, int len,
     int channels, int os)
 {
   for (ch = 0; ch < channels; ch++)
-    {
+     { IACA_START
       const uint8_t *pi = in + ch * in_bps;
       uint8_t *po = out[ch];
       uint8_t *end = po + os * len;
@@ -23,5 +23,5 @@ fn (int in_bps, int ch, const uint8_t * in, int is, uint8_t ** out, int len,
 	  po += os;
 	}
       while (po < end);
-    }
+     } IACA_END
 }

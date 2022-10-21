@@ -20,7 +20,7 @@ int
 fn (int32_t * decoded, int i, struct CParam code, int len, GetBitContext * gb)
 {
   for (i = 0; i < len; i++)
-    {
+     { IACA_START
       unsigned x = get_bits_long (gb, code.init);
       if (x >= code.escape && get_bits1 (gb))
 	{
@@ -53,5 +53,5 @@ fn (int32_t * decoded, int i, struct CParam code, int len, GetBitContext * gb)
 	    x -= code.escape;
 	}
       decoded[i] = (x >> 1) ^ -(x & 1);
-    }
+     } IACA_END
 }

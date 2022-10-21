@@ -11,10 +11,10 @@ int
 fn (uint8_t mask, int i, int width, uint8_t * dst, uint8_t color)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       if (mask & (1 << 7 - i))
 	dst[i] = color;
       if (mask & (1 << 3 - i))
 	dst[width + i] = color;
-    }
+     } IACA_END
 }

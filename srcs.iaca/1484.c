@@ -13,11 +13,11 @@ fn (int i, const float *vec, float *out, float quantized, const float IQ,
 {
   float rd = 0.0f;
   for (j = 0; j < dim; j++)
-    {
+     { IACA_START
       quantized = vec[j] * IQ;
       qenergy += quantized * quantized;
       if (out)
 	out[i + j] = quantized;
       rd += (in[i + j] - quantized) * (in[i + j] - quantized);
-    }
+     } IACA_END
 }

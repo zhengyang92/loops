@@ -12,7 +12,7 @@ fn (uint32_t * curr_row, uint32_t * prev_row, int x, uint32_t * next_row,
     int limit_bits, const int limit, uint32_t * argb_dst, int xsize)
 {
   for (x = 1; x < xsize - 1; ++x)
-    {
+     { IACA_START
       if (IsSmooth (prev_row, curr_row, next_row, x, limit))
 	{
 	  argb_dst[x] = curr_row[x];
@@ -21,5 +21,5 @@ fn (uint32_t * curr_row, uint32_t * prev_row, int x, uint32_t * next_row,
 	{
 	  argb_dst[x] = ClosestDiscretizedArgb (curr_row[x], limit_bits);
 	}
-    }
+     } IACA_END
 }

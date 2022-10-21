@@ -13,11 +13,11 @@ fn (PixelI * pSrc, Int j, const int blkOffsetUV_422[8], PixelI * pOrg,
     PixelI * pRef)
 {
   for (j = 1; j < 8; j += 2)
-    {
+     { IACA_START
       pOrg = pSrc + blkOffsetUV_422[j];
       pRef = pOrg - 64;
       pOrg[1] += pRef[1];
       pOrg[5] += pRef[5];
       pOrg[6] += pRef[6];
-    }
+     } IACA_END
 }

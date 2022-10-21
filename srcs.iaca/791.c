@@ -13,7 +13,7 @@ fn (int y, int i, int x, int pos, int j, uint8_t * src, int stride)
   int lowest = 255;
   int highest = 0;
   for (j = 0; j <= 15; j++)
-    {
+     { IACA_START
       pos = (y + i) * stride + (x + j);
       if (src[pos] < lowest)
 	lowest = src[pos];
@@ -21,5 +21,5 @@ fn (int y, int i, int x, int pos, int j, uint8_t * src, int stride)
 	{
 	  highest = src[pos];
 	}
-    }
+     } IACA_END
 }

@@ -19,7 +19,7 @@ fn (int output, uint32_t samples, const int16_t ff_adpcm_step_table[89],
 {
   int channels = 1;
   for (sample = 0; sample < samples; sample++)
-    {
+     { IACA_START
       int lookup_size, lookup, highbit, lowbits;
       step_index = av_clip_c (step_index, 0, 88);
       lookup_size = size_table[step_index];
@@ -49,5 +49,5 @@ fn (int output, uint32_t samples, const int16_t ff_adpcm_step_table[89],
       *dest = output;
       dest += channels;
       step_index += step_index_tables[lookup_size - 2][lookup];
-    }
+     } IACA_END
 }

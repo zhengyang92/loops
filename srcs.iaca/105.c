@@ -13,8 +13,8 @@ fn (const int band_size, float *g, const float *bandE,
 {
   int i = 0;
   for (int j = 0; j < band_size; j++)
-    {
+     { IACA_START
       float frac = (float) j / band_size;
       g[(eband5ms[i] << 2) + j] =
 	(1.f - frac) * bandE[i] + frac * bandE[i + 1];
-}}
+} IACA_END }

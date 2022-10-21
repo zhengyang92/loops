@@ -52,9 +52,9 @@ int
 fn (int i, int display_matrix[3][3], AVIOContext * pb)
 {
   for (i = 0; i < 3; i++)
-    {
+     { IACA_START
       display_matrix[i][0] = avio_rb32 (pb);
       display_matrix[i][1] = avio_rb32 (pb);
       display_matrix[i][2] = avio_rb32 (pb);
-    }
+     } IACA_END
 }

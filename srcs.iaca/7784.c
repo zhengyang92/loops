@@ -15,7 +15,7 @@ fn (int v, RangeCoder * c, int16_t * quant_table, uint8_t state[32],
 {
   int i = 0;
   for (v = 0; i < 128; v++)
-    {
+     { IACA_START
       unsigned len = get_symbol (c, state, 0) + 1U;
       if (len > 128 - i || !len)
 	return (-(int)
@@ -26,5 +26,5 @@ fn (int v, RangeCoder * c, int16_t * quant_table, uint8_t state[32],
 	  quant_table[i] = scale * v;
 	  i++;
 	}
-    }
+     } IACA_END
 }

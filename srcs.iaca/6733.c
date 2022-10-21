@@ -12,8 +12,8 @@ fn (unsigned int bytes_per_line, uint8_t * scanline, int i, int v,
     unsigned int x, unsigned int nplanes, int m)
 {
   for (i = nplanes - 1; i >= 0; i--)
-    {
+     { IACA_START
       v <<= 1;
       v += !!(scanline[i * bytes_per_line + (x >> 3)] & m);
-    }
+     } IACA_END
 }

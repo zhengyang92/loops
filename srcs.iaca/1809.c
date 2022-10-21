@@ -11,7 +11,7 @@ int
 fn (int bias, int i, uint8_t * sptr, uint8_t * dptr, int size)
 {
   for (i = 0; i < size; i++)
-    {
+     { IACA_START
       int val = sptr[i] + bias;
       dptr[i] = av_clip_uint8_c (val);
-}}
+} IACA_END }

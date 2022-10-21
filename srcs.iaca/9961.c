@@ -14,7 +14,7 @@ fn (const uint8_t * const row, int width, int x, const int bit_depth,
 {
   uint32_t code = 0xff000000;
   for (x = 0; x < width; ++x)
-    {
+     { IACA_START
       const int xsub = x & mask;
       if (xsub == 0)
 	{
@@ -22,5 +22,5 @@ fn (const uint8_t * const row, int width, int x, const int bit_depth,
 	}
       code |= row[x] << (8 + bit_depth * xsub);
       dst[x >> xbits] = code;
-    }
+     } IACA_END
 }

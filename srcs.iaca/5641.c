@@ -11,8 +11,8 @@ int
 fn (int i, const char *hex_table, char *buff, const uint8_t * src, int s)
 {
   for (i = 0; i < s; i++)
-    {
+     { IACA_START
       buff[i * 2] = hex_table[src[i] >> 4];
       buff[i * 2 + 1] = hex_table[src[i] & 0xF];
-    }
+     } IACA_END
 }

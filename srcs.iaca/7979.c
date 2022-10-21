@@ -15,7 +15,7 @@ fn (const uint8_t * flags, const int32_t * in, int i, int t3, int t4,
     int16_t * out, int t0, int t1, ptrdiff_t pitch, int t2)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       if (flags[i])
 	{
 	  {
@@ -38,5 +38,5 @@ fn (const uint8_t * flags, const int32_t * in, int i, int t3, int t4,
 	out[0 * pitch] = out[1 * pitch] = out[2 * pitch] = out[3 * pitch] = 0;
       in++;
       out++;
-    }
+     } IACA_END
 }

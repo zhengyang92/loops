@@ -13,10 +13,10 @@ fn (int i, uint8_t vec[3][4], const int val_shift, int vec_len[3],
     GetBitContext * gb, int split)
 {
   for (k = 0; k < 16 - split; k++)
-    {
+     { IACA_START
       *dst[i]++ =
 	get_value_cached (gb, vals[i], vec[i], vec_len[i], i, val_shift,
 			  prev_pix);
       prev_mode[split + k] = (vals[0] | (vals[1] << 3) | (vals[2] << 6));
-    }
+     } IACA_END
 }

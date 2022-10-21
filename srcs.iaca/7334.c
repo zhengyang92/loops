@@ -13,7 +13,7 @@ fn (float *y, float *xcorr, int max_pitch, float best_den[2], int len,
 {
   float Syy = 1.f;
   for (int i = 0; i < max_pitch; i++)
-    {
+     { IACA_START
       if (xcorr[i] > 0)
 	{
 	  float num;
@@ -42,5 +42,5 @@ fn (float *y, float *xcorr, int max_pitch, float best_den[2], int len,
 	}
       Syy += y[i + len] * y[i + len] - y[i] * y[i];
       Syy = ((1) > (Syy) ? (1) : (Syy));
-    }
+     } IACA_END
 }

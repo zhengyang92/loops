@@ -11,8 +11,8 @@ int
 fn (int ccr1[60], int i, int ccr2[60], int16_t temp_corr[60], int k)
 {
   for (k = i; k < 60; k += 2)
-    {
+     { IACA_START
       temp_corr[k] = 0;
       ccr2[k] = ccr1[k];
-    }
+     } IACA_END
 }

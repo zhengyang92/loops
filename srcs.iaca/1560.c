@@ -13,8 +13,8 @@ fn (const float h_smooth[5], float *g_filt, const int h_SL, int m,
     const int idx1)
 {
   for (j = 0; j <= h_SL; j++)
-    {
+     { IACA_START
       g_filt[m] += g_temp[idx1 - j][m] * h_smooth[j];
       q_filt[m] += q_temp[idx1 - j][m] * h_smooth[j];
-    }
+     } IACA_END
 }

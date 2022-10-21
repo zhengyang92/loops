@@ -12,9 +12,9 @@ fn (int w, const int mid, int x, const int factor, uint16_t * ydst,
     uint16_t * vdst, uint16_t * udst)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int c = factor * x / w;
       ydst[x] = c;
       udst[x] = mid;
       vdst[x] = mid;
-}}
+} IACA_END }

@@ -11,7 +11,7 @@ int
 fn (int16_t weight[10], int16_t min, int16_t * lsp, int i)
 {
   for (i = 1; i < 10 - 1; i++)
-    {
+     { IACA_START
       min =
 	((lsp[i] - lsp[i - 1]) >
 	 (lsp[i + 1] - lsp[i]) ? (lsp[i + 1] - lsp[i]) : (lsp[i] -
@@ -20,5 +20,5 @@ fn (int16_t weight[10], int16_t min, int16_t * lsp, int i)
 	weight[i] = (1 << 20) / min;
       else
 	weight[i] = (32767);
-    }
+     } IACA_END
 }

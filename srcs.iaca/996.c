@@ -12,8 +12,8 @@ int
 fn (int i, int64_t * sum, int len, const uint8_t * src, int64_t * sum2)
 {
   for (i = 0; i < len; i++)
-    {
+     { IACA_START
       *sum += src[i];
       *sum2 += src[i] * src[i];
-    }
+     } IACA_END
 }

@@ -13,10 +13,10 @@ fn (int i, uint32_t r, const uint32_t S_boxes_P_shuffle[8][64], uint64_t k,
     uint32_t out)
 {
   for (i = 7; i >= 0; i--)
-    {
+     { IACA_START
       uint8_t tmp = (r ^ k) & 0x3f;
       out |= S_boxes_P_shuffle[i][tmp];
       r = (r >> 4) | (r << 28);
       k >>= 6;
-    }
+     } IACA_END
 }

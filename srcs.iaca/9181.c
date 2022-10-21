@@ -14,7 +14,7 @@ fn (float tmp0, float z11, float tmp2, float tmp3, float tmp10, float *temp,
     float z2)
 {
   for (i = 0; i < 8 * 8; i += 8)
-    {
+     { IACA_START
       tmp0 = data[0 + i] + data[7 + i];
       tmp7 = data[0 + i] - data[7 + i];
       tmp1 = data[1 + i] + data[6 + i];
@@ -49,5 +49,5 @@ fn (float tmp0, float z11, float tmp2, float tmp3, float tmp10, float *temp,
       temp[3 + i] = z13 - z2;
       temp[1 + i] = z11 + z4;
       temp[7 + i] = z11 - z4;
-    }
+     } IACA_END
 }

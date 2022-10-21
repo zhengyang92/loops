@@ -11,9 +11,9 @@ int
 fn (int *coef_bits, boolean smoothing_useful, int coefi, int *coef_bits_latch)
 {
   for (coefi = 1; coefi <= 5; coefi++)
-    {
+     { IACA_START
       coef_bits_latch[coefi] = coef_bits[coefi];
       if (coef_bits[coefi] != 0)
 	smoothing_useful = 1;
-    }
+     } IACA_END
 }

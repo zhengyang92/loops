@@ -12,7 +12,7 @@ fn (const uint8_t * const alpha, uint8_t * const ptr, int x, int width,
     int inverse)
 {
   for (x = 0; x < width; ++x)
-    {
+     { IACA_START
       const uint32_t a = alpha[x];
       if (a != 255)
 	{
@@ -25,4 +25,4 @@ fn (const uint8_t * const alpha, uint8_t * const ptr, int x, int width,
 	      const uint32_t scale = GetScale (a, inverse);
 	      ptr[x] = Mult (ptr[x], scale);
 	}}
-}}
+} IACA_END }

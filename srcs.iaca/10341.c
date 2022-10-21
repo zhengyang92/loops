@@ -13,7 +13,7 @@ int
 fn (const ACTIVATION a, int i, const int n, float *x)
 {
   for (i = 0; i < n; ++i)
-    {
+     { IACA_START
       x[i] = activate (x[i], a);
-    }
+     } IACA_END
 }

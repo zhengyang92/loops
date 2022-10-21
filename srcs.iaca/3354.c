@@ -12,7 +12,7 @@ fn (uint8_t * ptr, unsigned int w, unsigned int x, unsigned int depth,
     uint8_t * ptr2)
 {
   for (x = 0; x < (w + 7 >> 3) * depth; x++)
-    {
+     { IACA_START
       if (depth == 1)
 	{
 	  ptr[8 * x] = ptr2[x] >> 7;
@@ -29,5 +29,5 @@ fn (uint8_t * ptr, unsigned int w, unsigned int x, unsigned int depth,
 	  ptr[2 * x] = ptr2[x] >> 4;
 	  ptr[2 * x + 1] = ptr2[x] & 0xF;
 	}
-    }
+     } IACA_END
 }

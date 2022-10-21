@@ -15,6 +15,6 @@ fn (int alinesize, uint16_t * dsta)
   int bx = 0;
   int by = 0;
   for (int j = 0; j < 4; j++)
-    {
+     { IACA_START
       dsta[x + (i + by * 4) * alinesize + bx * 4 + j] = 0;
-}}
+} IACA_END }

@@ -12,9 +12,9 @@ fn (int len2, int i, const int16_t * input, unsigned int len,
     int16_t * output, const int16_t * window)
 {
   for (i = 0; i < len2; i++)
-    {
+     { IACA_START
       int16_t w = window[i];
       output[i] = (((input[i]) * (w)) + (1 << 14)) >> 15;
       output[len - i - 1] = (((input[len - i - 1]) * (w)) + (1 << 14)) >> 15;
-    }
+     } IACA_END
 }

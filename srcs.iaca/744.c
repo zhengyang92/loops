@@ -12,7 +12,7 @@ fn (int sum[16], float rdiv, const int width, int peak, float bias,
     uint16_t * dst)
 {
   for (int off16 = 0; off16 < width; off16++)
-    {
+     { IACA_START
       sum[off16] = (int) (sum[off16] * rdiv + bias + 0.5f);
       dst[off16] = av_clip_c (sum[off16], 0, peak);
-}}
+} IACA_END }

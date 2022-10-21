@@ -18,7 +18,7 @@ fn (int num_codes, int i, BitstreamContext * bc, int code,
     VLC spectral_coeff_tab[7], int huff_symb, int selector, int *mantissas)
 {
   for (i = 0; i < num_codes; i++)
-    {
+     { IACA_START
       huff_symb =
 	bitstream_read_vlc (bc, spectral_coeff_tab[selector - 1].table,
 			    spectral_coeff_tab[selector - 1].bits, 3);
@@ -27,5 +27,5 @@ fn (int num_codes, int i, BitstreamContext * bc, int code,
       if (huff_symb & 1)
 	code = -code;
       mantissas[i] = code;
-    }
+     } IACA_END
 }

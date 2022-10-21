@@ -12,8 +12,8 @@ fn (uint8_t * extradata, int i, int *header_len, int extradata_size)
 {
   int overall_len = 3;
   for (; overall_len < extradata_size && *extradata == 0xff; extradata++)
-    {
+     { IACA_START
       header_len[i] += 0xff;
       overall_len += 0xff + 1;
-    }
+     } IACA_END
 }

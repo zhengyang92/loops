@@ -12,7 +12,7 @@ fn (unsigned int *uhistogram, const uint8_t * uptr, const int width,
     const uint8_t * vptr, unsigned int *vhistogram)
 {
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       uhistogram[uptr[x]]++;
       vhistogram[vptr[x]]++;
-}}
+} IACA_END }

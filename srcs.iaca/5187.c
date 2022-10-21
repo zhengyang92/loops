@@ -11,7 +11,7 @@ int
 fn (uint8_t * top, int w, int i, int bpp, uint8_t * dst, uint8_t * src)
 {
   for (i = 0; i < w; i++)
-    {
+     { IACA_START
       int a, b, c, p, pa, pb, pc;
       a = src[i - bpp];
       b = top[i];
@@ -28,5 +28,5 @@ fn (uint8_t * top, int w, int i, int bpp, uint8_t * dst, uint8_t * src)
       else
 	p = c;
       dst[i] = src[i] - p;
-    }
+     } IACA_END
 }

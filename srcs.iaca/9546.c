@@ -13,7 +13,7 @@ fn (uint8_t * list[63], int i, BitstreamContext * bc, int m, int n, int level,
     ptrdiff_t pitch)
 {
   for (; level > 0; i++)
-    {
+     { IACA_START
       if (i == m)
 	{
 	  m = n;
@@ -24,5 +24,5 @@ fn (uint8_t * list[63], int i, BitstreamContext * bc, int m, int n, int level,
 	break;
       list[n++] = list[i];
       list[n++] = list[i] + (((level & 1) ? pitch : 1) << (level / 2 + 1));
-    }
+     } IACA_END
 }

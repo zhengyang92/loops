@@ -12,7 +12,7 @@ fn (int i, int dstStride, int srcStride, uint16_t * dst, const uint16_t * src)
 {
   const int w = 4;
   for (i = 0; i < w; i++)
-    {
+     { IACA_START
       const int srcB = src[-2 * srcStride];
       const int srcA = src[-1 * srcStride];
       const int src0 = src[0 * srcStride];
@@ -40,4 +40,4 @@ fn (int i, int dstStride, int srcStride, uint16_t * dst, const uint16_t * src)
 			      (src1 + src6)) + 16) >> 5, 10) + 1) >> 1);
       dst++;
       src++;
-}}
+} IACA_END }

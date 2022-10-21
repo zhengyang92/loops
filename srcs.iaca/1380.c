@@ -16,7 +16,7 @@ fn (uint32_t state, int offset, enum AVCodecID *codec, const uint8_t * buf,
   int consecutive_codes = 0;
   int sync_codes = 0;
   for (; buf < probe_end; buf++)
-    {
+     { IACA_START
       state = (state << 8) | *buf;
       if (state ==
 	  ((((0xF872) << 8 & 0xff00) | ((0xF872) >> 8 & 0x00ff)) << 16 |
@@ -45,5 +45,5 @@ fn (uint32_t state, int offset, enum AVCodecID *codec, const uint8_t * buf,
 	      buf = expected_code - 7;
 	    }
 	}
-    }
+     } IACA_END
 }

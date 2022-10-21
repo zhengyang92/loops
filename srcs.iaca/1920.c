@@ -14,7 +14,7 @@ fn (unsigned int threshold1, int i, int last_non_zero, int start_i,
     const int *qmat, int level, int j)
 {
   for (i = 63; i >= start_i; i--)
-    {
+     { IACA_START
       j = scantable[i];
       level = block[j] * qmat[j];
       if (((unsigned) (level + threshold1)) > threshold2)
@@ -26,5 +26,5 @@ fn (unsigned int threshold1, int i, int last_non_zero, int start_i,
 	{
 	  block[j] = 0;
 	}
-    }
+     } IACA_END
 }

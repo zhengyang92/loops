@@ -12,7 +12,7 @@ fn (int w, float *main_ptr_data, const float factor,
     const uint16_t * main_ptr, float *ref_ptr_data, const uint16_t * ref_ptr)
 {
   for (int j = 0; j < w; j++)
-    {
+     { IACA_START
       ref_ptr_data[j] = ref_ptr[j] * factor - 128.f;
       main_ptr_data[j] = main_ptr[j] * factor - 128.f;
-}}
+} IACA_END }

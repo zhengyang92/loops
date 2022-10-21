@@ -14,7 +14,7 @@ fn (const uint16_t * c2, float delta, const uint16_t * c1, int width,
     uint16_t * dst, const uint16_t * c3)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       int sum0 =
 	c0[x] * 5 + c1[x] * 5 + c2[x] * 5 + c3[x] * -3 + c5[x] * -3 +
 	c6[x] * -3 + c7[x] * -3 + c8[x] * -3;
@@ -49,4 +49,4 @@ fn (const uint16_t * c2, float delta, const uint16_t * c1, int width,
       dst[x] =
 	av_clip_c (((sum0) >= 0 ? (sum0) : (-(sum0))) * scale + delta, 0,
 		   peak);
-}}
+} IACA_END }

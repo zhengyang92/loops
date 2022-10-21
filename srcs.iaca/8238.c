@@ -13,9 +13,9 @@ fn (int y, int w, unsigned int max, unsigned int shift, int x,
     const uint16_t * a, unsigned int off)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       unsigned u =
 	s[x] * a[x] + target_table[((x ^ y) >> 5) & 1][plane] * (max - a[x]) +
 	off;
       d[x] = av_clip_c ((u + (u >> shift)) >> shift, 0, max);
-}}
+} IACA_END }

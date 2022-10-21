@@ -13,7 +13,7 @@ fn (AVLFG * lfg, int i, const int8_t patt[4], int8_t * noise, int strength,
     int j, int flags)
 {
   for (i = 0, j = 0; i < 5120; i++, j++)
-    {
+     { IACA_START
       if (flags & 1)
 	{
 	  if (flags & 8)
@@ -79,4 +79,4 @@ fn (AVLFG * lfg, int i, const int8_t patt[4], int8_t * noise, int strength,
 	       ((double) 6 * av_lfg_get (lfg) /
 		  ((2147483647 * 2U + 1U) + 1.0))) == 0)
 	j--;
-}}
+} IACA_END }

@@ -11,7 +11,7 @@ int
 fn (int err, char buf[1024], int i)
 {
   for (i = 0; i < 3; ++i)
-    {
+     { IACA_START
       if (buf[i] < '0' || buf[i] > '9')
 	{
 	  err = 0;
@@ -19,5 +19,5 @@ fn (int err, char buf[1024], int i)
 	}
       err *= 10;
       err += buf[i] - '0';
-    }
+     } IACA_END
 }

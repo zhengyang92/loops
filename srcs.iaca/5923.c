@@ -11,8 +11,8 @@ int
 fn (int count, int offset, int i, int width, uint8_t * frame)
 {
   for (i = 0; i < count; i++)
-    {
+     { IACA_START
       frame[0] = frame[1] = frame[width] = frame[width + 1] = frame[-offset];
       frame += 2;
-    }
+     } IACA_END
 }

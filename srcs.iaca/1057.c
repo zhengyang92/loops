@@ -11,7 +11,7 @@ int
 fn (float *xx, int w, float *yy, const float *y, float *xy, const float *x)
 {
   for (int j = 0; j < w; j++)
-    {
+     { IACA_START
       float xval = x[j];
       float yval = y[j];
       float xxval = xval * xval;
@@ -20,4 +20,4 @@ fn (float *xx, int w, float *yy, const float *y, float *xy, const float *x)
       xx[j] = xxval;
       yy[j] = yyval;
       xy[j] = xyval;
-}}
+} IACA_END }

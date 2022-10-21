@@ -11,7 +11,7 @@ int
 fn (int pixel, uint8_t count, int i, uint8_t * out_buf)
 {
   for (i = 0; i < count; i++)
-    {
+     { IACA_START
       do
 	{
 	  ((uint8_t *) (out_buf))[2] = (pixel);
@@ -20,5 +20,5 @@ fn (int pixel, uint8_t count, int i, uint8_t * out_buf)
 	}
       while (0);
       out_buf += 3;
-    }
+     } IACA_END
 }

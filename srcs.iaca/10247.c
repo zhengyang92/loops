@@ -11,7 +11,7 @@ int
 fn (float mean, int i, int size, float *weights, int f, float *binary)
 {
   for (i = 0; i < size; ++i)
-    {
+     { IACA_START
       binary[f * size + i] = (weights[f * size + i] > 0) ? mean : -mean;
-    }
+     } IACA_END
 }

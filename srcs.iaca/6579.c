@@ -12,7 +12,7 @@ int
 fn (uint32_t table_4_3_value[32828], int i, int8_t table_4_3_exp[32828])
 {
   for (i = 1; i < (8191 + 16) * 4; i++)
-    {
+     { IACA_START
       double value = i / 4;
       double f, fm;
       int e, m;
@@ -22,4 +22,4 @@ fn (uint32_t table_4_3_value[32828], int i, int8_t table_4_3_exp[32828])
       e += 23 - 31 + 5 - 100;
       table_4_3_value[i] = m;
       table_4_3_exp[i] = -e;
-}}
+} IACA_END }

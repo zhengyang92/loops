@@ -17,8 +17,8 @@ int
 fn (const uint8_t * src, HuffEntry he[1024], int i)
 {
   for (i = 0; i < 1024; i++)
-    {
+     { IACA_START
       he[i].sym = i;
       he[i].len = *src++;
-    }
+     } IACA_END
 }

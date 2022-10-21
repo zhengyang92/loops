@@ -11,9 +11,11 @@ int
 fn (int i, int imax, unsigned long hmax, unsigned long hist[256])
 {
   for (i = 0; i < 256; ++i)
+  { IACA_START
     if (hist[i] > hmax)
       {
 	imax = i;
 	hmax = hist[i];
       }
+  } IACA_END
 }

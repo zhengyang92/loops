@@ -11,7 +11,7 @@ int
 fn (int x, int start_x, uint16_t * bufp)
 {
   for (x = 0; x < start_x; x++)
-    {
+     { IACA_START
       bufp[x] = bufp[start_x];
-    }
+     } IACA_END
 }

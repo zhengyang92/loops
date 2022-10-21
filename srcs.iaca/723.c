@@ -13,7 +13,7 @@ fn (const uint16_t * vptr, const uint16_t * uptr, const int width,
     int64_t sum_u, int64_t sum_v)
 {
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       sum_u += uptr[x];
       sum_v += vptr[x];
-}}
+} IACA_END }

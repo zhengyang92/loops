@@ -11,6 +11,6 @@ int
 fn (const int ah, const int w, uint16_t * da, const uint16_t * sa, int ay)
 {
   for (int x = 0; x < w; x++)
-    {
+     { IACA_START
       da[x] = sa[av_clip_c (x - ah, 0, w - 1) + ay];
-}}
+} IACA_END }

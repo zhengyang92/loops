@@ -13,7 +13,7 @@ fn (unsigned int h, unsigned int d, unsigned int f, unsigned int a,
     unsigned int b, const uint32_t K256[64], unsigned int g, unsigned int e)
 {
   for (; i < 64;)
-    {
+     { IACA_START
       T1 = (block[i] =
 	    block[i - 16] +
 	    (((((block[i - 15])) << (25)) |
@@ -246,5 +246,5 @@ fn (unsigned int h, unsigned int d, unsigned int f, unsigned int a,
 							(32 - (10))))) +
 	(((((b)) | ((c))) & ((d))) | (((b)) & ((c))));
       i++;
-    }
+     } IACA_END
 }

@@ -12,9 +12,9 @@ int
 fn (uint16_t cnts[256], uint32_t a, uint16_t freqs[512], int b)
 {
   for (b = a = 0; b < 256; b++)
-    {
+     { IACA_START
       freqs[2 * b] = cnts[b];
       freqs[2 * b + 1] = a;
       a += cnts[b];
-    }
+     } IACA_END
 }

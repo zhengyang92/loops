@@ -12,7 +12,7 @@ fn (int lut_nmsedec_sig0[128], int i, int mask, int lut_nmsedec_ref0[128],
     int lut_nmsedec_ref[128], int a, int lut_nmsedec_sig[128])
 {
   for (i = 0; i < (1 << 7); i++)
-    {
+     { IACA_START
       lut_nmsedec_sig[i] =
 	(((3 * i << (13 - (7 - 1))) - (9 << 11)) >
 	 (0) ? ((3 * i << (13 - (7 - 1))) - (9 << 11)) : (0));
@@ -30,5 +30,5 @@ fn (int lut_nmsedec_sig0[128], int i, int mask, int lut_nmsedec_ref0[128],
 	 (0)
 	 ? (((i * i - (i << 7) + (1 << 2 * (7 - 1)) +
 	      (1 << ((7 - 1) - 1))) & mask) << 1) : (0));
-    }
+     } IACA_END
 }

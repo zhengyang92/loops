@@ -11,8 +11,8 @@ int
 fn (int i, int v, int mask, int j, uint8_t * linear_to_xlaw)
 {
   for (; j < v; j += 1)
-    {
+     { IACA_START
       linear_to_xlaw[8192 - j] = (i ^ (mask ^ 0x80));
       linear_to_xlaw[8192 + j] = (i ^ mask);
-    }
+     } IACA_END
 }

@@ -13,11 +13,11 @@ fn (uint8_t (*path)[35768], int *idx_table, int band,
     const int16_t ff_nelly_delta_table[32], int best_idx)
 {
   for (band = 23 - 1; band >= 0; band--)
-    {
+     { IACA_START
       idx_table[band] = path[band][best_idx];
       if (band)
 	{
 	  best_idx -= ff_nelly_delta_table[path[band][best_idx]];
 	}
-    }
+     } IACA_END
 }

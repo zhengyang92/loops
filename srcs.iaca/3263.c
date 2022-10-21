@@ -12,7 +12,7 @@ fn (int i, float *coefs_ptr, float *decoder_standard_deviation, int j,
     int region)
 {
   for (j = 0; j < 20; j++)
-    {
+     { IACA_START
       if (*coefs_ptr != 0)
 	{
 	  i++;
@@ -22,5 +22,5 @@ fn (int i, float *coefs_ptr, float *decoder_standard_deviation, int j,
 	    }
 	}
       coefs_ptr++;
-    }
+     } IACA_END
 }

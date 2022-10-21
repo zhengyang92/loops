@@ -16,7 +16,7 @@ fn (int w, const int rnd, int cgu, int cgv, const int16_t * yuv_offset,
     const int uv_offset, int cbv)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int r00 = rgb0[x << 0], g00 = rgb1[x << 0], b00 = rgb2[x << 0];
       yuv0[x << 0] =
 	av_clip_uintp2_c (yuv_offset[0] +
@@ -30,4 +30,4 @@ fn (int w, const int rnd, int cgu, int cgv, const int16_t * yuv_offset,
 	av_clip_uintp2_c (uv_offset +
 			  (((r00) * cburv + (g00) * cgv + (b00) * cbv +
 			    rnd) >> sh), 12);
-}}
+} IACA_END }

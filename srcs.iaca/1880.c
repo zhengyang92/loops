@@ -11,7 +11,7 @@ int
 fn (const int w2, int x, int32_t * b, int32_t * tmp)
 {
   for (x = 0; x < w2; x++)
-    {
+     { IACA_START
       b[2 * x] = ((int) (tmp[x] + 1U)) >> 1;
       b[2 * x + 1] =
 	((int)
@@ -20,4 +20,4 @@ fn (const int w2, int x, int32_t * b, int32_t * tmp)
 	    ((int)
 	     (9U * tmp[x] + 9U * tmp[x + 1] - tmp[x + 2] - tmp[x - 1] +
 	      8) >> 4))) + 1U)) >> 1;
-}}
+} IACA_END }

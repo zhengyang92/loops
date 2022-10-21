@@ -12,7 +12,7 @@ fn (int i, uint32_t refcolor[3], int selected[4], int best_d,
     uint32_t pseudopal[33], int j)
 {
   for (j = i + 1; j < 4; j++)
-    {
+     { IACA_START
       int d = color_distance (refcolor[i], pseudopal[selected[j]]);
       if (d < best_d)
 	{
@@ -25,5 +25,5 @@ fn (int i, uint32_t refcolor[3], int selected[4], int best_d,
 	  while (0);
 	  best_d = d;
 	}
-    }
+     } IACA_END
 }

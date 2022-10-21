@@ -11,8 +11,8 @@ int
 fn (int w, int i, int acc, const uint8_t * src, uint8_t * dst)
 {
   for (; i < w; i++)
-    {
+     { IACA_START
       acc += src[i];
       dst[i] = acc;
-    }
+     } IACA_END
 }

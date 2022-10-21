@@ -21,11 +21,11 @@ int
 fn (size_t i, PixelI * pMB, struct tagPostProcInfo *pMBInfo)
 {
   for (i = 16; i < 256; i += 16)
-    {
+     { IACA_START
       if (pMB[i] != 0)
 	{
 	  pMBInfo->ucMBTexture = 3;
 	  break;
 	}
-    }
+     } IACA_END
 }

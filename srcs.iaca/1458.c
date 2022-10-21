@@ -13,9 +13,9 @@ fn (int tags, int i, uint8_t (*layout)[3], int TYPE_CPE, int AAC_CHANNEL_CC,
 {
   int sum = 0;
   for (i = 0; i < tags; i++)
-    {
+     { IACA_START
       int syn_ele = layout[i][0];
       int pos = layout[i][2];
       sum += (1 + (syn_ele == TYPE_CPE)) * (pos != AAC_CHANNEL_OFF
 					    && pos != AAC_CHANNEL_CC);
-}}
+} IACA_END }

@@ -13,7 +13,7 @@ fn (int i, const int32_t * coef0, int64_t * sum, const int32_t * coef1,
     int len)
 {
   for (i = 0; i < len; i++)
-    {
+     { IACA_START
       int lt = coef0[i];
       int rt = coef1[i];
       int md = lt + rt;
@@ -22,4 +22,4 @@ fn (int i, const int32_t * coef0, int64_t * sum, const int32_t * coef1,
       ((sum[1]) += ((int64_t) (rt) * (int64_t) (rt)));
       ((sum[2]) += ((int64_t) (md) * (int64_t) (md)));
       ((sum[3]) += ((int64_t) (sd) * (int64_t) (sd)));
-}}
+} IACA_END }

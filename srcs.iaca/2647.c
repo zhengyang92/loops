@@ -11,7 +11,7 @@ int
 fn (int k, int16_t * index)
 {
   for (k = 4; k < 6; k++)
-    {
+     { IACA_START
       if (index[k] >= 44 && index[k] < 108)
 	{
 	  index[k] += 64;
@@ -20,5 +20,5 @@ fn (int k, int16_t * index)
 	{
 	  index[k] += 128;
 	}
-    }
+     } IACA_END
 }

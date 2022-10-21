@@ -12,7 +12,7 @@ fn (int j, int i, float *x, int c, int w, int forward, int k, int out_c,
     float *out, int b, int stride, int h)
 {
   for (i = 0; i < w; ++i)
-    {
+     { IACA_START
       int in_index = i + w * (j + h * (k + c * b));
       int c2 = k % out_c;
       int offset = k / out_c;
@@ -23,5 +23,5 @@ fn (int j, int i, float *x, int c, int w, int forward, int k, int out_c,
 	out[out_index] = x[in_index];
       else
 	out[in_index] = x[out_index];
-    }
+     } IACA_END
 }

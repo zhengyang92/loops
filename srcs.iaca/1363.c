@@ -97,10 +97,10 @@ fn (struct sbg_script *s, struct sbg_script_synth *s1, int i, int64_t ts2,
     struct sbg_script_event *ev1)
 {
   for (i = 0; i < ev1->nb_elements; i++)
-    {
+     { IACA_START
       s1 = &s->synth[ev1->elements + i];
       r = generate_interval (log, s, inter, ts1, ts2, s1, s1, 0);
       if (r < 0)
 	return r;
-    }
+     } IACA_END
 }

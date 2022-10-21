@@ -14,7 +14,7 @@ fn (ptrdiff_t low_stride, int clip, int i, ptrdiff_t high_stride,
     int16_t * low, int16_t * high)
 {
   for (i = 0; i < len; i++)
-    {
+     { IACA_START
       if (i == 0)
 	{
 	  tmp =
@@ -67,5 +67,5 @@ fn (ptrdiff_t low_stride, int clip, int i, ptrdiff_t high_stride,
       if (clip)
 	output[(2 * i + 1) * out_stride] =
 	  av_clip_uintp2_c (output[(2 * i + 1) * out_stride], clip);
-    }
+     } IACA_END
 }

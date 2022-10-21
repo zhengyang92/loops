@@ -15,7 +15,7 @@ fn (int *current, int tags, int i, uint8_t (*layout_map)[3], int TYPE_CPE,
   int first_cpe = 0;
   int sce_parity = 0;
   for (i = *current; i < tags; i++)
-    {
+     { IACA_START
       if (layout_map[i][2] != pos)
 	break;
       if (layout_map[i][0] == TYPE_CPE)
@@ -39,5 +39,5 @@ fn (int *current, int tags, int i, uint8_t (*layout_map)[3], int TYPE_CPE,
 	  num_pos_channels++;
 	  sce_parity ^= 1;
 	}
-    }
+     } IACA_END
 }

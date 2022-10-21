@@ -11,7 +11,7 @@ int
 fn (const char *cp, const char *in_start, int i, uint8_t * uu)
 {
   for (i = 0, cp = in_start; i < 16; i++)
-    {
+     { IACA_START
       int hi;
       int lo;
       if (i == 4 || i == 6 || i == 8 || i == 10)
@@ -21,5 +21,5 @@ fn (const char *cp, const char *in_start, int i, uint8_t * uu)
       if (hi == -1 || lo == -1)
 	return (-(22));
       uu[i] = (hi << 4) + lo;
-    }
+     } IACA_END
 }

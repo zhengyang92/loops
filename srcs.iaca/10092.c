@@ -14,7 +14,7 @@ fn (int palette_size, uint32_t idx_map[256], int width, int x,
     const uint32_t * src, uint8_t * const tmp_row)
 {
   for (x = 0; x < width; ++x)
-    {
+     { IACA_START
       const uint32_t pix = src[x];
       if (pix != prev_pix)
 	{
@@ -23,5 +23,5 @@ fn (int palette_size, uint32_t idx_map[256], int width, int x,
 	  prev_pix = pix;
 	}
       tmp_row[x] = prev_idx;
-    }
+     } IACA_END
 }

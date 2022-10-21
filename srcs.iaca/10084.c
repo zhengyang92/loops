@@ -14,12 +14,12 @@ fn (uint32_t * const histogram_argb, uint32_t i,
 {
   int max_index = 0;
   for (i = 0; i < histogram_image_xysize; ++i)
-    {
+     { IACA_START
       const int symbol_index = histogram_symbols[i] & 0xffff;
       histogram_argb[i] = (symbol_index << 8);
       if (symbol_index >= max_index)
 	{
 	  max_index = symbol_index + 1;
 	}
-    }
+     } IACA_END
 }

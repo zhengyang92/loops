@@ -13,7 +13,7 @@ fn (int dst_stride, int i, int width, const uint8_t * src, int src_stride,
     uint16_t * dst)
 {
   for (i = 0; i < width; i += 2)
-    {
+     { IACA_START
       dst[(0) * dst_stride + (0) * 3 + 0] =
 	dst[(0) * dst_stride + (1) * 3 + 0] =
 	dst[(1) * dst_stride + (1) * 3 + 0] =
@@ -32,4 +32,4 @@ fn (int dst_stride, int i, int width, const uint8_t * src, int src_stride,
 	(src[(0) * src_stride + 1 * (0)]);
       src += 2 * 1;
       dst += 6;
-}}
+} IACA_END }

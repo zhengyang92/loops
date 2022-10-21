@@ -15,7 +15,7 @@ fn (const int iw2, const int iwd, uint16_t * dpy, const int iw1,
     const uint16_t * spx)
 {
   for (j = 0; j < w; j++)
-    {
+     { IACA_START
       const int x = ((spx[iw1 + j]) > (max) ? (max) : (spx[iw1 + j]));
       const int y = ((spy[iw2 + j]) > (max) ? (max) : (spy[iw2 + j]));
       const int z = spd[iwd + j];
@@ -30,5 +30,5 @@ fn (const int iw2, const int iwd, uint16_t * dpy, const int iw1,
 								      y)));
       dpx[pos] = x;
       dpy[pos] = y;
-    }
+     } IACA_END
 }

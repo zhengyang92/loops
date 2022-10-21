@@ -12,10 +12,10 @@ fn (int scale, int i, unsigned int dc, int h, uint16_t * src, uint16_t * dst,
     int stride)
 {
   for (i = 0; i < h; i++)
-    {
+     { IACA_START
       dst[0] = scale * src[0] + dc;
       if (scale)
 	src += stride;
       dst += stride;
-    }
+     } IACA_END
 }

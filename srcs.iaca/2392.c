@@ -13,7 +13,7 @@ int
 fn (ptrdiff_t stride, const int32_t * block, int i, uint16_t * pix)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       uint16_t v = pix[-1];
       pix[0] = v += block[0];
       pix[1] = v += block[1];
@@ -25,5 +25,5 @@ fn (ptrdiff_t stride, const int32_t * block, int i, uint16_t * pix)
       pix[7] = v + block[7];
       pix += stride;
       block += 8;
-    }
+     } IACA_END
 }

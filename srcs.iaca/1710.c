@@ -14,7 +14,7 @@ fn (int i, int mask, int16_t * block, GetBitContext * gb, int nz_coeff[64],
 {
   int nz_coeff_count = 0;
   for (i = 0; i < nz_coeff_count; i++)
-    {
+     { IACA_START
       if (!get_bits1 (gb))
 	continue;
       if (block[nz_coeff[i]] < 0)
@@ -24,5 +24,5 @@ fn (int i, int mask, int16_t * block, GetBitContext * gb, int nz_coeff[64],
       masks_count--;
       if (masks_count < 0)
 	return 0;
-    }
+     } IACA_END
 }

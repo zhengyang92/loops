@@ -12,8 +12,8 @@ fn (float *lpc, int i)
 {
   double bandwidth_expansion_coeff = 0.9883;
   for (i = 0; i < 10; i++)
-    {
+     { IACA_START
       lpc[i] *= bandwidth_expansion_coeff;
       bandwidth_expansion_coeff *= 0.9883;
-    }
+     } IACA_END
 }

@@ -13,7 +13,7 @@ fn (uint32_t state, int buf_size, const uint8_t * buf, int i)
 {
   int has_sps = 0;
   for (i = 0; i <= buf_size; i++)
-    {
+     { IACA_START
       if ((state & 0xFFFFFF1F) == 0x107)
 	has_sps = 1;
       if ((state & 0xFFFFFF00) == 0x100 && (state & 0xFFFFFF1F) != 0x106
@@ -30,5 +30,5 @@ fn (uint32_t state, int buf_size, const uint8_t * buf, int i)
 	}
       if (i < buf_size)
 	state = (state << 8) | buf[i];
-    }
+     } IACA_END
 }

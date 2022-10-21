@@ -12,7 +12,7 @@ fn (float y_2, float y_1, float *sum, const float *y, int len, float y_0,
     const float *x, int j, float y_3)
 {
   for (j = 0; j < len - 3; j += 4)
-    {
+     { IACA_START
       float tmp;
       tmp = *x++;
       y_3 = *y++;
@@ -38,4 +38,4 @@ fn (float y_2, float y_1, float *sum, const float *y, int len, float y_0,
       sum[1] += tmp * y_0;
       sum[2] += tmp * y_1;
       sum[3] += tmp * y_2;
-}}
+} IACA_END }

@@ -13,11 +13,11 @@ fn (const uint8_t * ref, const int linesize, int y_end, const uint8_t * buf,
 {
   int same_column = 1;
   for (int y = *y_start; y <= y_end; y++)
-    {
+     { IACA_START
       if (ref[y * ref_linesize + *x_start] != buf[y * linesize + *x_start])
 	{
 	  same_column = 0;
 	  break;
 	}
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ fn (int *nb_frames, const char *p, void *log_ctx, int **frames, int i,
     const char *frames_str)
 {
   for (i = 0; i < *nb_frames; i++)
-    {
+     { IACA_START
       long int f;
       char *tailptr;
       if (*p == '\0' || *p == ',')
@@ -40,5 +40,5 @@ fn (int *nb_frames, const char *p, void *log_ctx, int **frames, int i,
 		  (*frames)[i], (*frames)[i - 1]);
 	  return (-(22));
 	}
-    }
+     } IACA_END
 }

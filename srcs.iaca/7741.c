@@ -16,7 +16,7 @@ fn (uint32_t sum, uint8_t id, uint8_t i, uint8_t table,
     uint8_t n)
 {
   for (i = 0; i < n; i++)
-    {
+     { IACA_START
       id = values[i] - bitalloc_offsets[table];
       do
 	{
@@ -29,5 +29,5 @@ fn (uint32_t sum, uint8_t id, uint8_t i, uint8_t table,
 	}
       while (0);
       sum += bitalloc_bits[table][sel][id];
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ int
 fn (uint8_t * __restrict pixels, int16_t * block, int line_size, int i)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       pixels[0] += block[0];
       pixels[1] += block[1];
       pixels[2] += block[2];
@@ -23,5 +23,5 @@ fn (uint8_t * __restrict pixels, int16_t * block, int line_size, int i)
       pixels[7] += block[7];
       pixels += line_size;
       block += 8;
-    }
+     } IACA_END
 }

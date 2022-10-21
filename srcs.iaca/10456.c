@@ -12,8 +12,8 @@ int
 fn (stbi_uc * tc, stbi__uint32 pixel_count, stbi_uc * p, stbi__uint32 i)
 {
   for (i = 0; i < pixel_count; ++i)
-    {
+     { IACA_START
       p[1] = (p[0] == tc[0] ? 0 : 255);
       p += 2;
-    }
+     } IACA_END
 }

@@ -13,7 +13,7 @@ fn (const int r, int x, const int w, const uint16_t * const in,
     const uint32_t scale, uint16_t * const out)
 {
   for (; x < w - r; ++x)
-    {
+     { IACA_START
       const uint16_t delta = in[x + r] - in[x - r - 1];
       out[x] = (delta * scale) >> 16;
-}}
+} IACA_END }

@@ -12,8 +12,8 @@ fn (int i, int16_t temp[4], int16_t weight[10], int j,
     const int16_t ff_g723_1_lsp_band2[256][4])
 {
   for (j = 0; j < 4; j++)
-    {
+     { IACA_START
       temp[j] =
 	(weight[j + (6)] * ff_g723_1_lsp_band2[i][j] + (1 << 14)) >> 15;
-    }
+     } IACA_END
 }

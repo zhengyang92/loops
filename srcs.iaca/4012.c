@@ -13,12 +13,12 @@ fn (int32_t * dst, const int32_t * src1, int32_t wj, const int32_t * win,
     int32_t j, int32_t wi)
 {
   for (i = -len, j = len - 1; i < 0; i++, j--)
-    {
+     { IACA_START
       s0 = src0[i];
       s1 = src1[j];
       wi = win[i];
       wj = win[j];
       dst[i] = ((int64_t) s0 * wj - (int64_t) s1 * wi + 0x40000000) >> 31;
       dst[j] = ((int64_t) s0 * wi + (int64_t) s1 * wj + 0x40000000) >> 31;
-    }
+     } IACA_END
 }

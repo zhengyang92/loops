@@ -11,7 +11,7 @@ int
 fn (int y, int x, const int w, int use_median, IDWTELEM * src, int stride)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int i = x + y * stride;
       if (x)
 	{
@@ -39,5 +39,5 @@ fn (int y, int x, const int w, int use_median, IDWTELEM * src, int stride)
 	  if (y)
 	    src[i] += src[i - stride];
 	}
-    }
+     } IACA_END
 }

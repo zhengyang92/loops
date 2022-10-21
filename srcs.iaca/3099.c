@@ -18,7 +18,7 @@ fn (int *qmat, int indp, int blocks_per_slice, int16_t * in, int level,
   int prev_run = 4;
   int prev_level = 2;
   for (j = 0; j < blocks_per_slice; j++)
-    {
+     { IACA_START
       int val = ((in[(j << 6) + indp]) / ((qmat)[indp]));
       if (val)
 	{
@@ -39,5 +39,5 @@ fn (int *qmat, int indp, int blocks_per_slice, int16_t * in, int level,
 	{
 	  ++run;
 	}
-    }
+     } IACA_END
 }

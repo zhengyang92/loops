@@ -13,7 +13,7 @@ fn (int i, const __m128i zero, const uint32_t * in, uint32_t * out,
     int num_pixels, const uint32_t * upper)
 {
   for (i = 0; i + 2 <= num_pixels; i += 2)
-    {
+     { IACA_START
       const __m128i L = _mm_loadl_epi64 ((const __m128i *) &in[i - 1]);
       const __m128i src = _mm_loadl_epi64 ((const __m128i *) &in[i]);
       const __m128i T = _mm_loadl_epi64 ((const __m128i *) &upper[i]);
@@ -31,4 +31,4 @@ fn (int i, const __m128i zero, const uint32_t * in, uint32_t * out,
       const __m128i pred = _mm_packus_epi16 (A4, A4);
       const __m128i res = _mm_sub_epi8 (src, pred);
       _mm_storel_epi64 ((__m128i *) & out[i], res);
-}}
+} IACA_END }

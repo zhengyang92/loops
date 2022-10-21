@@ -12,8 +12,8 @@ int
 fn (uint32_t * out, int i, int bw2, uint8_t * src)
 {
   for (i = 0; i < bw2; i++)
-    {
+     { IACA_START
       out[i] ^= *((uint32_t *) src);
       src += 4;
-    }
+     } IACA_END
 }

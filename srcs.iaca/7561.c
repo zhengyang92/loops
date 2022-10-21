@@ -14,7 +14,7 @@ fn (const uint8_t * c2_data, uint8_t * d1_data, const int src_w,
     const int c1_shift_w, int intensity, const int max)
 {
   for (x = 0; x < src_w; x++)
-    {
+     { IACA_START
       const int c0 = c0_data[x >> c0_shift_w] + 256;
       const int c1 =
 	((c1_data[x >> c1_shift_w] - 128) >=
@@ -42,5 +42,5 @@ fn (const uint8_t * c2_data, uint8_t * d1_data, const int src_w,
 	  target = d1_data + (c0 + c1);
 	  update (target, max, intensity);
 	}
-    }
+     } IACA_END
 }

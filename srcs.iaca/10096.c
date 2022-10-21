@@ -13,7 +13,7 @@ fn (int i, int mean, int width, int WEBP_FILTER_GRADIENT,
     int WEBP_FILTER_VERTICAL, const uint8_t * const p, int bins[4][16])
 {
   for (i = 2; i < width - 1; i += 2)
-    {
+     { IACA_START
       const int diff0 = (abs ((p[i]) - (mean)) >> 4);
       const int diff1 = (abs ((p[i]) - (p[i - 1])) >> 4);
       const int diff2 = (abs ((p[i]) - (p[i - width])) >> 4);
@@ -25,4 +25,4 @@ fn (int i, int mean, int width, int WEBP_FILTER_GRADIENT,
       bins[WEBP_FILTER_VERTICAL][diff2] = 1;
       bins[WEBP_FILTER_GRADIENT][diff3] = 1;
       mean = (3 * mean + p[i] + 2) >> 2;
-}}
+} IACA_END }

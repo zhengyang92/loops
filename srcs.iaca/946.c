@@ -16,7 +16,7 @@ fn (uint8_t * S, const int src_w, int main_has_alpha, const int dr,
 {
   for (jmax = ((-x + dst_w) > (src_w) ? (src_w) : (-x + dst_w)); j < jmax;
        j++)
-    {
+     { IACA_START
       alpha = S[sa];
       if (main_has_alpha && alpha != 0 && alpha != 255)
 	{
@@ -77,5 +77,5 @@ fn (uint8_t * S, const int src_w, int main_has_alpha, const int dr,
 	}
       d += dstep;
       S += sstep;
-    }
+     } IACA_END
 }

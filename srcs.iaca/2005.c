@@ -16,8 +16,8 @@ int
 fn (const struct exif_tag tag_list[117], int i, uint16_t id)
 {
   for (i = 0; i < (sizeof (tag_list) / sizeof ((tag_list)[0])); i++)
-    {
+     { IACA_START
       if (tag_list[i].id == id)
 	return tag_list[i].name;
-    }
+     } IACA_END
 }

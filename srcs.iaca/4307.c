@@ -12,7 +12,7 @@ fn (float *grad, int grad_linesize, int w, int src_linesize, uint8_t * src)
 {
   int j = 3;
   for (int i = 1; i < w; i++)
-    {
+     { IACA_START
       float temp = 0.0f;
       grad[j * grad_linesize + i] =
 	abs (src[(j + 0) * src_linesize + i] -
@@ -38,4 +38,4 @@ fn (float *grad, int grad_linesize, int w, int src_linesize, uint8_t * src)
       temp = ((1) > (temp) ? (1) : (temp));
       grad[j * grad_linesize + i] /= temp;
       grad[j * grad_linesize] += grad[j * grad_linesize + i];
-}}
+} IACA_END }

@@ -12,7 +12,7 @@ fn (int mv, int f_code, uint8_t mv_penalty[8][16385],
     const uint8_t ff_mvtab[33][2])
 {
   for (mv = -(2 * 4096); mv <= (2 * 4096); mv++)
-    {
+     { IACA_START
       int len;
       if (mv == 0)
 	len = ff_mvtab[0][1];
@@ -37,5 +37,5 @@ fn (int mv, int f_code, uint8_t mv_penalty[8][16385],
 	    }
 	}
       mv_penalty[f_code][mv + (2 * 4096)] = len;
-    }
+     } IACA_END
 }

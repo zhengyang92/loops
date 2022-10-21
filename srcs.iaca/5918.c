@@ -13,8 +13,8 @@ fn (int i, int offset, int levels, int32_t * values, int code,
     const uint32_t ff_inverse[257])
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       int div = ((uint32_t) ((((uint64_t) code) * ff_inverse[levels]) >> 32));
       values[i] = code - offset - div * levels;
       code = div;
-}}
+} IACA_END }

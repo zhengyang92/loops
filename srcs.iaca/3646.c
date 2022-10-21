@@ -23,7 +23,7 @@ fn (int32_t * samples_l, int i, int32_t * samples_r, int nb_samples, int m,
     int k, struct Decorr *dpp)
 {
   for (m = 0, k = dpp->value & (8 - 1), i = 0; i < nb_samples; i++)
-    {
+     { IACA_START
       int32_t sam, tmp;
       sam = dpp->samplesA[m];
       samples_l[i] = tmp = (dpp->samplesA[k] =
@@ -59,5 +59,5 @@ fn (int32_t * samples_l, int i, int32_t * samples_r, int nb_samples, int m,
 	};
       m = (m + 1) & (8 - 1);
       k = (k + 1) & (8 - 1);
-    }
+     } IACA_END
 }

@@ -13,7 +13,7 @@ fn (const float *src, const float b2, int nb_samples, float *dst,
     const float a2)
 {
   for (int n = 0; n + 1 < nb_samples; n++)
-    {
+     { IACA_START
       float in = src[n];
       float out;
       out = in * b0 + z1;
@@ -26,4 +26,4 @@ fn (const float *src, const float b2, int nb_samples, float *dst,
       z1 = b1 * in + z2 + a1 * out;
       z2 = b2 * in + a2 * out;
       dst[n] = out;
-}}
+} IACA_END }

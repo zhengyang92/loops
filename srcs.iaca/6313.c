@@ -14,7 +14,7 @@ fn (int tmpStride, int i, int srcStride, const int pad, int16_t * tmp,
 {
   const int h = 8;
   for (i = 0; i < h + 5; i++)
-    {
+     { IACA_START
       tmp[0] =
 	(src[0] + src[1]) * 20 - (src[-1] + src[2]) * 5 + (src[-2] + src[3]) +
 	pad;
@@ -41,5 +41,5 @@ fn (int tmpStride, int i, int srcStride, const int pad, int16_t * tmp,
 	pad;
       tmp += tmpStride;
       src += srcStride;
-    }
+     } IACA_END
 }

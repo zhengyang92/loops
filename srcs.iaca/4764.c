@@ -12,7 +12,7 @@ fn (int i, int big, const int32_t * coefs, int len, const int32_t * smp,
     int32_t * res, int shift, int order)
 {
   for (i = order; i < len; i += 2)
-    {
+     { IACA_START
       int s = smp[i - order];
       int64_t p0 = 0, p1 = 0;
       if (big)
@@ -266,4 +266,4 @@ fn (int i, int big, const int32_t * coefs, int len, const int32_t * smp,
 		p1 += ((int64_t) (c) * (int64_t) (s));
 	}}} res[i] = smp[i] - av_clipl_int32_c (p0 >> shift);
       res[i + 1] = smp[i + 1] - av_clipl_int32_c (p1 >> shift);
-}}
+} IACA_END }

@@ -13,8 +13,8 @@ fn (int fill, ptrdiff_t bytewidth, const ptrdiff_t *dst_linesize, int height,
     uint8_t * data)
 {
   for (; height > 0; height--)
-    {
+     { IACA_START
       memset (data, fill, bytewidth);
       data += dst_linesize[0];
-    }
+     } IACA_END
 }

@@ -16,7 +16,7 @@ fn (const int c1_shift_h, int y, const int c1_linesize,
     uint8_t * dst)
 {
   for (y = 0; y < src_h; y++)
-    {
+     { IACA_START
       const int sum =
 	((c0_data[x >> c0_shift_w] - 128) >=
 	 0 ? (c0_data[x >> c0_shift_w] -
@@ -32,5 +32,5 @@ fn (const int c1_shift_h, int y, const int c1_linesize,
       if (!c1_shift_h || (y & c1_shift_h))
 	c1_data += c1_linesize;
       dst_data += dst_linesize;
-    }
+     } IACA_END
 }

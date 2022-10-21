@@ -19,11 +19,11 @@ int
 fn (int i, int width, unsigned int val, RICEContext rc, uint8_t * data)
 {
   for (i = 1; i < width; i++)
-    {
+     { IACA_START
       val = loco_get_rice (&rc);
       if (val == (-2147483647 - 1))
 	return (-(int)
 		(('I') | (('N') << 8) | (('D') << 16) |
 		 ((unsigned) ('A') << 24)));
       data[i] = data[i - 1] + val;
-}}
+} IACA_END }

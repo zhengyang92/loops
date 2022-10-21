@@ -12,7 +12,7 @@ fn (const uint8_t * src2, int x, int b_w, uint8_t * dst, int a,
     const uint8_t * src1, int b)
 {
   for (x = 0; x < b_w; x++)
-    {
+     { IACA_START
       dst[x] = (a * src1[x] + b * src2[x] + 4) >> 3;
-    }
+     } IACA_END
 }

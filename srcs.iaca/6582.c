@@ -11,7 +11,7 @@ int
 fn (int i, int32_t scale_factor_mult[15][3])
 {
   for (i = 0; i < 15; i++)
-    {
+     { IACA_START
       int n, norm;
       n = i + 2;
       norm = ((1L << n) * (1 << 23)) / ((1 << n) - 1);
@@ -22,5 +22,5 @@ fn (int i, int32_t scale_factor_mult[15][3])
 	{
 	}
       while (0);
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ fn (const uint8_t * srcp, int x, const int cthresh6, const int width,
     uint8_t * cmkp, const int cthresh, const int src_linesize)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       const int s1 = abs (srcp[x] - srcp[x + src_linesize]);
       if (s1 > cthresh
 	  && abs (4 * srcp[x] -
@@ -25,5 +25,5 @@ fn (const uint8_t * srcp, int x, const int cthresh6, const int width,
 							     src_linesize])) >
 	  cthresh6)
 	cmkp[x] = 0xff;
-    }
+     } IACA_END
 }

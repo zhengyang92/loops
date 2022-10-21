@@ -12,7 +12,7 @@ int
 fn (int16_t * quantizer_output, int j, int i, const uint8_t min_distance[2])
 {
   for (i = 1; i < 10; i++)
-    {
+     { IACA_START
       int diff =
 	(quantizer_output[i - 1] - quantizer_output[i] +
 	 min_distance[j]) >> 1;
@@ -21,5 +21,5 @@ fn (int16_t * quantizer_output, int j, int i, const uint8_t min_distance[2])
 	  quantizer_output[i - 1] -= diff;
 	  quantizer_output[i] += diff;
 	}
-    }
+     } IACA_END
 }

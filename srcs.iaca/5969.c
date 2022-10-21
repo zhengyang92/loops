@@ -123,7 +123,7 @@ fn (MacroBlock mb, SuperBlock sb, unsigned int multi_mask,
     const uint16_t mask_matrix[16], Escape124Context * s, unsigned int i)
 {
   for (i = 0; i < 16; i++)
-    {
+     { IACA_START
       if (multi_mask & mask_matrix[i])
 	{
 	  if (!can_safely_read (&bc, 1))
@@ -131,5 +131,5 @@ fn (MacroBlock mb, SuperBlock sb, unsigned int multi_mask,
 	  mb = decode_macroblock (s, &bc, &cb_index, superblock_index);
 	  insert_mb_into_sb (&sb, mb, i);
 	}
-    }
+     } IACA_END
 }

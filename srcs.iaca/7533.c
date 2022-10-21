@@ -15,6 +15,6 @@ fn (const int16_t * const kker, const uint8_t * const s, const int iws,
 {
   int tmp = 0;
   for (int j = 0; j < 2; j++)
-    {
+     { IACA_START
       tmp += kker[iws + j] * s[vv[iws + j] * in_linesize + uu[iws + j]];
-}}
+} IACA_END }

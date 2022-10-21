@@ -11,8 +11,8 @@ int
 fn (int buf_size, const uint8_t * buf, uint8_t * dst, int i)
 {
   for (i = 0; 2 * i + 1 < buf_size; i++)
-    {
+     { IACA_START
       dst[2 * i + 0] = buf[i] >> 4;
       dst[2 * i + 1] = buf[i] & 15;
-    }
+     } IACA_END
 }

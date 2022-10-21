@@ -11,7 +11,7 @@ int
 fn (int w, int i, IDWTELEM * ref, IDWTELEM * dst, IDWTELEM * src)
 {
   for (; i < w; i++)
-    {
+     { IACA_START
       dst[i] = src[i] + ((ref[i] + ref[(i + 1)] + 8 + 4 * src[i]) >> 4);
-    }
+     } IACA_END
 }

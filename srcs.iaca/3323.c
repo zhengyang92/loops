@@ -12,7 +12,7 @@ fn (int y, const int qmul, int x, const int w, const int qadd, IDWTELEM * src,
     int stride)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int i = src[x + y * stride];
       if (i < 0)
 	{
@@ -22,5 +22,5 @@ fn (int y, const int qmul, int x, const int w, const int qadd, IDWTELEM * src,
 	{
 	  src[x + y * stride] = ((i * qmul + qadd) >> ((7 - 4 + 8)));
 	}
-    }
+     } IACA_END
 }

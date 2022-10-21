@@ -12,7 +12,7 @@ int
 fn (const I32 iWidth, U8 * piDstPixel, const float *piSrcPixel, I32 x)
 {
   for (x = 0; x < iWidth; x++)
-    {
+     { IACA_START
       const float v = piSrcPixel[x];
       piDstPixel[x] = Convert_Float_To_U8 (v);
-}}
+} IACA_END }

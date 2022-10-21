@@ -12,10 +12,10 @@ fn (int i, const int x_0, const uint8_t * const s, double best_sse,
     const double value, const int x_1)
 {
   for (i = x_0; i < x_1; ++i)
-    {
+     { IACA_START
       const double diff = s[i] - value;
       const double sse = diff * diff;
       if (sse < best_sse)
 	best_sse = sse;
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ int
 fn (uint16_t * pixel_ptr, int x, uint16_t P[4], uint64_t flags)
 {
   for (x = 0; x < 8; x += 2, flags >>= 2)
-    {
+     { IACA_START
       pixel_ptr[x] = pixel_ptr[x + 1] = P[flags & 0x03];
-    }
+     } IACA_END
 }

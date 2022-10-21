@@ -12,7 +12,7 @@ int
 fn (const I32 iWidth, U8 * piDstPixel, const float *pfltSrcPixel, I32 x)
 {
   for (x = 0; x < iWidth; x++)
-    {
+     { IACA_START
       const float fltRed =
 	((pfltSrcPixel[3 * x]) > (0.0F) ? (pfltSrcPixel[3 * x]) : (0.0F));
       const float fltGreen =
@@ -42,4 +42,4 @@ fn (const I32 iWidth, U8 * piDstPixel, const float *pfltSrcPixel, I32 x)
 	  piDstPixel[4 * x + 1] = (U8) (fltGreen * fltScale);
 	  piDstPixel[4 * x + 2] = (U8) (fltBlue * fltScale);
 	  piDstPixel[4 * x + 3] = (U8) (e + 128);
-}}}
+} IACA_END }}

@@ -11,8 +11,8 @@ int
 fn (int i, INTFLOAT * src1, INTFLOAT (*src0)[2], int n, INTFLOAT (*dst)[2])
 {
   for (i = 0; i < n; i++)
-    {
+     { IACA_START
       dst[i][0] = ((src0[i][0]) * (src1[i]));
       dst[i][1] = ((src0[i][1]) * (src1[i]));
-    }
+     } IACA_END
 }

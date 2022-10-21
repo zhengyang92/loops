@@ -12,7 +12,7 @@ fn (const int *stride, int y, int w, int offset, const uint8_t ** src, int x,
     int16_t * sample[4][3], int lbd)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int b, g, r, a = a;
       if (lbd)
 	{
@@ -36,4 +36,4 @@ fn (const int *stride, int y, int w, int offset, const uint8_t ** src, int x,
       sample[1][0][x] = b;
       sample[2][0][x] = r;
       sample[3][0][x] = a;
-}}
+} IACA_END }

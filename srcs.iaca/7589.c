@@ -16,7 +16,7 @@ fn (uint16_t * const d1, const uint16_t * c0_data, const uint16_t * c2_data,
     const uint16_t * c1_data, uint16_t * const d2)
 {
   for (x = slicew_start; x < slicew_end; x++)
-    {
+     { IACA_START
       const int c0 =
 	((c0_data[x >> c0_shift_w]) >
 	 (limit) ? (limit) : (c0_data[x >> c0_shift_w]));
@@ -25,4 +25,4 @@ fn (uint16_t * const d1, const uint16_t * c0_data, const uint16_t * c2_data,
       *(d0 + d0_signed_linesize * c0 + x) = c0;
       *(d1 + d1_signed_linesize * c0 + x) = c1;
       *(d2 + d2_signed_linesize * c0 + x) = c2;
-}}
+} IACA_END }

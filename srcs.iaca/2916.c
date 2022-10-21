@@ -15,7 +15,7 @@ fn (const int lambda, int last_non_zero, int level_tab[65], int i,
   int last_run = 0;
   int last_level = 0;
   for (i = survivor[0]; i <= last_non_zero + 1; i++)
-    {
+     { IACA_START
       int score = score_tab[i];
       if (i)
 	score += lambda * 2;
@@ -26,5 +26,5 @@ fn (const int lambda, int last_non_zero, int level_tab[65], int i,
 	  last_level = level_tab[i];
 	  last_run = run_tab[i];
 	}
-    }
+     } IACA_END
 }

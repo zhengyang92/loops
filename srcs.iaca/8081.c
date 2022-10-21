@@ -13,7 +13,7 @@ fn (int add4, int8_t (*tone_level_idx_temp)[30][64], int add3,
     int8_t (*tone_level_idx)[30][64], int add2, int add1, int sb)
 {
   for (j = 1; j < 63; j++)
-    {
+     { IACA_START
       add1 = tone_level_idx[ch][sb][j] - 10;
       if (add1 < 0)
 	add1 = 0;
@@ -46,5 +46,5 @@ fn (int add4, int8_t (*tone_level_idx_temp)[30][64], int add3,
       if (tmp < 0)
 	tmp = 0;
       tone_level_idx_temp[ch][sb][j + 1] = tmp & 0xff;
-    }
+     } IACA_END
 }

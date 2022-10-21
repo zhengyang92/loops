@@ -12,7 +12,7 @@ fn (float *predictions, int indexes[10], char **names)
 {
   int i = 0;
   for (i = 0; i < 10; ++i)
-    {
+     { IACA_START
       int index = indexes[i];
       printf ("%.1f%%: %s\n", predictions[index] * 100, names[index]);
-}}
+} IACA_END }

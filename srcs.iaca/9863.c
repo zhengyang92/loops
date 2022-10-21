@@ -11,8 +11,8 @@ int
 fn (uint8_t * const v_dst, uint8_t * const u_dst, int j)
 {
   for (j = 0; j < 8; ++j)
-    {
+     { IACA_START
       u_dst[j * 32 - 1] = 129;
       v_dst[j * 32 - 1] = 129;
-    }
+     } IACA_END
 }

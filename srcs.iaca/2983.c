@@ -17,8 +17,8 @@ fn (unsigned int loc, int u[16][16], int v[16][16], int udif, int u0, int v0,
   int j = 0;
   int iii = 0;
   for (int jjj = 0; jjj < 4; jjj++)
-    {
+     { IACA_START
       u[i + ii + iii][j + jj + jjj] = u0 + ((udif * (int) (loc & 3) + 2) / 3);
       v[i + ii + iii][j + jj + jjj] = v0 + ((vdif * (int) (loc & 3) + 2) / 3);
       loc >>= 2;
-}}
+} IACA_END }

@@ -15,7 +15,7 @@ fn (int x, int pos_1_0, int width, int init_x, ptrdiff_t y_stride,
     const uint8_t edge_idx[5])
 {
   for (x = init_x; x < width; x++)
-    {
+     { IACA_START
       int diff0 =
 	((src[x + y_stride]) >
 	 (src[x + pos_0_0 + y_stride_0_1]) ? 1 : ((src[x + y_stride]) ==
@@ -31,4 +31,4 @@ fn (int x, int pos_1_0, int width, int init_x, ptrdiff_t y_stride,
       int offset_val = edge_idx[2 + diff0 + diff1];
       dst[x + y_stride] =
 	av_clip_uint8_c (src[x + y_stride] + sao_offset_val[offset_val]);
-}}
+} IACA_END }

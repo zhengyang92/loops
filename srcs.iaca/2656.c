@@ -13,6 +13,6 @@ fn (int i, int coefficients_length, int16_t * data_out, int j,
 {
   int sum = 0;
   for (j = coefficients_length - 1; j > 0; j--)
-    {
+     { IACA_START
       sum += (unsigned) (coefficients[j] * data_out[i - j]);
-}}
+} IACA_END }

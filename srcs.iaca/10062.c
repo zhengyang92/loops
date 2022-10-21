@@ -13,7 +13,7 @@ fn (const int uv_width, uint8_t * const a_ptr, const int V0, int x,
     uint8_t * const u)
 {
   for (x = 0; x < uv_width; ++x)
-    {
+     { IACA_START
       const int alpha =
 	a_ptr[2 * x + 0] + a_ptr[2 * x + 1] + a_ptr2[2 * x + 0] +
 	a_ptr2[2 * x + 1];
@@ -21,4 +21,4 @@ fn (const int uv_width, uint8_t * const a_ptr, const int V0, int x,
 	((((U0) * (1020 - (alpha)) + (u[x]) * (alpha)) * 0x101 + 1024) >> 18);
       v[x] =
 	((((V0) * (1020 - (alpha)) + (v[x]) * (alpha)) * 0x101 + 1024) >> 18);
-}}
+} IACA_END }

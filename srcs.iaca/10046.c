@@ -13,7 +13,7 @@ fn (int i, int uv_w, fixed_t * dst, const fixed_y_t * src2,
     const fixed_y_t * src1)
 {
   for (i = 0; i < uv_w; ++i)
-    {
+     { IACA_START
       const int r =
 	ScaleDown (src1[0 * uv_w + 0], src1[0 * uv_w + 1], src2[0 * uv_w + 0],
 		   src2[0 * uv_w + 1]);
@@ -30,4 +30,4 @@ fn (int i, int uv_w, fixed_t * dst, const fixed_y_t * src2,
       dst += 1;
       src1 += 2;
       src2 += 2;
-}}
+} IACA_END }

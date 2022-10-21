@@ -15,9 +15,9 @@ fn (int VAR_B, int VAR_X, int VAR_A, int x, ptrdiff_t width, int VAR_TOP,
     uint8_t * dst, const uint8_t * bottom)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       values[VAR_X] = x;
       values[VAR_TOP] = values[VAR_A] = top[x];
       values[VAR_BOTTOM] = values[VAR_B] = bottom[x];
       dst[x] = av_expr_eval (e, values, ((void *) 0));
-}}
+} IACA_END }

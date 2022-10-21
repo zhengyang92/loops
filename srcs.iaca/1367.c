@@ -96,7 +96,7 @@ fn (struct sbg_script *s, int i, struct ws_intervals *inter, void *log, int r,
     struct sbg_script_event *ev1)
 {
   for (i = -1; i < s->nb_events; i++)
-    {
+     { IACA_START
       ev1 = i < 0 ? &ev0 : &s->events[i];
       ev2 = &s->events[(i + 1) % s->nb_events];
       r = generate_plateau (log, s, inter, ev1);
@@ -105,5 +105,5 @@ fn (struct sbg_script *s, int i, struct ws_intervals *inter, void *log, int r,
       r = generate_transition (log, s, inter, ev1, ev2);
       if (r < 0)
 	return r;
-    }
+     } IACA_END
 }

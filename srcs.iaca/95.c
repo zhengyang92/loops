@@ -13,7 +13,7 @@ fn (float mem1, float num4, float num2, float *y, float mem2, float mem0,
     float num1)
 {
   for (int i = 0; i < N; i++)
-    {
+     { IACA_START
       float sum = x[i];
       sum += (num0 * mem0);
       sum += (num1 * mem1);
@@ -26,4 +26,4 @@ fn (float mem1, float num4, float num2, float *y, float mem2, float mem0,
       mem1 = mem0;
       mem0 = x[i];
       y[i] = sum;
-}}
+} IACA_END }

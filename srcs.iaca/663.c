@@ -12,7 +12,7 @@ fn (int x, const int block_size, const uint16_t * srcp, const uint16_t * refp)
 {
   double dist = 0.;
   for (x = 0; x < block_size; x++)
-    {
+     { IACA_START
       double temp = refp[x] - srcp[x];
       dist += temp * temp;
-}}
+} IACA_END }

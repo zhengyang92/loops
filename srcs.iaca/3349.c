@@ -13,7 +13,7 @@ fn (float xout2, float *pw, float *n0, float x_freq[10], float xin2,
 {
   int i2 = 0;
   for (int i = 0; i < m; i++, i2 += 2)
-    {
+     { IACA_START
       n0 = pw + (i * 4);
       xout1 = xin1 + 2.f * x_freq[i2] * n0[0] + n0[1];
       xout2 = xin2 + 2.f * x_freq[i2 + 1] * n0[2] + n0[3];
@@ -23,4 +23,4 @@ fn (float xout2, float *pw, float *n0, float x_freq[10], float xin2,
       n0[2] = xin2;
       xin1 = xout1;
       xin2 = xout2;
-}}
+} IACA_END }

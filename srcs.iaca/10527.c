@@ -65,7 +65,7 @@ int
 fn (long k, long i, long j)
 {
   for (j = 0; j < spaces_.N; j++)
-    {
+     { IACA_START
       space2_.Px[j][i] += space2_.Vy[k][i] * space2_.Cx[j][k];
-    }
+     } IACA_END
 }

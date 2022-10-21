@@ -14,12 +14,12 @@ fn (int min_s, int freq[256], const size_t data_size, int num_levels_in,
 {
   int max_s = 255;
   for (n = 0; n < data_size; ++n)
-    {
+     { IACA_START
       num_levels_in += (freq[data[n]] == 0);
       if (min_s > data[n])
 	min_s = data[n];
       if (max_s < data[n])
 	max_s = data[n];
       ++freq[data[n]];
-    }
+     } IACA_END
 }

@@ -11,7 +11,7 @@ int
 fn (int spatial, int j, int i, float *x, float *mean, int k, int filters)
 {
   for (k = 0; k < spatial; ++k)
-    {
+     { IACA_START
       int index = j * filters * spatial + i * spatial + k;
       mean[i] += x[index];
-}}
+} IACA_END }

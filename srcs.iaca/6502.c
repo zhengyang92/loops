@@ -21,8 +21,8 @@ fn (uint8_t * data, int i, int val, int width, RICEContext rc, int step,
     int stride)
 {
   for (i = 1; i < width; i++)
-    {
+     { IACA_START
       val = loco_get_rice (&rc);
       data[i * step] = loco_predict (&data[i * step], stride, step) + val;
-    }
+     } IACA_END
 }

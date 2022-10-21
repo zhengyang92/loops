@@ -13,7 +13,7 @@ fn (int x, int width, const uint8_t * src, uint8_t * dst,
     const uint32_t * const color_map)
 {
   for (x = 0; x < width; ++x)
-    {
+     { IACA_START
       *dst++ = VP8GetAlphaValue (color_map[VP8GetAlphaIndex (*src++)]);
-    }
+     } IACA_END
 }

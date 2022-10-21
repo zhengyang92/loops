@@ -11,8 +11,8 @@ int
 fn (int j, const uint8_t * buf, int len, int r)
 {
   for (j = 0; j < r; j++)
-    {
+     { IACA_START
       __attribute__((unused)) int p_diff = buf[0];
       buf++;
       len--;
-}}
+} IACA_END }

@@ -13,7 +13,7 @@ fn (int min_x, int mv_predictor[8][2], int ref[8], int max_x, int min_y,
 {
   int pred_count = 0;
   for (j = 0; j < pred_count; j++)
-    {
+     { IACA_START
       max_x =
 	((max_x) > (mv_predictor[j][0]) ? (max_x) : (mv_predictor[j][0]));
       max_y =
@@ -24,5 +24,5 @@ fn (int min_x, int mv_predictor[8][2], int ref[8], int max_x, int min_y,
       min_y =
 	((min_y) > (mv_predictor[j][1]) ? (mv_predictor[j][1]) : (min_y));
       min_r = ((min_r) > (ref[j]) ? (ref[j]) : (min_r));
-    }
+     } IACA_END
 }

@@ -14,8 +14,8 @@ fn (const uint8_t lsf_dim_codebook[3], int i, int16_t * lsfdeq,
 {
   int cb_pos = 0;
   for (j = 0; j < lsf_dim_codebook[i]; j++)
-    {
+     { IACA_START
       lsfdeq[pos + j] =
 	lsf_codebook[cb_pos + index[i] * lsf_dim_codebook[i] + j];
-    }
+     } IACA_END
 }

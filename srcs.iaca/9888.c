@@ -12,7 +12,7 @@ int
 fn (uint32_t * dst, int width, const uint8_t * alpha, int i)
 {
   for (i = 0; i < width; ++i)
-    {
+     { IACA_START
       dst[i] = alpha[i] << 8;
-    }
+     } IACA_END
 }

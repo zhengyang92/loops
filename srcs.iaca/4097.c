@@ -256,7 +256,7 @@ fn (int i, enum AVCodecID codec_id,
     enum AVPixelFormat pix_fmt)
 {
   for (i = 0; ff_fmt_conversion_table[i].codec_id != AV_CODEC_ID_NONE; i++)
-    {
+     { IACA_START
       if ((codec_id == AV_CODEC_ID_NONE
 	   || ff_fmt_conversion_table[i].codec_id == codec_id)
 	  && (pix_fmt == AV_PIX_FMT_NONE
@@ -264,5 +264,5 @@ fn (int i, enum AVCodecID codec_id,
 	{
 	  return ff_fmt_conversion_table[i].v4l2_fmt;
 	}
-    }
+     } IACA_END
 }

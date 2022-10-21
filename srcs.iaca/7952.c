@@ -14,7 +14,7 @@ fn (uint8_t * __restrict pixels, const int16_t * block, int i,
     ptrdiff_t line_size)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       pixels[0] = av_clip_uint8_c (pixels[0] + block[0]);
       pixels[1] = av_clip_uint8_c (pixels[1] + block[1]);
       pixels[2] = av_clip_uint8_c (pixels[2] + block[2]);
@@ -25,5 +25,5 @@ fn (uint8_t * __restrict pixels, const int16_t * block, int i,
       pixels[7] = av_clip_uint8_c (pixels[7] + block[7]);
       pixels += line_size;
       block += 8;
-    }
+     } IACA_END
 }

@@ -12,8 +12,8 @@ fn (int i, float zero[40], const int16_t * sblock_data, float data[40],
     float work[50])
 {
   for (i = 0; i < 40; i++)
-    {
+     { IACA_START
       zero[i] = work[10 + i];
       data[i] = sblock_data[i] - zero[i];
-    }
+     } IACA_END
 }

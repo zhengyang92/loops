@@ -11,7 +11,7 @@ int
 fn (int map, int i, int lo, int hi, uint8_t * out, int stride)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       if (map & 1)
 	out[0] = hi;
       else
@@ -30,5 +30,5 @@ fn (int map, int i, int lo, int hi, uint8_t * out, int stride)
 	out[3] = lo;
       map >>= 4;
       out += stride;
-    }
+     } IACA_END
 }

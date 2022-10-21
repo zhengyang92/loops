@@ -14,7 +14,7 @@ fn (const uint8_t * buf, uint8_t count, int code, uint8_t * samples,
 {
   int sample = 128;
   for (count++; count > 0; count--)
-    {
+     { IACA_START
       code = *buf++;
       sample += ws_adpcm_4bit[code & 0xF];
       sample = av_clip_uint8_c (sample);
@@ -22,5 +22,5 @@ fn (const uint8_t * buf, uint8_t count, int code, uint8_t * samples,
       sample += ws_adpcm_4bit[code >> 4];
       sample = av_clip_uint8_c (sample);
       *samples++ = sample;
-    }
+     } IACA_END
 }

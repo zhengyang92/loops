@@ -15,7 +15,7 @@ fn (const int no_p, uint8_t * pix, const int tc_2, const int tc, int d,
   int nd_p = 1;
   int nd_q = 1;
   for (d = 0; d < 4; d++)
-    {
+     { IACA_START
       const int p2 = pix[-3 * xstride];
       const int p1 = pix[-2 * xstride];
       const int p0 = pix[-1 * xstride];
@@ -46,4 +46,4 @@ fn (const int no_p, uint8_t * pix, const int tc_2, const int tc, int d,
 	    }
 	}
       pix += ystride;
-}}
+} IACA_END }

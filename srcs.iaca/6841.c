@@ -14,7 +14,7 @@ fn (int i, uint8_t bits2[1296], uint16_t syms[1296], const uint8_t * insyms,
 {
   int realsize = 0;
   for (i = 0; i < size; i++)
-    {
+     { IACA_START
       if (bits[i])
 	{
 	  bits2[realsize] = bits[i];
@@ -23,5 +23,5 @@ fn (int i, uint8_t bits2[1296], uint16_t syms[1296], const uint8_t * insyms,
 	  maxbits = ((maxbits) > (bits[i]) ? (maxbits) : (bits[i]));
 	  counts[bits[i]]++;
 	}
-    }
+     } IACA_END
 }

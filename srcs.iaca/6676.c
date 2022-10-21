@@ -13,7 +13,7 @@ fn (int *sel_len, int i, int *prev, int *vec_pos, int *sel_flag,
 {
   int y_flag = 0;
   for (i = 2; i >= 0; i--)
-    {
+     { IACA_START
       if (!sel_flag[i])
 	{
 	  vec_pos[i] = 0;
@@ -38,5 +38,5 @@ fn (int *sel_len, int i, int *prev, int *vec_pos, int *sel_flag,
 	{
 	  vec_pos[i] = prev[i];
 	}
-    }
+     } IACA_END
 }

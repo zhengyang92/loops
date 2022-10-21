@@ -12,7 +12,7 @@ fn (int pixel_countdown, int pixel_ptr, int pixel, int byte_run,
     unsigned char *pixels, int j)
 {
   for (j = 0; j < byte_run; j++, pixel_countdown -= 1)
-    {
+     { IACA_START
       do
 	{
 	  ((uint8_t *) (&pixels[pixel_ptr]))[0] = (pixel);
@@ -21,5 +21,5 @@ fn (int pixel_countdown, int pixel_ptr, int pixel, int byte_run,
 	}
       while (0);
       pixel_ptr += 3;
-    }
+     } IACA_END
 }

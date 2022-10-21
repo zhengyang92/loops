@@ -12,7 +12,7 @@ fn (int w, int high, int i, int h, int src_linesize, const uint8_t * src,
     int low, int j, uint8_t * dst)
 {
   for (i = 0; i < w; i++)
-    {
+     { IACA_START
       if (src[i] > high)
 	{
 	  dst[i] = src[i];
@@ -28,5 +28,5 @@ fn (int w, int high, int i, int h, int src_linesize, const uint8_t * src,
 	dst[i] = src[i];
       else
 	dst[i] = 0;
-    }
+     } IACA_END
 }

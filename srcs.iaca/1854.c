@@ -13,8 +13,8 @@ fn (uint32_t sum, uint8_t id, uint8_t i, uint8_t sel,
     const uint8_t bitalloc_12_bits[5][12], int *values, uint8_t n)
 {
   for (i = 0; i < n; i++)
-    {
+     { IACA_START
       id = values[i] - 1;
       sum += bitalloc_12_bits[sel][id];
-    }
+     } IACA_END
 }

@@ -11,8 +11,8 @@ int
 fn (int xpos, JSAMPLE * outptr, int padding)
 {
   for (xpos = 0; xpos < padding; xpos++)
-    {
+     { IACA_START
       *outptr = outptr[-1];
       outptr++;
-    }
+     } IACA_END
 }

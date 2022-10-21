@@ -13,7 +13,7 @@ fn (int32_t * dst, int t1, const uint8_t * flags, int i, int t0, int t3,
     int t4, const int32_t * src, int t2)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       if (flags[i])
 	{
 	  {
@@ -39,5 +39,5 @@ fn (int32_t * dst, int t1, const uint8_t * flags, int i, int t0, int t3,
 	dst[0] = dst[4] = dst[8] = dst[12] = 0;
       src++;
       dst++;
-    }
+     } IACA_END
 }

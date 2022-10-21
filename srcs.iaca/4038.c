@@ -14,8 +14,8 @@ fn (const char *name, const char *const spherical_projection_names[3], int i)
        i <
        (sizeof (spherical_projection_names) /
 	sizeof ((spherical_projection_names)[0])); i++)
-    {
+     { IACA_START
       if (av_strstart (name, spherical_projection_names[i], ((void *) 0)))
 	return i;
-    }
+     } IACA_END
 }

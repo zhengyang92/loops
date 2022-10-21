@@ -12,7 +12,7 @@ int
 fn (int y, int x, int16_t (*block)[64], uint16_t * dst, int stride)
 {
   for (x = 0; x < 8; x++)
-    {
+     { IACA_START
       int16_t *temp =
 	block[(x >> 2) + 2 * (y >> 2)] + 2 * (x & 3) + 2 * 8 * (y & 3);
       int cb = block[4][x + 8 * y];
@@ -33,4 +33,4 @@ fn (int y, int x, int16_t (*block)[64], uint16_t * dst, int stride)
       dst[1 + stride] =
 	((y + cb) >> 3) + (((y - cg) & 0xFC) << 3) + (((y + cr) & 0xF8) << 8);
       dst += 2;
-}}
+} IACA_END }

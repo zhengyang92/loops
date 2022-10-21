@@ -11,7 +11,7 @@ int
 fn (int *ptr, int i)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       const unsigned t0 = -39409U * ptr[7 * 1] - 58980U * ptr[1 * 1];
       const unsigned t1 = 39410U * ptr[1 * 1] - 58980U * ptr[7 * 1];
       const unsigned t2 = -33410U * ptr[5 * 1] - 167963U * ptr[3 * 1];
@@ -33,4 +33,4 @@ fn (int *ptr, int i)
       ptr[6 * 1] = (int) (-(t3 + t7) + t8 + tA) >> 13;
       ptr[7 * 1] = (int) (-(t1 + t6) + t9 + tB) >> 13;;
       ptr += 8;
-}}
+} IACA_END }

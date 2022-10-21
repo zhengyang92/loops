@@ -12,7 +12,7 @@ fn (int mv, const uint8_t ff_mpeg12_mbMotionVectorTable[17][2], int f_code,
     uint8_t mv_penalty[8][4097])
 {
   for (mv = -2048; mv <= 2048; mv++)
-    {
+     { IACA_START
       int len;
       if (mv == 0)
 	{
@@ -33,5 +33,5 @@ fn (int mv, const uint8_t ff_mpeg12_mbMotionVectorTable[17][2], int f_code,
 	    len = ff_mpeg12_mbMotionVectorTable[16][1] + 2 + bit_size;
 	}
       mv_penalty[f_code][mv + 2048] = len;
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ fn (uint64_t accu3, int i, uint64_t accu0, int n, uint64_t accu1,
     uint64_t accu, int (*x)[2], int nz, uint64_t accu2)
 {
   for (i = 0; i < n; i += 2)
-    {
+     { IACA_START
       accu0 += (int64_t) x[i + 0][0] * x[i + 0][0];
       accu1 += (int64_t) x[i + 0][1] * x[i + 0][1];
       accu2 += (int64_t) x[i + 1][0] * x[i + 1][0];
@@ -39,5 +39,5 @@ fn (uint64_t accu3, int i, uint64_t accu0, int n, uint64_t accu1,
 	  accu += accu0 + accu1 + accu2 + accu3;
 	  accu0 = accu1 = accu2 = accu3 = 0;
 	}
-    }
+     } IACA_END
 }

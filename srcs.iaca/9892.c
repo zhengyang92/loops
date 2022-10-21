@@ -13,8 +13,8 @@ fn (int i, int width, uint32_t alpha_and, uint8_t * dst,
     const uint8_t * alpha)
 {
   for (; i < width; ++i)
-    {
+     { IACA_START
       const uint32_t alpha_value = alpha[i];
       dst[4 * i] = alpha_value;
       alpha_and &= alpha_value;
-}}
+} IACA_END }

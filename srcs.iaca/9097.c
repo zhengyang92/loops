@@ -15,7 +15,7 @@ fn (unsigned int num, int32_t * dst, const uint16_t * const cf_table[16],
     unsigned int sx, unsigned int high, unsigned int i, unsigned int value)
 {
   for (i = 0; i < num; i++)
-    {
+     { IACA_START
       unsigned int range = high - low + 1;
       unsigned int target = (((value - low + 1) << 14) - 1) / range;
       unsigned int symbol = lut[target >> (14 - (14 - 8))] << delta;
@@ -50,5 +50,5 @@ fn (unsigned int num, int32_t * dst, const uint16_t * const cf_table[16],
 	  value = 2 * value + bitstream_read_bit (bc);
 	}
       *dst++ = symbol;
-    }
+     } IACA_END
 }

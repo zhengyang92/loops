@@ -20,11 +20,11 @@ fn (int num_codes, const int8_t mantissa_vlc_tab[18], int i,
     int selector, int *mantissas)
 {
   for (i = 0; i < num_codes; i++)
-    {
+     { IACA_START
       huff_symb =
 	bitstream_read_vlc (bc, spectral_coeff_tab[selector - 1].table,
 			    spectral_coeff_tab[selector - 1].bits, 3);
       mantissas[i * 2] = mantissa_vlc_tab[huff_symb * 2];
       mantissas[i * 2 + 1] = mantissa_vlc_tab[huff_symb * 2 + 1];
-    }
+     } IACA_END
 }

@@ -11,7 +11,7 @@ int
 fn (int i, uint8_t clip1[766])
 {
   for (i = -255; i <= 255 + 255; ++i)
-    {
+     { IACA_START
       clip1[255 + i] = clip_8b (i);
-    }
+     } IACA_END
 }

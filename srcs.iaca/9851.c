@@ -13,7 +13,7 @@ fn (OPJ_UINT32 i, OPJ_INT32 * __restrict c0, OPJ_UINT32 n,
     OPJ_INT32 * __restrict c2, OPJ_INT32 * __restrict c1)
 {
   for (i = 0; i < n; ++i)
-    {
+     { IACA_START
       OPJ_INT32 r = c0[i];
       OPJ_INT32 g = c1[i];
       OPJ_INT32 b = c2[i];
@@ -32,5 +32,5 @@ fn (OPJ_UINT32 i, OPJ_INT32 * __restrict c0, OPJ_UINT32 n,
       c0[i] = y;
       c1[i] = u;
       c2[i] = v;
-    }
+     } IACA_END
 }

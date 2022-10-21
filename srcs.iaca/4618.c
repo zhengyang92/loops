@@ -14,7 +14,7 @@ fn (int sb, unsigned int cur_s, int32_t * current_res, unsigned int sx[8],
     unsigned int cur_k, unsigned int start, GetBitContext * gb)
 {
   for (; start < sb_length; start++)
-    {
+     { IACA_START
       int32_t res = *current_res;
       if (res == cur_tail_code)
 	{
@@ -44,5 +44,5 @@ fn (int sb, unsigned int cur_s, int32_t * current_res, unsigned int sx[8],
 	    }
 	}
       *current_res++ = res;
-    }
+     } IACA_END
 }

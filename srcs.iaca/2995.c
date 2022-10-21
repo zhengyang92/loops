@@ -13,7 +13,7 @@ fn (uint32_t N, int i, const uint32_t * const ff_celt_pvq_u_row[15],
 {
   int sum = 0;
   for (i = N - 1; i >= 0; i--)
-    {
+     { IACA_START
       const uint32_t i_s =
 	(ff_celt_pvq_u_row
 	 [((N - i) >
@@ -62,4 +62,4 @@ fn (uint32_t N, int i, const uint32_t * const ff_celt_pvq_u_row[15],
 	(ff_celt_pvq_u_row[((N - i) > (sum) ? (sum) : (N - i))]
 	 [((N - i) > (sum) ? (N - i) : (sum))]) + (y[i] < 0) * i_s;
       sum += ((y[i]) >= 0 ? (y[i]) : (-(y[i])));
-}}
+} IACA_END }

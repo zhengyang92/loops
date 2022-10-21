@@ -13,7 +13,7 @@ fn (const uint8_t scan8[51], int i, const int8_t top[12], void *logctx,
     int8_t * pred_mode_cache)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       int status = top[pred_mode_cache[scan8[0] + i]];
       if (status < 0)
 	{
@@ -26,5 +26,5 @@ fn (const uint8_t scan8[51], int i, const int8_t top[12], void *logctx,
 	{
 	  pred_mode_cache[scan8[0] + i] = status;
 	}
-    }
+     } IACA_END
 }

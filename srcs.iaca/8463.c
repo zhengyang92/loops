@@ -12,7 +12,7 @@ fn (uint16_t * inrow, const int w, int j, uint16_t * outrow,
     const uint16_t (*tab)[65536], const int step)
 {
   for (j = 0; j < w; j++)
-    {
+     { IACA_START
       switch (step)
 	{
 	case 4:
@@ -26,5 +26,5 @@ fn (uint16_t * inrow, const int w, int j, uint16_t * outrow,
 	}
       outrow += step;
       inrow += step;
-    }
+     } IACA_END
 }

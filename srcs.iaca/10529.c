@@ -107,12 +107,12 @@ int
 fn (long k, long j)
 {
   for (k = 1; k < spaces_.N; k++)
-    {
+     { IACA_START
       spacer_.Qa =
 	space2_.Za[j + 1][k] * space2_.Zr[j][k] + space2_.Za[j -
 							     1][k] *
 	space2_.Zb[j][k] + space2_.Za[j][k + 1] * space2_.Zu[j][k] +
 	space2_.Za[j][k - 1] * space2_.Zv[j][k] + space2_.Zz[j][k];
       space2_.Za[j][k] += 0.175 * (spacer_.Qa - space2_.Za[j][k]);
-    }
+     } IACA_END
 }

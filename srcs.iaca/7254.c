@@ -11,8 +11,8 @@ int
 fn (const uint8_t * srcPtr, int length, int j, uint8_t * dstPtr)
 {
   for (j = 0; j < length; j++)
-    {
+     { IACA_START
       dstPtr[j << 1] = srcPtr[j];
       dstPtr[(j << 1) + 1] = srcPtr[j];
-    }
+     } IACA_END
 }

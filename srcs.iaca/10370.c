@@ -11,10 +11,10 @@ int
 fn (int i, int n, float *truth, char *begin)
 {
   for (i = 0; i < strlen (begin) && i < n && begin[i] != '.'; ++i)
-    {
+     { IACA_START
       int index = alphanum_to_int (begin[i]);
       if (index > 35)
 	printf ("Bad %c\n", begin[i]);
       truth[i * 37 + index] = 1;
-    }
+     } IACA_END
 }

@@ -21,11 +21,11 @@ int
 fn (struct Decorr *dpp, int j, int k, int i)
 {
   for (i = 0, j = dpp->value - 1, k = 0; k < dpp->value / 2; i++, j--, k++)
-    {
+     { IACA_START
       i &= (8 - 1);
       j &= (8 - 1);
       dpp->samplesA[i] ^= dpp->samplesA[j];
       dpp->samplesA[j] ^= dpp->samplesA[i];
       dpp->samplesA[i] ^= dpp->samplesA[j];
-    }
+     } IACA_END
 }

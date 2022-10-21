@@ -13,7 +13,7 @@ fn (const int cat, int v, VP8BitReader * const br,
     const uint8_t * const kCat3456[4], const uint8_t * tab)
 {
   for (tab = kCat3456[cat]; *tab; ++tab)
-    {
+     { IACA_START
       v += v + VP8GetBit (br, *tab);
-    }
+     } IACA_END
 }

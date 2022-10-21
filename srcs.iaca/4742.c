@@ -12,7 +12,7 @@ int
 fn (int y, int prev_dc, ptrdiff_t stride, int x, int width, int16_t * data)
 {
   for (x = 1; x < width - 1; x++)
-    {
+     { IACA_START
       int dc;
       dc = -prev_dc + data[x + y * stride] * 8 - data[x + 1 + y * stride];
       dc =
@@ -20,4 +20,4 @@ fn (int y, int prev_dc, ptrdiff_t stride, int x, int width, int16_t * data)
 	 * 10923 + 32768) >> 16;
       prev_dc = data[x + y * stride];
       data[x + y * stride] = dc;
-}}
+} IACA_END }

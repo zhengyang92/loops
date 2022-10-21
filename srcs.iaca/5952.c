@@ -12,9 +12,9 @@ int
 fn (int x, int width, BitstreamContext * bc, uint8_t * dst, uint8_t (*lru)[8])
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       dst[x * 3 + 0] = decode_sym (bc, lru[0]);
       dst[x * 3 + 1] = decode_sym (bc, lru[1]);
       dst[x * 3 + 2] = decode_sym (bc, lru[2]);
-    }
+     } IACA_END
 }

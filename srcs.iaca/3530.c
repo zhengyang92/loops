@@ -14,7 +14,7 @@ fn (unsigned int d1, int i, unsigned int b1, ptrdiff_t stride,
     unsigned int c1, int16_t tmp[16], unsigned int a1, uint8_t * dst)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       a1 = (tmp[i + 0] + tmp[i + 8]) * 23170;
       b1 = (tmp[i + 0] - tmp[i + 8]) * 23170;
       c1 = tmp[i + 4] * 12540 - tmp[i + 12] * 30274;
@@ -31,4 +31,4 @@ fn (unsigned int d1, int i, unsigned int b1, ptrdiff_t stride,
       dst[2 * stride + i] =
 	av_clip_uint8_c (dst[2 * stride + i] +
 			 ((int) (b1 - c1 + 0x20000) >> 18));
-}}
+} IACA_END }

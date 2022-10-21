@@ -13,7 +13,7 @@ fn (int hasAlpha, int i, const int16_t * buf0, int dstW,
     const int16_t * abuf0, uint8_t * dest)
 {
   for (i = 0; i < dstW; i++)
-    {
+     { IACA_START
       int Y = (buf0[i] + 64) >> 7;
       int A;
       Y = av_clip_uint8_c (Y);
@@ -25,5 +25,5 @@ fn (int hasAlpha, int i, const int16_t * buf0, int dstW,
 	}
       dest[i * 2] = Y;
       dest[i * 2 + 1] = hasAlpha ? A : 255;
-    }
+     } IACA_END
 }

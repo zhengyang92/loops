@@ -12,11 +12,11 @@ fn (float lowest, int i, float workT[32])
 {
   int low_indx = 0;
   for (i = 0; i < 32; i++)
-    {
+     { IACA_START
       if (workT[i] < lowest)
 	{
 	  lowest = workT[i];
 	  low_indx = i;
 	}
-    }
+     } IACA_END
 }

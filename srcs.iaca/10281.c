@@ -11,7 +11,7 @@ int
 fn (stbi_uc * o, int i, int val[64], int *v, int out_stride, stbi_uc * out)
 {
   for (i = 0, v = val, o = out; i < 8; ++i, v += 8, o += out_stride)
-    {
+     { IACA_START
       int t0, t1, t2, t3, p1, p2, p3, p4, p5, x0, x1, x2, x3;
       p2 = v[2];
       p3 = v[6];
@@ -59,4 +59,4 @@ fn (stbi_uc * o, int i, int val[64], int *v, int out_stride, stbi_uc * out)
       o[5] = stbi__clamp ((x2 - t1) >> 17);
       o[3] = stbi__clamp ((x3 + t0) >> 17);
       o[4] = stbi__clamp ((x3 - t0) >> 17);
-}}
+} IACA_END }

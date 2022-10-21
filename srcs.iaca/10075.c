@@ -12,12 +12,12 @@ fn (uint32_t * palette, int i, uint32_t predict, int num_colors, int k,
     int best_ix, uint32_t best_score)
 {
   for (k = i; k < num_colors; ++k)
-    {
+     { IACA_START
       const uint32_t cur_score = PaletteColorDistance (palette[k], predict);
       if (best_score > cur_score)
 	{
 	  best_score = cur_score;
 	  best_ix = k;
 	}
-    }
+     } IACA_END
 }

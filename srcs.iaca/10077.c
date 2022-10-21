@@ -16,7 +16,7 @@ fn (const uint32_t * prev_row, int kHistoBlueSubGreen,
     uint32_t pix_prev, int kHistoBluePredSubGreen, int kHistoBlue)
 {
   for (x = 0; x < width; ++x)
-    {
+     { IACA_START
       const uint32_t pix = curr_row[x];
       const uint32_t pix_diff = VP8LSubPixels (pix, pix_prev);
       pix_prev = pix;
@@ -36,4 +36,4 @@ fn (const uint32_t * prev_row, int kHistoBlueSubGreen,
       {
 	const uint32_t hash = HashPix (pix);
 	++histo[kHistoPalette * 256 + hash];
-}}}
+} IACA_END }}

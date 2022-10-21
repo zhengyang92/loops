@@ -11,7 +11,7 @@ int
 fn (int i, int x, int min, const uint8_t ** coordinates, int coord, int limit)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       if (coord & (1 << i))
 	{
 	  min =
@@ -19,5 +19,5 @@ fn (int i, int x, int min, const uint8_t ** coordinates, int coord, int limit)
 	     (*(coordinates[i] + x)) ? (*(coordinates[i] + x)) : (min));
 	}
       min = ((min) > (limit) ? (min) : (limit));
-    }
+     } IACA_END
 }

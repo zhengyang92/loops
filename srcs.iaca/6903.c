@@ -11,7 +11,7 @@ int
 fn (int i, BitstreamContext * bc, int wlength, int mode, int coding_mode[128])
 {
   for (i = 1; i < wlength; i++)
-    {
+     { IACA_START
       int c = get_unary (bc, 1, 6);
       switch (c)
 	{
@@ -34,5 +34,5 @@ fn (int i, BitstreamContext * bc, int wlength, int mode, int coding_mode[128])
 	  break;
 	}
       coding_mode[i] = mode;
-    }
+     } IACA_END
 }

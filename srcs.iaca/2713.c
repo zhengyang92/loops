@@ -11,7 +11,7 @@ int
 fn (int16_t * buf, int j, int16_t tmp[64], int i)
 {
   for (j = 0; j < 8; j++)
-    {
+     { IACA_START
       (buf[j]) += (tmp[i * 8 + j] >> 1);
-    }
+     } IACA_END
 }

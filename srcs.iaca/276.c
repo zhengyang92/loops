@@ -13,7 +13,7 @@ fn (float max, const float rng, float tol, float *x, int N)
   float prev_p = 0.f;
   float min = 3.40282347e+38F;
   for (int i = 0; i < N; i++)
-    {
+     { IACA_START
       const float d = x[((i + 1) > (N) ? (N) : (i + 1))] - x[i];
       const float p =
 	ceilf (fabsf (d) / rng) * rng * (((d < tol) > 0.f) -
@@ -22,4 +22,4 @@ fn (float max, const float rng, float tol, float *x, int N)
       prev_p += p;
       max = fmaxf (x[i], max);
       min = fminf (x[i], min);
-}}
+} IACA_END }

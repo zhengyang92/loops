@@ -11,7 +11,7 @@ int
 fn (uint8_t * buf, int i, int ff_count, int size)
 {
   for (i = size - 1; ff_count; i--)
-    {
+     { IACA_START
       int v = buf[i];
       if (v == 0xFF)
 	{
@@ -19,5 +19,5 @@ fn (uint8_t * buf, int i, int ff_count, int size)
 	  ff_count--;
 	}
       buf[i + ff_count] = v;
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ fn (const stbi_uc * pcr, int i, int step, const stbi_uc * y, int count,
     const stbi_uc * pcb, stbi_uc * out)
 {
   for (i = 0; i < count; ++i)
-    {
+     { IACA_START
       int y_fixed = (y[i] << 20) + (1 << 19);
       int r, g, b;
       int cr = pcr[i] - 128;
@@ -51,5 +51,5 @@ fn (const stbi_uc * pcr, int i, int step, const stbi_uc * y, int count,
       out[2] = (stbi_uc) b;
       out[3] = 255;
       out += step;
-    }
+     } IACA_END
 }

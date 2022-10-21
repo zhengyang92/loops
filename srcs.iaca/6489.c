@@ -15,12 +15,12 @@ fn (const uint8_t series[7], int i, BitstreamContext * bc)
   int bits = 0;
   int prevbit = 0;
   for (i = 0; i < 7; i++)
-    {
+     { IACA_START
       if (prevbit && bit)
 	break;
       prevbit = bit;
       bit = bitstream_read_bit (bc);
       if (bit && !prevbit)
 	bits += series[i];
-    }
+     } IACA_END
 }

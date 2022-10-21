@@ -12,7 +12,7 @@ fn (int count, const char *sep, int i, char *ap0, double *dp,
     uint64_t component_len, char *ap)
 {
   for (i = 0; i < count; i++)
-    {
+     { IACA_START
       unsigned l = snprintf (ap, component_len, "%.15g%s", dp[i], sep);
       if (l >= component_len)
 	{
@@ -20,4 +20,4 @@ fn (int count, const char *sep, int i, char *ap0, double *dp,
 	  return ((void *) 0);
 	}
       ap += l;
-}}
+} IACA_END }

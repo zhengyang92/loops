@@ -12,7 +12,7 @@ int
 fn (int i, ptrdiff_t linesize, uint8_t * b, uint8_t * d, uint8_t * c_ptr)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       d = c_ptr + (linesize << 3);
       b[0] = c_ptr[0];
       b[1] = c_ptr[1];
@@ -24,5 +24,5 @@ fn (int i, ptrdiff_t linesize, uint8_t * b, uint8_t * d, uint8_t * c_ptr)
       b[7] = d[3];
       c_ptr += linesize;
       b += 16;
-    }
+     } IACA_END
 }

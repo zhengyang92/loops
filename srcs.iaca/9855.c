@@ -13,8 +13,8 @@ fn (OPJ_INT32 * lCurrentData, OPJ_INT32 ** lData, OPJ_INT32 * lMctPtr,
     OPJ_UINT32 pNbComp, OPJ_UINT32 j, OPJ_UINT32 k)
 {
   for (k = 0; k < pNbComp; ++k)
-    {
+     { IACA_START
       *(lData[j]) += opj_int_fix_mul (*lMctPtr, lCurrentData[k]);
       ++lMctPtr;
-    }
+     } IACA_END
 }

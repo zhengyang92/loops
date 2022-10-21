@@ -13,7 +13,7 @@ fn (float snr_limit, int i, int *bandWidthT, float workT2[32],
     float *flcoeffs1, float workT3[32])
 {
   for (i = 0; i < 32; i++)
-    {
+     { IACA_START
       flcoeffs5[i] = workT2[i] = 0.0;
       if (bandWidthT[i])
 	{
@@ -28,5 +28,5 @@ fn (float snr_limit, int i, int *bandWidthT, float workT2[32],
       workT3[i] = bandWidthT[i] * workT1[i] * 0.01;
       if (workT3[i] <= snr_limit)
 	workT3[i] = 0.0;
-    }
+     } IACA_END
 }

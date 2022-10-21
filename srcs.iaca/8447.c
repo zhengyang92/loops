@@ -12,7 +12,7 @@ fn (const float *src_b, int w, const float *src_g, const float *src_r, int x,
     uint8_t * dstp_b, uint8_t * dstp_g, uint8_t * dstp_r)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       dstp_r[x] =
 	av_clip_uint8_c (src_r[x] * 0.5773502691896258f +
 			 src_g[x] * 0.7071067811865475f +
@@ -24,5 +24,5 @@ fn (const float *src_b, int w, const float *src_g, const float *src_r, int x,
 	av_clip_uint8_c (src_r[x] * 0.5773502691896258f +
 			 src_g[x] * -0.7071067811865475f +
 			 src_b[x] * 0.4082482904638631f);
-    }
+     } IACA_END
 }

@@ -11,8 +11,8 @@ int
 fn (float c, int i, float *work, float g, const float *data)
 {
   for (i = 0; i < 40; i++)
-    {
+     { IACA_START
       g += work[i] * work[i];
       c += data[i] * work[i];
-    }
+     } IACA_END
 }

@@ -13,10 +13,10 @@ fn (int i, int min_width, int B, int C, const ptrdiff_t stride2, int A,
     uint8_t * bsrc)
 {
   for (i = 1; i < min_width; i++)
-    {
+     { IACA_START
       A = bsrc[i - stride2];
       B = bsrc[i - (stride2 + 1)];
       C = bsrc[i - 1];
       bsrc[i] = (A - B + C + bsrc[i]) & 0xFF;
-    }
+     } IACA_END
 }

@@ -11,7 +11,8 @@ typedef __uint64_t uint64_t;
 int
 fn (uint32_t occ[256], int i, uint32_t l2tab[256], int m, uint64_t len)
 {
-  for (m = 1; m < 256; m++)
+  for (m = 1; m < 256; m++) {
+	  IACA_START
     if (occ[m])
       {
 	len +=
@@ -19,4 +20,6 @@ fn (uint32_t occ[256], int i, uint32_t l2tab[256], int m, uint64_t len)
 	   ((i * (uint64_t) l2tab[m] +
 	     (256 - i) * (uint64_t) l2tab[256 - m]) >> 8)) >> 8;
       }
+  }
+  IACA_END
 }

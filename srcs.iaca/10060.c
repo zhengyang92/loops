@@ -14,7 +14,7 @@ fn (uint8_t * u_ptr, const uint8_t * a_ptr, const int a_stride, int values[3],
 {
   int need_reset = 1;
   for (x = 0; x + 8 <= width; x += 8)
-    {
+     { IACA_START
       if (SmoothenBlock (a_ptr + x, a_stride, y_ptr + x, y_stride, 8, 8))
 	{
 	  if (need_reset)
@@ -32,5 +32,5 @@ fn (uint8_t * u_ptr, const uint8_t * a_ptr, const int a_stride, int values[3],
 	{
 	  need_reset = 1;
 	}
-    }
+     } IACA_END
 }

@@ -14,8 +14,8 @@ fn (unsigned int tmp, unsigned int shift, uint16_t * dstPtr2,
     const int dst_depth)
 {
   for (; j < length; j++)
-    {
+     { IACA_START
       tmp = ((srcPtr2[j]) + dither[j & 7]) >> shift;
       dstPtr2[j] = av_bswap16 (tmp - (tmp >> dst_depth));
-    }
+     } IACA_END
 }

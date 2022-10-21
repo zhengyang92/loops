@@ -13,8 +13,8 @@ fn (unsigned char palette_idx2, unsigned char palette_idx1,
     int j)
 {
   for (j = 0; j < byte_run; j++, pixel_countdown -= 2)
-    {
+     { IACA_START
       pixels[pixel_ptr++] = palette_idx1;
       pixels[pixel_ptr++] = palette_idx2;
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ fn (int count, uint8_t * dst, int offset)
 {
   int oi = 0;
   for (int j = 0; j < count * 2; j++)
-    {
+     { IACA_START
       dst[oi] = dst[oi - offset];
       oi++;
-}}
+} IACA_END }

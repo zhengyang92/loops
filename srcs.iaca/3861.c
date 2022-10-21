@@ -12,7 +12,7 @@ fn (const uint16_t ** src, int scale_low, uint16_t * dest, int x, int width,
     int scale_high, uint16_t component)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       component = av_bswap16 (src[0][x]);
       *dest++ = av_bswap16 (component << scale_high | component >> scale_low);
       component = av_bswap16 (src[1][x]);
@@ -21,5 +21,5 @@ fn (const uint16_t ** src, int scale_low, uint16_t * dest, int x, int width,
       *dest++ = av_bswap16 (component << scale_high | component >> scale_low);
       component = av_bswap16 (src[3][x]);
       *dest++ = av_bswap16 (component << scale_high | component >> scale_low);
-    }
+     } IACA_END
 }

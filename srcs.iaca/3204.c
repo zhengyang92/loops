@@ -13,7 +13,7 @@ fn (int bias, int i, ptrdiff_t stride, uint8_t * src, int h, const int A,
     uint8_t * dst, const ptrdiff_t step, const int E)
 {
   for (i = 0; i < h; i++)
-    {
+     { IACA_START
       dst[0] =
 	(((dst[0]) + (((A * src[0] + E * src[step + 0] + bias)) >> 6) +
 	  1) >> 1);
@@ -40,5 +40,5 @@ fn (int bias, int i, ptrdiff_t stride, uint8_t * src, int h, const int A,
 	  1) >> 1);
       dst += stride;
       src += stride;
-    }
+     } IACA_END
 }

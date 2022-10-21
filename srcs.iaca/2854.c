@@ -14,7 +14,7 @@ fn (uint16_t ff_band_index_long[9][23],
   int k = 0;
   int i = 0;
   for (int j = 0; j < 22; j++)
-    {
+     { IACA_START
       ff_band_index_long[i][j] = k;
       k += ff_band_size_long[i][j] >> 1;
-}}
+} IACA_END }

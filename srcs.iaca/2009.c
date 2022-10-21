@@ -13,7 +13,7 @@ int
 fn (int32_t im, uint64_t * freq, GetBitContext gbit, int32_t iM)
 {
   for (; im <= iM; im++)
-    {
+     { IACA_START
       uint64_t l = freq[im] = get_bits (&gbit, 6);
       if (l == 63)
 	{
@@ -37,5 +37,5 @@ fn (int32_t im, uint64_t * freq, GetBitContext gbit, int32_t iM)
 	    freq[im++] = 0;
 	  im--;
 	}
-    }
+     } IACA_END
 }

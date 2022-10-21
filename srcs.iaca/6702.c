@@ -13,8 +13,8 @@ fn (unsigned int N0, float *X, unsigned int cm, int k,
 {
   int recombine = 0;
   for (k = 0; k < recombine; k++)
-    {
+     { IACA_START
       cm = celt_bit_deinterleave[cm];
       celt_haar1 (X, N0 >> k, 1 << k);
-    }
+     } IACA_END
 }

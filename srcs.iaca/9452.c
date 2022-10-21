@@ -12,7 +12,8 @@ int
 fn (int next_code, int i, uint32_t codes[270], uint8_t bits[270],
     int surplus_codes, const int alphabet_size, int current_length)
 {
-  for (i = 0; i < alphabet_size; i++)
+  for (i = 0; i < alphabet_size; i++) {
+	  IACA_START
     if (!bits[i])
       {
 	if (surplus_codes-- == 0)
@@ -23,4 +24,5 @@ fn (int next_code, int i, uint32_t codes[270], uint8_t bits[270],
 	bits[i] = current_length;
 	codes[i] = next_code++;
       }
+  } IACA_END
 }

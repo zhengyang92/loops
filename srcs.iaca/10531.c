@@ -52,12 +52,12 @@ int
 fn (long k)
 {
   for (k = 0; k < alpha_.Mk; k++)
-    {
+     { IACA_START
       beta_.Times[k][alpha_.Il - 1][alpha_.Jr - 1] = space0_.Time[k];
       beta_.Fopn[k][alpha_.Il - 1][alpha_.Jr - 1] = space0_.Flopn[k];
       beta_.Terrs[k][alpha_.Il - 1][alpha_.Jr - 1] = space0_.Terr1[k];
       alpha_.Npfs[k][alpha_.Il - 1][alpha_.Jr - 1] = space0_.Npfs1[k];
       beta_.Csums[k][alpha_.Il - 1][alpha_.Jr - 1] = space0_.Csum[k];
       beta_.Dos[k][alpha_.Il - 1][alpha_.Jr - 1] = space0_.Total[k];
-    }
+     } IACA_END
 }

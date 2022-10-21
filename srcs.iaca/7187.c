@@ -11,7 +11,7 @@ int
 fn (const uint8_t * src, int width, uint8_t * dst, int i)
 {
   for (i = 0; i < width; i++)
-    {
+     { IACA_START
       int b = src[i * 3 + 0];
       int g = src[i * 3 + 1];
       int r = src[i * 3 + 2];
@@ -20,4 +20,4 @@ fn (const uint8_t * src, int width, uint8_t * dst, int i)
 	  ((int) (0.587 * 219 / 255 * (1 << 15) + 0.5)) * g +
 	  ((int) (0.114 * 219 / 255 * (1 << 15) + 0.5)) * b +
 	  (33 << (15 - 1))) >> 15);
-}}
+} IACA_END }

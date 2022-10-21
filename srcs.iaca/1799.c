@@ -13,7 +13,7 @@ fn (ptrdiff_t low_stride, ptrdiff_t high_stride, ptrdiff_t in_stride, int len,
     int16_t * low, int16_t * input, int16_t * high)
 {
   for (int i = 2; i < len - 2; i += 2)
-    {
+     { IACA_START
       low[(i >> 1) * low_stride] =
 	av_clip_int16_c (input[i * in_stride] + input[(i + 1) * in_stride]);
       high[(i >> 1) * high_stride] =
@@ -24,4 +24,4 @@ fn (ptrdiff_t low_stride, ptrdiff_t high_stride, ptrdiff_t in_stride, int len,
 									  0) *
 									 in_stride]
 			 - input[(i + 1) * in_stride]);
-}}
+} IACA_END }

@@ -13,8 +13,8 @@ fn (int i, int32_t ** filterPos, int64_t * filter, int filterSize,
     const int64_t fone, int dstW)
 {
   for (i = 0; i < dstW; i++)
-    {
+     { IACA_START
       filter[i * filterSize] = fone;
       (*filterPos)[i] = i;
-    }
+     } IACA_END
 }

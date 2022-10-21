@@ -13,7 +13,7 @@ fn (int temp, int offset, int min_rate_categories[28], int number_of_regions,
 {
   int raw_min_idx = 16;
   for (region = number_of_regions - 1; region >= 0; region--)
-    {
+     { IACA_START
       if (min_rate_categories[region] < 7)
 	{
 	  temp =
@@ -25,5 +25,5 @@ fn (int temp, int offset, int min_rate_categories[28], int number_of_regions,
 	      raw_min_idx = region;
 	    }
 	}
-    }
+     } IACA_END
 }

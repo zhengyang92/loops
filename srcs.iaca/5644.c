@@ -29,8 +29,8 @@ fn (int64_t size, int i, uint32_t dpds_table_size, AVIOContext * pb,
     uint32_t * dpds_table)
 {
   for (i = 0; i < dpds_table_size; ++i)
-    {
+     { IACA_START
       dpds_table[i] = avio_rl32 (pb);
       size -= 4;
-    }
+     } IACA_END
 }

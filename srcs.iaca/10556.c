@@ -12,7 +12,7 @@ fn (Int32 alphaSize, Int32 heap[260], Int32 nHeap, Int32 i, Int32 weight[516],
     Int32 parent[516])
 {
   for (i = 1; i <= alphaSize; i++)
-    {
+     { IACA_START
       parent[i] = -1;
       nHeap++;
       heap[nHeap] = i;
@@ -27,5 +27,5 @@ fn (Int32 alphaSize, Int32 heap[260], Int32 nHeap, Int32 i, Int32 weight[516],
 	  }
 	heap[zz] = tmp;
       };
-    }
+     } IACA_END
 }

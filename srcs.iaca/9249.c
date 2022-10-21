@@ -12,7 +12,7 @@ fn (int alpha, uint16_t * pix, int d, int xstride, int inner_iters, int beta,
     int ystride)
 {
   for (d = 0; d < 4 * inner_iters; d++)
-    {
+     { IACA_START
       const int p0 = pix[-1 * xstride];
       const int p1 = pix[-2 * xstride];
       const int q0 = pix[0];
@@ -25,5 +25,5 @@ fn (int alpha, uint16_t * pix, int d, int xstride, int inner_iters, int beta,
 	  pix[0] = (2 * q1 + q0 + p1 + 2) >> 2;
 	}
       pix += ystride;
-    }
+     } IACA_END
 }

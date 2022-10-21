@@ -23,8 +23,8 @@ fn (int32_t temp_A[8], struct Decorr *dpp, int m)
 {
   int i = 0;
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       dpp->samplesA[i] = temp_A[m];
       m = (m + 1) & (8 - 1);
-    }
+     } IACA_END
 }

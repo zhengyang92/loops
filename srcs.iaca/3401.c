@@ -12,7 +12,7 @@ fn (int dst_size, const unsigned char *src, int i, unsigned char *dst,
     int code_table[64], const unsigned char *src_end, int len)
 {
   for (i = 0; i < 64 && dst_size > 0; i++)
-    {
+     { IACA_START
       len = code_table[i];
       if (len < 0)
 	{
@@ -29,4 +29,4 @@ fn (int dst_size, const unsigned char *src, int i, unsigned char *dst,
 	  src += len;
 	} dst += len;
       dst_size -= len;
-}}
+} IACA_END }

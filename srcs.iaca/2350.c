@@ -12,10 +12,10 @@ fn (int stride, int H, const uint8_t * src2, const uint8_t * const src0,
     int k, const uint8_t * src1, int V)
 {
   for (k = 2; k <= 4; ++k)
-    {
+     { IACA_START
       src1 += stride;
       src2 -= stride;
       H += k * (src0[k] - src0[-k]);
       V += k * (src1[0] - src2[0]);
-    }
+     } IACA_END
 }

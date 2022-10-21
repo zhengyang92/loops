@@ -11,8 +11,8 @@ int
 fn (int i, int n, float (*out)[38][64], float (*in)[32][2], int len)
 {
   for (n = 0; n < len; n++)
-    {
+     { IACA_START
       out[0][n][i] = in[i][n][0];
       out[1][n][i] = in[i][n][1];
-    }
+     } IACA_END
 }

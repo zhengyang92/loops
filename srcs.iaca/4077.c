@@ -17,7 +17,7 @@ fn (TXComplex * data, const int len2, const int len4, const TXSample * tsin,
     const TXSample * fact, const TXSample * tcos, TXComplex t[3])
 {
   for (int i = 1; i < len4; i++)
-    {
+     { IACA_START
       t[0].re =
 	(((((int64_t) (fact[4])) *
 	   (int64_t) ((data[i].re + data[len2 - i].re))) + 0x40000000) >> 31);
@@ -45,5 +45,5 @@ fn (TXComplex * data, const int len2, const int len4, const TXSample * tsin,
       data[i].im = t[2].im - t[0].im;
       data[len2 - i].re = t[0].re - t[2].re;
       data[len2 - i].im = t[2].im + t[0].im;
-    }
+     } IACA_END
 }

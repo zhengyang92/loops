@@ -14,7 +14,7 @@ fn (float h13, float hs12, float h10, float hs11, float hs01, float h01,
     float hs00, float h12)
 {
   for (n = 0; n < len; n++)
-    {
+     { IACA_START
       float l_re = l[n][0];
       float l_im = l[n][1];
       float r_re = r[n][0];
@@ -31,4 +31,4 @@ fn (float h13, float hs12, float h10, float hs11, float hs01, float h01,
       l[n][1] = h00 * l_im + h02 * r_im + h10 * l_re + h12 * r_re;
       r[n][0] = h01 * l_re + h03 * r_re - h11 * l_im - h13 * r_im;
       r[n][1] = h01 * l_im + h03 * r_im + h11 * l_re + h13 * r_re;
-}}
+} IACA_END }

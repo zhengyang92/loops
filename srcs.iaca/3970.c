@@ -11,7 +11,7 @@ int
 fn (const int16_t ** tmpU, int i, const int vChrFilterSize)
 {
   for (; i < vChrFilterSize; i++)
-    {
+     { IACA_START
       tmpU[i] = tmpU[i - 1];
-    }
+     } IACA_END
 }

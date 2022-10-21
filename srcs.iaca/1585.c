@@ -11,7 +11,7 @@ int
 fn (int buf_size, const uint8_t * buf, int i)
 {
   for (i = 1; i < buf_size; i += 2)
-    {
+     { IACA_START
       if (buf[i] == 0x77 || buf[i] == 0x0B)
 	{
 	  if ((buf[i] ^ buf[i - 1]) == (0x77 ^ 0x0B))
@@ -24,5 +24,5 @@ fn (int buf_size, const uint8_t * buf, int i)
 	      break;
 	    }
 	}
-    }
+     } IACA_END
 }

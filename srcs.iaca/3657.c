@@ -23,9 +23,9 @@ fn (int32_t temp_A[8], struct Decorr *dpp, int32_t temp_B[8], int k)
 {
   int m = 0;
   for (k = 0; k < 8; k++)
-    {
+     { IACA_START
       dpp->samplesA[k] = temp_A[m];
       dpp->samplesB[k] = temp_B[m];
       m = (m + 1) & (8 - 1);
-    }
+     } IACA_END
 }

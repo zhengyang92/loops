@@ -12,7 +12,7 @@ fn (float t, float *coeffs)
 {
   float sum = 0.f;
   for (int i = 0; i < 4; i++)
-    {
+     { IACA_START
       const float x = 3.14159265358979323846 * (t - i + 1);
       if (x == 0.f)
 	{
@@ -23,5 +23,5 @@ fn (float t, float *coeffs)
 	  coeffs[i] = sinf (x) * sinf (x / 2.f) / (x * x / 2.f);
 	}
       sum += coeffs[i];
-    }
+     } IACA_END
 }

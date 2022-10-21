@@ -11,7 +11,7 @@ int
 fn (int j, uint8_t * dst[4], int w)
 {
   for (j = 0; j < w; j++)
-    {
+     { IACA_START
       int k = dst[3][j];
       int r = (255 - dst[0][j]) * k;
       int g = (128 - dst[1][j]) * k;
@@ -20,4 +20,4 @@ fn (int j, uint8_t * dst[4], int w)
       dst[1][j] = (g * 257 >> 16) + 128;
       dst[2][j] = (b * 257 >> 16) + 128;
       dst[3][j] = 255;
-}}
+} IACA_END }

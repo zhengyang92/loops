@@ -14,7 +14,7 @@ fn (const int sblinesize, const int bh, const int srlinesize, const int w,
     const uint8_t * sg, const int sglinesize, int by)
 {
   for (int x = 0; x < w; x++)
-    {
+     { IACA_START
       int rx = (x - rh) % w;
       int gx = (x - gh) % w;
       int bx = (x - bh) % w;
@@ -27,5 +27,5 @@ fn (const int sblinesize, const int bh, const int srlinesize, const int w,
       dr[x] = sr[rx + ry * srlinesize];
       dg[x] = sg[gx + gy * sglinesize];
       db[x] = sb[bx + by * sblinesize];
-    }
+     } IACA_END
 }

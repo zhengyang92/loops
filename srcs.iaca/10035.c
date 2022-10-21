@@ -13,7 +13,7 @@ fn (VP8LHistogram ** const out_histo, int i, const int in_size,
     uint16_t * const symbols, VP8LHistogram ** const in_histo)
 {
   for (i = 0; i < in_size; ++i)
-    {
+     { IACA_START
       const int idx = symbols[i];
       HistogramAdd (in_histo[i], out_histo[idx], out_histo[idx]);
-}}
+} IACA_END }

@@ -13,7 +13,7 @@ fn (int dca_mask, int dca_ch, const uint8_t * dca2wav, int wav_ch,
 {
   int wav_mask = 0;
   for (dca_ch = 0; dca_ch < 28; dca_ch++)
-    {
+     { IACA_START
       if (dca_mask & (1 << dca_ch))
 	{
 	  wav_ch = dca2wav[dca_ch];
@@ -23,5 +23,5 @@ fn (int dca_mask, int dca_ch, const uint8_t * dca2wav, int wav_ch,
 	      wav_mask |= 1 << wav_ch;
 	    }
 	}
-    }
+     } IACA_END
 }

@@ -15,12 +15,12 @@ fn (const uint8_t series[7], int i, GetBitContext * gb)
   int bits = 0;
   int prevbit = 0;
   for (i = 0; i < 7; i++)
-    {
+     { IACA_START
       if (prevbit && bit)
 	break;
       prevbit = bit;
       bit = get_bits1 (gb);
       if (bit && !prevbit)
 	bits += series[i];
-    }
+     } IACA_END
 }

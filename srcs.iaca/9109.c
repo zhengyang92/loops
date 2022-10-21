@@ -14,7 +14,7 @@ fn (int i, ptrdiff_t stride, int16_t (*src)[8], const uint8_t * cm,
     uint8_t * dst)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       const int a0 = 3 * src[1][i] - (src[7][i] << 1);
       const int a1 = 3 * src[3][i] + (src[5][i] << 1);
       const int a2 = (src[3][i] << 1) - 3 * src[5][i];
@@ -39,4 +39,4 @@ fn (int i, ptrdiff_t stride, int16_t (*src)[8], const uint8_t * cm,
       dst[i + 5 * stride] = cm[dst[i + 5 * stride] + ((b2 - b6) >> 7)];
       dst[i + 6 * stride] = cm[dst[i + 6 * stride] + ((b1 - b5) >> 7)];
       dst[i + 7 * stride] = cm[dst[i + 7 * stride] + ((b0 - b4) >> 7)];
-}}
+} IACA_END }

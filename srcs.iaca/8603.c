@@ -13,10 +13,10 @@ fn (int y, uint8_t * cols, int width, int x, uint32_t col, uint8_t * grps,
     int bpp, uint8_t * out, int stride)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       if (grps)
 	cols[1] = grps[(x >> 1) + 1];
       out[x + y * stride] = cols[col & ((1 << bpp) - 1)];
       col >>= bpp;
-    }
+     } IACA_END
 }

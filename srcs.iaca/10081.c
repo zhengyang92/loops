@@ -14,7 +14,7 @@ fn (const uint8_t * code_length_bitdepth, VP8LBitWriter * const bw, int i,
 {
   int codes_to_store = 19;
   for (i = 0; i < codes_to_store; ++i)
-    {
+     { IACA_START
       VP8LPutBits (bw, code_length_bitdepth[kStorageOrder[i]], 3);
-    }
+     } IACA_END
 }

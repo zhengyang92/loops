@@ -13,8 +13,8 @@ fn (const int buffer_linesize, int i, const int nb_match_blocks,
     const int block_size, float *buffer)
 {
   for (k = 0; k < nb_match_blocks; k++)
-    {
+     { IACA_START
       bufferz[k] = buffer[buffer_linesize * k + i * block_size + j];
       rbufferz[k] = rbuffer[buffer_linesize * k + i * block_size + j];
-    }
+     } IACA_END
 }

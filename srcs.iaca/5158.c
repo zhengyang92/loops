@@ -13,8 +13,8 @@ fn (int32_t * row, int k, const int16_t * lpc, int order)
 {
   int DC_resp = 0;
   for (k = 0; k < order; k++)
-    {
+     { IACA_START
       DC_resp += lpc[k];
       row[k] = lpc[k] * 4096;
-    }
+     } IACA_END
 }

@@ -12,9 +12,9 @@ int
 fn (uint8_t * dst, int k, uint32_t bits)
 {
   for (k = 0; k < 32; k++)
-    {
+     { IACA_START
       dst[0] = !!(bits & 0x80000000);
       dst += 4;
       bits <<= 1;
-    }
+     } IACA_END
 }

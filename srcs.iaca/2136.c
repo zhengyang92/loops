@@ -11,7 +11,7 @@ int
 fn (int x, uint8_t * dst, int w, const uint8_t * src)
 {
   for (; x < w; x++)
-    {
+     { IACA_START
       dst[x] = src[(x >> 1)];
-    }
+     } IACA_END
 }

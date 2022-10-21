@@ -14,7 +14,7 @@ fn (float tmp0, float z11, float tmp2, float tmp3, float tmp10, float z5,
     float tmp7, float tmp12, float z2)
 {
   for (ctr = 8 - 1; ctr >= 0; ctr--)
-    {
+     { IACA_START
       tmp0 = dataptr[8 * 0] + dataptr[8 * 7];
       tmp7 = dataptr[8 * 0] - dataptr[8 * 7];
       tmp1 = dataptr[8 * 1] + dataptr[8 * 6];
@@ -46,4 +46,4 @@ fn (float tmp0, float z11, float tmp2, float tmp3, float tmp10, float z5,
       dataptr[8 * 1] = z11 + z4;
       dataptr[8 * 7] = z11 - z4;
       dataptr++;
-}}
+} IACA_END }

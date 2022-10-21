@@ -13,7 +13,7 @@ fn (int stride, int d1, int i, int d, int c, int a, int d2, uint8_t * src,
 {
   int rnd = 1;
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       a = src[-2];
       b = src[-1];
       c = src[0];
@@ -26,5 +26,5 @@ fn (int stride, int d1, int i, int d, int c, int a, int d2, uint8_t * src,
       src[1] = d + d1;
       src += stride;
       rnd = !rnd;
-    }
+     } IACA_END
 }

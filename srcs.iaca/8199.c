@@ -11,7 +11,7 @@ int
 fn (int val, uint16_t * dst, int len, int n)
 {
   for (n = 0; n < len; n++)
-    {
+     { IACA_START
       dst[n] = val;
-    }
+     } IACA_END
 }

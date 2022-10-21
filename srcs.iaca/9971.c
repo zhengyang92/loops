@@ -14,7 +14,7 @@ fn (const int x_out_max, rescaler_t * const irow, uint8_t * const dst,
     int x_out, const uint32_t scale)
 {
   for (; x_out < x_out_max; ++x_out)
-    {
+     { IACA_START
       const int v =
 	(int) (((uint64_t) (irow[x_out]) * (scale) +
 		((1ull << 32) >> 1)) >> 32);
@@ -35,5 +35,5 @@ fn (const int x_out_max, rescaler_t * const irow, uint8_t * const dst,
        ));
       dst[x_out] = v;
       irow[x_out] = 0;
-    }
+     } IACA_END
 }

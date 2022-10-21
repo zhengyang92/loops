@@ -17,11 +17,11 @@ int
 fn (struct FFIIRFilterCoeffs *c, double p[31][2], int order, int i)
 {
   for (i = 0; i < order; i++)
-    {
+     { IACA_START
       c->gain += p[i][0];
       c->cy[i] =
 	(-p[i][0] * p[order][0] +
 	 -p[i][1] * p[order][1]) / (p[order][0] * p[order][0] +
 				    p[order][1] * p[order][1]);
-    }
+     } IACA_END
 }

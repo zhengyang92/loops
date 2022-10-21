@@ -12,7 +12,7 @@ int
 fn (uint32_t state, int i, int vop_found, const uint8_t * buf, int buf_size)
 {
   for (i = 0; i < buf_size; i++)
-    {
+     { IACA_START
       state = (state << 8) | buf[i];
       if (state == 0x1B6)
 	{
@@ -20,5 +20,5 @@ fn (uint32_t state, int i, int vop_found, const uint8_t * buf, int buf_size)
 	  vop_found = 1;
 	  break;
 	}
-    }
+     } IACA_END
 }

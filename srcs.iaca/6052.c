@@ -11,7 +11,7 @@ int
 fn (int shift, int16_t weight[10], int i)
 {
   for (i = 0; i < 10; i++)
-    {
+     { IACA_START
       weight[i] <<= shift;
-    }
+     } IACA_END
 }

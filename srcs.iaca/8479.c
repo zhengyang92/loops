@@ -13,7 +13,7 @@ fn (float p0, float q0, float q2, float p2, float *coeffs, float q1, float q3,
 {
   float sum = 0.f;
   for (int i = 0; i < 4; i++)
-    {
+     { IACA_START
       const float x = fabsf (t - i + 1.f);
       if (x < 1.f)
 	{
@@ -36,5 +36,5 @@ fn (float p0, float q0, float q2, float p2, float *coeffs, float q1, float q3,
 	  coeffs[i] = 0.f;
 	}
       sum += coeffs[i];
-    }
+     } IACA_END
 }

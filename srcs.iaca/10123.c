@@ -18,8 +18,8 @@ fn (Int k, int iWeight, CAdaptiveScan * pScan)
 {
   int iScale = 2;
   for (k = 1; k < 16; k++)
-    {
+     { IACA_START
       pScan[k].uTotal = iWeight;
       iWeight -= iScale;
-    }
+     } IACA_END
 }

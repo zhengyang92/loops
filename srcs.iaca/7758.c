@@ -15,8 +15,8 @@ fn (const uint8_t ff_dv_quant_shifts[22][4], int i, uint32_t * factor2,
     uint32_t * factor1)
 {
   for (; i < dv_quant_areas[c]; i++)
-    {
+     { IACA_START
       *factor1 = iweight1[i] << (ff_dv_quant_shifts[s][c] + 1);
       *factor2++ = (*factor1++) << 1;
-    }
+     } IACA_END
 }

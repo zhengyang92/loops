@@ -26,8 +26,8 @@ int
 fn (int d, OpusRangeCoder * rc, int32_t * location, int32_t branch[4][2])
 {
   for (d = 0; d < 2; d++)
-    {
+     { IACA_START
       silk_count_children (rc, 3, branch[3][d], location);
       location += 2;
-    }
+     } IACA_END
 }

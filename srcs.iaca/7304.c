@@ -10,5 +10,5 @@
 int
 fn (unsigned int j, const char *key, const char *s)
 {
-  for (j = 0; av_toupper (s[j]) == av_toupper (key[j]) && key[j]; j++);
+  for (j = 0; av_toupper (s[j]) == av_toupper (key[j]) && key[j]; j++) { IACA_START} ; IACA_END
 }

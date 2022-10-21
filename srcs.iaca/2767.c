@@ -12,7 +12,7 @@ fn (int j, const double *data, int i, int len)
 {
   double sum = 1.0;
   for (i = j - 1; i < len; i += 2)
-    {
+     { IACA_START
       sum += data[i] * data[i - j] + data[i + 1] * data[i - j + 1];
-    }
+     } IACA_END
 }

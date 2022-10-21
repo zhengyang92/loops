@@ -11,7 +11,7 @@ int
 fn (const char *tagname, int likely_a_tag, int i)
 {
   for (i = 0; tagname[i]; i++)
-    {
+     { IACA_START
       if (!
 	  (((tagname[i]) >= '0' && (tagname[i]) <= '9')
 	   || ((tagname[i]) >= 'a' && (tagname[i]) <= 'z')
@@ -21,5 +21,5 @@ fn (const char *tagname, int likely_a_tag, int i)
 	  likely_a_tag = 0;
 	  break;
 	}
-    }
+     } IACA_END
 }

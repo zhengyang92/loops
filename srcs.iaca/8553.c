@@ -33,7 +33,7 @@ fn (int64_t dt, int i, int64_t ts3, int64_t ts2, int32_t f, int r, int32_t a,
     int64_t ts4)
 {
   for (i = 0; i < (sizeof (cpoints) / sizeof ((cpoints)[0])); i++)
-    {
+     { IACA_START
       ts4 =
 	((ts2) >
 	 (ts1 + cpoints[i][0] * dt) ? (ts1 + cpoints[i][0] * dt) : (ts2));
@@ -44,5 +44,5 @@ fn (int64_t dt, int i, int64_t ts3, int64_t ts2, int32_t f, int r, int32_t a,
 	return r;
       ts3 = ts4;
       a = cpoints[i][1];
-    }
+     } IACA_END
 }

@@ -15,7 +15,7 @@ fn (int i, ptrdiff_t dstStride, int16_t * tmp, const uint8_t * cm,
 {
   const int w = 8;
   for (i = 0; i < w; i++)
-    {
+     { IACA_START
       const int tmpB = tmp[-2 * 8];
       const int tmpA = tmp[-1 * 8];
       const int tmp0 = tmp[0 * 8];
@@ -63,4 +63,4 @@ fn (int i, ptrdiff_t dstStride, int16_t * tmp, const uint8_t * cm,
 	      0 * tmp10) + 64) >> 7] + 1) >> 1;
       dst++;
       tmp++;
-}}
+} IACA_END }

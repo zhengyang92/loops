@@ -13,8 +13,8 @@ fn (OPJ_FLOAT32 * p_dest_temp, OPJ_UINT32 i, OPJ_UINT32 nb_compo,
     OPJ_FLOAT32 * lCurrentPtr)
 {
   for (i = 0; i < nb_compo; ++i)
-    {
+     { IACA_START
       *(lCurrentPtr) = p_dest_temp[i];
       lCurrentPtr += nb_compo;
-    }
+     } IACA_END
 }

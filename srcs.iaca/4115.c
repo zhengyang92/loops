@@ -14,7 +14,7 @@ fn (int minperiod, float yy, float yy_lookup[769], int k, float g, int T0,
     int maxperiod, float best_yy, int N)
 {
   for (k = 2; k <= 15; k++)
-    {
+     { IACA_START
       int T1, T1b;
       float g1;
       float cont = 0;
@@ -60,5 +60,5 @@ fn (int minperiod, float yy, float yy_lookup[769], int k, float g, int T0,
 	  T = T1;
 	  g = g1;
 	}
-    }
+     } IACA_END
 }

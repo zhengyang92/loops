@@ -13,7 +13,7 @@ fn (uint16_t * const pixels, int e2, int dy, int err, int x0, int y1,
     int linesize)
 {
   for (;;)
-    {
+     { IACA_START
       pixels[y0 * linesize + x0 * 4 + 0] = rgbcolor[0];
       pixels[y0 * linesize + x0 * 4 + 1] = rgbcolor[1];
       pixels[y0 * linesize + x0 * 4 + 2] = rgbcolor[2];
@@ -31,5 +31,5 @@ fn (uint16_t * const pixels, int e2, int dy, int err, int x0, int y1,
 	  err += dx;
 	  y0 += sy;
 	}
-    }
+     } IACA_END
 }

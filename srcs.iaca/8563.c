@@ -12,7 +12,7 @@ fn (int out, int i, unsigned int round, int c, int *src, int *dst, int len,
     int s, int ssign)
 {
   for (i = 0; i < len; i++)
-    {
+     { IACA_START
       out = (int) ((int64_t) ((int64_t) src[i] * c + round) >> s);
       dst[i] = out * (unsigned) ssign;
-}}
+} IACA_END }

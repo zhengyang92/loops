@@ -13,7 +13,7 @@ fn (ptrdiff_t stride, int h, uint8_t * pix1, uint8_t * pix2, int s)
 {
   int i = 0;
   for (i = 0; i < h; i++)
-    {
+     { IACA_START
       s += abs (pix1[0] - pix2[0]);
       s += abs (pix1[1] - pix2[1]);
       s += abs (pix1[2] - pix2[2]);
@@ -24,5 +24,5 @@ fn (ptrdiff_t stride, int h, uint8_t * pix1, uint8_t * pix2, int s)
       s += abs (pix1[7] - pix2[7]);
       pix1 += stride;
       pix2 += stride;
-    }
+     } IACA_END
 }

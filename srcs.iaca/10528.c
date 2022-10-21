@@ -74,8 +74,8 @@ int
 fn (long k)
 {
   for (k = 0; k < spaces_.N; k++)
-    {
+     { IACA_START
       space1_.Y[k] = space1_.U[k] / space1_.V[k];
       space1_.W[k] = space1_.X[k] / (exp (space1_.Y[k]) - 1.0);
-    }
+     } IACA_END
 }

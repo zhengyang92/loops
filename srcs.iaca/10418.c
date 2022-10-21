@@ -11,7 +11,7 @@ int
 fn (float *pred, int j, int classes)
 {
   for (j = 0; j < classes; ++j)
-    {
+     { IACA_START
       printf ("\t%g", pred[j]);
-    }
+     } IACA_END
 }

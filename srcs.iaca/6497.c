@@ -12,9 +12,9 @@ fn (int col, uint8_t * v_out, unsigned char *encoded, unsigned int width,
     uint8_t * y_out, uint8_t * u_out)
 {
   for (col = 0; col < width; col++)
-    {
+     { IACA_START
       y_out[col] = *encoded++;
       u_out[col] = *encoded++ + 128;
       v_out[col] = *encoded++ + 128;
-    }
+     } IACA_END
 }

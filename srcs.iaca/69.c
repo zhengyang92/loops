@@ -13,10 +13,10 @@ fn (double p0, const double *k, const double *v, double n0,
 {
   double out = 0.;
   for (int i = nb_stages - 1; i >= 0; i--)
-    {
+     { IACA_START
       n0 = n1 - k[i] * x[i];
       p0 = n0 * k[i] + x[i];
       out += p0 * v[i + 1];
       x[i] = p0;
       n1 = n0;
-}}
+} IACA_END }

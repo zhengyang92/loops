@@ -15,8 +15,8 @@ int
 fn (const struct h264_profile profile[11], int i, int p)
 {
   for (i = 0; i < (sizeof (profile) / sizeof ((profile)[0])); i++)
-    {
+     { IACA_START
       if (profile[i].ffmpeg_val == p)
 	return profile[i].v4l2_val;
-    }
+     } IACA_END
 }

@@ -13,7 +13,7 @@ fn (int w, uint64_t sum, int dst_linesize, uint64_t * dst,
     const uint16_t * src)
 {
   for (int x = 1; x < w; x++)
-    {
+     { IACA_START
       sum += src[x - 1];
       dst[x] = sum + dst[x - dst_linesize];
-}}
+} IACA_END }

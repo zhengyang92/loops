@@ -16,7 +16,7 @@ fn (float d53, float od25, ptrdiff_t stride, float os07, float d26,
     float od16, float od07, int type, float d17, int i, float od34, float s53)
 {
   for (i = 0; i < y * 8; i += y)
-    {
+     { IACA_START
       s17 = temp[1 * x + i] + temp[7 * x + i];
       d17 = temp[1 * x + i] - temp[7 * x + i];
       s53 = temp[5 * x + i] + temp[3 * x + i];
@@ -102,5 +102,5 @@ fn (float d53, float od25, ptrdiff_t stride, float os07, float d26,
 	  dest[3 * stride + i] = av_clip_uint8_c (lrintf (os34 - od34));
 	  dest[4 * stride + i] = av_clip_uint8_c (lrintf (os34 + od34));
 	}
-    }
+     } IACA_END
 }

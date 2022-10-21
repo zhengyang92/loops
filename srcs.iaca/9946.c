@@ -13,7 +13,7 @@ fn (const int max_pos, int i, const uint8_t * const row, const __m128i zero,
     uint8_t * const out, const uint8_t * const top)
 {
   for (i = 0; i < max_pos; i += 8)
-    {
+     { IACA_START
       const __m128i A0 = _mm_loadl_epi64 ((const __m128i *) &row[i - 1]);
       const __m128i B0 = _mm_loadl_epi64 ((const __m128i *) &top[i]);
       const __m128i C0 = _mm_loadl_epi64 ((const __m128i *) &top[i - 1]);
@@ -26,4 +26,4 @@ fn (const int max_pos, int i, const uint8_t * const row, const __m128i zero,
       const __m128i G = _mm_packus_epi16 (F, zero);
       const __m128i H = _mm_sub_epi8 (D, G);
       _mm_storel_epi64 ((__m128i *) (out + i), H);
-}}
+} IACA_END }

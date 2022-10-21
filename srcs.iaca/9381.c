@@ -14,7 +14,7 @@ fn (int z11, int z2, int z3, int tmp1, int tmp11, int tmp5, int tmp3,
     int z1)
 {
   for (ctr = 8 - 1; ctr >= 0; ctr--)
-    {
+     { IACA_START
       tmp0 = dataptr[0] + dataptr[7];
       tmp7 = dataptr[0] - dataptr[7];
       tmp1 = dataptr[1] + dataptr[6];
@@ -46,5 +46,5 @@ fn (int z11, int z2, int z3, int tmp1, int tmp11, int tmp5, int tmp3,
       dataptr[1] = z11 + z4;
       dataptr[7] = z11 - z4;
       dataptr += 8;
-    }
+     } IACA_END
 }

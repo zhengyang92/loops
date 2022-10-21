@@ -14,7 +14,7 @@ fn (uint32 bps, tmsize_t wc, uint32 byte, uint8 * cp, uint8 * tmp,
     tmsize_t count)
 {
   for (byte = 0; byte < bps; byte++)
-    {
+     { IACA_START
       cp[bps * count + byte] = tmp[(bps - byte - 1) * wc + count];
-    }
+     } IACA_END
 }

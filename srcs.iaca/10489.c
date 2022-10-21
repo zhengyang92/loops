@@ -15,9 +15,9 @@ fn (image * val, int m, image * buf, int t, image * val_resized,
   int i = 0;
   int nthreads = 8;
   for (t = 0; t < nthreads && i + t - nthreads < m; ++t)
-    {
+     { IACA_START
       pthread_join (thr[t], 0);
       val[t] = buf[t];
       val_resized[t] = buf_resized[t];
-    }
+     } IACA_END
 }

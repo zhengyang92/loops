@@ -75,7 +75,7 @@ int
 fn (struct sbg_script *s, int64_t cur_ts, int i, int64_t delta)
 {
   for (i = 0; i < s->nb_tseq; i++)
-    {
+     { IACA_START
       if (av_sat_add64_c (s->tseq[i].ts.t, delta) !=
 	  s->tseq[i].ts.t + (uint64_t) delta)
 	return (-(int)
@@ -84,5 +84,5 @@ fn (struct sbg_script *s, int64_t cur_ts, int i, int64_t delta)
       if (s->tseq[i].ts.t + delta < cur_ts)
 	delta += ((int64_t) (24 * 60 * 60) * 1000000);
       cur_ts = s->tseq[i].ts.t += delta;
-    }
+     } IACA_END
 }

@@ -13,7 +13,7 @@ fn (int i, int d1, int d, int16_t * left, int c, int a, int16_t * right,
 {
   int rnd2 = 4;
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       a = left[6];
       b = left[7];
       c = right[0];
@@ -28,5 +28,5 @@ fn (int i, int d1, int d, int16_t * left, int c, int a, int16_t * right,
       left += 8;
       rnd2 = 7 - rnd2;
       rnd1 = 7 - rnd1;
-    }
+     } IACA_END
 }

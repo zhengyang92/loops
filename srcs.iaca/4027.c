@@ -15,9 +15,9 @@ fn (int plane_h, int clear_block_size[4], uint8_t clear_block[4][32],
     uint8_t * data)
 {
   for (; plane_h > 0; plane_h--)
-    {
+     { IACA_START
       memset_bytes (data, bytewidth, &clear_block[plane][0],
 		    clear_block_size[plane]);
       data += dst_linesize[plane];
-    }
+     } IACA_END
 }

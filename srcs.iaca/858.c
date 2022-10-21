@@ -12,7 +12,7 @@ fn (const float *src, const float decay, float *dst, const int width,
     float *osrc)
 {
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       const float v = fmaxf (src[x], osrc[x] * decay);
       osrc[x] = v;
       if (0)
@@ -23,5 +23,5 @@ fn (const float *src, const float decay, float *dst, const int width,
 	{
 	  dst[x] = (v);
 	}
-    }
+     } IACA_END
 }

@@ -14,8 +14,8 @@ fn (uint8_t * pixels, const int log2_blocksize, int x, uint8_t * c_ptr1,
   for (x = 0;
        x < (1 << ((log2_blocksize - 1) > (0) ? (log2_blocksize - 1) : (0)));
        x++)
-    {
+     { IACA_START
       c_ptr[x] = pixels[x];
       c_ptr1[x] = ptr1[x];
-    }
+     } IACA_END
 }

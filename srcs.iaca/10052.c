@@ -14,7 +14,7 @@ fn (const uint8_t * const g_ptr, int i, int width,
     int j, uint16_t * dst, int step)
 {
   for (i = 0, j = 0; i < (width >> 1); i += 1, j += 2 * step, dst += 4)
-    {
+     { IACA_START
       dst[0] =
 	LinearToGamma (GammaToLinear ((r_ptr + j)[0]) +
 		       GammaToLinear ((r_ptr + j)[(step)]) +
@@ -30,5 +30,5 @@ fn (const uint8_t * const g_ptr, int i, int width,
 		       GammaToLinear ((b_ptr + j)[(step)]) +
 		       GammaToLinear ((b_ptr + j)[rgb_stride]) +
 		       GammaToLinear ((b_ptr + j)[rgb_stride + (step)]), 0);
-    }
+     } IACA_END
 }

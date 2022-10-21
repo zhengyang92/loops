@@ -12,8 +12,8 @@ int
 fn (int x, uint8_t * tmp, uint32_t mask, uint8_t * data)
 {
   for (x = 0; x < 4; x++)
-    {
+     { IACA_START
       tmp[x] = data[mask & 1];
       mask >>= 1;
-    }
+     } IACA_END
 }

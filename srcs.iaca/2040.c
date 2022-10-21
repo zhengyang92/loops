@@ -11,7 +11,7 @@ int
 fn (char *value, const uint8_t * ptr8, int i)
 {
   for (; i < 80 && ptr8[i] != ')'; i++)
-    {
+     { IACA_START
       *value++ = ptr8[i];
-    }
+     } IACA_END
 }

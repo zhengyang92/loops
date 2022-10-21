@@ -11,7 +11,7 @@ int
 fn (const uint32_t SHA256_K[64], uint32_t T[8], uint32_t W[16])
 {
   for (unsigned int j = 16; j < 64; j += 16)
-    {
+     { IACA_START
       T[(7 - 0) & 7] +=
 	rotr_32 (T[(4 - 0) & 7] ^
 		 rotr_32 (T[(4 - 0) & 7] ^ rotr_32 (T[(4 - 0) & 7], 14), 5),
@@ -330,4 +330,4 @@ fn (const uint32_t SHA256_K[64], uint32_t T[8], uint32_t W[16])
 		 2) +
 	((T[(0 - 15) & 7] & (T[(1 - 15) & 7] ^ T[(2 - 15) & 7])) +
 	 (T[(1 - 15) & 7] & T[(2 - 15) & 7]));
-}}
+} IACA_END }

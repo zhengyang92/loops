@@ -14,11 +14,11 @@ fn (int16_t * syntdenum, int16_t length, int i, int16_t * lsfdeq,
     int pos, int lp_length)
 {
   for (i = 1; i < 6; i++)
-    {
+     { IACA_START
       lsp_interpolate2polydec (lp, lsfdeq, lsfdeq2, lsf_weight_30ms[i],
 			       length);
       memcpy (syntdenum + pos, lp, lp_length * 2);
       bw_expand (weightdenum + pos, lp, kLpcChirpSyntDenum, lp_length);
       pos += lp_length;
-    }
+     } IACA_END
 }

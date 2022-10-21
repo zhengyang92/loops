@@ -11,8 +11,8 @@ int
 fn (int16_t * block, int i)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       block[i] += 8192;
       idctSparseCol_int16_12bit (block + i);
-    }
+     } IACA_END
 }

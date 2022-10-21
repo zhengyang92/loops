@@ -13,7 +13,7 @@ fn (int no_q, const int tc, uint16_t * pix, int d, ptrdiff_t ystride,
     int no_p, ptrdiff_t xstride)
 {
   for (d = 0; d < 4; d++)
-    {
+     { IACA_START
       int delta0;
       const int p1 = pix[-2 * xstride];
       const int p0 = pix[-1 * xstride];
@@ -25,5 +25,5 @@ fn (int no_q, const int tc, uint16_t * pix, int d, ptrdiff_t ystride,
       if (!no_q)
 	pix[0 * xstride] = av_clip_uintp2_c (q0 - delta0, 12);
       pix += ystride;
-    }
+     } IACA_END
 }

@@ -71,7 +71,7 @@ int
 fn (long k, long i)
 {
   for (k = 0; k < i; k++)
-    {
+     { IACA_START
       space1_.W[i] += space2_.B[k][i] * space1_.W[(i - k) - 1];
-    }
+     } IACA_END
 }

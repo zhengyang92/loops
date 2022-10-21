@@ -13,7 +13,7 @@ fn (const uint8_t * s1, int w, const uint32_t * dst_top, const uint8_t * s2,
     uint32_t * dst)
 {
   for (int x = 0; x < w; x += 4)
-    {
+     { IACA_START
       const int d0 = s1[x] - s2[x];
       const int d1 = s1[x + 1] - s2[x + 1];
       const int d2 = s1[x + 2] - s2[x + 2];
@@ -26,4 +26,4 @@ fn (const uint8_t * s1, int w, const uint32_t * dst_top, const uint8_t * s2,
       dst[x + 1] += dst[x];
       dst[x + 2] += dst[x + 1];
       dst[x + 3] += dst[x + 2];
-}}
+} IACA_END }

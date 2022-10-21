@@ -74,9 +74,9 @@ int
 fn (struct sbg_script_tseq *tseq, int i, struct sbg_script *s)
 {
   for (i = 0; i < s->nb_def; i++)
-    {
+     { IACA_START
       if (s->def[i].name_len == tseq->name_len
 	  && !memcmp (s->def[i].name, tseq->name, tseq->name_len))
 	break;
-    }
+     } IACA_END
 }

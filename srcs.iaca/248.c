@@ -15,7 +15,7 @@ fn (float imp_sum, int work_len, float *pi_wraps, int i, float *work,
   for (i = 0;
        i <= (int) (pi_wraps[work_len >> 1] / 3.14159265358979323846 + .5f);
        i++)
-    {
+     { IACA_START
       imp_sum += work[i];
       if (fabs (imp_sum) > fabs (peak_imp_sum))
 	{
@@ -24,5 +24,5 @@ fn (float imp_sum, int work_len, float *pi_wraps, int i, float *work,
 	}
       if (work[i] > work[imp_peak])
 	imp_peak = i;
-    }
+     } IACA_END
 }

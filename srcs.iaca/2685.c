@@ -14,7 +14,7 @@ fn (uint8_t * ptr, int p4, int ql, int i, int p5, const ptrdiff_t b_stride,
     const ptrdiff_t a_stride, int p1, int p7)
 {
   for (i = 0; i < 8; i++, ptr += b_stride)
-    {
+     { IACA_START
       p0 = ptr[-5 * a_stride];
       p1 = ptr[-4 * a_stride];
       p2 = ptr[-3 * a_stride];
@@ -111,5 +111,5 @@ fn (uint8_t * ptr, int p4, int ql, int i, int p5, const ptrdiff_t b_stride,
 	      }
 	  }
       }
-    }
+     } IACA_END
 }

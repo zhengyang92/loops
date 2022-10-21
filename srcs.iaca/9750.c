@@ -11,7 +11,7 @@ int
 fn (INT32 * rgb_ycc_tab, INT32 i)
 {
   for (i = 0; i <= 255; i++)
-    {
+     { IACA_START
       rgb_ycc_tab[i + 0] = ((INT32) ((0.299) * (1L << 16) + 0.5)) * i;
       rgb_ycc_tab[i + (1 * (255 + 1))] =
 	((INT32) ((0.587) * (1L << 16) + 0.5)) * i;
@@ -28,5 +28,5 @@ fn (INT32 * rgb_ycc_tab, INT32 i)
 	(-((INT32) ((0.418687589) * (1L << 16) + 0.5))) * i;
       rgb_ycc_tab[i + (7 * (255 + 1))] =
 	(-((INT32) ((0.081312411) * (1L << 16) + 0.5))) * i;
-    }
+     } IACA_END
 }

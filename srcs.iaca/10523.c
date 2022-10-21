@@ -78,8 +78,8 @@ int
 fn (long k, long jn, long j)
 {
   for (j = 1; j < jn; j++)
-    {
+     { IACA_START
       space2_.Zr[k][j] = space2_.Zr[k][j] + spacer_.T * space2_.Zu[k][j];
       space2_.Zz[k][j] = space2_.Zz[k][j] + spacer_.T * space2_.Zv[k][j];
-    }
+     } IACA_END
 }

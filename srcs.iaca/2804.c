@@ -12,7 +12,7 @@ int
 fn (ptrdiff_t stride, int x, int score, uint8_t * s)
 {
   for (x = 0; x < 8; x += 4)
-    {
+     { IACA_START
       score +=
 	((s[x] - s[x + stride]) >=
 	 0 ? (s[x] - s[x + stride]) : (-(s[x] - s[x + stride]))) +
@@ -25,5 +25,5 @@ fn (ptrdiff_t stride, int x, int score, uint8_t * s)
 	((s[x + 3] - s[x + 3 + stride]) >=
 	 0 ? (s[x + 3] -
 	      s[x + 3 + stride]) : (-(s[x + 3] - s[x + 3 + stride])));
-    }
+     } IACA_END
 }

@@ -15,7 +15,7 @@ fn (int exact, RiceContext * rc, int opt_porder, int i, int pmin, int n,
     RiceContext tmp_rc, int pred_order)
 {
   for (i = pmax;;)
-    {
+     { IACA_START
       bits[i] =
 	calc_optimal_rice_params (&tmp_rc, i, sums, n, pred_order, kmax,
 				  exact);
@@ -27,5 +27,5 @@ fn (int exact, RiceContext * rc, int opt_porder, int i, int pmin, int n,
       if (i == pmin)
 	break;
       calc_sum_next (--i, sums, exact ? kmax : 0);
-    }
+     } IACA_END
 }

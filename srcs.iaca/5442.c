@@ -14,9 +14,9 @@ fn (int32_t gy, int32_t by, int i, const uint8_t ** src, int width,
     int32_t ry, uint16_t * dst)
 {
   for (i = 0; i < width; i++)
-    {
+     { IACA_START
       int g = src[0][i];
       int b = src[1][i];
       int r = src[2][i];
       dst[i] = (ry * r + gy * g + by * b + (0x801 << (15 - 7))) >> (15 - 6);
-}}
+} IACA_END }

@@ -13,7 +13,7 @@ fn (int16 b, int rc, unsigned char *bp, tmsize_t npixels, tmsize_t i,
     tmsize_t cc, int shft, int16 * tp)
 {
   for (i = 0; i < npixels && cc > 0;)
-    {
+     { IACA_START
       if (*bp >= 128)
 	{
 	  if (cc < 2)
@@ -30,5 +30,5 @@ fn (int16 b, int rc, unsigned char *bp, tmsize_t npixels, tmsize_t i,
 	  while (--cc && rc-- && i < npixels)
 	    tp[i++] |= (int16) * bp++ << shft;
 	}
-    }
+     } IACA_END
 }

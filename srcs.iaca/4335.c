@@ -12,7 +12,7 @@ fn (const int height, int g, const double *src, const int width, int c, int r,
     const double *gauss, const int filtersize, double *dst)
 {
   for (g = 0; g < filtersize; ++g)
-    {
+     { IACA_START
       dst[((r) * (width) + (c))] +=
 	((src)
 	 [((av_clip_c
@@ -20,5 +20,5 @@ fn (const int height, int g, const double *src, const int width, int c, int r,
 	     ((height) - 1))) * ((width)) + (av_clip_c (((c)), 0,
 							((width) -
 							 1))))] * (gauss[g]));
-    }
+     } IACA_END
 }

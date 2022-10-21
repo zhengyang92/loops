@@ -12,7 +12,7 @@ fn (int j, uint8_t * dst)
 {
   int DC = 8;
   for (j = 0; j < 16; ++j)
-    {
+     { IACA_START
       DC += dst[-1 + j * 32];
-    }
+     } IACA_END
 }

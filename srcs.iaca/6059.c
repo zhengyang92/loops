@@ -16,7 +16,7 @@ fn (int temp, int offset, int i, int ccr_eng, int eng, int16_t * buf,
   int max_ccr = 0x4000;
   int max_exp = 32;
   for (i = 18; i <= (18 + 127) - 3; i++)
-    {
+     { IACA_START
       offset--;
       orig_eng +=
 	buf[offset] * buf[offset] - buf[offset +
@@ -58,5 +58,5 @@ fn (int temp, int offset, int i, int ccr_eng, int eng, int16_t * buf,
 	  max_ccr = ccr;
 	  max_eng = eng;
 	}
-    }
+     } IACA_END
 }

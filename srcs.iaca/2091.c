@@ -12,10 +12,10 @@ fn (int i, int offset, int cb_gain, int cb_shift, int cb_pos,
     int16_t * vector, int cb_sign)
 {
   for (i = 0; i < 8; i += 2)
-    {
+     { IACA_START
       offset = ((cb_pos & 7) << 3) + cb_shift + i;
       vector[offset] = (cb_sign & 1) ? cb_gain : -cb_gain;
       cb_pos >>= 3;
       cb_sign >>= 1;
-    }
+     } IACA_END
 }

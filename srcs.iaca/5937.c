@@ -13,7 +13,7 @@ fn (int y, int w, int linesize, int v, int x, unsigned int bitbuf, int h,
     uint8_t * q)
 {
   for (y = 0; y < h; y++)
-    {
+     { IACA_START
       *q++ = 0x11;
       bitbuf = 0;
       bitcnt = 4;
@@ -258,5 +258,5 @@ fn (int y, int w, int linesize, int v, int x, unsigned int bitbuf, int h,
 	}
       *q++ = 0xf0;
       bitmap += linesize;
-    }
+     } IACA_END
 }

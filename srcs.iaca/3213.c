@@ -13,7 +13,7 @@ fn (const uint8_t ff_reverse[256], uint8_t vucf, uint8_t * o,
     const uint32_t * samples, int channels, const int nb_channels)
 {
   for (channels = 0; channels < nb_channels; channels += 2)
-    {
+     { IACA_START
       o[0] = ff_reverse[(samples[0] & 0x000FF000) >> 12];
       o[1] = ff_reverse[(samples[0] & 0x0FF00000) >> 20];
       o[2] = ff_reverse[((samples[0] & 0xF0000000) >> 28) | vucf];
@@ -22,5 +22,5 @@ fn (const uint8_t ff_reverse[256], uint8_t vucf, uint8_t * o,
       o[5] = ff_reverse[(samples[1] & 0xF0000000) >> 28];
       o += 6;
       samples += 2;
-    }
+     } IACA_END
 }

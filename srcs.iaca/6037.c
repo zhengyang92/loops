@@ -13,8 +13,8 @@ fn (int *dest, int m, int n, int16_t * src, int16_t * fir_coef,
     int16_t * iir_coef, int64_t filter)
 {
   for (n = 1; n <= 10; n++)
-    {
+     { IACA_START
       filter -=
 	fir_coef[n - 1] * src[m - n] - iir_coef[n - 1] * (dest[m - n] >> 16);
-    }
+     } IACA_END
 }

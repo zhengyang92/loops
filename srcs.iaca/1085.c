@@ -12,11 +12,11 @@ fn (int y, int *emin, int offset, const int start, int x, const int end,
     uint16_t * dst, const int bg)
 {
   for (x = start; x < end && x < emin[y - offset]; x++)
-    {
+     { IACA_START
       if (dst[x] != bg)
 	{
 	  emin[y - offset] = x;
 	  break;
 	}
-    }
+     } IACA_END
 }

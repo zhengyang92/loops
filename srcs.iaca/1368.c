@@ -29,11 +29,11 @@ int
 fn (int edata_size, int i, struct ws_intervals *inter)
 {
   for (i = 0; i < inter->nb_inter; i++)
-    {
+     { IACA_START
       edata_size +=
 	inter->inter[i].type == WS_SINE ? 44 : inter->inter[i].type ==
 	WS_NOISE ? 32 : 0;
       if (edata_size < 0)
 	return (-(12));
-    }
+     } IACA_END
 }

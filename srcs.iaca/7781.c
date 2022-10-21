@@ -12,8 +12,8 @@ int
 fn (uint8_t * src, ptrdiff_t size, int p)
 {
   for (ptrdiff_t i = 1; i < size; i++)
-    {
+     { IACA_START
       int d = src[i] - p + 384;
       p = src[i];
       src[i] = d;
-}}
+} IACA_END }

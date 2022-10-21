@@ -13,10 +13,10 @@ fn (const int bits_per_pixel, int x, const uint32_t bit_mask, const int width,
     const int count_mask, const uint32_t * const color_map)
 {
   for (x = 0; x < width; ++x)
-    {
+     { IACA_START
       if ((x & count_mask) == 0)
 	packed_pixels = VP8GetARGBIndex (*src++);
       *dst++ = VP8GetARGBValue (color_map[packed_pixels & bit_mask]);
       packed_pixels >>= bits_per_pixel;
-    }
+     } IACA_END
 }

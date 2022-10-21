@@ -13,7 +13,7 @@ fn (uint32_t state, int buf_size, const uint8_t * buf)
 {
   int found = 0;
   for (int i = 0; i < buf_size; i++)
-    {
+     { IACA_START
       state = (state << 8) | buf[i];
       if (state == 0x1B3)
 	{
@@ -21,5 +21,5 @@ fn (uint32_t state, int buf_size, const uint8_t * buf)
 	}
       else if (found && state != 0x1B5 && state < 0x200 && state >= 0x100)
 	return i - 3;
-    }
+     } IACA_END
 }

@@ -15,7 +15,7 @@ fn (const uint16_t * const cf_table[16], int32_t * dst, unsigned int num,
     unsigned int high, unsigned int i, unsigned int value, GetBitContext * gb)
 {
   for (i = 0; i < num; i++)
-    {
+     { IACA_START
       unsigned int range = high - low + 1;
       unsigned int target = (((value - low + 1) << 14) - 1) / range;
       unsigned int symbol = lut[target >> (14 - (14 - 8))] << delta;
@@ -50,5 +50,5 @@ fn (const uint16_t * const cf_table[16], int32_t * dst, unsigned int num,
 	  value = 2 * value + get_bits1 (gb);
 	}
       *dst++ = symbol;
-    }
+     } IACA_END
 }

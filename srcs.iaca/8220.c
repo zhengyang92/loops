@@ -13,7 +13,7 @@ int
 fn (int16_t * block, int i, ptrdiff_t line_size, uint8_t * dest)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       dest[0] = av_clip_uint8_c (block[0]);
       dest[1] = av_clip_uint8_c (block[1]);
       dest[2] = av_clip_uint8_c (block[2]);
@@ -24,5 +24,5 @@ fn (int16_t * block, int i, ptrdiff_t line_size, uint8_t * dest)
       dest[7] = av_clip_uint8_c (block[7]);
       dest += line_size;
       block += 8;
-    }
+     } IACA_END
 }

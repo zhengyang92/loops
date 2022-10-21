@@ -14,7 +14,7 @@ fn (int i, GetByteContext cmds, int y_pos, int line_size, unsigned int count,
 {
   int x_pos = 0;
   for (i = 0; i < count && x_pos < line_size; i++)
-    {
+     { IACA_START
       int8_t cmd = bytestream2_get_byte (&cmds);
       int l, r;
       if (cmd == 0)
@@ -77,5 +77,5 @@ fn (int i, GetByteContext cmds, int y_pos, int line_size, unsigned int count,
 		}
 	    }
 	}
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ int
 fn (int32_t * block, uint16_t * dst, int i, int stride)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       const unsigned a0 = block[0 + i * 8] + (unsigned) block[4 + i * 8];
       const unsigned a2 = block[0 + i * 8] - (unsigned) block[4 + i * 8];
       const unsigned a4 =
@@ -55,4 +55,4 @@ fn (int32_t * block, uint16_t * dst, int i, int stride)
 	av_clip_uintp2_c (dst[i + 6 * stride] + ((int) (b2 - b5) >> 6), 10);
       dst[i + 7 * stride] =
 	av_clip_uintp2_c (dst[i + 7 * stride] + ((int) (b0 - b7) >> 6), 10);
-}}
+} IACA_END }

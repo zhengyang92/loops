@@ -14,7 +14,7 @@ fn (int uni_code, const uint8_t ff_mpeg4_DCtab_chrom[13][2], int level,
     const uint8_t ff_mpeg4_DCtab_lum[13][2])
 {
   for (level = -256; level < 256; level++)
-    {
+     { IACA_START
       int size, v, l;
       size = 0;
       v = abs (level);
@@ -61,5 +61,5 @@ fn (int uni_code, const uint8_t ff_mpeg4_DCtab_chrom[13][2], int level,
 	}
       ff_v2_dc_chroma_table[level + 256][0] = uni_code;
       ff_v2_dc_chroma_table[level + 256][1] = uni_len;
-    }
+     } IACA_END
 }

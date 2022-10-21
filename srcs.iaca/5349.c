@@ -13,11 +13,11 @@ fn (const int q_s, const int right, const uint64_t q_m, int bits, int x,
     const uint64_t q_a, dwtcoef * buf, const int left)
 {
   for (x = left; x < right; x++)
-    {
+     { IACA_START
       uint32_t c_abs =
 	(((q_m) * (((buf[x]) >= 0 ? (buf[x]) : (-(buf[x])))) +
 	  (q_a)) >> (q_s));
       bits += count_vc2_ue_uint (c_abs);
       bits += !!c_abs;
-    }
+     } IACA_END
 }

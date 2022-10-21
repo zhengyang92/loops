@@ -52,9 +52,9 @@ fn (const struct channel_layout_name channel_layout_map[29], const char *name,
   for (i = 0;
        i < (sizeof (channel_layout_map) / sizeof ((channel_layout_map)[0]));
        i++)
-    {
+     { IACA_START
       if (strlen (channel_layout_map[i].name) == name_len
 	  && !memcmp (channel_layout_map[i].name, name, name_len))
 	return channel_layout_map[i].layout.u.mask;
-    }
+     } IACA_END
 }

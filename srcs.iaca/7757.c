@@ -15,8 +15,8 @@ fn (const uint16_t * iweight2, int i, uint32_t * factor2, int c,
     uint32_t * factor1)
 {
   for (i = 0; i < 64; i++)
-    {
+     { IACA_START
       *factor1++ = (dv100_qstep[s] << (c + 9)) * iweight1[i];
       *factor2++ = (dv100_qstep[s] << (c + 9)) * iweight2[i];
-    }
+     } IACA_END
 }

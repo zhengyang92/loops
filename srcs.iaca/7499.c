@@ -17,7 +17,7 @@ fn (const uint8_t * nxtnf, const uint8_t * srcnf, uint64_t accumPc, int temp1,
     const uint8_t * srcf, uint8_t * mapp)
 {
   for (x = startx; x < stopx; x++)
-    {
+     { IACA_START
       if (mapp[x] > 0 || mapp[x + map_linesize] > 0)
 	{
 	  temp1 = srcpf[x] + (srcf[x] << 2) + srcnf[x];
@@ -42,5 +42,5 @@ fn (const uint8_t * nxtnf, const uint8_t * srcnf, uint64_t accumPc, int temp1,
 		accumNml += temp2;
 	    }
 	}
-    }
+     } IACA_END
 }

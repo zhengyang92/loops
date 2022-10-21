@@ -12,9 +12,9 @@ fn (uint32 ** BWmap, uint32 w, unsigned char *pp, uint32 _x, uint32 * cp,
     uint32 * bw)
 {
   for (_x = w; _x >= 2; _x -= 2)
-    {
+     { IACA_START
       bw = BWmap[*pp++];
       *cp++ = *bw++;
       *cp++ = *bw++;
-    }
+     } IACA_END
 }

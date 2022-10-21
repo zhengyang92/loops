@@ -26,7 +26,7 @@ int
 fn (int bufsize, int i, AVIOContext * pb, char *line)
 {
   for (i = 0; i < bufsize - 1; i++)
-    {
+     { IACA_START
       int b = avio_r8 (pb);
       if (b == 0)
 	break;
@@ -36,5 +36,5 @@ fn (int bufsize, int i, AVIOContext * pb, char *line)
 	  return 0;
 	}
       line[i] = b;
-    }
+     } IACA_END
 }

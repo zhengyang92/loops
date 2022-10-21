@@ -12,7 +12,7 @@ int
 fn (uint8_t * buf, int i, const uint32_t * pal)
 {
   for (i = 0; i < 256; i++)
-    {
+     { IACA_START
       bytestream_put_be24 (&buf, pal[i]);
-    }
+     } IACA_END
 }

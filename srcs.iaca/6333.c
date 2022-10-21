@@ -14,7 +14,7 @@ fn (uint32_t state, int i, int HEVC_NAL_PPS, const uint8_t * buf,
 {
   int has_ps = 0;
   for (i = 0; i < buf_size; i++)
-    {
+     { IACA_START
       state = (state << 8) | buf[i];
       if (((state >> 8) & 0xFFFFFF) == 0x000001)
 	{
@@ -26,5 +26,5 @@ fn (uint32_t state, int i, int HEVC_NAL_PPS, const uint8_t * buf,
 	  else
 	    return 0;
 	}
-    }
+     } IACA_END
 }

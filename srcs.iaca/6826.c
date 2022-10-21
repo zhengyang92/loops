@@ -11,8 +11,8 @@ int
 fn (uint16_t * pixels, uint16_t colorA, int block_ptr, int pixel_x)
 {
   for (pixel_x = 0; pixel_x < 4; pixel_x++)
-    {
+     { IACA_START
       pixels[block_ptr] = colorA;
       block_ptr++;
-    }
+     } IACA_END
 }

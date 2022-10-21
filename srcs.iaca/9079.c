@@ -13,10 +13,10 @@ fn (int16_t * fc_v, int pulse_signs, int i, const uint8_t * tab1, int mask,
     int bits, int pulse_indexes, int pulse_count)
 {
   for (i = 0; i < pulse_count; i++)
-    {
+     { IACA_START
       fc_v[i + tab1[pulse_indexes & mask]] +=
 	(pulse_signs & 1) ? 8191 : -8192;
       pulse_indexes >>= bits;
       pulse_signs >>= 1;
-    }
+     } IACA_END
 }

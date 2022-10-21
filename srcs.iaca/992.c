@@ -13,12 +13,12 @@ fn (const int height, const float shy, int y, const int hsub, const float shx,
     const int wy, const int src_linesize, uint8_t * dst)
 {
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       int sx = x + vsub * shx * y / hsub - wx;
       int sy = y + hsub * shy * x / vsub - wy;
       if (sx >= 0 && sx < width - 1 && sy >= 0 && sy < height - 1)
 	{
 	  dst[x] = src[sy * src_linesize + sx];
 	}
-    }
+     } IACA_END
 }

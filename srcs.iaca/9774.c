@@ -13,7 +13,7 @@ fn (INT32 tmp2, INT32 tmp11, INT32 tmp0, INT32 tmp1, DCTELEM * dataptr,
     int ctr, INT32 tmp10)
 {
   for (ctr = 8 - 1; ctr >= 0; ctr--)
-    {
+     { IACA_START
       tmp0 = dataptr[8 * 0] + dataptr[8 * 4];
       tmp1 = dataptr[8 * 1] + dataptr[8 * 3];
       tmp2 = dataptr[8 * 2];
@@ -53,5 +53,5 @@ fn (INT32 tmp2, INT32 tmp11, INT32 tmp0, INT32 tmp1, DCTELEM * dataptr,
 			((2.785601151) * (((INT32) 1) << 13) + 0.5))))) +
 		    (((INT32) 1) << ((13 + 2) - 1))) >> (13 + 2));
       dataptr++;
-    }
+     } IACA_END
 }

@@ -12,8 +12,8 @@ fn (const int width, const uint16_t * xf1, const uint16_t * xf0, const int z,
     uint16_t * dst)
 {
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       const int zx = z + x;
       const int zz = zx % width + width * (zx < 0);
       dst[x] = (zx > 0) && (zx < width) ? xf1[zz] : xf0[zz];
-}}
+} IACA_END }

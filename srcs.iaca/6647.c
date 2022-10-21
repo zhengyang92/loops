@@ -12,7 +12,7 @@ fn (const int s, int y, int dyx, int x, int width, int r, int vy, int vx,
     int shift, uint8_t * dst, int dxx, uint8_t * src, int height, int stride)
 {
   for (x = 0; x < 8; x++)
-    {
+     { IACA_START
       int index;
       int src_x = vx >> 16;
       int src_y = vy >> 16;
@@ -59,5 +59,5 @@ fn (const int s, int y, int dyx, int x, int width, int r, int vy, int vx,
 	}
       vx += dxx;
       vy += dyx;
-    }
+     } IACA_END
 }

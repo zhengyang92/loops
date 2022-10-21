@@ -11,7 +11,7 @@ int
 fn (float *lut, int N, int n)
 {
   for (n = 0; n < N; n++)
-    {
+     { IACA_START
       float M = (N - 1) / 2.;
       if (((n - M) >= 0 ? (n - M) : (-(n - M))) >= 0.3 * M)
 	{
@@ -27,5 +27,5 @@ fn (float *lut, int N, int n)
 	{
 	  lut[n] = 1;
 	}
-    }
+     } IACA_END
 }

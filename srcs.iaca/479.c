@@ -13,7 +13,7 @@ fn (const uint16_t * bottom, ptrdiff_t width, const float opacity,
     const uint16_t * top, uint16_t * dst)
 {
   for (int j = 0; j < width; j++)
-    {
+     { IACA_START
       dst[j] =
 	top[j] +
 	((((int)
@@ -27,4 +27,4 @@ fn (const uint16_t * bottom, ptrdiff_t width, const float opacity,
 			     : (bottom[j] - top[j]) * ((1 << 9) -
 						       1) / bottom[j],
 			     9))) - top[j]) * opacity;
-}}
+} IACA_END }

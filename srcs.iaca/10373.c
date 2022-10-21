@@ -16,9 +16,9 @@ int
 fn (data out, int n, data * d, int i)
 {
   for (i = 0; i < n; ++i)
-    {
+     { IACA_START
       data new = concat_data (d[i], out);
       free_data (out);
       out = new;
-    }
+     } IACA_END
 }

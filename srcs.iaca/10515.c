@@ -108,7 +108,7 @@ int
 fn (long i2, long j1, long ip, long j2, long i1)
 {
   for (ip = 0; ip < spaces_.N; ip++)
-    {
+     { IACA_START
       i1 = space2_.P[ip][0];
       j1 = space2_.P[ip][1];
       i1 &= 64 - 1;
@@ -126,5 +126,5 @@ fn (long i2, long j1, long ip, long j2, long i1)
       i2 += ispace_.E[i2 + 32];
       j2 += ispace_.F[j2 + 32];
       space2_.H[j2][i2] += 1.0;
-    }
+     } IACA_END
 }

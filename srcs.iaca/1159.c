@@ -11,7 +11,7 @@ int
 fn (int v, int x, int width, float o1, float o2, uint16_t * dst, int step)
 {
   for (x = 0; x < width; x += step)
-    {
+     { IACA_START
       dst[x] = (v - dst[x]) * o1 + dst[x] * o2;
-    }
+     } IACA_END
 }

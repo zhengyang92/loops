@@ -12,9 +12,9 @@ fn (Int32 maxLen, Int32 * limit, Int32 * base, Int32 minLen, Int32 i,
     Int32 vec)
 {
   for (i = minLen; i <= maxLen; i++)
-    {
+     { IACA_START
       vec += (base[i + 1] - base[i]);
       limit[i] = vec - 1;
       vec <<= 1;
-    }
+     } IACA_END
 }

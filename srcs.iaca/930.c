@@ -31,7 +31,7 @@ fn (chord_set * chords, int val)
 {
   int r_cap = 1;
   for (int i = 0; i < chords->size; i++)
-    {
+     { IACA_START
       if (val != chords->C[i].l)
 	{
 	  while (2 * val < chords->C[i].l && val != 0)
@@ -58,5 +58,5 @@ fn (chord_set * chords, int val)
 	    }
 	  chords->R[chords->Lnum++] = val;
 	}
-    }
+     } IACA_END
 }

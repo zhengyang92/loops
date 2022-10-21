@@ -124,7 +124,7 @@ int
 fn (long k)
 {
   for (k = 0; k < spaces_.N; k++)
-    {
+     { IACA_START
       space1_.Vx[k] =
 	space1_.Vx[k] + space1_.Ex1[k] + (space1_.Xx[k] -
 					  space1_.Xi[k]) * space1_.Dex1[k];
@@ -133,5 +133,5 @@ fn (long k)
       space1_.Rx[k] = space1_.Xx[k] - ispace_.Ir[k];
       ispace_.Ir[k] = (ispace_.Ir[k] & 2048 - 1) + 1;
       space1_.Xx[k] = space1_.Rx[k] + ispace_.Ir[k];
-    }
+     } IACA_END
 }

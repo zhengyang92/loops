@@ -15,7 +15,7 @@ fn (const PixOrCopy * const v, VP8LBitWriter * const bw,
     const uint8_t order[4], int k, const HuffmanTreeCode * codes)
 {
   for (k = 0; k < 4; ++k)
-    {
+     { IACA_START
       const int code = PixOrCopyLiteral (v, order[k]);
       WriteHuffmanCode (bw, codes + k, code);
-}}
+} IACA_END }

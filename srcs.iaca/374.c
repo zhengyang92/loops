@@ -12,7 +12,7 @@ fn (const char *name, const char *inst_name, char name2[30], int k,
     const char *filt_name)
 {
   for (k = 0; name2[k]; k++)
-    {
+     { IACA_START
       if (name2[k] == '@' && name[k + 1])
 	{
 	  name2[k] = 0;
@@ -20,5 +20,5 @@ fn (const char *name, const char *inst_name, char name2[30], int k,
 	  filt_name = name2;
 	  break;
 	}
-    }
+     } IACA_END
 }

@@ -13,5 +13,5 @@ fn (int pulse_idx, int pulse,
     unsigned int combined_pulse_pos)
 {
   for (; combined_pulse_pos < dss_sp_combinatorial_table[pulse][pulse_idx];
-       --pulse_idx);
+       --pulse_idx) {IACA_START} ; IACA_END
 }

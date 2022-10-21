@@ -11,7 +11,7 @@ int
 fn (int i, int *tmp, const int kC2, const int16_t * in, const int kC1)
 {
   for (i = 0; i < 4; ++i)
-    {
+     { IACA_START
       const int a = in[0] + in[8];
       const int b = in[0] - in[8];
       const int c = (((in[4]) * (kC2)) >> 16) - (((in[12]) * (kC1)) >> 16);
@@ -22,4 +22,4 @@ fn (int i, int *tmp, const int kC2, const int16_t * in, const int kC1)
       tmp[3] = a - d;
       tmp += 4;
       in++;
-}}
+} IACA_END }

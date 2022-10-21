@@ -14,7 +14,7 @@ fn (int last, int i, const uint8_t * jvt_list, uint8_t * factors, int size,
 {
   int next = 8;
   for (i = 0; i < size; i++)
-    {
+     { IACA_START
       if (next)
 	{
 	  int v = get_se_golomb (gb);
@@ -33,5 +33,5 @@ fn (int last, int i, const uint8_t * jvt_list, uint8_t * factors, int size,
 	  break;
 	}
       last = factors[scan[i]] = next ? next : last;
-    }
+     } IACA_END
 }

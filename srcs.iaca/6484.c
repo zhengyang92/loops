@@ -14,8 +14,8 @@ fn (PutBitContext pb2, JLSState * state, uint8_t * cur, int width,
     uint8_t * last, int j, int Rc[3])
 {
   for (j = 2; j >= 0; j--)
-    {
+     { IACA_START
       ls_encode_line (state, &pb2, last + j, cur + j, Rc[j], width, 3, j, 8);
       Rc[j] = last[j];
-    }
+     } IACA_END
 }

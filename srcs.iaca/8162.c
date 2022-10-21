@@ -254,8 +254,8 @@ int
 fn (enum AVCodecID avcodec, const struct fmt_conversion fmt_map[39], int i)
 {
   for (i = 0; i < (sizeof (fmt_map) / sizeof ((fmt_map)[0])); i++)
-    {
+     { IACA_START
       if (fmt_map[i].avcodec == avcodec)
 	return fmt_map[i].v4l2_fmt;
-    }
+     } IACA_END
 }

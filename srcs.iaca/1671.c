@@ -12,7 +12,7 @@ fn (const char *p, const char *linebreaks, const char *p_end,
     int keep_ass_markup, AVBPrint * buf)
 {
   for (; p < p_end && *p; p++)
-    {
+     { IACA_START
       if (linebreaks && strchr (linebreaks, *p))
 	{
 	  av_bprintf (buf, "\\N");
@@ -34,5 +34,5 @@ fn (const char *p, const char *linebreaks, const char *p_end,
 	{
 	  av_bprint_chars (buf, *p, 1);
 	}
-    }
+     } IACA_END
 }

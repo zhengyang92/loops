@@ -14,7 +14,7 @@ fn (const ptrdiff_t mb_stride, uint8_t * fixed, int mb_y,
     const int mb_width)
 {
   for (mb_x = 0; mb_x < mb_width; mb_x++)
-    {
+     { IACA_START
       const int mb_xy = mb_x + mb_y * mb_stride;
       if (fixed[mb_xy] == 8)
 	{
@@ -31,5 +31,5 @@ fn (const ptrdiff_t mb_stride, uint8_t * fixed, int mb_y,
 	    add_blocklist (blocklist, &blocklist_length, fixed, mb_x,
 			   mb_y + 1, mb_xy + mb_stride);
 	}
-    }
+     } IACA_END
 }

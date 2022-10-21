@@ -12,7 +12,7 @@ fn (int decorr_left_weight, int i, int nb_samples, int32_t ** buffer,
     int decorr_shift)
 {
   for (i = 0; i < nb_samples; i++)
-    {
+     { IACA_START
       int32_t a, b;
       a = buffer[0][i];
       b = buffer[1][i];
@@ -20,5 +20,5 @@ fn (int decorr_left_weight, int i, int nb_samples, int32_t ** buffer,
       b += a;
       buffer[0][i] = b;
       buffer[1][i] = a;
-    }
+     } IACA_END
 }

@@ -24,7 +24,7 @@ fn (int32_t * in_right, int32_t * out_left, int nb_samples, int m,
 {
   int i = 0;
   for (i = 0; i < nb_samples; i++)
-    {
+     { IACA_START
       int32_t sam, tmp;
       sam = dpp->samplesA[m];
       out_left[i] = tmp = (dpp->samplesA[k] =
@@ -46,5 +46,5 @@ fn (int32_t * in_right, int32_t * out_left, int nb_samples, int m,
 	};
       m = (m + 1) & (8 - 1);
       k = (k + 1) & (8 - 1);
-    }
+     } IACA_END
 }

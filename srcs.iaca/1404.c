@@ -12,7 +12,7 @@ int
 fn (const uint8_t keybits[32], uint8_t * buf, uint32_t key)
 {
   for (int i = 0; i < 32; i++)
-    {
+     { IACA_START
       unsigned p = keybits[i];
       key |= ((buf[p] >> ((i * 5 + 3) & 7)) & 1u) << i;
-}}
+} IACA_END }

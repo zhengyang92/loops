@@ -13,7 +13,7 @@ fn (int mrefs, int w, int interpol, int spat, int x, uint16_t * prev,
     int clip_max, uint16_t * dst, uint16_t * prev2, int prefs2)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int c = cur[mrefs];
       int d = (prev2[0] + next2[0]) >> 1;
       int e = cur[prefs];
@@ -90,5 +90,5 @@ fn (int mrefs, int w, int interpol, int spat, int x, uint16_t * prev,
       next++;
       prev2++;
       next2++;
-    }
+     } IACA_END
 }

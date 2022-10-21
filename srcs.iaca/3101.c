@@ -11,7 +11,7 @@ int
 fn (uint16_t * last_line, unsigned int dst_width, int j, uint16_t * dst)
 {
   for (j = 0; j < dst_width; ++j)
-    {
+     { IACA_START
       dst[j] = last_line[j];
-    }
+     } IACA_END
 }

@@ -13,9 +13,9 @@ fn (const char *name, const char *const color_range_names[3], int i)
   for (i = 0;
        i < (sizeof (color_range_names) / sizeof ((color_range_names)[0]));
        i++)
-    {
+     { IACA_START
       size_t len = strlen (color_range_names[i]);
       if (!strncmp (color_range_names[i], name, len))
 	return i;
-    }
+     } IACA_END
 }

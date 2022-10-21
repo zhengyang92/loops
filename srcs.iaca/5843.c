@@ -23,7 +23,7 @@ fn (int i, int level_code, int mask, int16_t level_buf[65],
     int esc_golomb_order, int esc_code, uint8_t run_buf[65], int run)
 {
   for (i = 0; i < 65; i++)
-    {
+     { IACA_START
       level_code = get_ue_code (bc, r->golomb_order);
       if (level_code >= 59)
 	{
@@ -49,5 +49,5 @@ fn (int i, int level_code, int mask, int16_t level_buf[65],
 	}
       level_buf[i] = level;
       run_buf[i] = run;
-    }
+     } IACA_END
 }

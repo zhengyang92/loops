@@ -12,9 +12,9 @@ fn (int16_t * filter, int i, int filterSize, int k, int16_t * filterCopy,
     int j)
 {
   for (j = 0; j < 16; ++j)
-    {
+     { IACA_START
       int from = (i + j) * filterSize + k;
       int to = i * filterSize + j * 4 + k * 16;
       memcpy (&filter[to], &filterCopy[from], 4 * sizeof (int16_t));
-    }
+     } IACA_END
 }

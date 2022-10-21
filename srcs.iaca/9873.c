@@ -12,7 +12,7 @@ fn (int j, int color_cache_bits, const uint16_t kAlphabetSize[5])
 {
   int max_alphabet_size = 0;
   for (j = 0; j < 5; ++j)
-    {
+     { IACA_START
       int alphabet_size = kAlphabetSize[j];
       if (j == 0 && color_cache_bits > 0)
 	{
@@ -22,5 +22,5 @@ fn (int j, int color_cache_bits, const uint16_t kAlphabetSize[5])
 	{
 	  max_alphabet_size = alphabet_size;
 	}
-    }
+     } IACA_END
 }

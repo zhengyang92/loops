@@ -13,9 +13,9 @@ fn (int l, AVBPrint bp, uint8_t * data)
 {
   int i = 0;
   for (i = 0; i < l; i++)
-    {
+     { IACA_START
       av_bprintf (&bp, "%02x", data[i]);
       if (i & 1)
 	av_bprintf (&bp, " ");
-    }
+     } IACA_END
 }

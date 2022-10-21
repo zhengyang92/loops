@@ -15,7 +15,7 @@ fn (const int last_pixel_pair, const uint8_t * cur_u, uint8_t * top_dst,
     const uint8_t * top_y, const uint8_t * top_v)
 {
   for (x = 1; x <= last_pixel_pair; ++x)
-    {
+     { IACA_START
       const uint32_t t_uv = ((top_u[x]) | ((top_v[x]) << 16));
       const uint32_t uv = ((cur_u[x]) | ((cur_v[x]) << 16));
       const uint32_t avg = tl_uv + t_uv + l_uv + uv + 0x00080008u;
@@ -39,4 +39,4 @@ fn (const int last_pixel_pair, const uint8_t * cur_u, uint8_t * top_dst,
 	}
       tl_uv = t_uv;
       l_uv = uv;
-}}
+} IACA_END }

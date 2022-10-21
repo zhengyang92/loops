@@ -12,9 +12,9 @@ int
 fn (int i, int len, int16_t ** samples, int32_t ** in, int shift)
 {
   for (i = 0; i < len; i++)
-    {
+     { IACA_START
       unsigned a = in[0][i];
       unsigned b = in[1][i];
       (samples[0][i]) = a << shift;
       (samples[1][i]) = (a - b) << shift;
-}}
+} IACA_END }

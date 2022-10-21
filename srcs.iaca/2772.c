@@ -13,8 +13,8 @@ fn (int max_order, int zero_shift, int i, int min_shift, int max_shift,
     int precision)
 {
   for (i = min_order - 1; i < max_order; i++)
-    {
+     { IACA_START
       quantize_lpc_coefs (lpc[i], i + 1, precision, coefs[i], &shift[i],
 			  min_shift, max_shift, zero_shift);
-    }
+     } IACA_END
 }

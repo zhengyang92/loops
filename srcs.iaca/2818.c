@@ -12,8 +12,8 @@ int
 fn (PutBitContext * p, const uint8_t * bits_table, int i, int n)
 {
   for (i = 1; i <= 16; i++)
-    {
+     { IACA_START
       n += bits_table[i];
       put_bits (p, 8, bits_table[i]);
-    }
+     } IACA_END
 }

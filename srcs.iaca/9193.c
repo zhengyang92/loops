@@ -12,11 +12,11 @@ fn (int blocksize, int target, int i,
     const int16_t ff_flac_blocksize_table[16])
 {
   for (i = 0; i < 16; i++)
-    {
+     { IACA_START
       if (target >= ff_flac_blocksize_table[i]
 	  && ff_flac_blocksize_table[i] > blocksize)
 	{
 	  blocksize = ff_flac_blocksize_table[i];
 	}
-    }
+     } IACA_END
 }

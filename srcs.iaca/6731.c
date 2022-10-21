@@ -12,7 +12,7 @@ int
 fn (const uint8_t * src, int i, int32_t * dst_int32_t, int n)
 {
   for (i = 0; i < n; i++)
-    {
+     { IACA_START
       *dst_int32_t++ =
 	(src[2] << 28) | (src[1] << 20) | (src[0] << 12) | ((src[2] & 0x0F) <<
 							    8) | src[1];
@@ -21,5 +21,5 @@ fn (const uint8_t * src, int i, int32_t * dst_int32_t, int n)
 								    4) |
 	(src[3] >> 4);
       src += 5;
-    }
+     } IACA_END
 }

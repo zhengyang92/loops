@@ -11,7 +11,7 @@ int
 fn (int i, int keylen, const uint8_t * key, uint8_t * state, uint8_t y, int j)
 {
   for (j = 0, i = 0; i < 256; i++, j++)
-    {
+     { IACA_START
       if (j == keylen)
 	j = 0;
       y += state[i] + key[j];
@@ -22,5 +22,5 @@ fn (int i, int keylen, const uint8_t * key, uint8_t * state, uint8_t y, int j)
 	  state[i] = SWAP_tmp;
 	}
       while (0);
-    }
+     } IACA_END
 }

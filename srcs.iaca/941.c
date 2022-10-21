@@ -12,8 +12,8 @@ fn (int w, float *sum, float *total_weight, const uint8_t * src,
     uint8_t * dst)
 {
   for (int x = 0; x < w; x++)
-    {
+     { IACA_START
       total_weight[x] += 1.f;
       sum[x] += 1.f * src[x];
       dst[x] = av_clip_uint8_c (sum[x] / total_weight[x] + 0.5f);
-}}
+} IACA_END }

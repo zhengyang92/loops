@@ -15,7 +15,7 @@ fn (uint32_t * rgba_palette, int g, int i, uint8_t * alpha,
     int j, int b)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       if (alpha[i] != 0)
 	{
 	  if (!color_used[colormap[i]])
@@ -36,5 +36,5 @@ fn (uint32_t * rgba_palette, int g, int i, uint8_t * alpha,
 		((alpha[i] * 17U) << 24);
 	    }
 	}
-    }
+     } IACA_END
 }

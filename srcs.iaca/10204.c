@@ -12,7 +12,7 @@ int
 fn (const I32 iWidth, U8 * piDstPixel, const float *piSrcPixel, I32 x)
 {
   for (x = 0; x < iWidth; x++)
-    {
+     { IACA_START
       const float r = piSrcPixel[4 * x];
       const float g = piSrcPixel[4 * x + 1];
       const float b = piSrcPixel[4 * x + 2];
@@ -21,4 +21,4 @@ fn (const I32 iWidth, U8 * piDstPixel, const float *piSrcPixel, I32 x)
       piDstPixel[4 * x + 1] = Convert_Float_To_U8 (g);
       piDstPixel[4 * x + 2] = Convert_Float_To_U8 (b);
       piDstPixel[4 * x + 3] = Convert_AlphaFloat_To_U8 (a);
-}}
+} IACA_END }

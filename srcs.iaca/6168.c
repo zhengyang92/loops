@@ -11,7 +11,7 @@ int
 fn (int16_t * block, int i)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       const int z0 = block[i + 4 * 0] + block[i + 4 * 2];
       const int z1 = block[i + 4 * 0] - block[i + 4 * 2];
       const int z2 = (block[i + 4 * 1] >> 1) - block[i + 4 * 3];
@@ -20,4 +20,4 @@ fn (int16_t * block, int i)
       block[i + 4 * 1] = z1 + z2;
       block[i + 4 * 2] = z1 - z2;
       block[i + 4 * 3] = z0 - z3;
-}}
+} IACA_END }

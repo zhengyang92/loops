@@ -12,7 +12,7 @@ fn (int i, const int lim, const uint8_t * cm, const int stride, int diff,
     uint8_t * src, const int step)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       diff =
 	((src[-2 * step] - src[1 * step]) -
 	 (src[-1 * step] - src[0 * step]) * 4) >> 3;
@@ -20,5 +20,5 @@ fn (int i, const int lim, const uint8_t * cm, const int stride, int diff,
       src[-1 * step] = cm[src[-1 * step] + diff];
       src[0 * step] = cm[src[0 * step] - diff];
       src += stride;
-    }
+     } IACA_END
 }

@@ -21,7 +21,7 @@ fn (float xy_filt_val, int w, const float sigma_nsq, const float *xx_filt,
   float accum_inner_den = 0.f;
   float gain_limit = 100.f;
   for (int j = 0; j < w; j++)
-    {
+     { IACA_START
       mu1_sq_val = mu1_sq[i * w + j];
       mu2_sq_val = mu2_sq[i * w + j];
       mu1_mu2_val = mu1_mu2[i * w + j];
@@ -60,5 +60,5 @@ fn (float xy_filt_val, int w, const float sigma_nsq, const float *xx_filt,
 	num_val = den_val = 1.f;
       accum_inner_num += num_val;
       accum_inner_den += den_val;
-    }
+     } IACA_END
 }

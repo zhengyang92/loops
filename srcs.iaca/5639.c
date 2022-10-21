@@ -130,9 +130,9 @@ int
 fn (int i, const AVCodecTag * const *tags, enum AVCodecID id)
 {
   for (i = 0; tags && tags[i]; i++)
-    {
+     { IACA_START
       int tag = ff_codec_get_tag (tags[i], id);
       if (tag)
 	return tag;
-    }
+     } IACA_END
 }

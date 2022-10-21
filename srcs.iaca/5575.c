@@ -11,7 +11,7 @@ int
 fn (int y, int srclinesize, int x, int outw, uint8_t * dst, uint8_t * src)
 {
   for (x = 0; x < outw; x++)
-    {
+     { IACA_START
       int32_t v =
 	((((const uint8_t *) (src + x * srclinesize +
 			      y * 3))[0] << 16) | (((const uint8_t *) (src +
@@ -32,5 +32,5 @@ fn (int y, int srclinesize, int x, int outw, uint8_t * dst, uint8_t * src)
 	  ((uint8_t *) (dst + 3 * x))[0] = (v) >> 16;
 	}
       while (0);
-    }
+     } IACA_END
 }

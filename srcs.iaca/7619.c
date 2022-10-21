@@ -76,7 +76,7 @@ fn (struct sbg_script *s, int64_t period, int i, int64_t trans_time,
     struct sbg_script_event *ev2, struct sbg_script_event *ev1)
 {
   for (i = 0; i < s->nb_events; i++)
-    {
+     { IACA_START
       ev1 = &s->events[i];
       ev2 = &s->events[(i + 1) % s->nb_events];
       if (!ev1->fade.slide)
@@ -91,5 +91,5 @@ fn (struct sbg_script *s, int64_t period, int i, int64_t trans_time,
 					   trans_time) : (ev2->ts_trans));
 	}
       ev1->ts_next = ev2->ts_int + (ev1 < ev2 ? 0 : period);
-    }
+     } IACA_END
 }

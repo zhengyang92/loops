@@ -13,7 +13,7 @@ fn (const uint16_t * dithers, int thresh, uint16_t * dc, int width, int x,
     uint8_t * dst, uint8_t * src)
 {
   for (x = 0; x < width; dc += x & 1, x++)
-    {
+     { IACA_START
       int pix = src[x] << 7;
       int delta = dc[0] - pix;
       int m = abs (delta) * thresh >> 16;
@@ -21,4 +21,4 @@ fn (const uint16_t * dithers, int thresh, uint16_t * dc, int width, int x,
       m = m * m * delta >> 14;
       pix += m + dithers[x & 7];
       dst[x] = av_clip_uint8_c (pix >> 7);
-}}
+} IACA_END }

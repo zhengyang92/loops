@@ -13,8 +13,8 @@ fn (int i, int level[16], int16_t * block, int total_coeff,
     const uint8_t * scantable)
 {
   for (; i < total_coeff; i++)
-    {
+     { IACA_START
       scantable--;
       ((int32_t *) block)[*scantable] = level[i];
-    }
+     } IACA_END
 }

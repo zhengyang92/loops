@@ -12,10 +12,10 @@ fn (int shift_start[4], int j, const unsigned int c, int shift_dec[4],
     unsigned int v, unsigned int value)
 {
   for (j = shift_start[c]; j > -shift_dec[c]; j -= shift_dec[c])
-    {
+     { IACA_START
       if (j > 0)
 	value |= v << j;
       else
 	value |= v >> (-j);
-    }
+     } IACA_END
 }

@@ -11,7 +11,7 @@ int
 fn (int i, int tmp[64], short *q, int sum, short *p)
 {
   for (i = 0; i < 64; i++)
-    {
+     { IACA_START
       sum = p[0 * 64] * q[0 * 64];
       sum += p[1 * 64] * q[1 * 64];
       sum += p[2 * 64] * q[2 * 64];
@@ -23,5 +23,5 @@ fn (int i, int tmp[64], short *q, int sum, short *p)
       tmp[i] = sum;
       p++;
       q++;
-    }
+     } IACA_END
 }

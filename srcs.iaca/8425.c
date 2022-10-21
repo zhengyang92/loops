@@ -18,7 +18,7 @@ fn (const int stepw, const uint16_t * in_vptr, int y, int sv,
   int x = 0;
   for (int xx = ((0) > (x - sizew) ? (0) : (x - sizew));
        xx <= ((x + sizew) > (w - 1) ? (w - 1) : (x + sizew)); xx += stepw)
-    {
+     { IACA_START
       const int Y = in_yptr[xx * chroma_w];
       const int U = in_uptr[xx];
       const int V = in_vptr[xx];
@@ -32,5 +32,5 @@ fn (const int stepw, const uint16_t * in_vptr, int y, int sv,
 	  sv += V;
 	  cn++;
 	}
-    }
+     } IACA_END
 }

@@ -54,7 +54,7 @@ int
 fn (uint8_t * key, int i, AVIOContext * pb, uint8_t * val, int64_t end)
 {
   for (i = 0; i < 2; i++)
-    {
+     { IACA_START
       uint8_t **p;
       uint32_t len, tag;
       int ret;
@@ -89,5 +89,5 @@ fn (uint8_t * key, int i, AVIOContext * pb, uint8_t * val, int64_t end)
 	  return ret;
 	}
       (*p)[len] = 0;
-    }
+     } IACA_END
 }

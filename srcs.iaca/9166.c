@@ -14,7 +14,7 @@ fn (uint32_t * rgba_palette, int g, int i, uint32_t subtitle_color,
     int level, int nb_opaque_colors, int j, int b)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       if (alpha[i] != 0)
 	{
 	  if (!color_used[colormap[i]])
@@ -35,5 +35,5 @@ fn (uint32_t * rgba_palette, int g, int i, uint32_t subtitle_color,
 		((alpha[i] * 17) << 24);
 	    }
 	}
-    }
+     } IACA_END
 }

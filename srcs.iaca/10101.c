@@ -11,10 +11,10 @@ int
 fn (int histogram_size, int max_depth, uint8_t * const bit_depths, int j)
 {
   for (j = 1; j < histogram_size; ++j)
-    {
+     { IACA_START
       if (max_depth < bit_depths[j])
 	{
 	  max_depth = bit_depths[j];
 	}
-    }
+     } IACA_END
 }

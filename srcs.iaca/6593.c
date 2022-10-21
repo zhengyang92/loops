@@ -11,7 +11,7 @@ int
 fn (float *ptr, float csa_table[8][4], int i, int n)
 {
   for (i = n; i > 0; i--)
-    {
+     { IACA_START
       do
 	{
 	  float tmp0 = ptr[-1 - 0];
@@ -77,5 +77,5 @@ fn (float *ptr, float csa_table[8][4], int i, int n)
 	}
       while (0);
       ptr += 18;
-    }
+     } IACA_END
 }

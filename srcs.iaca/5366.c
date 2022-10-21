@@ -12,11 +12,11 @@ int
 fn (int x, int delta, const int16_t * weights, uint8_t * dst, uint8_t * src)
 {
   for (x = 0; x < 8; x++)
-    {
+     { IACA_START
       dst[x] =
 	av_clip_uint8_c ((src[x - delta] * weights[0] + src[x] * weights[1] +
 			  src[x + delta] * weights[2] + src[x +
 							    2 * delta] *
 			  weights[3] + 64) >> 7);
-    }
+     } IACA_END
 }

@@ -16,11 +16,11 @@ int
 fn (int le, uint32_t magic, int i, const struct endianess table[7])
 {
   for (i = 0; i < 7; i++)
-    {
+     { IACA_START
       if (magic == table[i].magic)
 	{
 	  le = table[i].is_le;
 	  break;
 	}
-    }
+     } IACA_END
 }

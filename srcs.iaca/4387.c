@@ -11,7 +11,7 @@ int
 fn (int w0, int x, unsigned int *cchange, uint16_t * d, const uint16_t * i)
 {
   for (x = 0; x < w0; x++)
-    {
+     { IACA_START
       d[x] = cchange[i[x]];
-    }
+     } IACA_END
 }

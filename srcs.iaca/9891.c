@@ -13,7 +13,7 @@ fn (int i, const __m128i zero, const int limit, __m128i all_alphas,
     __m128i * out, const uint8_t * alpha, const __m128i rgb_mask)
 {
   for (i = 0; i < limit; i += 8)
-    {
+     { IACA_START
       const __m128i a0 = _mm_loadl_epi64 ((const __m128i *) &alpha[i]);
       const __m128i a1 = _mm_unpacklo_epi8 (a0, zero);
       const __m128i a2_lo = _mm_unpacklo_epi16 (a1, zero);
@@ -28,4 +28,4 @@ fn (int i, const __m128i zero, const int limit, __m128i all_alphas,
       _mm_storeu_si128 (out + 1, b2_hi);
       all_alphas = _mm_and_si128 (all_alphas, a0);
       out += 2;
-}}
+} IACA_END }

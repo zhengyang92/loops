@@ -13,7 +13,7 @@ fn (int lumY, int *out_chr_size, int *out_lum_size, int chrSubSample,
     int lumFilterSize, int chrFilterSize)
 {
   for (lumY = 0; lumY < dstH; lumY++)
-    {
+     { IACA_START
       int chrY = (int64_t) lumY * chrDstH / dstH;
       int nextSlice =
 	((lumFilterPos[lumY] + lumFilterSize - 1) >
@@ -34,4 +34,4 @@ fn (int lumY, int *out_chr_size, int *out_lum_size, int chrSubSample,
 	  chrFilterPos[chrY]) ? ((*out_chr_size)) : ((nextSlice >>
 						      chrSubSample) -
 						     chrFilterPos[chrY]));
-}}
+} IACA_END }

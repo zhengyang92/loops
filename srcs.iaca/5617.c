@@ -12,11 +12,11 @@ fn (int64_t pos, int ret, int i, int64_t best_pos, int best_valid,
     int64_t out_pos[4])
 {
   for (i = 0; i < ret; i++)
-    {
+     { IACA_START
       if (llabs (best_pos - pos) > llabs (out_pos[i] - pos))
 	{
 	  best_pos = out_pos[i];
 	  best_valid = ret;
 	}
-    }
+     } IACA_END
 }

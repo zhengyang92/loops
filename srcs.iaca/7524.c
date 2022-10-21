@@ -12,7 +12,7 @@ fn (float *lut, int x, int width, const uint8_t * index, float opacity,
     uint8_t * dst, const uint8_t * src, int max)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       int v = lut[index[x]];
       if (v >= 0 && v <= max)
 	{
@@ -22,5 +22,5 @@ fn (float *lut, int x, int width, const uint8_t * index, float opacity,
 	{
 	  dst[x] = src[x];
 	};
-    }
+     } IACA_END
 }

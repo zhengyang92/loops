@@ -13,7 +13,7 @@ fn (int alpha, const int tc, uint16_t * pix, int d, ptrdiff_t ystride,
     int inner_iters, int beta, ptrdiff_t xstride)
 {
   for (d = 0; d < inner_iters; d++)
-    {
+     { IACA_START
       const int p0 = pix[-1 * xstride];
       const int p1 = pix[-2 * xstride];
       const int q0 = pix[0];
@@ -28,4 +28,4 @@ fn (int alpha, const int tc, uint16_t * pix, int d, ptrdiff_t ystride,
 	  pix[0] = av_clip_uintp2_c (q0 - delta, 14);
 	}
       pix += ystride;
-}}
+} IACA_END }

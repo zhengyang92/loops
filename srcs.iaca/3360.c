@@ -13,8 +13,8 @@ fn (int i, GetBitContext * bitbuf, const uint8_t string_table[256],
     uint8_t seed, uint8_t * out)
 {
   for (i = 1; i <= out[0]; i++)
-    {
+     { IACA_START
       out[i] = get_bits (bitbuf, 8) ^ seed;
       seed = string_table[out[i] ^ seed];
-    }
+     } IACA_END
 }

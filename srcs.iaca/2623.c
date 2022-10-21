@@ -13,8 +13,8 @@ fn (const uint8_t * len_table, int index, int n, uint32_t * dst, int len,
     uint32_t bits)
 {
   for (index = 0; index < n; index++)
-    {
+     { IACA_START
       if (len_table[index] == len)
 	dst[index] = bits++;
-    }
+     } IACA_END
 }

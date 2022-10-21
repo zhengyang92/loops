@@ -13,7 +13,7 @@ fn (const uint8_t * cb, uint8_t bits[256], int i)
   int b = 1;
   int index = 0;
   for (i = *cb++; i > 0; i--)
-    {
+     { IACA_START
       do
 	{
 	  if (!(index < 256))
@@ -26,5 +26,5 @@ fn (const uint8_t * cb, uint8_t bits[256], int i)
       while (0);
       bits[index] = b;
       index++;
-    }
+     } IACA_END
 }

@@ -14,9 +14,9 @@ fn (const char *name, const char *const color_primaries_names[23], int i)
        i <
        (sizeof (color_primaries_names) / sizeof ((color_primaries_names)[0]));
        i++)
-    {
+     { IACA_START
       size_t len = strlen (color_primaries_names[i]);
       if (!strncmp (color_primaries_names[i], name, len))
 	return i;
-    }
+     } IACA_END
 }

@@ -13,7 +13,7 @@ fn (int offset, uint16_t * out, int code, GetByteContext * gbc, int j)
 {
   int pos = 0;
   for (j = 0; j < code + 1; j++)
-    {
+     { IACA_START
       if (pos < offset)
 	{
 	  out[pos++] = bytestream2_get_be16 (gbc);
@@ -22,5 +22,5 @@ fn (int offset, uint16_t * out, int code, GetByteContext * gbc, int j)
 	{
 	  bytestream2_skip (gbc, 2);
 	}
-    }
+     } IACA_END
 }

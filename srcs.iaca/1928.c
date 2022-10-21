@@ -13,8 +13,8 @@ fn (int msk_val[50], int misc_decay, int i, const uint8_t band_low_tab[3],
 {
   int fast_leak = 0;
   for (i = nb_exponent - 1; i > band_low_tab[nb_code]; i--)
-    {
+     { IACA_START
       fast_leak = log_add (fast_leak - misc_decay, psd_val[i] - fast_gain);
       msk_val[i] = ((msk_val[i]) > (fast_leak) ? (msk_val[i]) : (fast_leak));
-    }
+     } IACA_END
 }

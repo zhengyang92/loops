@@ -13,8 +13,8 @@ fn (const int width, int64_t sum, const int size_w, int64_t * col_sum,
     const uint16_t * lut, uint16_t * dst)
 {
   for (int x = 1; x < width; x++)
-    {
+     { IACA_START
       sum = sum - col_sum[x - size_w - 1] + col_sum[x + size_w];
       ((void) 0);
       dst[x] = (lut[(sum)]);
-}}
+} IACA_END }

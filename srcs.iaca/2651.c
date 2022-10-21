@@ -14,11 +14,11 @@ fn (int16_t * lsp, int i, int16_t * lsf, const int16_t cos_derivative_tbl[64],
     int16_t freq)
 {
   for (i = 0; i < order; i++)
-    {
+     { IACA_START
       freq = (lsf[i] * 20861) >> 15;
       k = ((freq >> 8) > (63) ? (63) : (freq >> 8));
       diff = freq & 0xFF;
       tmp = cos_derivative_tbl[k] * diff;
       lsp[i] = cos_tbl[k] + (tmp >> 12);
-    }
+     } IACA_END
 }

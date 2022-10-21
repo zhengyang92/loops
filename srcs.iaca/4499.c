@@ -15,7 +15,7 @@ fn (uint16_t * d1_data, const uint16_t * c0_data, const uint16_t * c2_data,
     const uint16_t * c1_data)
 {
   for (x = 0; x < src_w; x++)
-    {
+     { IACA_START
       const int c0 =
 	((c0_data[x >> c0_shift_w]) >
 	 (limit) ? (limit) : (c0_data[x >> c0_shift_w]));
@@ -33,5 +33,5 @@ fn (uint16_t * d1_data, const uint16_t * c0_data, const uint16_t * c2_data,
 	  *(d1_data + c0) = c1;
 	  *(d2_data + c0) = c2;
 	}
-    }
+     } IACA_END
 }

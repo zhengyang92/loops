@@ -13,7 +13,7 @@ fn (int y, int w, int linesize, uint8_t * used_color, int bit_len, int x,
     int h, uint8_t * d, GetBitContext gb, int len, int color, int is_8bit)
 {
   for (;;)
-    {
+     { IACA_START
       if (get_bits_count (&gb) > bit_len)
 	return -1;
       if (is_8bit)
@@ -37,5 +37,5 @@ fn (int y, int w, int linesize, uint8_t * used_color, int bit_len, int x,
 	  x = 0;
 	  align_get_bits (&gb);
 	}
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ fn (uint8_t * const good_for_rle, int k, int i)
 {
   int stride = 0;
   for (k = 0; k < stride; ++k)
-    {
+     { IACA_START
       good_for_rle[i - k - 1] = 1;
-    }
+     } IACA_END
 }

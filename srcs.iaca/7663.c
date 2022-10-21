@@ -13,7 +13,7 @@ fn (int32_t * dst, int temp, int i, unsigned int mul, int temp4,
     int shift, int temp7, const int32_t * src, int temp6)
 {
   for (i = 0; i < len; i += 8)
-    {
+     { IACA_START
       temp = src[i] * mul;
       temp1 = src[i + 1] * mul;
       temp = temp + round;
@@ -38,5 +38,5 @@ fn (int32_t * dst, int temp, int i, unsigned int mul, int temp4,
       temp7 = temp7 + round;
       dst[i + 6] = temp6 >> shift;
       dst[i + 7] = temp7 >> shift;
-    }
+     } IACA_END
 }

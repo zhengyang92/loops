@@ -82,11 +82,11 @@ int
 fn (long k)
 {
   for (k = 0; k < spaces_.N; k++)
-    {
+     { IACA_START
       space1_.Vx[k] = 0.0;
       space1_.Xx[k] = 0.0;
       ispace_.Ix[k] = (long) space1_.Grd[k];
       space1_.Xi[k] = (double) ispace_.Ix[k];
       space1_.Ex1[k] = space1_.Ex[ispace_.Ix[k] - 1];
       space1_.Dex1[k] = space1_.Dex[ispace_.Ix[k] - 1];
-}}
+} IACA_END }

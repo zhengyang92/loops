@@ -13,7 +13,7 @@ fn (OPJ_FLOAT32 * __restrict bi, OPJ_INT32 count, OPJ_INT32 x,
     OPJ_FLOAT32 * __restrict a, OPJ_INT32 i)
 {
   for (i = 0; i < count; ++i)
-    {
+     { IACA_START
       OPJ_INT32 j = i;
       bi[i * 8] = a[j];
       j += x;
@@ -22,5 +22,5 @@ fn (OPJ_FLOAT32 * __restrict bi, OPJ_INT32 count, OPJ_INT32 x,
       bi[i * 8 + 2] = a[j];
       j += x;
       bi[i * 8 + 3] = a[j];
-    }
+     } IACA_END
 }

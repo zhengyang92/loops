@@ -15,7 +15,7 @@ fn (int i, int nblocks, int16_t prev_dc, int sign, int16_t * out,
     GetBitContext * gb)
 {
   for (i = 1; i < nblocks; i++, out += 64)
-    {
+     { IACA_START
       code =
 	decode_vlc_codeword (gb,
 			     ff_prores_dc_codebook[((((delta) >=
@@ -29,5 +29,5 @@ fn (int i, int nblocks, int16_t prev_dc, int sign, int16_t * out,
       delta = (((code + 1) >> 1) ^ sign) - sign;
       prev_dc += delta;
       out[0] = prev_dc;
-    }
+     } IACA_END
 }

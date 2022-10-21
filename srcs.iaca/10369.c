@@ -11,9 +11,9 @@ int
 fn (box_label * b, int n, int i)
 {
   for (i = 0; i < n; ++i)
-    {
+     { IACA_START
       box_label swap = b[i];
       int index = rand () % n;
       b[i] = b[index];
       b[index] = swap;
-}}
+} IACA_END }

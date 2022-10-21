@@ -13,6 +13,6 @@ fn (int i, int lumFilterSize, const int32_t ** alpSrc, int j, int A,
     const int16_t * lumFilter)
 {
   for (j = 0; j < lumFilterSize; j++)
-    {
+     { IACA_START
       A += alpSrc[j][i] * (unsigned) lumFilter[j];
-}}
+} IACA_END }

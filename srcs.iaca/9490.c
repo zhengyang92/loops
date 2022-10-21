@@ -12,7 +12,7 @@ fn (int dst_x, int mask, int x, int width, const uint8_t * src, int j,
     uint8_t * dst, int b)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       j = (x & 7);
       if ((mask << j) & 0x80)
 	{
@@ -20,5 +20,5 @@ fn (int dst_x, int mask, int x, int width, const uint8_t * src, int j,
 	  dst[dst_x >> 3] |= b << (7 - (dst_x & 7));
 	  dst_x++;
 	}
-    }
+     } IACA_END
 }

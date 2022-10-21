@@ -16,7 +16,7 @@ fn (int w, const int rnd, int cgu, int cgv, const int16_t * yuv_offset,
     const int uv_offset, int cbv)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int r00 = rgb0[x << 1], g00 = rgb1[x << 1], b00 = rgb2[x << 1];
       int r01 = rgb0[x * 2 + 1], g01 = rgb1[x * 2 + 1], b01 = rgb2[x * 2 + 1];
       yuv0[x << 1] =
@@ -39,4 +39,4 @@ fn (int w, const int rnd, int cgu, int cgv, const int16_t * yuv_offset,
 			    (((g00) + (g01) + 1) >> 1) * cgv +
 			    (((b00) + (b01) + 1) >> 1) * cbv + rnd) >> sh),
 			  10);
-}}
+} IACA_END }

@@ -12,7 +12,7 @@ fn (unsigned int shift, uint16_t * dstPtr2, const uint16_t * srcPtr2,
     int length, int j)
 {
   for (j = 0; j < length - 7; j += 8)
-    {
+     { IACA_START
       dstPtr2[j + 0] = ((srcPtr2[j + 0]) >> shift);
       dstPtr2[j + 1] = ((srcPtr2[j + 1]) >> shift);
       dstPtr2[j + 2] = ((srcPtr2[j + 2]) >> shift);
@@ -21,5 +21,5 @@ fn (unsigned int shift, uint16_t * dstPtr2, const uint16_t * srcPtr2,
       dstPtr2[j + 5] = ((srcPtr2[j + 5]) >> shift);
       dstPtr2[j + 6] = ((srcPtr2[j + 6]) >> shift);
       dstPtr2[j + 7] = ((srcPtr2[j + 7]) >> shift);
-    }
+     } IACA_END
 }

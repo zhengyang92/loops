@@ -13,12 +13,12 @@ fn (Int32 k, UInt32 * fmap, UInt32 * eclass, Int32 i, Int32 j, Int32 H,
     Int32 nblock, UInt32 * bhtab)
 {
   for (i = 0; i < nblock; i++)
-    {
+     { IACA_START
       if ((bhtab[(i) >> 5] & ((UInt32) 1 << ((i) & 31))))
 	j = i;
       k = fmap[i] - H;
       if (k < 0)
 	k += nblock;
       eclass[k] = j;
-    }
+     } IACA_END
 }

@@ -11,7 +11,7 @@ int
 fn (float postscale, float min, float max, int length, float *buffer)
 {
   for (int i = 0; i < length; i++)
-    {
+     { IACA_START
       buffer[i] *= postscale;
       buffer[i] = av_clipf_sse (buffer[i], min, max);
-}}
+} IACA_END }

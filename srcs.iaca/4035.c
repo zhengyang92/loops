@@ -14,10 +14,10 @@ fn (const char *const chroma_location_names[7], const char *name, int i)
        i <
        (sizeof (chroma_location_names) / sizeof ((chroma_location_names)[0]));
        i++)
-    {
+     { IACA_START
       if (!chroma_location_names[i])
 	continue;
       if (av_strstart (name, chroma_location_names[i], ((void *) 0)))
 	return i;
-    }
+     } IACA_END
 }

@@ -13,7 +13,7 @@ fn (const int16_t * ba, int16_t len, int16_t * x, int16_t * y, int32_t tmp,
     int16_t * signal)
 {
   for (int i = 0; i < len; i++)
-    {
+     { IACA_START
       tmp = ((int32_t) (((int16_t) (y[1])) * ((int16_t) (ba[3]))));
       tmp += ((int32_t) (((int16_t) (y[3])) * ((int16_t) (ba[4]))));
       tmp = (tmp >> 15);
@@ -42,5 +42,5 @@ fn (const int16_t * ba, int16_t len, int16_t * x, int16_t * y, int32_t tmp,
 	}
       y[0] = tmp >> 16;
       y[1] = (tmp - (y[0] * (1 << 16))) >> 1;
-    }
+     } IACA_END
 }

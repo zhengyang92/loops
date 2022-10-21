@@ -15,7 +15,7 @@ fn (FLOAT tmp3, FLOAT tmp7, FLOAT tmp10, int i, FLOAT tmp5, int16_t * data,
     FLOAT tmp4)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       tmp0 = temp[8 * 0 + i] + temp[8 * 1 + i];
       tmp1 = temp[8 * 2 + i] + temp[8 * 3 + i];
       tmp2 = temp[8 * 4 + i] + temp[8 * 5 + i];
@@ -44,5 +44,5 @@ fn (FLOAT tmp3, FLOAT tmp7, FLOAT tmp10, int i, FLOAT tmp5, int16_t * data,
       tmp12 *= 0.70710678118654752440;
       data[8 * 3 + i] = lrintf (postscale[8 * 2 + i] * (tmp13 + tmp12));
       data[8 * 7 + i] = lrintf (postscale[8 * 6 + i] * (tmp13 - tmp12));
-    }
+     } IACA_END
 }

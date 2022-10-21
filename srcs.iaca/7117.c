@@ -13,7 +13,7 @@ fn (uint8_t * bitmap, int w, int x, const uint8_t ff_log2_tab[256],
     BitstreamContext bc)
 {
   for (x = 0; x < w;)
-    {
+     { IACA_START
       int log2 = ff_log2_tab[bitstream_peek (&bc, 8)];
       int run = bitstream_read (&bc, 14 - 4 * (log2 >> 1));
       int color = bitstream_read (&bc, 2);
@@ -23,5 +23,5 @@ fn (uint8_t * bitmap, int w, int x, const uint8_t ff_log2_tab[256],
       memset (bitmap, color, run);
       bitmap += run;
       x += run;
-    }
+     } IACA_END
 }

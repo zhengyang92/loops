@@ -13,10 +13,10 @@ fn (int i, uint16_t * in_lines_cur[4], int linesize, const int16_t * coef,
     int32_t * work_line)
 {
   for (i = 0; i < linesize; i++)
-    {
+     { IACA_START
       *work_line = *in_lines_cur[0]++ * coef[0];
       *work_line += *in_lines_cur[1]++ * coef[1];
       *work_line += *in_lines_cur[2]++ * coef[2];
       *work_line++ += *in_lines_cur[3]++ * coef[3];
-    }
+     } IACA_END
 }

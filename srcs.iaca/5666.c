@@ -17,7 +17,8 @@ int
 fn (int i, struct elem_to_channel e2c_vec[64], int n)
 {
   int next_n = 0;
-  for (i = 1; i < n; i++)
+  for (i = 1; i < n; i++) {
+	  IACA_START
     if (e2c_vec[i - 1].av_position > e2c_vec[i].av_position)
       {
 	do
@@ -29,4 +30,5 @@ fn (int i, struct elem_to_channel e2c_vec[64], int n)
 	while (0);
 	next_n = i;
       }
+  } IACA_END
 }

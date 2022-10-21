@@ -12,7 +12,7 @@ fn (short *samples, GetByteContext gb, int ch, int n, int factor2,
     int factor1, int prev[2][2], unsigned int exp, int byte)
 {
   for (n = 0; n < 14; n++)
-    {
+     { IACA_START
       int32_t sampledat;
       if (n & 1)
 	{
@@ -29,5 +29,5 @@ fn (short *samples, GetByteContext gb, int ch, int n, int factor2,
       *samples = av_clip_int16_c (sampledat);
       prev[ch][1] = prev[ch][0];
       prev[ch][0] = *samples++;
-    }
+     } IACA_END
 }

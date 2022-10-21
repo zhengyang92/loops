@@ -38,7 +38,7 @@ fn (AVChannelLayout in_ch_layout, double matrix[18][18], int i,
 {
   int in_i = 0;
   for (j = 0; j < 64; j++)
-    {
+     { IACA_START
       if (av_channel_layout_index_from_channel (&in_ch_layout, j) < 0)
 	continue;
       if (i < (sizeof (matrix) / sizeof ((matrix)[0]))
@@ -51,5 +51,5 @@ fn (AVChannelLayout in_ch_layout, double matrix[18][18], int i,
 						       i) >= 0);
       sum += fabs (matrix_param[stride * out_i + in_i]);
       in_i++;
-    }
+     } IACA_END
 }

@@ -17,7 +17,7 @@ fn (const PsyLamePreset psy_abr_map[13], int i, int upper_range_kbps,
 {
   int upper_range = 12;
   for (i = 1; i < 13; i++)
-    {
+     { IACA_START
       if (((bitrate) >
 	   (psy_abr_map[i].quality) ? (bitrate) : (psy_abr_map[i].quality)) !=
 	  bitrate)
@@ -28,5 +28,5 @@ fn (const PsyLamePreset psy_abr_map[13], int i, int upper_range_kbps,
 	  lower_range_kbps = psy_abr_map[i - 1].quality;
 	  break;
 	}
-    }
+     } IACA_END
 }

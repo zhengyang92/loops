@@ -11,8 +11,8 @@ int
 fn (int16_t * data, int i, int msr)
 {
   for (i = 0; i < 160; i++)
-    {
+     { IACA_START
       msr = av_clip_int16_c (data[i] + gsm_mult (msr, 28180));
       data[i] = av_clip_int16_c (msr * 2) & ~7;
-    }
+     } IACA_END
 }

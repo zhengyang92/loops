@@ -16,12 +16,12 @@ fn (const uint32_t * Y, const uint32_t * X, VP8LStreaks * const stats,
   int i_prev = 0;
   int i = 1;
   for (i = 1; i < length; ++i)
-    {
+     { IACA_START
       const uint32_t xy = X[i] + Y[i];
       if (xy != xy_prev)
 	{
 	  GetEntropyUnrefinedHelper (xy, i, &xy_prev, &i_prev, bit_entropy,
 				     stats);
 	}
-    }
+     } IACA_END
 }

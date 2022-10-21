@@ -11,7 +11,7 @@ int
 fn (int i, int32_t * input, int temp[16])
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       const int z0 = input[4 * i + 0] + input[4 * i + 1];
       const int z1 = input[4 * i + 0] - input[4 * i + 1];
       const int z2 = input[4 * i + 2] - input[4 * i + 3];
@@ -20,4 +20,4 @@ fn (int i, int32_t * input, int temp[16])
       temp[4 * i + 1] = z0 - z3;
       temp[4 * i + 2] = z1 - z2;
       temp[4 * i + 3] = z1 + z2;
-}}
+} IACA_END }

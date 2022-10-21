@@ -12,7 +12,7 @@ fn (double e, uint16_t * tbl)
 {
   int i = 0;
   for (i = 0; i < 65536; ++i)
-    {
+     { IACA_START
       tbl[i] = pow (i / 65535.0, e) * 65535.0;
-    }
+     } IACA_END
 }

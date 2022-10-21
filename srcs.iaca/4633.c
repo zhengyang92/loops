@@ -16,7 +16,7 @@ fn (int list_start, int mode_list[128], int *coef_idx, int coef_list[128],
 {
   int coef_count = 0;
   for (i = 0; i < 4; i++, ccoef++)
-    {
+     { IACA_START
       if (get_bits1 (gb))
 	{
 	  coef_list[--list_start] = ccoef;
@@ -37,5 +37,5 @@ fn (int list_start, int mode_list[128], int *coef_idx, int coef_list[128],
 	  block[scan[ccoef]] = t;
 	  coef_idx[coef_count++] = ccoef;
 	}
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ int
 fn (int32_t * block, uint16_t * dst, int i, int stride)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       const int a0 = block[0 + i * 8] + block[4 + i * 8];
       const int a2 = block[0 + i * 8] - block[4 + i * 8];
       const int a4 = (block[2 + i * 8] >> 1) - block[6 + i * 8];
@@ -53,4 +53,4 @@ fn (int32_t * block, uint16_t * dst, int i, int stride)
 	av_clip_uintp2_c (dst[i + 6 * stride] + ((b2 - b5) >> 6), 10);
       dst[i + 7 * stride] =
 	av_clip_uintp2_c (dst[i + 7 * stride] + ((b0 - b7) >> 6), 10);
-}}
+} IACA_END }

@@ -13,7 +13,7 @@ fn (const float *s_m, float phi_sign0, const float ff_sbr_noise_table[][2],
     int m_max)
 {
   for (m = 0; m < m_max; m++)
-    {
+     { IACA_START
       float y0 = Y[m][0];
       float y1 = Y[m][1];
       noise = (noise + 1) & 0x1ff;
@@ -30,5 +30,5 @@ fn (const float *s_m, float phi_sign0, const float ff_sbr_noise_table[][2],
       Y[m][0] = y0;
       Y[m][1] = y1;
       phi_sign1 = -phi_sign1;
-    }
+     } IACA_END
 }

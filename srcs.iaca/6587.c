@@ -11,7 +11,7 @@ int
 fn (float is_table[2][16], int i)
 {
   for (i = 0; i < 7; i++)
-    {
+     { IACA_START
       float f;
       float v;
       if (i != 6)
@@ -24,4 +24,4 @@ fn (float is_table[2][16], int i)
 	  v = ((float) (1.0));
 	} is_table[0][i] = v;
       is_table[1][6 - i] = v;
-}}
+} IACA_END }

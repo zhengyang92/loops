@@ -17,7 +17,7 @@ fn (int w, const int rnd, ptrdiff_t s, int cgu, int cgv,
     int cburv, const int uv_offset, ptrdiff_t s0, int cbv)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int r00 = rgb0[x << 1], g00 = rgb1[x << 1], b00 = rgb2[x << 1];
       int r01 = rgb0[x * 2 + 1], g01 = rgb1[x * 2 + 1], b01 = rgb2[x * 2 + 1];
       int r10 = rgb0[x * 2 + 0 + s], g10 = rgb1[x * 2 + 0 + s], b10 =
@@ -53,4 +53,4 @@ fn (int w, const int rnd, ptrdiff_t s, int cgu, int cgv,
 						   (g11) + 2) >> 2) * cgv +
 			    (((b00) + (b01) + (b10) + (b11) + 2) >> 2) * cbv +
 			    rnd) >> sh), 10);
-}}
+} IACA_END }

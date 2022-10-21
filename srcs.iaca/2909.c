@@ -16,7 +16,7 @@ fn (unsigned int threshold1, int i, int coeff[2][64], int last_non_zero,
   int max = 0;
   int bias = 0;
   for (i = start_i; i <= last_non_zero; i++)
-    {
+     { IACA_START
       const int j = scantable[i];
       int level = block[j] * qmat[j];
       if (((unsigned) (level + threshold1)) > threshold2)
@@ -42,5 +42,5 @@ fn (unsigned int threshold1, int i, int coeff[2][64], int last_non_zero,
 	  coeff[0][i] = (level >> 31) | 1;
 	  coeff_count[i] = 1;
 	}
-    }
+     } IACA_END
 }

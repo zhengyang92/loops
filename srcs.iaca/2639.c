@@ -13,8 +13,8 @@ fn (int y, int d, int x, int8_t pixel, int linesize, int j, uint8_t * dst)
 {
   int plane = 0;
   for (j = 0; j < d; j++)
-    {
+     { IACA_START
       dst[y * linesize + x * 4 + plane] = pixel;
       x++;
-    }
+     } IACA_END
 }

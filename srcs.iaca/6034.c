@@ -23,7 +23,7 @@ fn (const int32_t combinatorial_table[6][30], int temp,
     int16_t * vector, int j)
 {
   for (i = 0; i < 60 / 2; i++)
-    {
+     { IACA_START
       temp -= combinatorial_table[j][i];
       if (temp >= 0)
 	continue;
@@ -40,5 +40,5 @@ fn (const int32_t combinatorial_table[6][30], int temp,
 	}
       if (j == 6)
 	break;
-    }
+     } IACA_END
 }

@@ -14,7 +14,7 @@ fn (uint16 k, uint16 g, uint32 w, unsigned char *pp, int samplesperpixel,
     uint32 * cp, TIFFRGBValue * Map, uint16 b, uint16 r, uint32 x)
 {
   for (x = w; x > 0; --x)
-    {
+     { IACA_START
       k = 255 - pp[3];
       r = (k * (255 - pp[0])) / 255;
       g = (k * (255 - pp[1])) / 255;
@@ -23,5 +23,5 @@ fn (uint16 k, uint16 g, uint32 w, unsigned char *pp, int samplesperpixel,
 	((uint32) (Map[r]) | ((uint32) (Map[g]) << 8) |
 	 ((uint32) (Map[b]) << 16) | (((uint32) 0xffL) << 24));
       pp += samplesperpixel;
-    }
+     } IACA_END
 }

@@ -11,7 +11,7 @@ int
 fn (int *block)
 {
   for (int i = 0; i < 8; i++)
-    {
+     { IACA_START
       if ((block[0x08 + i] | block[0x10 + i] | block[0x18 + i] |
 	   block[0x20 + i] | block[0x28 + i] | block[0x30 + i] | block[0x38 +
 								       i]) ==
@@ -29,5 +29,5 @@ fn (int *block)
 	{
 	  idct_1d (block + i, 8);
 	}
-    }
+     } IACA_END
 }

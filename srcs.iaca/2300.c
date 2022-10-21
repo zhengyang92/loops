@@ -11,7 +11,7 @@ int
 fn (int32_t * block, int i)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       const unsigned z0 = block[i + 4 * 0] + (unsigned) block[i + 4 * 2];
       const unsigned z1 = block[i + 4 * 0] - (unsigned) block[i + 4 * 2];
       const unsigned z2 =
@@ -22,4 +22,4 @@ fn (int32_t * block, int i)
       block[i + 4 * 1] = z1 + z2;
       block[i + 4 * 2] = z1 - z2;
       block[i + 4 * 3] = z0 - z3;
-}}
+} IACA_END }

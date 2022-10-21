@@ -18,7 +18,7 @@ fn (uint8_t new_cfhd_vlc_len[528], int i, uint32_t new_cfhd_vlc_bits[528],
     uint16_t new_cfhd_vlc_run[528])
 {
   for (i = 0, j = 0; i < (263 + 1); i++, j++)
-    {
+     { IACA_START
       new_cfhd_vlc_bits[j] = table_18_vlc_bits[i];
       new_cfhd_vlc_len[j] = table_18_vlc_len[i];
       new_cfhd_vlc_run[j] = table_18_vlc_run[i];
@@ -34,5 +34,5 @@ fn (uint8_t new_cfhd_vlc_len[528], int i, uint32_t new_cfhd_vlc_bits[528],
 	  new_cfhd_vlc_run[j] = table_18_vlc_run[i];
 	  new_cfhd_vlc_level[j] = -table_18_vlc_level[i];
 	}
-    }
+     } IACA_END
 }

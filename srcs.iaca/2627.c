@@ -11,8 +11,8 @@ int
 fn (int i, int min_width, const uint8_t * src, uint8_t * dst, int left)
 {
   for (i = 0; i < min_width; i++)
-    {
+     { IACA_START
       const int temp = src[i];
       dst[i] = temp - left;
       left = temp;
-}}
+} IACA_END }

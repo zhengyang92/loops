@@ -12,7 +12,7 @@ int
 fn (uint32_t pal[256], uint8_t * buf, int i, uint32_t ncolors)
 {
   for (i = 0; i < ncolors; i++)
-    {
+     { IACA_START
       uint32_t val;
       uint8_t red, green, blue;
       val = pal[i];
@@ -25,5 +25,5 @@ fn (uint32_t pal[256], uint8_t * buf, int i, uint32_t ncolors)
       bytestream_put_be16 (&buf, blue << 8);
       bytestream_put_byte (&buf, 0x7);
       bytestream_put_byte (&buf, 0);
-    }
+     } IACA_END
 }

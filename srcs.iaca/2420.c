@@ -12,8 +12,8 @@ int
 fn (ptrdiff_t stride, int i, uint8_t * src, unsigned int dc0)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       ((uint32_t *) (src + i * stride))[0] =
 	((uint32_t *) (src + i * stride))[1] = dc0;
-    }
+     } IACA_END
 }

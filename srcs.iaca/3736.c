@@ -12,8 +12,8 @@ fn (int dst_size, int dst_index, const float *src, int64_t incr, float *dst,
     int64_t index2)
 {
   for (dst_index = 0; dst_index < dst_size; dst_index++)
-    {
+     { IACA_START
       dst[dst_index] = src[index2 >> 32];
       index2 += incr;
-    }
+     } IACA_END
 }

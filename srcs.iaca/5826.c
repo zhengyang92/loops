@@ -11,7 +11,7 @@ int
 fn (int32_t * block, int temp[64], int i)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       {
 	const int a0 = ((&temp[8 * i]))[0] + ((&temp[8 * i]))[4];
 	const int a1 = ((&temp[8 * i]))[0] - ((&temp[8 * i]))[4];
@@ -36,4 +36,4 @@ fn (int32_t * block, int temp[64], int i)
 	((&block[8 * i]))[6] = (((a1 + a3 - a2 - b2) + 0x7F) >> 8);
 	((&block[8 * i]))[7] = (((a0 + a2 - b0) + 0x7F) >> 8);
       };
-}}
+} IACA_END }

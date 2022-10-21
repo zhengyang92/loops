@@ -12,11 +12,11 @@ fn (const uint16_t * const cf_table[16], uint8_t * lut, int delta,
     unsigned int sx, unsigned int i)
 {
   for (i = 0; i < (1 << (14 - 8)); i++)
-    {
+     { IACA_START
       unsigned int target = (i + 1) << (14 - (14 - 8));
       unsigned int symbol = 1 << delta;
       while (cf_table[sx][symbol] > target)
 	symbol += 1 << delta;
       *lut++ = symbol >> delta;
-    }
+     } IACA_END
 }

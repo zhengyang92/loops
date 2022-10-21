@@ -13,7 +13,7 @@ fn (int n_inv, const int mdct, int *in_map, int m, int n, int m_inv,
 {
   int j = 0;
   for (int i = 0; i < n; i++)
-    {
+     { IACA_START
       in_map[j * n + i] = ((i * m + j * n) % len) << mdct;
       out_map[(i * m * m_inv + j * n * n_inv) % len] = i * m + j;
-}}
+} IACA_END }

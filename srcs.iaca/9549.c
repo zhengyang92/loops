@@ -12,7 +12,7 @@ int
 fn (const int qmul, int i, int16_t * block, int dc, uint8_t * dst, int stride)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       const int z0 = 13 * (block[i + 4 * 0] + block[i + 4 * 2]);
       const int z1 = 13 * (block[i + 4 * 0] - block[i + 4 * 2]);
       const int z2 = 7 * block[i + 4 * 1] - 17 * block[i + 4 * 3];
@@ -26,4 +26,4 @@ fn (const int qmul, int i, int16_t * block, int dc, uint8_t * dst, int stride)
 	av_clip_uint8_c (dst[i + stride * 2] + ((z1 - z2) * qmul + rr >> 20));
       dst[i + stride * 3] =
 	av_clip_uint8_c (dst[i + stride * 3] + ((z0 - z3) * qmul + rr >> 20));
-}}
+} IACA_END }

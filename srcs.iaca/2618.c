@@ -11,7 +11,7 @@ int
 fn (char *buffer, int *lenp, const char *in, int len)
 {
   for (len = 0; len < 128; len++)
-    {
+     { IACA_START
       const char c = *in++;
       switch (c)
 	{
@@ -27,5 +27,5 @@ fn (char *buffer, int *lenp, const char *in, int len)
 	  break;
 	}
       buffer[len] = c;
-    }
+     } IACA_END
 }

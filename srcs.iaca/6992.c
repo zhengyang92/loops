@@ -12,7 +12,7 @@ fn (int t1, int i, int t6, int16_t * dst, int t8, int t5, int16_t * src,
     int t7, int t3, int t4, int t2)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       t1 = 12 * (src[0] + src[4]) + 4;
       t2 = 12 * (src[0] - src[4]) + 4;
       t3 = 16 * src[2] + 6 * src[6];
@@ -35,5 +35,5 @@ fn (int t1, int i, int t6, int16_t * dst, int t8, int t5, int16_t * src,
       dst[7] = (t5 - t1) >> 3;
       src += 8;
       dst += 8;
-    }
+     } IACA_END
 }

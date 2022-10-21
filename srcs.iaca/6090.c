@@ -12,7 +12,7 @@ int
 fn (int left_samples_available, const uint8_t scan8[51], int i, void *logctx,
     const int8_t left[12], const int mask[4], int8_t * pred_mode_cache)
 {
-  for (i = 0; i < 4; i++)
+  for (i = 0; i < 4; i++) {IACA_START
     if (!(left_samples_available & mask[i]))
       {
 	int status = left[pred_mode_cache[scan8[0] + 8 * i]];
@@ -28,4 +28,5 @@ fn (int left_samples_available, const uint8_t scan8[51], int i, void *logctx,
 	    pred_mode_cache[scan8[0] + 8 * i] = status;
 	  }
       }
+  } IACA_END
 }

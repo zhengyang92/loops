@@ -14,9 +14,9 @@ fn (int i, int lpc_refl[10], int idx,
     const uint8_t sizes[10], const uint8_t bit_sizes[10])
 {
   for (i = 0; i < 10; i++)
-    {
+     { IACA_START
       idx = quantize (lpc_refl[i], ff_lpc_refl_cb[i], sizes[i]);
       put_bits (&pb, bit_sizes[i], idx);
       lpc_refl[i] = ff_lpc_refl_cb[i][idx];
-    }
+     } IACA_END
 }

@@ -30,9 +30,9 @@ int
 fn (chord_set * chords, int chord_length_index)
 {
   for (int i = 0; i < chords->size; i++)
-    {
+     { IACA_START
       while (chords->R[chord_length_index] < chords->C[i].l)
 	chord_length_index++;
       chords->C[i].i = chord_length_index;
-    }
+     } IACA_END
 }

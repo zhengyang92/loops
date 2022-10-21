@@ -11,8 +11,8 @@ int
 fn (int i, int lsfq_min_distance, int lsfq_min, int16_t * lsfq, int lp_order)
 {
   for (i = 0; i < lp_order; i++)
-    {
+     { IACA_START
       lsfq[i] = ((lsfq[i]) > (lsfq_min) ? (lsfq[i]) : (lsfq_min));
       lsfq_min = lsfq[i] + lsfq_min_distance;
-    }
+     } IACA_END
 }

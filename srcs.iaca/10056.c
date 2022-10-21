@@ -14,8 +14,8 @@ fn (size_t src_stride, int y, const uint8_t * ref, size_t x_step,
     uint8_t * tmp1)
 {
   for (x = 0; x < width; ++x)
-    {
+     { IACA_START
       tmp1[x + y * width] = src[x * x_step + y * src_stride];
       tmp2[x + y * width] = ref[x * x_step + y * ref_stride];
-    }
+     } IACA_END
 }

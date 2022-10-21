@@ -12,7 +12,7 @@ fn (int mask, int x, int dsp_mask, int width, uint8_t * d, int bpp,
     const uint8_t * s, int j)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       j = x & 7;
       if ((dsp_mask << j) & 0x80)
 	{
@@ -21,5 +21,5 @@ fn (int mask, int x, int dsp_mask, int width, uint8_t * d, int bpp,
       d += bpp;
       if ((mask << j) & 0x80)
 	s += bpp;
-    }
+     } IACA_END
 }

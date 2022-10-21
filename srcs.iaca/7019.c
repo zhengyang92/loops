@@ -33,7 +33,7 @@ fn (int adx, int predicted, vorbis_floor1 * vf, int dy, int err,
     uint16_t floor1_Y_final[258], uint16_t floor1_Y[258], int ady)
 {
   for (i = 2; i < vf->x_list_dim; ++i)
-    {
+     { IACA_START
       unsigned val, highroom, lowroom, room, high_neigh_offs, low_neigh_offs;
       low_neigh_offs = vf->list[i].low;
       high_neigh_offs = vf->list[i].high;
@@ -101,5 +101,5 @@ fn (int adx, int predicted, vorbis_floor1 * vf, int dy, int err,
 	{
 	}
       while (0);
-    }
+     } IACA_END
 }

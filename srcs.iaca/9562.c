@@ -19,10 +19,10 @@ fn (int last, int i, uint8_t syms[256], uint32_t code, HuffEntry he[256],
     uint8_t bits[256], uint32_t codes[256])
 {
   for (i = last; i >= 0; i--)
-    {
+     { IACA_START
       codes[i] = code >> (32 - he[i].len);
       bits[i] = he[i].len;
       syms[i] = he[i].sym;
       code += 0x80000000u >> (he[i].len - 1);
-    }
+     } IACA_END
 }

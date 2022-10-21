@@ -12,7 +12,7 @@ fn (const int v, uint16_t * vptr, uint16_t * uptr, const int u,
     const int width)
 {
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       uptr[x] = u;
       vptr[x] = v;
-}}
+} IACA_END }

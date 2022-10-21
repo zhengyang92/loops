@@ -17,7 +17,7 @@ fn (int32_t * rgb2yuv, int i, int luma_stride,
 {
   const int dst_stride = 6;
   for (i = 2; i < width - 2; i += 2)
-    {
+     { IACA_START
       dst[(0) * dst_stride + (0) * 3 + 0] =
 	((unsigned int) (src[(-1) * src_stride + 1 * (-1)]) +
 	 (unsigned int) (src[(-1) * src_stride + 1 * (1)]) +
@@ -64,4 +64,4 @@ fn (int32_t * rgb2yuv, int i, int luma_stride,
       dstY += 2;
       dstU++;
       dstV++;
-}}
+} IACA_END }

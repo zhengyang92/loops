@@ -14,7 +14,7 @@ fn (uint64_t (*rc_stat2)[2], int i, const int e, RangeCoder * c,
     uint8_t * state, uint64_t (*rc_stat)[2])
 {
   for (i = 0; i < e; i++)
-    {
+     { IACA_START
       do
 	{
 	  if (rc_stat)
@@ -25,5 +25,5 @@ fn (uint64_t (*rc_stat2)[2], int i, const int e, RangeCoder * c,
 	  put_rac (c, state + 1 + i, 1);
 	}
       while (0);
-    }
+     } IACA_END
 }

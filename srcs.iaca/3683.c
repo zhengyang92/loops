@@ -11,7 +11,7 @@ int
 fn (int16_t * tmp, int x, int w2, int16_t * b)
 {
   for (; x < w2; x++)
-    {
+     { IACA_START
       b[2 * x] = (tmp[x] + 1) >> 1;
       b[2 * x + 1] =
 	((int)
@@ -19,4 +19,4 @@ fn (int16_t * tmp, int x, int w2, int16_t * b)
 	   ((int)
 	    (9U * tmp[x] + 9U * tmp[x + 1] - tmp[x + 2] - tmp[x - 1] +
 	     8) >> 4))) + 1) >> 1;
-}}
+} IACA_END }

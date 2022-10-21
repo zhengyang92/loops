@@ -14,10 +14,10 @@ fn (int i, int entry, int16_t run_symbols[134], uint16_t run_code[134],
     uint8_t run_bits[134])
 {
   for (i = 0; i < 4; ++i)
-    {
+     { IACA_START
       run_code[entry] = (i << 2) | 1;
       run_bits[entry] = 4;
       run_symbols[entry] = i + 1;
       ++entry;
-    }
+     } IACA_END
 }

@@ -12,8 +12,8 @@ fn (int c, uint8_t * dst, int pitch, int i)
 {
   int out = 0;
   for (i = 0; i < c * 2; i++)
-    {
+     { IACA_START
       dst[out] = dst[out - pitch];
       out++;
-    }
+     } IACA_END
 }

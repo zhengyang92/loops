@@ -13,8 +13,8 @@ fn (JSAMPLE * outptr, JDIMENSION clumps_per_line, int samples_per_clump,
     JDIMENSION nclump, JSAMPLE * inptr)
 {
   for (nclump = clumps_per_line; nclump-- > 0;)
-    {
+     { IACA_START
       outptr[0] = *inptr++;
       outptr += samples_per_clump;
-    }
+     } IACA_END
 }

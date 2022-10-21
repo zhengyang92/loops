@@ -13,7 +13,7 @@ fn (int i, uint8_t bits[1024], const uint8_t * src, int *fsym,
     uint16_t codes_count[33], unsigned int nb_elems)
 {
   for (i = 0; i < nb_elems; i++)
-    {
+     { IACA_START
       if (src[i] == 0)
 	{
 	  *fsym = i;
@@ -32,4 +32,4 @@ fn (int i, uint8_t bits[1024], const uint8_t * src, int *fsym,
 		(('I') | (('N') << 8) | (('D') << 16) |
 		 ((unsigned) ('A') << 24)));
       codes_count[bits[i]]++;
-}}
+} IACA_END }

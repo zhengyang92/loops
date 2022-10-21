@@ -11,10 +11,10 @@ int
 fn (int src_size, int i, const uint8_t * src, uint8_t * dst)
 {
   for (i = 0; i < src_size; i += 4)
-    {
+     { IACA_START
       dst[i + 0] = src[i + 3];
       dst[i + 1] = src[i + 2];
       dst[i + 2] = src[i + 1];
       dst[i + 3] = src[i + 0];
-    }
+     } IACA_END
 }

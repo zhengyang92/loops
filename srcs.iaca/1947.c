@@ -16,7 +16,7 @@ fn (int i, const uint8_t ff_dv_vlc_level[409], uint8_t new_dv_vlc_run[818],
     int16_t new_dv_vlc_level[818], const uint8_t ff_dv_vlc_run[409])
 {
   for (i = 0, j = 0; i < 409; i++, j++)
-    {
+     { IACA_START
       new_dv_vlc_bits[j] = ff_dv_vlc_bits[i];
       new_dv_vlc_len[j] = ff_dv_vlc_len[i];
       new_dv_vlc_run[j] = ff_dv_vlc_run[i];
@@ -31,5 +31,5 @@ fn (int i, const uint8_t ff_dv_vlc_level[409], uint8_t new_dv_vlc_run[818],
 	  new_dv_vlc_run[j] = ff_dv_vlc_run[i];
 	  new_dv_vlc_level[j] = -ff_dv_vlc_level[i];
 	}
-    }
+     } IACA_END
 }

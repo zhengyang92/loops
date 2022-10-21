@@ -24,8 +24,8 @@ int
 fn (ADPCMChannelStatus * cs, int16_t * samples, GetByteContext gb)
 {
   for (int m = 0; m < 64; m += 2)
-    {
+     { IACA_START
       int byte = bytestream2_get_byteu (&gb);
       samples[m] = adpcm_ima_qt_expand_nibble (cs, byte & 0x0F);
       samples[m + 1] = adpcm_ima_qt_expand_nibble (cs, byte >> 4);
-}}
+} IACA_END }

@@ -14,7 +14,7 @@ fn (float *data, float x3, float x4, int i, float g12, float g02, float x1,
     float g00)
 {
   for (i = 0; i < 120; i++)
-    {
+     { IACA_START
       float w = ff_celt_window2[i];
       x0 = data[i - T1 + 2];
       data[i] +=
@@ -28,4 +28,4 @@ fn (float *data, float x3, float x4, int i, float g12, float g02, float x1,
       x3 = x2;
       x2 = x1;
       x1 = x0;
-}}
+} IACA_END }

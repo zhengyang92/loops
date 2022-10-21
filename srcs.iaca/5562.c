@@ -106,12 +106,12 @@ fn (struct rgb_pixfmt_map_entry rgb_pixfmt_map[7],
 {
   for (i = 0; i < (sizeof (rgb_pixfmt_map) / sizeof ((rgb_pixfmt_map)[0]));
        i++)
-    {
+     { IACA_START
       struct rgb_pixfmt_map_entry *entry = &rgb_pixfmt_map[i];
       if (entry->bits_per_pixel == varinfo->bits_per_pixel
 	  && entry->red_offset == varinfo->red.offset
 	  && entry->green_offset == varinfo->green.offset
 	  && entry->blue_offset == varinfo->blue.offset)
 	return entry->pixfmt;
-    }
+     } IACA_END
 }

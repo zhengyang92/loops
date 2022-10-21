@@ -13,8 +13,8 @@ fn (int i, uint8_t * y_table, const int inc, int64_t cb, uint8_t ** table,
     const int elemsize)
 {
   for (i = 0; i < 256; i++)
-    {
+     { IACA_START
       table[i] = y_table + elemsize * (cb >> 16);
       cb += inc;
-    }
+     } IACA_END
 }

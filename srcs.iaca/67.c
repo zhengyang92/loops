@@ -12,7 +12,7 @@ fn (double *out, const double *in, double softness, const double stddev,
     double absmean, double new_stddev, int length)
 {
   for (int i = 0; i < length; i++)
-    {
+     { IACA_START
       if (new_stddev <= stddev)
 	out[i] = 0.0;
       else if (fabs (in[i]) <= absmean)
@@ -23,5 +23,5 @@ fn (double *out, const double *in, double softness, const double stddev,
 		   0 ? 1 : -1) * absmean / exp (3.0 * softness *
 						(fabs (in[i]) -
 						 absmean) / absmean);
-    }
+     } IACA_END
 }

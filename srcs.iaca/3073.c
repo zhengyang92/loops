@@ -11,7 +11,7 @@ int
 fn (int i, int size, int bpp, uint8_t * dst, uint8_t * src)
 {
   for (; i < size; i++)
-    {
+     { IACA_START
       dst[i] = ((dst[i - bpp]) + (src[i]));
-    }
+     } IACA_END
 }

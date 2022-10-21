@@ -11,7 +11,7 @@ int
 fn (int stride, int H, int a, const uint8_t * cm, int j, uint8_t * src, int V)
 {
   for (j = 8; j > 0; --j)
-    {
+     { IACA_START
       int b = a;
       a += V;
       src[0] = cm[(b) >> 5];
@@ -23,4 +23,4 @@ fn (int stride, int H, int a, const uint8_t * cm, int j, uint8_t * src, int V)
       src[6] = cm[(b + 6 * H) >> 5];
       src[7] = cm[(b + 7 * H) >> 5];
       src += stride;
-}}
+} IACA_END }

@@ -11,7 +11,7 @@ int
 fn (UINT8 bits[33], int j, int i)
 {
   for (i = 32; i > 16; i--)
-    {
+     { IACA_START
       while (bits[i] > 0)
 	{
 	  j = i - 2;
@@ -22,5 +22,5 @@ fn (UINT8 bits[33], int j, int i)
 	  bits[j + 1] += 2;
 	  bits[j]--;
 	}
-    }
+     } IACA_END
 }

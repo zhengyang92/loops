@@ -12,7 +12,7 @@ int
 fn (ptrdiff_t stride, uint8_t * src, int temp[64], int i)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       temp[8 * i + 0] = (src[stride * i + 0]) + (src[stride * i + 1]);
       temp[8 * i + 1] = (src[stride * i + 0]) - (src[stride * i + 1]);;
       temp[8 * i + 2] = (src[stride * i + 2]) + (src[stride * i + 3]);
@@ -77,4 +77,4 @@ fn (ptrdiff_t stride, uint8_t * src, int temp[64], int i)
 	temp[8 * i + 3] = a + b;
 	temp[8 * i + 7] = a - b;
       };
-}}
+} IACA_END }

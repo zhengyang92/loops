@@ -12,7 +12,7 @@ fn (int i, int64_t * filter, int filterSize, int xx, const int64_t fone,
     int xDstInSrc, int j)
 {
   for (j = 0; j < filterSize; j++)
-    {
+     { IACA_START
       int64_t coeff =
 	fone - (((xx << 16) - xDstInSrc) >=
 		0 ? ((xx << 16) -
@@ -21,5 +21,5 @@ fn (int i, int64_t * filter, int filterSize, int xx, const int64_t fone,
 	coeff = 0;
       filter[i * filterSize + j] = coeff;
       xx++;
-    }
+     } IACA_END
 }

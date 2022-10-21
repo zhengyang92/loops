@@ -12,7 +12,7 @@ fn (int alpha, uint8_t * pix, const int tc, int d, int xstride,
     int inner_iters, int beta, int ystride)
 {
   for (d = 0; d < inner_iters; d++)
-    {
+     { IACA_START
       const int p0 = pix[-1 * xstride];
       const int p1 = pix[-2 * xstride];
       const int q0 = pix[0];
@@ -27,4 +27,4 @@ fn (int alpha, uint8_t * pix, const int tc, int d, int xstride,
 	  pix[0] = av_clip_uint8_c (q0 - delta);
 	}
       pix += ystride;
-}}
+} IACA_END }

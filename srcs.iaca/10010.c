@@ -12,7 +12,7 @@ fn (int max_a, const int nb, int accum[4], int dist_accum[4], int n,
     const int *alphas, int map[256], int a, int centers[4], int min_a)
 {
   for (a = min_a; a <= max_a; ++a)
-    {
+     { IACA_START
       if (alphas[a])
 	{
 	  while (n + 1 < nb
@@ -24,5 +24,5 @@ fn (int max_a, const int nb, int accum[4], int dist_accum[4], int n,
 	  dist_accum[n] += a * alphas[a];
 	  accum[n] += alphas[a];
 	}
-    }
+     } IACA_END
 }

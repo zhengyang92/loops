@@ -14,7 +14,7 @@ fn (int width, int x, uint32_t prev_pix, uint32_t prev_idx,
     const uint32_t * src, uint16_t buffer[2048], uint8_t * const tmp_row)
 {
   for (x = 0; x < width; ++x)
-    {
+     { IACA_START
       const uint32_t pix = src[x];
       if (pix != prev_pix)
 	{
@@ -22,5 +22,5 @@ fn (int width, int x, uint32_t prev_pix, uint32_t prev_idx,
 	  prev_pix = pix;
 	}
       tmp_row[x] = prev_idx;
-    }
+     } IACA_END
 }

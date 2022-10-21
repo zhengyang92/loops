@@ -11,7 +11,7 @@ int
 fn (int prev_block_ptr, int pixel_x, int block_ptr, uint8_t * const pixels)
 {
   for (pixel_x = 0; pixel_x < 4; pixel_x++)
-    {
+     { IACA_START
       pixels[block_ptr++] = pixels[prev_block_ptr++];
-    }
+     } IACA_END
 }

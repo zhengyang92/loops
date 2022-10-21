@@ -11,7 +11,7 @@ int
 fn (int width, int32_t * dstU, int32_t * dstV, int i)
 {
   for (i = 0; i < width; i++)
-    {
+     { IACA_START
       dstU[i] =
 	(((dstU[i]) >
 	  (30775 << 4) ? (30775 << 4) : (dstU[i])) * 4663 -
@@ -20,5 +20,5 @@ fn (int width, int32_t * dstU, int32_t * dstV, int i)
 	(((dstV[i]) >
 	  (30775 << 4) ? (30775 << 4) : (dstV[i])) * 4663 -
 	 (9289992 << 4)) >> 12;
-    }
+     } IACA_END
 }

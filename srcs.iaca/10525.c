@@ -116,9 +116,9 @@ int
 fn (long kb5i, long i, long k)
 {
   for (i = 1; i <= spaces_.N; i++)
-    {
+     { IACA_START
       k = spaces_.N - i;
       space1_.B5[k + kb5i] = space1_.Sa[k] + spacer_.Stb5 * space1_.Sb[k];
       spacer_.Stb5 = space1_.B5[k + kb5i] - spacer_.Stb5;
-    }
+     } IACA_END
 }

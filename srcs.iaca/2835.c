@@ -12,7 +12,7 @@ fn (int ny, const int my, int i, int best_pos[8][2], int score, int nx,
     const int mx, int best[8])
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       if (score < best[i])
 	{
 	  memmove (&best[i + 1], &best[i], sizeof (int) * (7 - i));
@@ -23,5 +23,5 @@ fn (int ny, const int my, int i, int best_pos[8][2], int score, int nx,
 	  best_pos[i][1] = ny + 4 * my;
 	  break;
 	}
-    }
+     } IACA_END
 }

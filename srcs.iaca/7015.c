@@ -13,7 +13,7 @@ fn (unsigned int entries, unsigned int ce, uint8_t * tmp_vlc_bits,
     unsigned int used_entries, unsigned int flag, GetBitContext * gb)
 {
   for (ce = 0; ce < entries; ++ce)
-    {
+     { IACA_START
       flag = get_bits1 (gb);
       if (flag)
 	{
@@ -22,5 +22,5 @@ fn (unsigned int entries, unsigned int ce, uint8_t * tmp_vlc_bits,
 	}
       else
 	tmp_vlc_bits[ce] = 0;
-    }
+     } IACA_END
 }

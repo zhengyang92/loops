@@ -12,7 +12,7 @@ fn (int y, int w, int16_t * sample[2], int x, int pixel_stride, uint8_t * src,
     int stride)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       ((uint16_t *) (src + stride * y))[x * pixel_stride] = sample[1][x];
-    }
+     } IACA_END
 }

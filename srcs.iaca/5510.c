@@ -13,7 +13,7 @@ fn (int i, int32_t ** filterPos, int64_t * filter, int filterSize, int srcW,
     int j)
 {
   for (j = 0; j < filterSize; j++)
-    {
+     { IACA_START
       do
 	{
 	  if (!((*filterPos)[i] + j < srcW || !filter[i * filterSize + j]))
@@ -25,5 +25,5 @@ fn (int i, int32_t ** filterPos, int64_t * filter, int filterSize, int srcW,
 	    }
 	}
       while (0);
-    }
+     } IACA_END
 }

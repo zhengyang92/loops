@@ -12,7 +12,7 @@ fn (int i, int e, int n, int c, int a, const int32_t * smp, int32_t * res,
     int order)
 {
   for (i = order; i < n; i += 2)
-    {
+     { IACA_START
       int b = smp[i] - smp[i - 1];
       int d = b - a;
       int f = d - c;
@@ -21,4 +21,4 @@ fn (int i, int e, int n, int c, int a, const int32_t * smp, int32_t * res,
       c = a - b;
       e = c - d;
       res[i + 1] = e - f;
-}}
+} IACA_END }

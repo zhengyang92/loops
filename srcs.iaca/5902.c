@@ -15,10 +15,10 @@ fn (int num_codes, int count, int i, BitstreamContext * bc,
     uint8_t bits[256])
 {
   for (j = 0; j < num_codes; j++)
-    {
+     { IACA_START
       symbols[count] = bitstream_read (bc, 8);
       bits[count] = i + 1;
       codes[count] = prefix++;
       count++;
-    }
+     } IACA_END
 }

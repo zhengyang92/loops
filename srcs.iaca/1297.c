@@ -13,7 +13,7 @@ fn (int n_len, int *match_h_offset_ptr, const uint8_t * haystack,
     int *match_n_offset_ptr, int n_pos)
 {
   for (h_pos = 0; h_pos < h_len; h_pos++)
-    {
+     { IACA_START
       int match_len = 0;
       int match_h_pos, match_n_pos;
       while (h_pos + match_len < h_len && n_pos + match_len < n_len
@@ -36,5 +36,5 @@ fn (int n_len, int *match_h_offset_ptr, const uint8_t * haystack,
       *match_n_offset_ptr = match_n_pos;
       *match_len_ptr = match_len;
       return 0;
-    }
+     } IACA_END
 }

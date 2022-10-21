@@ -12,7 +12,7 @@ fn (const float *src, int src_stridea, int i, int dst_strideb, float *dst,
     int src_strideb, int add, int dst_stridea)
 {
   for (i = 0; i < 16; i++)
-    {
+     { IACA_START
       const float x00 = 1.4142135623731f * src[0 * src_stridea];
       const float x01 =
 	1.40740373752638f * src[1 * src_stridea] +
@@ -143,4 +143,4 @@ fn (const float *src, int src_stridea, int i, int dst_strideb, float *dst,
 	0.25f * x1e;
       dst += dst_strideb;
       src += src_strideb;
-}}
+} IACA_END }

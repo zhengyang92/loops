@@ -12,8 +12,8 @@ fn (int w, uint8_t * npfptr, uint8_t * dptr, int j, uint8_t * nsptr)
 {
   int diff = 0;
   for (j = 0; j < w * 3; j++)
-    {
+     { IACA_START
       diff |= npfptr[j] ^ nsptr[j];
       dptr[j] = nsptr[j];
-    }
+     } IACA_END
 }

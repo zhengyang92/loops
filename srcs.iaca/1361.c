@@ -75,9 +75,9 @@ fn (struct sbg_script *s, int r, int i, void *log)
 {
   int nb_events_max = 0;
   for (i = 0; i < s->nb_tseq; i++)
-    {
+     { IACA_START
       r = expand_tseq (log, s, &nb_events_max, 0, &s->tseq[i]);
       if (r < 0)
 	return r;
-    }
+     } IACA_END
 }

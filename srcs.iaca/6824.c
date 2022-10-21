@@ -13,10 +13,10 @@ fn (const int *stride, int i, int top, uint8_t * block, uint8_t * const *data,
 {
   int v = 0;
   for (j = 0; j < 2; j++)
-    {
+     { IACA_START
       int x = (top + i) * stride[0] + left + j;
       *block++ = data[0][x];
       x = (top + i) * stride[1] + left + j;
       u += data[1][x];
       v += data[2][x];
-}}
+} IACA_END }

@@ -11,8 +11,8 @@ int
 fn (uint16_t kGammaToLinearTab[256], const double norm, int v)
 {
   for (v = 0; v <= 255; ++v)
-    {
+     { IACA_START
       kGammaToLinearTab[v] =
 	(uint16_t) (pow (norm * v, 0.80) * ((1 << 12) - 1) + .5);
-    }
+     } IACA_END
 }

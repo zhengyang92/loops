@@ -13,7 +13,7 @@ fn (int stbi__flip_vertically_on_write, float UDU[64], int col, int width,
     int ofsG, int row, int ofsB, int height, int pos, int comp)
 {
   for (col = x; col < x + 8; ++col, ++pos)
-    {
+     { IACA_START
       int p =
 	(stbi__flip_vertically_on_write ? height - 1 -
 	 row : row) * width * comp + col * comp;
@@ -32,5 +32,5 @@ fn (int stbi__flip_vertically_on_write, float UDU[64], int col, int width,
       YDU[pos] = +0.29900f * r + 0.58700f * g + 0.11400f * b - 128;
       UDU[pos] = -0.16874f * r - 0.33126f * g + 0.50000f * b;
       VDU[pos] = +0.50000f * r - 0.41869f * g - 0.08131f * b;
-    }
+     } IACA_END
 }

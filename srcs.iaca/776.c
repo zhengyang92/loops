@@ -12,7 +12,7 @@ fn (int w, int g, float *dstp_b, const uint8_t * srcp, int x, int r,
     float *dstp_g, float *dstp_r, int b)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       dstp_r[x] =
 	srcp[r] * 0.5773502691896258f + srcp[g] * 0.5773502691896258f +
 	srcp[b] * 0.5773502691896258f;
@@ -22,5 +22,5 @@ fn (int w, int g, float *dstp_b, const uint8_t * srcp, int x, int r,
 	srcp[r] * 0.4082482904638631f + srcp[g] * -0.8164965809277261f +
 	srcp[b] * 0.4082482904638631f;
       srcp += 3;
-    }
+     } IACA_END
 }

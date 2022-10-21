@@ -13,7 +13,7 @@ fn (int i, int srcStride, const uint8_t * src, const uint8_t * cm,
 {
   const int w = 8;
   for (i = 0; i < w; i++)
-    {
+     { IACA_START
       dst[i] =
 	cm[(src[srcStride * -1 + i - 1] - 12 * src[srcStride * -1 + i + 1] -
 	    6 * src[srcStride * -1 + i] + src[srcStride * -1 + i + 2] +
@@ -26,5 +26,5 @@ fn (int i, int srcStride, const uint8_t * src, const uint8_t * cm,
 	    src[srcStride * 2 + i - 1] - 12 * src[srcStride * 2 + i + 1] -
 	    6 * src[srcStride * 2 + i] + src[srcStride * 2 + i + 2] +
 	    128) >> 8];
-    }
+     } IACA_END
 }

@@ -14,7 +14,7 @@ fn (stbi__uint32 y, stbi__uint32 x, stbi__uint32 i, int out_n, stbi_uc * cur,
     stbi__uint16 * cur16)
 {
   for (i = 0; i < x * y * out_n; ++i, cur16++, cur += 2)
-    {
+     { IACA_START
       *cur16 = (cur[0] << 8) | cur[1];
-    }
+     } IACA_END
 }

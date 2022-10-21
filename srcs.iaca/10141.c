@@ -12,11 +12,11 @@ int
 fn (PixelI * pOrg, PixelI * pSrc, Int j, PixelI * pRef)
 {
   for (j = 1; j <= 3; j += 2)
-    {
+     { IACA_START
       pOrg = pSrc + 16 * j;
       pRef = pOrg - 16;
       pOrg[2] += pRef[2];
       pOrg[10] += pRef[10];
       pOrg[9] += pRef[9];
-    }
+     } IACA_END
 }

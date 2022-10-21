@@ -15,7 +15,7 @@ fn (const uint32_t * const argb, int i, int best_offset, int best_length,
     int ind)
 {
   for (ind = 0; ind < num_ind; ++ind)
-    {
+     { IACA_START
       int curr_length = 0;
       int j = i;
       int j_offset =
@@ -52,5 +52,5 @@ fn (const uint32_t * const argb, int i, int best_offset, int best_length,
 	      best_length = curr_length;
 	    }
 	}
-    }
+     } IACA_END
 }

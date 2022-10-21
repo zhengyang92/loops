@@ -10,7 +10,8 @@
 int
 fn (int i, float diff_isf[14])
 {
-  for (i = 1; i < 20 - 16; i++)
+  for (i = 1; i < 20 - 16; i++) {
+	  IACA_START
     if (diff_isf[i] + diff_isf[i - 1] < 5.0)
       {
 	if (diff_isf[i] > diff_isf[i - 1])
@@ -20,4 +21,6 @@ fn (int i, float diff_isf[14])
 	else
 	  diff_isf[i] = 5.0 - diff_isf[i - 1];
       }
+  }
+  IACA_END
 }

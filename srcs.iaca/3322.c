@@ -13,7 +13,7 @@ fn (int y, int bias, const int qmul, int thres2, DWTELEM * src, int x,
     const int w, int thres1, IDWTELEM * dst, int stride)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int i = src[x + y * stride];
       if ((unsigned) (i + thres1) > thres2)
 	{
@@ -33,5 +33,5 @@ fn (int y, int bias, const int qmul, int thres2, DWTELEM * src, int x,
 	}
       else
 	dst[x + y * stride] = 0;
-    }
+     } IACA_END
 }

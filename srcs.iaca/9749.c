@@ -29,7 +29,7 @@ fn (const char *preset_name, AVIOContext ** s, int i, char filename[1000],
     const char *base[3])
 {
   for (i = 0; i < (sizeof (base) / sizeof ((base)[0])) && ret < 0; i++)
-    {
+     { IACA_START
       if (!base[i])
 	continue;
       if (codec_name)
@@ -45,4 +45,4 @@ fn (const char *preset_name, AVIOContext ** s, int i, char filename[1000],
 		    i != 1 ? "" : "/.avconv", preset_name);
 	  ret = avio_open2 (s, filename, 1, &int_cb, ((void *) 0));
 	}
-}}
+} IACA_END }

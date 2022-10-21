@@ -13,7 +13,7 @@ fn (const uint8_t * c8, float delta, const uint8_t * c5, int width, int x,
     const uint8_t * c2, uint8_t * dst, const uint8_t * c0, const uint8_t * c6)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       float suma =
 	c0[x] * -1 + c1[x] * -1 + c2[x] * -1 + c6[x] * 1 + c7[x] * 1 +
 	c8[x] * 1;
@@ -22,4 +22,4 @@ fn (const uint8_t * c8, float delta, const uint8_t * c5, int width, int x,
 	c8[x] * 1;
       dst[x] =
 	av_clip_uint8_c (sqrtf (suma * suma + sumb * sumb) * scale + delta);
-}}
+} IACA_END }

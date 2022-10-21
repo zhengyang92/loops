@@ -11,7 +11,7 @@ int
 fn (uint8_t * b, const uint8_t * color_rgba, int y_step)
 {
   for (int i = 0; i < 4; i++)
-    {
+     { IACA_START
       b[0] =
 	((((((int) ((0.29900) * (1 << 10) + 0.5)) * (color_rgba[0]) +
 	    ((int) ((0.58700) * (1 << 10) + 0.5)) * (color_rgba[1]) +
@@ -24,4 +24,4 @@ fn (uint8_t * b, const uint8_t * color_rgba, int y_step)
 	      ((1 << (10 - 1)))) >> 10))) + 128;
       b[1] = 0x06;
       b += y_step;
-}}
+} IACA_END }

@@ -14,7 +14,7 @@ fn (uint8_t sub_layer_level_present_flag[7],
     unsigned int max_sub_layers_minus1, unsigned int i, GetBitContext * gb)
 {
   for (i = 0; i < max_sub_layers_minus1; i++)
-    {
+     { IACA_START
       if (sub_layer_profile_present_flag[i])
 	{
 	  skip_bits_long (gb, 32);
@@ -23,5 +23,5 @@ fn (uint8_t sub_layer_level_present_flag[7],
 	}
       if (sub_layer_level_present_flag[i])
 	skip_bits (gb, 8);
-    }
+     } IACA_END
 }

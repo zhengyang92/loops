@@ -12,7 +12,7 @@ int
 fn (int8_t * exp, int16_t * psd, int end, int bin, int start)
 {
   for (bin = start; bin < end; bin++)
-    {
+     { IACA_START
       psd[bin] = (3072 - (exp[bin] << 7));
-    }
+     } IACA_END
 }

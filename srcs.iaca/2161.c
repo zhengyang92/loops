@@ -11,7 +11,7 @@ int
 fn (int y, uint8_t * src, const int strength, int stride)
 {
   for (y = 0; y < 8; y++)
-    {
+     { IACA_START
       int d1, d2, ad1;
       int p0 = src[y * stride - 2];
       int p1 = src[y * stride - 1];
@@ -40,5 +40,5 @@ fn (int y, uint8_t * src, const int strength, int stride)
       d2 = av_clip_c ((p0 - p3) / 4, -ad1, ad1);
       src[y * stride - 2] = p0 - d2;
       src[y * stride + 1] = p3 + d2;
-    }
+     } IACA_END
 }

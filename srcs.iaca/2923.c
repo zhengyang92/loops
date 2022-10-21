@@ -13,7 +13,7 @@ fn (int i, int last_non_zero, int start_i, int16_t * block, int run_tab[65],
     const uint8_t * perm_scantable, int rle_index, int run)
 {
   for (i = start_i; i <= last_non_zero; i++)
-    {
+     { IACA_START
       int j = perm_scantable[i];
       const int level = block[j];
       if (level)
@@ -25,5 +25,5 @@ fn (int i, int last_non_zero, int start_i, int16_t * block, int run_tab[65],
 	{
 	  run++;
 	}
-    }
+     } IACA_END
 }

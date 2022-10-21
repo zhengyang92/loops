@@ -11,12 +11,12 @@ int
 fn (uint8_t vo[11], const uint8_t * left, uint8_t ve[11], int i)
 {
   for (i = 0; i < 8 / 2 - 2; i++)
-    {
+     { IACA_START
       vo[i] =
 	(left[8 - 4 - i * 2] + left[8 - 3 - i * 2] * 2 + left[8 - 2 - i * 2] +
 	 2) >> 2;
       ve[i] =
 	(left[8 - 5 - i * 2] + left[8 - 4 - i * 2] * 2 + left[8 - 3 - i * 2] +
 	 2) >> 2;
-    }
+     } IACA_END
 }

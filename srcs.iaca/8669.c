@@ -11,7 +11,7 @@ int
 fn (int16_t acb_vector[60], int j, int16_t * vector_ptr)
 {
   for (j = 0; j < 60; j++)
-    {
+     { IACA_START
       int v = av_clip_int16_c (vector_ptr[j] * 2);
       vector_ptr[j] = av_clip_int16_c (v + acb_vector[j]);
-}}
+} IACA_END }

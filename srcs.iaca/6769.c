@@ -19,7 +19,7 @@ fn (const uint8_t * scan, int max_coeffs, int bits_left,
     int run_cb_index)
 {
   for (pos = blocks_per_slice - 1; pos < max_coeffs;)
-    {
+     { IACA_START
       run_cb_index = ff_prores_run_to_cb_index[((run) > (15) ? (15) : (run))];
       lev_cb_index =
 	ff_prores_lev_to_cb_index[((level) > (9) ? (9) : (level))];
@@ -42,5 +42,5 @@ fn (const uint8_t * scan, int max_coeffs, int bits_left,
       sign = get_sbits (gb, 1);
       out[((pos & block_mask) << 6) + scan[pos >> plane_size_factor]] =
 	(level ^ sign) - sign;
-    }
+     } IACA_END
 }

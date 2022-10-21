@@ -13,7 +13,7 @@ fn (uint8_t * bap, int m, int16_t * psd, int band_end,
     const uint8_t * bap_tab, int bin)
 {
   for (; bin < band_end; bin++)
-    {
+     { IACA_START
       int address = av_clip_uintp2_c ((psd[bin] - m) >> 5, 6);
       bap[bin] = bap_tab[address];
-}}
+} IACA_END }

@@ -11,9 +11,9 @@ int
 fn (uint16_t (*mant_cnt)[16], int blk)
 {
   for (blk = 0; blk < 6; blk++)
-    {
+     { IACA_START
       memset (mant_cnt[blk], 0, sizeof (mant_cnt[blk]));
       mant_cnt[blk][1] = mant_cnt[blk][2] = 2;
       mant_cnt[blk][4] = 1;
-    }
+     } IACA_END
 }

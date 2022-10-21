@@ -13,11 +13,11 @@ fn (char *token, stbi__context * s, char buffer[1024])
 {
   int valid = 0;
   for (;;)
-    {
+     { IACA_START
       token = stbi__hdr_gettoken (s, buffer);
       if (token[0] == 0)
 	break;
       if (strcmp (token, "FORMAT=32-bit_rle_rgbe") == 0)
 	valid = 1;
-    }
+     } IACA_END
 }

@@ -11,7 +11,7 @@ int
 fn (int j, float ff_mdct_win_float[8][40], int i)
 {
   for (j = 0; j < 4; j++)
-    {
+     { IACA_START
       double d;
       if (j == 2 && i % 3 != 1)
 	continue;
@@ -43,4 +43,4 @@ fn (int j, float ff_mdct_win_float[8][40], int i)
 	    i <
 	    18 ? i : i + ((((36) + (2 * 4) - 1) & ~((2 * 4) - 1)) / 2 - 18);
 	  ff_mdct_win_float[j][idx] = ((float) ((d / (1 << 5))));
-}}}
+} IACA_END }}

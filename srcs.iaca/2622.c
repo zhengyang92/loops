@@ -13,9 +13,9 @@ fn (int i, uint16_t * map, int *up, uint8_t * len, uint8_t * dst)
 {
   int size = 0;
   for (i = 0; i < size; i++)
-    {
+     { IACA_START
       dst[map[i]] = len[up[i]] + 1;
       if (dst[map[i]] >= 32)
 	break;
-    }
+     } IACA_END
 }

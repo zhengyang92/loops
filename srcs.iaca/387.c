@@ -15,7 +15,7 @@ fn (int thrb, unsigned int ldiff, int mid, const float *weights, float sum,
   int x = 0;
   float wsum = 1.f;
   for (int j = mid - 1; j >= 0; j--)
-    {
+     { IACA_START
       srcjx = srcf[j][x];
       ldiff = ((srcx - srcjx) >= 0 ? (srcx - srcjx) : (-(srcx - srcjx)));
       lsumdiff += ldiff;
@@ -24,5 +24,5 @@ fn (int thrb, unsigned int ldiff, int mid, const float *weights, float sum,
       l++;
       sum += srcjx * weights[j];
       wsum += weights[j];
-    }
+     } IACA_END
 }

@@ -12,10 +12,10 @@ int
 fn (uint64_t * K, uint64_t CDn, int i, const uint8_t PC2_shuffle[48])
 {
   for (i = 0; i < 16; i++)
-    {
+     { IACA_START
       CDn = key_shift_left (CDn);
       if (i > 1 && i != 8 && i != 15)
 	CDn = key_shift_left (CDn);
       K[i] = shuffle (CDn, PC2_shuffle, sizeof (PC2_shuffle));
-    }
+     } IACA_END
 }

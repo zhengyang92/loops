@@ -12,7 +12,7 @@ fn (int16_t * weight, int i)
 {
   int sum = 1;
   for (i = 0; i < 64; i++)
-    {
+     { IACA_START
       int one = 36;
       int qns = 4;
       int w;
@@ -22,4 +22,4 @@ fn (int16_t * weight, int i)
       ((void) (0));
       ((void) (0));
       sum += w * w;
-}}
+} IACA_END }

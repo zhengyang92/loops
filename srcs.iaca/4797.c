@@ -13,11 +13,11 @@ fn (uint32_t * dst, const uint32_t * src, size_t i, size_t colors_seen)
 {
   int seen = 0;
   for (size_t c = 0; c < colors_seen; c++)
-    {
+     { IACA_START
       if (src[i] == dst[c])
 	{
 	  seen = 1;
 	  break;
 	}
-    }
+     } IACA_END
 }

@@ -13,7 +13,7 @@ fn (int E, int i, int I, int H, int wd, ptrdiff_t strideb, uint8_t * dst,
     ptrdiff_t stridea)
 {
   for (i = 0; i < 8; i++, dst += stridea)
-    {
+     { IACA_START
       int p7, p6, p5, p4;
       int p3 = dst[strideb * -4], p2 = dst[strideb * -3];
       int p1 = dst[strideb * -2], p0 = dst[strideb * -1];
@@ -138,4 +138,4 @@ fn (int E, int i, int I, int H, int wd, ptrdiff_t strideb, uint8_t * dst,
 	      f = (f1 + 1) >> 1;
 	      dst[strideb * -2] = av_clip_uint8_c (p1 + f);
 	      dst[strideb * +1] = av_clip_uint8_c (q1 - f);
-}}}}
+} IACA_END }}}

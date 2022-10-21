@@ -12,10 +12,10 @@ fn (int i, float *out, float tmp, float gain, int n, float *mem,
     const float *pole_coeffs, const float *in, const float *zero_coeffs)
 {
   for (i = 0; i < n; i++)
-    {
+     { IACA_START
       tmp = gain * in[i] - pole_coeffs[0] * mem[0] - pole_coeffs[1] * mem[1];
       out[i] = tmp + zero_coeffs[0] * mem[0] + zero_coeffs[1] * mem[1];
       mem[1] = mem[0];
       mem[0] = tmp;
-    }
+     } IACA_END
 }

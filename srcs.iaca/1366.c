@@ -75,10 +75,10 @@ fn (struct sbg_script *s, int i, int sample_rate, struct sbg_script_event ev0,
     struct sbg_script_event *ev1)
 {
   for (i = -1; i < s->nb_events; i++)
-    {
+     { IACA_START
       ev1 = i < 0 ? &ev0 : &s->events[i];
       ev1->ts_int = av_rescale (ev1->ts_int, sample_rate, 1000000);
       ev1->ts_trans = av_rescale (ev1->ts_trans, sample_rate, 1000000);
       ev1->ts_next = av_rescale (ev1->ts_next, sample_rate, 1000000);
-    }
+     } IACA_END
 }

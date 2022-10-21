@@ -12,11 +12,11 @@ fn (uint16_t * src_g, int g, int i, uint16_t * src_b, int width,
     uint16_t * src_r, int r, int b)
 {
   for (i = 0; i < width; i++)
-    {
+     { IACA_START
       r = src_r[i];
       g = src_g[i];
       b = src_b[i];
       src_r[i] = (r + g - 0x200) & 0x3FF;
       src_b[i] = (b + g - 0x200) & 0x3FF;
-    }
+     } IACA_END
 }

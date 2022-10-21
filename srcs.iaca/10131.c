@@ -16,11 +16,11 @@ fn (PixelI iBias, const U8 nLen, const I8 nExpBias, size_t iColumn,
     PixelI * pChannel[16], float *pDst, const U8 idxCC[16][16], size_t iShift)
 {
   for (iChannel = 0; iChannel < cChannel; iChannel++)
-    {
+     { IACA_START
       PixelI p =
 	((pChannel[iChannel & 15]
 	  [((iColumn >> 4) << 8) + idxCC[iRow][iColumn & 0xf]] +
 	  iBias) >> iShift);
       pDst[iChannel] = pixel2float (p, nExpBias, nLen);
-    }
+     } IACA_END
 }

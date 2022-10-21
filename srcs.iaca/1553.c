@@ -16,7 +16,7 @@ fn (INTFLOAT h02, INTFLOAT h01, INTFLOAT (*l)[2], INTFLOAT h13,
     UINTFLOAT hs13, UINTFLOAT hs12)
 {
   for (n = 0; n < len; n++)
-    {
+     { IACA_START
       INTFLOAT l_re = l[n][0];
       INTFLOAT l_im = l[n][1];
       INTFLOAT r_re = r[n][0];
@@ -37,5 +37,5 @@ fn (INTFLOAT h02, INTFLOAT h01, INTFLOAT (*l)[2], INTFLOAT h13,
 	((h01) * (l_re) + (h03) * (r_re) - (h11) * (l_im) - (h13) * (r_im));
       r[n][1] =
 	((h01) * (l_im) + (h03) * (r_im) + (h11) * (l_re) + (h13) * (r_re));
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ fn (double qc, int i, int is_signed, int maxval, const float *scaled,
     int *out, int size, float Q34, const float *in)
 {
   for (i = 0; i < size; i++)
-    {
+     { IACA_START
       qc = scaled[i] * Q34;
       out[i] =
 	(int) ((qc + 0.4054) >
@@ -21,5 +21,5 @@ fn (double qc, int i, int is_signed, int maxval, const float *scaled,
 	{
 	  out[i] = -out[i];
 	}
-    }
+     } IACA_END
 }

@@ -11,7 +11,7 @@ int
 fn (int i, uint32_t x[128], int z, const uint32_t th[2], int k, int a)
 {
   for (i = 0; i < 2; i++)
-    {
+     { IACA_START
       k = (a + i & (128 - 1));
       if (k == z || x[k] < th[i])
 	{
@@ -20,5 +20,5 @@ fn (int i, uint32_t x[128], int z, const uint32_t th[2], int k, int a)
 	}
       if (x[a + i & (128 - 1)] > th[i])
 	break;
-    }
+     } IACA_END
 }

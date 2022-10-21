@@ -11,7 +11,7 @@ int
 fn (int j, uint8_t * const y_dst)
 {
   for (j = 0; j < 16; ++j)
-    {
+     { IACA_START
       y_dst[j * 32 - 1] = 129;
-    }
+     } IACA_END
 }

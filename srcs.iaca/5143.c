@@ -14,7 +14,7 @@ fn (int ylinesize, unsigned int control[4], uint16_t * dsty,
 {
   int x = 0;
   for (int i = 0; i < 4; i++)
-    {
+     { IACA_START
       const int nb_bits = control[i] + 1;
       const int div = (1 << nb_bits) - 1;
       const int add = div - 1;
@@ -34,4 +34,4 @@ fn (int ylinesize, unsigned int control[4], uint16_t * dsty,
 	av_clip_uintp2_c (y_min +
 			  ((y_diff * get_bits (&bit, nb_bits) + add) / div),
 			  12);
-}}
+} IACA_END }

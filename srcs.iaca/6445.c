@@ -14,7 +14,7 @@ fn (int t1, int32_t * dst, const uint8_t * flags, int sp2, int i, int t6,
     int t3, int t4, const int32_t * src, int t2)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       if (flags[i])
 	{
 	  shift = !(i & 4);
@@ -61,5 +61,5 @@ fn (int t1, int32_t * dst, const uint8_t * flags, int sp2, int i, int t6,
 	  dst[56] = 0;
       src++;
       dst++;
-    }
+     } IACA_END
 }

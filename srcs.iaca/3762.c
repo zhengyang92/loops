@@ -14,7 +14,7 @@ fn (int16_t * dstV, int32_t gv, int32_t gu, int i, int32_t bu, int width,
     int32_t ru, int32_t bv, int16_t * dstU, const uint8_t * src1, int32_t rv)
 {
   for (i = 0; i < width; i++)
-    {
+     { IACA_START
       int b = src1[3 * i + 0];
       int g = src1[3 * i + 1];
       int r = src1[3 * i + 2];
@@ -24,4 +24,4 @@ fn (int16_t * dstV, int32_t gv, int32_t gu, int i, int32_t bu, int width,
       dstV[i] =
 	(rv * r + gv * g + bv * b + (256 << (15 - 1)) +
 	 (1 << (15 - 7))) >> (15 - 6);
-}}
+} IACA_END }

@@ -13,11 +13,11 @@ fn (int fill, float *X, float *lowband,
 {
   int recombine = 0;
   for (k = 0; k < recombine; k++)
-    {
+     { IACA_START
       if (quant || lowband)
 	celt_haar1 (quant ? X : lowband, N >> k, 1 << k);
       fill =
 	ff_celt_bit_interleave[fill & 0xF] | ff_celt_bit_interleave[fill >> 4]
 	<< 2;
-    }
+     } IACA_END
 }

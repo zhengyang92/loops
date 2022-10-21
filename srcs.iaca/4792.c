@@ -13,8 +13,8 @@ fn (int16_t impulse_corr[60], int i, int16_t temp_corr[60], int64_t temp,
     int scale)
 {
   for (i = 1; i < 60; i++)
-    {
+     { IACA_START
       temp = ff_g723_1_dot_product (temp_corr + i, temp_corr, 60 - i);
       impulse_corr[i] = av_clipl_int32_c ((temp << scale) + (1 << 15)) >> 16;
-    }
+     } IACA_END
 }

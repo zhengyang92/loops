@@ -11,7 +11,7 @@ int
 fn (int channel, int width, int16_t * alpha, int i)
 {
   for (i = 0; i < width; i++)
-    {
+     { IACA_START
       channel = alpha[i];
       channel -= 256;
       channel <<= 3;
@@ -19,5 +19,5 @@ fn (int channel, int width, int16_t * alpha, int i)
       channel >>= 16;
       channel = av_clip_uintp2_c (channel, 12);
       alpha[i] = channel;
-    }
+     } IACA_END
 }

@@ -13,7 +13,7 @@ fn (int32_t * samples, int count, int i, int HDCD_ANA_PE, int HDCD_ANA_CDT,
     int stride)
 {
   for (i = 0; i < count; i++)
-    {
+     { IACA_START
       samples[i * stride] *= 1 << 15;
       if (mode == HDCD_ANA_PE)
 	{
@@ -26,5 +26,5 @@ fn (int32_t * samples, int count, int i, int HDCD_ANA_PE, int HDCD_ANA_CDT,
 	samples[i * stride] = hdcd_analyze_gen (samples[i * stride], 1, 1);
       else if (mode == HDCD_ANA_CDT && cdt_active)
 	samples[i * stride] = hdcd_analyze_gen (samples[i * stride], 1, 1);
-    }
+     } IACA_END
 }

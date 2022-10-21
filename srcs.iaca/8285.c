@@ -14,7 +14,7 @@ fn (int hasAlpha, const int16_t ** lumSrcPtr, int i, int32_t * lumMmxFilter,
     int s, const int vLumFilterSize, int dstY)
 {
   for (i = 0; i < vLumFilterSize; i += 2)
-    {
+     { IACA_START
       *(const void * *) &lumMmxFilter[s * i] = lumSrcPtr[i];
       *(const void * *) &lumMmxFilter[s * i + 8 / 4] =
 	lumSrcPtr[i + (vLumFilterSize > 1)];
@@ -33,4 +33,4 @@ fn (int hasAlpha, const int16_t ** lumSrcPtr, int i, int32_t * lumMmxFilter,
 	  alpMmxFilter[s * i + 16 / 4] = alpMmxFilter[s * i + 16 / 4 + 1] =
 	    lumMmxFilter[s * i + 16 / 4];
 	}
-}}
+} IACA_END }

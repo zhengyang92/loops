@@ -14,7 +14,7 @@ fn (const uint32_t * const argb, int used_subtract_green, uint32_t right,
     uint8_t * const max_diffs, uint32_t current, int stride)
 {
   for (x = 1; x < width - 1; ++x)
-    {
+     { IACA_START
       up = argb[-stride + x];
       down = argb[stride + x];
       left = current;
@@ -27,5 +27,5 @@ fn (const uint32_t * const argb, int used_subtract_green, uint32_t right,
 	  right = AddGreenToBlueAndRed (right);
 	}
       max_diffs[x] = MaxDiffAroundPixel (current, up, down, left, right);
-    }
+     } IACA_END
 }

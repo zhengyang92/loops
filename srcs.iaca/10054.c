@@ -13,7 +13,7 @@ fn (uint32_t * const argb_dst, int x, const uint8_t * const src,
     const int width)
 {
   for (x = 0; x < width; ++x)
-    {
+     { IACA_START
       argb_dst[x] = (argb_dst[x] & 0x00ffffffu) | ((uint32_t) src[x] << 24);
-    }
+     } IACA_END
 }

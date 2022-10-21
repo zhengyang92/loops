@@ -11,9 +11,9 @@ int
 fn (uint8_t * ptr, int w, uint8_t * bytestream, unsigned int v, int j)
 {
   for (j = 0; j < w; j++)
-    {
+     { IACA_START
       v = ((uint32_t *) ptr)[j];
       bytestream_put_be24 (&bytestream, v);
       *bytestream++ = v >> 24;
-    }
+     } IACA_END
 }

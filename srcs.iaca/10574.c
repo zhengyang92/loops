@@ -13,7 +13,7 @@ fn (UInt32 * ftab, Int32 runningOrder[256], Int32 i, Int32 j, Int32 vv)
 {
   Int32 h = 1;
   for (i = h; i <= 255; i++)
-    {
+     { IACA_START
       vv = runningOrder[i];
       j = i;
       while ((ftab[((runningOrder[j - h]) + 1) << 8] -
@@ -26,5 +26,5 @@ fn (UInt32 * ftab, Int32 runningOrder[256], Int32 i, Int32 j, Int32 vv)
 	    goto zero;
 	}
     zero:runningOrder[j] = vv;
-    }
+     } IACA_END
 }

@@ -76,9 +76,9 @@ fn (struct sbg_script_definition *def, struct sbg_script *s, int i,
     int64_t t0, int *nb_ev_max, void *log, int r, struct sbg_script_tseq *be)
 {
   for (i = 0; i < def->nb_elements; i++)
-    {
+     { IACA_START
       r = expand_tseq (log, s, nb_ev_max, t0, &be[i]);
       if (r < 0)
 	return r;
-    }
+     } IACA_END
 }

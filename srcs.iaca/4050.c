@@ -18,7 +18,7 @@ fn (TXComplex tmp, TXComplex fft5in[5], const int len4, TXComplex * exp,
 {
   int i = 0;
   for (int j = 0; j < 5; j++)
-    {
+     { IACA_START
       const int k = in_map[i * 5 + j];
       if (k < len4)
 	{
@@ -38,5 +38,5 @@ fn (TXComplex tmp, TXComplex fft5in[5], const int len4, TXComplex * exp,
 	    (tmp.re) * (exp[k >> 1].im) + (tmp.im) * (exp[k >> 1].re);
 	}
       while (0);
-    }
+     } IACA_END
 }

@@ -27,11 +27,11 @@ int
 fn (int c, int i, AVIOContext * pb, uint8_t key[1024])
 {
   for (i = 0; i < sizeof (key) - 1; i++)
-    {
+     { IACA_START
       c = avio_r8 (pb);
       if (c < 0x20 || c > 0x7E)
 	break;
       else
 	key[i] = c;
-    }
+     } IACA_END
 }

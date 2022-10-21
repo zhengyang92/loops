@@ -13,7 +13,7 @@ fn (int bnd, const uint8_t * band_struct, int n_subbands, int ecpl,
 {
   int n_bands = 0;
   for (bnd = 0, subbnd = 1; subbnd < n_subbands; subbnd++)
-    {
+     { IACA_START
       int subbnd_size = (ecpl && subbnd < 4) ? 6 : 12;
       if (band_struct[subbnd - 1])
 	{
@@ -24,5 +24,5 @@ fn (int bnd, const uint8_t * band_struct, int n_subbands, int ecpl,
 	{
 	  bnd_sz[++bnd] = subbnd_size;
 	}
-    }
+     } IACA_END
 }

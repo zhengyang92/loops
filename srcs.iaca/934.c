@@ -12,7 +12,7 @@ fn (int w, int components, int max, uint16_t * dst, int step,
     const uint16_t * src)
 {
   for (int x = 0; x < w; x++)
-    {
+     { IACA_START
       switch (step)
 	{
 	case 4:
@@ -26,5 +26,5 @@ fn (int w, int components, int max, uint16_t * dst, int step,
 	}
       src += step;
       dst += step;
-    }
+     } IACA_END
 }

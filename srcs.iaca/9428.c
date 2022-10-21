@@ -13,7 +13,7 @@ fn (int t1, int i, int s2, int s1, int tmp[18], int s0, int s3, int j,
     const int icos36[9], int t2)
 {
   for (j = 0; j < 4; j++)
-    {
+     { IACA_START
       t0 = tmp[i];
       t1 = tmp[i + 2];
       s0 = t1 + t0;
@@ -44,5 +44,5 @@ fn (int t1, int i, int s2, int s1, int tmp[18], int s0, int s3, int j,
 	MULH ((1) * (t0),
 	      win[(((36) + (2 * 4) - 1) & ~((2 * 4) - 1)) / 2 + j]);
       i += 4;
-    }
+     } IACA_END
 }

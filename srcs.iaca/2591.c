@@ -12,7 +12,7 @@ fn (int limit2, int16_t * src, int i, int add)
 {
   int shift = 7;
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       do
 	{
 	  const int e0 = 64 * src[0 * 4] + 64 * src[2 * 4];
@@ -28,5 +28,5 @@ fn (int limit2, int16_t * src, int i, int add)
       if (limit2 < 4 && i % 4 == 0 && !!i)
 	limit2 -= 4;
       src++;
-    }
+     } IACA_END
 }

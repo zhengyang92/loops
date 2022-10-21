@@ -13,10 +13,10 @@ fn (int i, int64_t error, int64_t * filter, int filterSize, int64_t sum,
     int16_t ** outFilter, int j, int *outFilterSize)
 {
   for (j = 0; j < *outFilterSize; j++)
-    {
+     { IACA_START
       int64_t v = filter[i * filterSize + j] + error;
       int intV =
 	(((v) >= 0 ? (v) + ((sum) >> 1) : (v) - ((sum) >> 1)) / (sum));
       (*outFilter)[i * (*outFilterSize) + j] = intV;
       error = v - intV * sum;
-}}
+} IACA_END }

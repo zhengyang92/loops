@@ -11,7 +11,7 @@ int
 fn (const uint8_t * src, float *bptr, int x, const int width)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       bptr[x] = src[x];
-    }
+     } IACA_END
 }

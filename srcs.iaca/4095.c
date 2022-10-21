@@ -12,7 +12,7 @@ fn (const char *p, const char json_escape[8], const char *src, AVBPrint * dst,
     const char json_subst[8])
 {
   for (p = src; *p; p++)
-    {
+     { IACA_START
       char *s = strchr (json_escape, *p);
       if (s)
 	{
@@ -27,5 +27,5 @@ fn (const char *p, const char json_escape[8], const char *src, AVBPrint * dst,
 	{
 	  av_bprint_chars (dst, *p, 1);
 	}
-    }
+     } IACA_END
 }

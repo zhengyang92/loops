@@ -189,10 +189,10 @@ fn (uint32_t v4l2_fmt, int i, struct fmt_map fmt_conversion_table[16])
        i <
        (sizeof (fmt_conversion_table) / sizeof ((fmt_conversion_table)[0]));
        i++)
-    {
+     { IACA_START
       if (fmt_conversion_table[i].v4l2_fmt == v4l2_fmt)
 	{
 	  return fmt_conversion_table[i].codec_id;
 	}
-    }
+     } IACA_END
 }

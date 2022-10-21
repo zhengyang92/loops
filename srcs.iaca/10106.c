@@ -13,11 +13,11 @@ fn (uint16_t sum, int x, const int w, const uint16_t * const top,
     const uint8_t * src, uint16_t * const out, uint16_t * const cur)
 {
   for (x = 0; x < w; ++x)
-    {
+     { IACA_START
       uint16_t new_value;
       sum += src[x];
       new_value = top[x] + sum;
       out[x] = new_value - cur[x];
       cur[x] = new_value;
-    }
+     } IACA_END
 }

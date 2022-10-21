@@ -13,7 +13,7 @@ fn (int stride, int i, int p, int width, int rows_to_go, uint8_t * dst,
 {
   int filled = 0;
   for (i = 0; i < run; i++)
-    {
+     { IACA_START
       dst[filled++] = p;
       if (filled >= width)
 	{
@@ -23,5 +23,5 @@ fn (int stride, int i, int p, int width, int rows_to_go, uint8_t * dst,
 	  if (rows_to_go <= 0)
 	    break;
 	}
-    }
+     } IACA_END
 }

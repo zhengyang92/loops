@@ -35,9 +35,9 @@ fn (AVChannelLayout in_ch_layout, double matrix[18][18], int i,
     AVChannelLayout out_ch_layout)
 {
   for (i = 0; i < (sizeof (matrix) / sizeof ((matrix)[0])); i++)
-    {
+     { IACA_START
       if (av_channel_layout_index_from_channel (&in_ch_layout, i) >= 0
 	  && av_channel_layout_index_from_channel (&out_ch_layout, i) >= 0)
 	matrix[i][i] = 1.0;
-    }
+     } IACA_END
 }

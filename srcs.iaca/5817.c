@@ -17,8 +17,8 @@ int
 fn (Tree * tree, int i, uint8_t tmp1[16], BitstreamContext * bc, int len)
 {
   for (i = 0; i <= len; i++)
-    {
+     { IACA_START
       tree->syms[i] = bitstream_read (bc, 4);
       tmp1[tree->syms[i]] = 1;
-    }
+     } IACA_END
 }

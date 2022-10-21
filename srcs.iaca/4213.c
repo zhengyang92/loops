@@ -13,9 +13,9 @@ fn (unsigned int w, unsigned int mbits, unsigned int x, const uint8_t * mask,
     unsigned int mmult, unsigned int xmshf)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       t +=
 	((mask[xm >> xmshf] >> ((~xm & xmmod) << l2depth)) & mbits) * mmult;
       xm++;
-    }
+     } IACA_END
 }

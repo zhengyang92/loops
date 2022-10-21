@@ -14,7 +14,7 @@ fn (size_t b, uint8_t * foreground, uint8_t foreground_alpha,
     uint8_t output_alpha, uint8_t background_alpha)
 {
   for (b = 0; b < bpp - 1; ++b)
-    {
+     { IACA_START
       if (output_alpha == 0)
 	{
 	  output[b] = 0;
@@ -34,5 +34,5 @@ fn (size_t b, uint8_t * foreground, uint8_t foreground_alpha,
 	      foreground_alpha) * background_alpha * background[b]) / (255 *
 								       output_alpha);
 	}
-    }
+     } IACA_END
 }

@@ -12,8 +12,8 @@ fn (const int16_t * chrFilter, int i, const int16_t ** chrVSrc,
     const int16_t ** chrUSrc, int U, int j, int chrFilterSize, int V)
 {
   for (j = 0; j < chrFilterSize; j++)
-    {
+     { IACA_START
       U += chrUSrc[j][i] * chrFilter[j];
       V += chrVSrc[j][i] * chrFilter[j];
-    }
+     } IACA_END
 }

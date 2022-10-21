@@ -11,7 +11,7 @@ int
 fn (char *arg, int i, int argc, char **argv, char *def)
 {
   for (i = 0; i < argc - 1; ++i)
-    {
+     { IACA_START
       if (!argv[i])
 	continue;
       if (0 == strcmp (argv[i], arg))
@@ -21,5 +21,5 @@ fn (char *arg, int i, int argc, char **argv, char *def)
 	  del_arg (argc, argv, i);
 	  break;
 	}
-    }
+     } IACA_END
 }

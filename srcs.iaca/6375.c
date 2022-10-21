@@ -12,7 +12,7 @@ fn (int16_t * coeffs, int add, int i, const int8_t transform[32][32])
 {
   int shift = 7;
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       do
 	{
 	  const int e0 =
@@ -34,5 +34,5 @@ fn (int16_t * coeffs, int add, int i, const int8_t transform[32][32])
 	}
       while (0);
       coeffs += 4;
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ fn (int8_t (*tone_level_idx_temp)[30][64], int esp_40,
     int8_t (*coding_method)[30][64], int comp, int ch, int tmp, int j, int sb)
 {
   for (j = 0; j < 64; j++)
-    {
+     { IACA_START
       comp = tone_level_idx_temp[ch][sb][j] * esp_40 * 10;
       if (comp < 0)
 	comp += 0xff;
@@ -46,5 +46,5 @@ fn (int8_t (*tone_level_idx_temp)[30][64], int esp_40,
       else
 	tmp = 0;
       coding_method[ch][sb][j] = ((tmp & 0xfffa) + 30) & 0xff;
-    }
+     } IACA_END
 }

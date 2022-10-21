@@ -13,8 +13,8 @@ fn (int i, int width, uint32_t * pal, uint8_t * dstU, const uint8_t * src1,
     uint8_t * dstV)
 {
   for (i = 0; i < width; i++)
-    {
+     { IACA_START
       int p = pal[src1[i]];
       dstU[i] = p >> 8;
       dstV[i] = p >> 16;
-}}
+} IACA_END }

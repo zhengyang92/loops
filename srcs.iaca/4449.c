@@ -15,7 +15,7 @@ fn (const int height, uint8_t * cur_data, const int8_t n_coef_hf[2], int y_in,
     const int adj_line_stride)
 {
   for (j = 0; j < n_coef_hf[filter]; j++)
-    {
+     { IACA_START
       y_in = (y_out + 1) + (j * 2) - n_coef_hf[filter];
       while (y_in < 0)
 	y_in += 2;
@@ -23,5 +23,5 @@ fn (const int height, uint8_t * cur_data, const int8_t n_coef_hf[2], int y_in,
 	y_in -= 2;
       in_lines_cur[j] = cur_data + (y_in * cur_line_stride);
       in_lines_adj[j] = adj_data + (y_in * adj_line_stride);
-    }
+     } IACA_END
 }

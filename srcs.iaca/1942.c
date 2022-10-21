@@ -11,7 +11,7 @@ int
 fn (int (*counttab2)[256], int i)
 {
   for (i = 0; i < 256; i++)
-    {
+     { IACA_START
       counttab2[i + 1][i] = 0;
-    }
+     } IACA_END
 }

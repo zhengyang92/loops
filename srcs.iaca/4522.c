@@ -11,7 +11,7 @@ int
 fn (int k, float *v, int len)
 {
   for (k = 0; k < len; k += 8)
-    {
+     { IACA_START
       do
 	{
 	  float SWAP_tmp = v[k + 4];
@@ -26,5 +26,5 @@ fn (int k, float *v, int len)
 	  v[k + 3] = SWAP_tmp;
 	}
       while (0);
-    }
+     } IACA_END
 }

@@ -13,7 +13,7 @@ fn (int dist, int cr, int cg, int cb, uint8_t * pal)
   int best = 2147483647;
   int index = 0;
   for (int k = 0; k < 256; k++)
-    {
+     { IACA_START
       int pr = pal[k * 4 + 0];
       int pg = pal[k * 4 + 1];
       int pb = pal[k * 4 + 2];
@@ -28,5 +28,5 @@ fn (int dist, int cr, int cg, int cb, uint8_t * pal)
 	  best = dist;
 	  index = k;
 	}
-    }
+     } IACA_END
 }

@@ -11,7 +11,7 @@ int
 fn (const int w2, int x, int32_t * b, int32_t * temp)
 {
   for (x = 1; x < w2; x++)
-    {
+     { IACA_START
       temp[x] =
 	((unsigned) (b[x]) -
 	 ((int) (1817 * (b[x + w2 - 1] + (unsigned) b[x + w2]) + 2048) >>
@@ -19,4 +19,4 @@ fn (const int w2, int x, int32_t * b, int32_t * temp)
       temp[x + w2 - 1] =
 	((unsigned) (b[x + w2 - 1]) -
 	 ((int) (113 * (temp[x - 1] + (unsigned) temp[x]) + 64) >> 7));
-}}
+} IACA_END }

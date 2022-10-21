@@ -18,7 +18,7 @@ fn (int16_t * blocks, int run_cb, int i, int max_coeffs, int idx,
     int run)
 {
   for (idx = scan[i]; idx < max_coeffs; idx += 64)
-    {
+     { IACA_START
       level = blocks[idx] / qmat[scan[i]];
       if (level)
 	{
@@ -37,5 +37,5 @@ fn (int16_t * blocks, int run_cb, int i, int max_coeffs, int idx,
 	{
 	  run++;
 	}
-    }
+     } IACA_END
 }

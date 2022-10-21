@@ -14,7 +14,7 @@ fn (int i, uint32_t (*const hash_functions[3]) (uint32_t), int palette_size,
 {
   int use_LUT = 1;
   for (j = 0; j < palette_size; ++j)
-    {
+     { IACA_START
       const uint32_t ind = hash_functions[i] (palette[j]);
       if (buffer[ind] != 0xffffu)
 	{
@@ -25,5 +25,5 @@ fn (int i, uint32_t (*const hash_functions[3]) (uint32_t), int palette_size,
 	{
 	  buffer[ind] = j;
 	}
-    }
+     } IACA_END
 }

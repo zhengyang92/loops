@@ -15,7 +15,7 @@ fn (const ptrdiff_t mb_stride, uint8_t * fixed, int next_blocklist_length,
 {
   for (blocklist_index = 0; blocklist_index < blocklist_length;
        blocklist_index++)
-    {
+     { IACA_START
       const int mb_x = blocklist[blocklist_index][0];
       const int mb_y = blocklist[blocklist_index][1];
       const int mb_xy = mb_x + mb_y * mb_stride;
@@ -35,5 +35,5 @@ fn (const ptrdiff_t mb_stride, uint8_t * fixed, int next_blocklist_length,
 	    add_blocklist (next_blocklist, &next_blocklist_length, fixed,
 			   mb_x, mb_y + 1, mb_xy + mb_stride);
 	}
-    }
+     } IACA_END
 }

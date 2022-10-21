@@ -13,7 +13,7 @@ fn (OPJ_UINT32 pNbComp, OPJ_UINT32 j, OPJ_INT32 ** lData,
     OPJ_INT32 * lCurrentData)
 {
   for (j = 0; j < pNbComp; ++j)
-    {
+     { IACA_START
       lCurrentData[j] = (*(lData[j]));
-    }
+     } IACA_END
 }

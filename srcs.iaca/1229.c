@@ -12,7 +12,7 @@ fn (const char *str, int outlen, char *out)
 {
   int pos = 0;
   for (; *str; str++)
-    {
+     { IACA_START
       if (pos + 6 > outlen)
 	{
 	  char *tmp;
@@ -54,5 +54,5 @@ fn (const char *str, int outlen, char *out)
 	{
 	  out[pos++] = *str;
 	}
-    }
+     } IACA_END
 }

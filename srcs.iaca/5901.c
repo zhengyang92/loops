@@ -11,7 +11,7 @@ int
 fn (int16_t * ptr, int i)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       const int t0 = (((2841 * ptr[1 * 8] + 565 * ptr[7 * 8]) + 4) >> 3);
       const int t1 = (((565 * ptr[1 * 8] - 2841 * ptr[7 * 8]) + 4) >> 3);
       const int t2 = (((1609 * ptr[5 * 8] + 2408 * ptr[3 * 8]) + 4) >> 3);
@@ -34,4 +34,4 @@ fn (int16_t * ptr, int i)
       ptr[6 * 8] = (t7 + t4 - tA) >> 14;
       ptr[7 * 8] = (t6 + t5 - t8) >> 14;;
       ptr++;
-}}
+} IACA_END }

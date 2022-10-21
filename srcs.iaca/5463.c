@@ -11,8 +11,8 @@ int
 fn (const uint8_t * src, int i, uint8_t * ydst, const int chromWidth)
 {
   for (i = 0; i < chromWidth; i++)
-    {
+     { IACA_START
       ydst[2 * i + 0] = src[4 * i + 1];
       ydst[2 * i + 1] = src[4 * i + 3];
-    }
+     } IACA_END
 }

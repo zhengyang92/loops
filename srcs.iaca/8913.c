@@ -13,6 +13,7 @@ fn (const uint16_t * src, int w, int mxy, ptrdiff_t ds, int x, uint16_t * dst,
     int avg)
 {
   for (x = 0; x < w; x++)
+  { IACA_START
     if (avg)
       {
 	dst[x] =
@@ -23,4 +24,5 @@ fn (const uint16_t * src, int w, int mxy, ptrdiff_t ds, int x, uint16_t * dst,
       {
 	dst[x] = (src[x] + ((mxy * (src[x + ds] - src[x]) + 8) >> 4));
       }
+  } IACA_END
 }

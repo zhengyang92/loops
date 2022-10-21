@@ -12,11 +12,11 @@ int
 fn (int y, int w, int x, int ref_stride, IDWTELEM * line, uint8_t * dst8)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int v = line[x] + (128 << 4) + (1 << (4 - 1));
       v >>= 4;
       if (v & (~255))
 	v = ~(v >> 31);
       dst8[x + y * ref_stride] = v;
-    }
+     } IACA_END
 }

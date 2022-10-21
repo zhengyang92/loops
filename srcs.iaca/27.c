@@ -11,8 +11,8 @@ int
 fn (int16_t * prv, int16_t * dst, int nb_samples, int n, const int16_t * src)
 {
   for (n = 0; n < nb_samples; n++)
-    {
+     { IACA_START
       const int16_t current = src[n];
       dst[n] = current - prv[0];
       prv[0] = current;
-}}
+} IACA_END }

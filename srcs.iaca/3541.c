@@ -13,7 +13,7 @@ fn (int tl, int y, ptrdiff_t stride, const uint16_t * top,
     const uint16_t * left, uint16_t * dst)
 {
   for (y = 0; y < 32; y++)
-    {
+     { IACA_START
       int l_m_tl = left[31 - y] - tl;
       dst[0] = av_clip_uintp2_c (top[0] + l_m_tl, 10);
       dst[1] = av_clip_uintp2_c (top[1] + l_m_tl, 10);
@@ -48,4 +48,4 @@ fn (int tl, int y, ptrdiff_t stride, const uint16_t * top,
       dst[30] = av_clip_uintp2_c (top[30] + l_m_tl, 10);
       dst[31] = av_clip_uintp2_c (top[31] + l_m_tl, 10);
       dst += stride;
-}}
+} IACA_END }

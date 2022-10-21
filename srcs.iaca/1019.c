@@ -16,6 +16,6 @@ fn (const int16_t * const kker, const int iws, ptrdiff_t in_linesize,
 {
   int tmp = 0;
   for (int j = 0; j < 3; j++)
-    {
+     { IACA_START
       tmp += kker[iws + j] * s[vv[iws + j] * in_linesize + uu[iws + j]];
-}}
+} IACA_END }

@@ -14,7 +14,7 @@ fn (ptrdiff_t alpha_step, int y, int w, int alpha, int y_subsample,
     const uint8_t * a, const uint8_t * s)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       if (y_subsample)
 	{
 	  alpha =
@@ -28,5 +28,5 @@ fn (ptrdiff_t alpha_step, int y, int w, int alpha, int y_subsample,
 								  alpha) +
 	128;
       d[x] = (257 * u) >> 16;
-    }
+     } IACA_END
 }

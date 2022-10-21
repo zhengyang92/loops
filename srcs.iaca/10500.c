@@ -13,12 +13,12 @@ fn (const char *colon_strs[10], size_t lens[10], size_t widths[10],
 {
   for (unsigned i = 0; i < (sizeof (colon_strs) / sizeof ((colon_strs)[0]));
        ++i)
-    {
+     { IACA_START
       widths[i] = tuklib_mbstr_width ((colon_strs[i]), &lens[i]);
       ((void) (0));
       if (widths[i] == (size_t) -1)
 	widths[i] = lens[i];
       if (widths[i] > width_max)
 	width_max = widths[i];
-    }
+     } IACA_END
 }

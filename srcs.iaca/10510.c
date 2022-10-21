@@ -142,7 +142,7 @@ int
 fn (long ky, long kx, long nl1, long nl2)
 {
   for (ky = 1; ky < spaces_.N; ky++)
-    {
+     { IACA_START
       space1_.Du1[ky] =
 	space2_.U1[nl1][ky + 1][kx] - space2_.U1[nl1][ky - 1][kx];
       space1_.Du2[ky] =
@@ -167,5 +167,5 @@ fn (long ky, long kx, long nl1, long nl2)
 	spacer_.Sig * (space2_.U3[nl1][ky][kx + 1] -
 		       2.0 * space2_.U3[nl1][ky][kx] +
 		       space2_.U3[nl1][ky][kx - 1]);
-    }
+     } IACA_END
 }

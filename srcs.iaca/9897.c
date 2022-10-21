@@ -14,7 +14,7 @@ fn (const uint8_t * const alpha, const __m128i zero, uint8_t * const ptr,
 {
   int x = 0;
   for (x = 0; x + 8 <= width; x += 8)
-    {
+     { IACA_START
       const __m128i v0 = _mm_loadl_epi64 ((__m128i *) & ptr[x]);
       const __m128i a0 = _mm_loadl_epi64 ((const __m128i *) &alpha[x]);
       const __m128i v1 = _mm_unpacklo_epi8 (v0, zero);
@@ -24,4 +24,4 @@ fn (const uint8_t * const alpha, const __m128i zero, uint8_t * const ptr,
       const __m128i v4 = _mm_mulhi_epu16 (v3, kMult);
       const __m128i v5 = _mm_packus_epi16 (v4, zero);
       _mm_storel_epi64 ((__m128i *) & ptr[x], v5);
-}}
+} IACA_END }

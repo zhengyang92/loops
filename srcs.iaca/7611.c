@@ -11,8 +11,8 @@ int
 fn (const uint32_t * keys, int i, uint32_t v)
 {
   for (i = 1; i < 5; i++)
-    {
+     { IACA_START
       v = (v >> 16) | (v << 16);
       v *= keys[i];
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ fn (const int ah, const uint8_t * sa, const int w, const int salinesize,
     const int av, const int h, uint8_t * da)
 {
   for (int x = 0; x < w; x++)
-    {
+     { IACA_START
       int ax = (x - ah) % w;
       int ay = (x - av) % h;
       if (ax < 0)
@@ -20,5 +20,5 @@ fn (const int ah, const uint8_t * sa, const int w, const int salinesize,
       if (ay < 0)
 	ay += h;
       da[x] = sa[ax + ay * salinesize];
-    }
+     } IACA_END
 }

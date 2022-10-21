@@ -13,7 +13,7 @@ fn (double *param, int i, int64_t * filter, int filterSize, int xx, int j,
     int flags)
 {
   for (j = 0; j < filterSize; j++)
-    {
+     { IACA_START
       int64_t d =
 	(((((int64_t) xx << 17) - xDstInSrc) >=
 	  0 ? (((int64_t) xx << 17) -
@@ -116,4 +116,4 @@ fn (double *param, int i, int64_t * filter, int filterSize, int xx, int j,
 	  ((void) (0));
 	} filter[i * filterSize + j] = coeff;
       xx++;
-}}
+} IACA_END }

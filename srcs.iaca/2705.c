@@ -16,7 +16,7 @@ fn (int t1, int row2, const uint8_t * flags, const int32_t * in, int i,
     int row8, int t0, int t3, int t4, int t2)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       if (flags[i])
 	{
 	  {
@@ -76,5 +76,5 @@ fn (int t1, int row2, const uint8_t * flags, const int32_t * in, int i,
 	}
       in++;
       out++;
-    }
+     } IACA_END
 }

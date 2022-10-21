@@ -11,7 +11,7 @@ int
 fn (int frames, const uint8_t * buf2, const uint8_t * end, int fsize)
 {
   for (frames = 0; buf2 < end; frames++)
-    {
+     { IACA_START
       uint32_t header =
 	((((const uint8_t *) (buf2))[0] << 16) |
 	 (((const uint8_t *) (buf2))[1] << 8) |
@@ -23,5 +23,5 @@ fn (int frames, const uint8_t * buf2, const uint8_t * end, int fsize)
 	break;
       fsize = ((fsize) > (end - buf2) ? (end - buf2) : (fsize));
       buf2 += fsize;
-    }
+     } IACA_END
 }

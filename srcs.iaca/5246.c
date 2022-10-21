@@ -13,7 +13,7 @@ fn (uint32_t y, int32_t tmp1, int32_t (*sb_sample_f)[2][8], int32_t tmp0,
     int blk, int blocks, int sb, uint32_t x)
 {
   for (blk = 0; blk < blocks; blk++)
-    {
+     { IACA_START
       tmp0 =
 	((sb_sample_f[blk][0][sb]) >=
 	 0 ? (sb_sample_f[blk][0][sb]) : (-(sb_sample_f[blk][0][sb])));
@@ -24,5 +24,5 @@ fn (uint32_t y, int32_t tmp1, int32_t (*sb_sample_f)[2][8], int32_t tmp0,
 	x |= tmp0 - 1;
       if (tmp1 != 0)
 	y |= tmp1 - 1;
-    }
+     } IACA_END
 }

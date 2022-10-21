@@ -11,9 +11,9 @@ int
 fn (int i, size_t sizes[4], int total_size)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       if (sizes[i] > 2147483647 - total_size)
 	return (-(22));
       total_size += sizes[i];
-    }
+     } IACA_END
 }

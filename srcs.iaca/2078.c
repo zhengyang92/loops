@@ -12,7 +12,7 @@ fn (int pixel_countdown, int pixel_ptr, int pixel, GetByteContext g2,
     int byte_run, unsigned char *pixels, int j)
 {
   for (j = 0; j < byte_run; j++, pixel_countdown--)
-    {
+     { IACA_START
       pixel = bytestream2_get_le24 (&g2);
       do
 	{
@@ -22,5 +22,5 @@ fn (int pixel_countdown, int pixel_ptr, int pixel, GetByteContext g2,
 	}
       while (0);
       pixel_ptr += 3;
-    }
+     } IACA_END
 }

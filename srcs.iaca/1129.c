@@ -20,7 +20,7 @@ fn (const int c1_shift_h, const int d0_signed_linesize,
     const int intensity)
 {
   for (y = 0; y < src_h; y++)
-    {
+     { IACA_START
       const int c0 = c0_data[x >> c0_shift_w] + 128;
       const int c1 = c1_data[x >> c1_shift_w] - 128;
       const int c2 = c2_data[x >> c2_shift_w] - 128;
@@ -40,5 +40,5 @@ fn (const int c1_shift_h, const int d0_signed_linesize,
       d0_data += d0_linesize;
       d1_data += d1_linesize;
       d2_data += d2_linesize;
-    }
+     } IACA_END
 }

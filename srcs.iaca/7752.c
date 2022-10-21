@@ -14,8 +14,8 @@ fn (int x, int width, const int16_t * idwt, uint8_t * dst,
     const uint16_t * src)
 {
   for (x = 0; x < width; x += 2)
-    {
+     { IACA_START
       dst[x] = av_clip_uint8_c (((src[x] + 32) >> 6) + idwt[x]);
       dst[x + 1] = av_clip_uint8_c (((src[x + 1] + 32) >> 6) + idwt[x + 1]);
-    }
+     } IACA_END
 }

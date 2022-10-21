@@ -13,7 +13,7 @@ fn (uint16 k, uint16 g, uint32 w, unsigned char *pp, int samplesperpixel,
     uint32 _x, uint32 * cp, uint16 b, uint16 r)
 {
   for (_x = w; _x >= 8; _x -= 8)
-    {;
+     { IACA_START;
       k = 255 - pp[3];
       r = (k * (255 - pp[0])) / 255;
       g = (k * (255 - pp[1])) / 255;
@@ -78,5 +78,5 @@ fn (uint16 k, uint16 g, uint32 w, unsigned char *pp, int samplesperpixel,
 	((uint32) (r) | ((uint32) (g) << 8) | ((uint32) (b) << 16) |
 	 (((uint32) 0xffL) << 24));
       pp += samplesperpixel;
-    }
+     } IACA_END
 }

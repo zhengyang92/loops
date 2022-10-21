@@ -13,7 +13,7 @@ fn (const uint32_t * const argb, VP8LColorCache hashers, int k, const int len)
 {
   int i = 0;
   for (k = 0; k < len; ++k)
-    {
+     { IACA_START
       VP8LColorCacheInsert (&hashers, argb[i + k]);
-    }
+     } IACA_END
 }

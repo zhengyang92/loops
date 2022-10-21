@@ -12,7 +12,7 @@ fn (int y, int w, int offset, int x, int *stride, uint8_t ** src, int lbd,
     int16_t * sample[4][2])
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int g = sample[0][1][x];
       int b = sample[1][1][x];
       int r = sample[2][1][x];
@@ -31,5 +31,5 @@ fn (int y, int w, int offset, int x, int *stride, uint8_t ** src, int lbd,
 	  *((uint16_t *) (src[1] + x * 2 + stride[1] * y)) = g;
 	  *((uint16_t *) (src[2] + x * 2 + stride[2] * y)) = r;
 	}
-    }
+     } IACA_END
 }

@@ -17,7 +17,7 @@ fn (int w, const int rnd, uint8_t * yuv1, int cgu, int cgv,
     int cbv)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int r00 = rgb0[x << 1], g00 = rgb1[x << 1], b00 = rgb2[x << 1];
       int y00;
       int r01 = rgb0[x * 2 + 1], g01 = rgb1[x * 2 + 1], b01 = rgb2[x * 2 + 1];
@@ -62,4 +62,4 @@ fn (int w, const int rnd, uint8_t * yuv1, int cgu, int cgv,
       rnd_scratch[2][!(y & 1)][x + 0] += (diff * 5 + 8) >> 4;
       rnd_scratch[2][!(y & 1)][x + 1] += (diff * 1 + 8) >> 4;
       rnd_scratch[2][(y & 1)][x + 0] = rnd;
-}}
+} IACA_END }

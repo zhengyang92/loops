@@ -13,7 +13,7 @@ fn (uint8_t * t2, const ptrdiff_t half_size, const uint8_t * src,
     uint8_t * t1)
 {
   for (ptrdiff_t i = 0; i < half_size; i++)
-    {
+     { IACA_START
       t1[i] = *(src++);
       t2[i] = *(src++);
-}}
+} IACA_END }

@@ -11,8 +11,8 @@ int
 fn (int stride, int y, uint8_t * tmp, uint8_t * data)
 {
   for (y = 0; y < 4; y++)
-    {
+     { IACA_START
       memset (tmp, data[0], 4);
       tmp += stride;
-    }
+     } IACA_END
 }

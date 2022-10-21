@@ -11,10 +11,10 @@ int
 fn (int i, const uint8_t * buf, int crc, int num_bytes, unsigned int bit_size)
 {
   for (i = 0; i < ((bit_size + 2) & 7); i++)
-    {
+     { IACA_START
       crc <<= 1;
       if (crc & 0x100)
 	crc ^= 0x11D;
       crc ^= (buf[num_bytes] >> (7 - i)) & 1;
-    }
+     } IACA_END
 }

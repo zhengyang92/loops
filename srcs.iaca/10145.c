@@ -20,7 +20,7 @@ fn (Int k, CAdaptiveScan * pScan, Int iRun, const PixelI * pCoeffs,
 {
   Int iNumNonzero = 1;
   for (k = 2; k < iCount; k++)
-    {
+     { IACA_START
       iLevel = pCoeffs[pScan[k].uScan];
       iRun++;
       if (iLevel)
@@ -37,5 +37,5 @@ fn (Int k, CAdaptiveScan * pScan, Int iRun, const PixelI * pCoeffs,
 	  iNumNonzero++;
 	  iRun = 0;
 	}
-    }
+     } IACA_END
 }

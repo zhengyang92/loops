@@ -13,7 +13,7 @@ fn (int y, int w, int dX, int i, int radius, int x, int h, int p2,
     int j, int p1)
 {
   for (k = 0; k < radius; k++)
-    {
+     { IACA_START
       x = i + k * dX;
       y = j + k * dY;
       p1 = y * src_linesize + x;
@@ -25,5 +25,5 @@ fn (int y, int w, int dX, int i, int radius, int x, int h, int p2,
       tmp = (src[p1] - src[p2]) * sign;
       if (tmp >= 0)
 	break;
-    }
+     } IACA_END
 }

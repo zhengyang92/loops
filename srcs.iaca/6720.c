@@ -14,7 +14,7 @@ fn (float *excitationf, int i, int32_t excitation[320], int shellblocks,
     int voiced)
 {
   for (i = 0; i < shellblocks << 4; i++)
-    {
+     { IACA_START
       int value = excitation[i];
       excitation[i] = value * 256 | silk_quant_offset[voiced][qoffset_high];
       if (value < 0)
@@ -26,5 +26,5 @@ fn (float *excitationf, int i, int32_t excitation[320], int shellblocks,
 	excitation[i] *= -1;
       seed += value;
       excitationf[i] = excitation[i] / 8388608.0f;
-    }
+     } IACA_END
 }

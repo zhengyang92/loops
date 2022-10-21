@@ -13,11 +13,11 @@ fn (unsigned int acc, ptrdiff_t w, int i, unsigned int mask, uint16_t * dst,
     const uint16_t * src)
 {
   for (i = 0; i < w - 1; i++)
-    {
+     { IACA_START
       acc += src[i];
       dst[i] = acc &= mask;
       i++;
       acc += src[i];
       dst[i] = acc &= mask;
-    }
+     } IACA_END
 }

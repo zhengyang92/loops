@@ -13,11 +13,11 @@ fn (uint16_t * dst0, uint16_t * dst1, const uint16_t * src, const int t0,
     const int bg, const int step)
 {
   for (x = slicew_start * step; x < slicew_end * step; x++)
-    {
+     { IACA_START
       if (src[x] != bg)
 	{
 	  dst0[x] = t0;
 	  dst1[x] = t1;
 	}
-    }
+     } IACA_END
 }

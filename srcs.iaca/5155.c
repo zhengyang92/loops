@@ -14,8 +14,8 @@ fn (float *X, uint32_t cm, uint32_t N0,
 {
   int recombine = 0;
   for (k = 0; k < recombine; k++)
-    {
+     { IACA_START
       cm = ff_celt_bit_deinterleave[cm];
       celt_haar1 (X, N0 >> k, 1 << k);
-    }
+     } IACA_END
 }

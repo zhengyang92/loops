@@ -15,7 +15,7 @@ fn (float *cand, int *idx_table, float power_candidate, int band,
 {
   int power_idx = 0;
   for (band = 1; band < 23; band++)
-    {
+     { IACA_START
       power_candidate = cand[band] - power_idx;
       best_idx =
 	sf_delta_lut[av_clip_c
@@ -25,5 +25,5 @@ fn (float *cand, int *idx_table, float power_candidate, int band,
 	best_idx++;;
       idx_table[band] = best_idx;
       power_idx += ff_nelly_delta_table[best_idx];
-    }
+     } IACA_END
 }

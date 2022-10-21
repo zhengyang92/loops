@@ -14,7 +14,7 @@ fn (int *coef_idx, int i, int32_t * block, const uint32_t * quant,
     int coef_count, const uint8_t * scan)
 {
   for (i = 0; i < coef_count; i++)
-    {
+     { IACA_START
       int idx = coef_idx[i];
       block[scan[idx]] = (int) (block[scan[idx]] * quant[idx]) >> 11;
-}}
+} IACA_END }

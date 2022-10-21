@@ -11,7 +11,7 @@ int
 fn (int dstW, int *filterPos, int i)
 {
   for (i = 0; i + 8 <= dstW; i += 8)
-    {
+     { IACA_START
       do
 	{
 	  int SWAP_tmp = filterPos[i + 4];
@@ -26,5 +26,5 @@ fn (int dstW, int *filterPos, int i)
 	  filterPos[i + 3] = SWAP_tmp;
 	}
       while (0);
-    }
+     } IACA_END
 }

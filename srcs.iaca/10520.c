@@ -116,7 +116,7 @@ int
 fn (long l, long i, long ink, long j)
 {
   for (l = 1; l <= spaces_.Loop; l++)
-    {
+     { IACA_START
       i = spaces_.N - 1;
       j = 0;
       ink = -1;
@@ -147,5 +147,5 @@ fn (long l, long i, long ink, long j)
       if (i != j)
 	goto l61;
     l62:;
-    }
+     } IACA_END
 }

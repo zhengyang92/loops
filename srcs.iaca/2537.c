@@ -12,8 +12,8 @@ int
 fn (int x, uint8_t * dst, int16_t * res, int size)
 {
   for (x = 0; x < size; x++)
-    {
+     { IACA_START
       dst[x] = av_clip_uint8_c (dst[x] + *res);
       res++;
-    }
+     } IACA_END
 }

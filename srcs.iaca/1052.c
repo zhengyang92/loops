@@ -15,7 +15,7 @@ fn (const float srintensity, const float gintensity, const float rintensity,
     uint16_t * gptr, const float bintensity)
 {
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       float g = gptr[x] * scale;
       float b = bptr[x] * scale;
       float r = rptr[x] * scale;
@@ -37,4 +37,4 @@ fn (const float srintensity, const float gintensity, const float rintensity,
       gptr[x] = av_clip_uintp2_c (g * max, depth);
       bptr[x] = av_clip_uintp2_c (b * max, depth);
       rptr[x] = av_clip_uintp2_c (r * max, depth);
-}}
+} IACA_END }

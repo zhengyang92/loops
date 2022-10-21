@@ -12,7 +12,7 @@ fn (unsigned char *scratch, int ncomp, int width, float *scanline, int x,
     float linear[3], unsigned char rgbe[4])
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       switch (ncomp)
 	{
 	case 4:
@@ -30,5 +30,5 @@ fn (unsigned char *scratch, int ncomp, int width, float *scanline, int x,
       scratch[x + width * 1] = rgbe[1];
       scratch[x + width * 2] = rgbe[2];
       scratch[x + width * 3] = rgbe[3];
-    }
+     } IACA_END
 }

@@ -26,11 +26,11 @@ fn (int64_t error, ADPCMChannelStatus * cs, int flag, const int16_t * samples,
     PutBitContext * pb, int shift, int nsamples)
 {
   for (int n = 0; n < nsamples; n++)
-    {
+     { IACA_START
       int nibble = adpcm_argo_compress_nibble (cs, samples[n], shift, flag);
       int16_t sample = ff_adpcm_argo_expand_nibble (cs, nibble, shift, flag);
       error += abs (samples[n] - sample);
       if (pb)
 	put_bits (pb, 4, nibble);
-    }
+     } IACA_END
 }

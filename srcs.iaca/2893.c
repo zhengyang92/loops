@@ -11,7 +11,7 @@ int
 fn (int xr, int *tab, int i, const int *xp)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       xr = (((int64_t) (tab[30 - i * 4]) * (int64_t) (xp[0])) >> 15);
       tab[30 - i * 4] = (tab[i * 4] - xr);
       tab[i * 4] = (tab[i * 4] + xr);
@@ -25,5 +25,5 @@ fn (int xr, int *tab, int i, const int *xp)
       tab[3 + i * 4] = (tab[29 - i * 4] - xr);
       tab[29 - i * 4] = (tab[29 - i * 4] + xr);
       xp += 2;
-    }
+     } IACA_END
 }

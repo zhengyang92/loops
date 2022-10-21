@@ -11,7 +11,7 @@ int
 fn (int idx, int32_t * map, int n)
 {
   for (idx = 0; idx <= n; ++idx)
-    {
+     { IACA_START
       do
 	{
 	  if (0)
@@ -19,5 +19,5 @@ fn (int idx, int32_t * map, int n)
 		    "floor0 map: map at pos %d is %" "d" "\n", idx, map[idx]);
 	}
       while (0);
-    }
+     } IACA_END
 }

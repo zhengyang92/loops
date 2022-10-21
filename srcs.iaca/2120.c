@@ -14,8 +14,8 @@ fn (int ccr_buf[80], int16_t flt_buf[5][60], int64_t temp,
 {
   int count = 0;
   for (j = 0; j < 5; j++)
-    {
+     { IACA_START
       temp = ff_dot_product (buf, flt_buf[j], 60);
       ccr_buf[count++] = av_clipl_int32_c (temp << 1);
-    }
+     } IACA_END
 }

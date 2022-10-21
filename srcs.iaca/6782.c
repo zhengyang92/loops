@@ -12,7 +12,7 @@ fn (int8_t (*coding_method)[30][64], int ch, int case_val, int k, int j,
     int sb, int run)
 {
   for (k = 0; k < run; k++)
-    {
+     { IACA_START
       if (j + k < 128)
 	{
 	  if (coding_method[ch][sb + (j + k) / 64][(j + k) % 64] >
@@ -29,5 +29,5 @@ fn (int8_t (*coding_method)[30][64], int ch, int case_val, int k, int j,
 		}
 	    }
 	}
-    }
+     } IACA_END
 }

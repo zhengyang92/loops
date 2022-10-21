@@ -13,8 +13,8 @@ int
 fn (I32 n, const I32 iWidth, Bool bBlackWhite, U8 * piDstPixel, const U8 v)
 {
   for (n = 0; n < iWidth % 8; n++)
-    {
+     { IACA_START
       piDstPixel[iWidth / 8 * 8 + n] =
 	(((v >> (7 - n)) & 0x1) != 0) ^ bBlackWhite ? 0xFF : 0x00;
-    }
+     } IACA_END
 }

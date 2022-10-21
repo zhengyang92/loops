@@ -12,6 +12,6 @@ fn (const double *src, int nb_samples, const int64_t N, double *dst,
     const double dc)
 {
   for (int n = 0; n < nb_samples; n++)
-    {
+     { IACA_START
       dst[n] = src[n] + dc * (((N + n) & 255) ? 0. : 1.);
-}}
+} IACA_END }

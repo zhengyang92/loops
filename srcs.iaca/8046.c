@@ -13,7 +13,7 @@ fn (uint8_t a, int w, int i, int h, ptrdiff_t plane_stride, uint8_t * plane,
     uint8_t * p, int j, uint8_t b)
 {
   for (j = h - 1; j >= 0; j--)
-    {
+     { IACA_START
       p = plane + plane_stride * j;
       i = w - 1;
       p[i] = p[i >> 1];
@@ -24,5 +24,5 @@ fn (uint8_t a, int w, int i, int h, ptrdiff_t plane_stride, uint8_t * plane,
 	  p[i] = (3 * a + b + 1) >> 2;
 	  p[i + 1] = (a + 3 * b + 1) >> 2;
 	}
-    }
+     } IACA_END
 }

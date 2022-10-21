@@ -28,7 +28,7 @@ fn (const uint16_t ff_silk_model_pulse_count[11][19], OpusRangeCoder * rc,
     uint8_t pulsecount[20])
 {
   for (i = 0; i < shellblocks; i++)
-    {
+     { IACA_START
       pulsecount[i] =
 	ff_opus_rc_dec_cdf (rc, ff_silk_model_pulse_count[ratelevel]);
       if (pulsecount[i] == 17)
@@ -40,5 +40,5 @@ fn (const uint16_t ff_silk_model_pulse_count[11][19], OpusRangeCoder * rc,
 	    pulsecount[i] =
 	      ff_opus_rc_dec_cdf (rc, ff_silk_model_pulse_count[10]);
 	}
-    }
+     } IACA_END
 }

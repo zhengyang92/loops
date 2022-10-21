@@ -11,6 +11,6 @@ int
 fn (int i, int rows, float *m, int cols)
 {
   for (i = 0; i < rows * cols; ++i)
-    {
+     { IACA_START
       m[i] = (float) rand () / 2147483647;
-}}
+} IACA_END }

@@ -12,8 +12,8 @@ int
 fn (int w, uint8_t * pix, const uint32_t * sq, int s, int j)
 {
   for (j = 0; j < w; j++)
-    {
+     { IACA_START
       s += sq[pix[0]];
       pix++;
-    }
+     } IACA_END
 }

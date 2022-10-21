@@ -14,7 +14,7 @@ fn (int i, int bits, unsigned int val, BitstreamContext * bc,
     int cf)
 {
   for (i = 0; i < num_coeffs; i++)
-    {
+     { IACA_START
       cf = val & mask;
       if (is_signed)
 	cf = sign_extend (cf, bits);
@@ -22,5 +22,5 @@ fn (int i, int bits, unsigned int val, BitstreamContext * bc,
 	cf = -cf;
       out[pos++] = cf;
       val >>= bits;
-    }
+     } IACA_END
 }

@@ -26,7 +26,7 @@ fn (int count, const Codebook * const cb, int width, int16_t * data,
     int stride)
 {
   for (int j = 0; j < stride; j++)
-    {
+     { IACA_START
       int16_t index =
 	j >= width ? 0 : ((data[j]) >
 			  0 ? 1 : -1) * lut[((data[j]) >=
@@ -43,5 +43,5 @@ fn (int count, const Codebook * const cb, int width, int16_t * data,
 	  count = put_runcode (pb, count, rb);
 	}
       put_bits (pb, cb[index].size, cb[index].bits);
-    }
+     } IACA_END
 }

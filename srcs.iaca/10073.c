@@ -12,9 +12,9 @@ int
 fn (score_t thresh, const int16_t * levels, int i, score_t score)
 {
   for (i = 1; i < 16; ++i)
-    {
+     { IACA_START
       score += (levels[i] != 0);
       if (score > thresh)
 	return 0;
-    }
+     } IACA_END
 }

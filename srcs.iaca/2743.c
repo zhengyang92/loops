@@ -11,8 +11,8 @@ int
 fn (uint8_t * buf, const int HEAD, int i, int L)
 {
   for (i = 0; i < HEAD; i++)
-    {
+     { IACA_START
       L += buf[i];
       buf[i] = L;
-    }
+     } IACA_END
 }

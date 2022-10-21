@@ -12,7 +12,7 @@ fn (int16_t * coeffs, int i, int add)
 {
   int shift = 7;
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       do
 	{
 	  const int e0 = 64 * coeffs[0 * 1] + 64 * coeffs[2 * 1];
@@ -26,5 +26,5 @@ fn (int16_t * coeffs, int i, int add)
 	}
       while (0);
       coeffs += 4;
-    }
+     } IACA_END
 }

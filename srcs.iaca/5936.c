@@ -13,7 +13,7 @@ fn (int color, int y, int w, int v, int x, unsigned int bitbuf, int h,
     uint8_t * q)
 {
   for (y = 0; y < h; y++)
-    {
+     { IACA_START
       *q++ = 0x10;
       bitbuf = 0;
       bitcnt = 6;
@@ -317,5 +317,5 @@ fn (int color, int y, int w, int v, int x, unsigned int bitbuf, int h,
 	}
       *q++ = 0xf0;
       bitmap += linesize;
-    }
+     } IACA_END
 }

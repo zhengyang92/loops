@@ -11,10 +11,10 @@ int
 fn (uint16_t * s, int i)
 {
   for (i = 0; i < 16; ++i)
-    {
+     { IACA_START
       if (s[i] & 0x8000)
 	s[i] &= 0x7fff;
       else
 	s[i] = ~s[i];
-    }
+     } IACA_END
 }

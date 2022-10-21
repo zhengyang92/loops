@@ -13,7 +13,7 @@ fn (const int chromWidth, int i, const uint8_t * vc, const uint8_t * uc,
     const uint8_t * yc, uint64_t * ldst)
 {
   for (i = 0; i < chromWidth; i += 2)
-    {
+     { IACA_START
       uint64_t k =
 	uc[0] + (yc[0] << 8) + (vc[0] << 16) + ((unsigned) yc[1] << 24);
       uint64_t l =
@@ -22,4 +22,4 @@ fn (const int chromWidth, int i, const uint8_t * vc, const uint8_t * uc,
       yc += 4;
       uc += 2;
       vc += 2;
-}}
+} IACA_END }

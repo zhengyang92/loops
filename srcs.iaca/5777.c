@@ -15,7 +15,7 @@ fn (unsigned int cur_s, int32_t * current_res, unsigned int sx[8],
     int sb)
 {
   for (; start < sb_length; start++)
-    {
+     { IACA_START
       int32_t res = *current_res;
       if (res == cur_tail_code)
 	{
@@ -45,5 +45,5 @@ fn (unsigned int cur_s, int32_t * current_res, unsigned int sx[8],
 	    }
 	}
       *current_res++ = res;
-    }
+     } IACA_END
 }

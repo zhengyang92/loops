@@ -12,7 +12,7 @@ int
 fn (uint8 * cp, const unsigned char TIFFBitRevTable[256], tmsize_t n)
 {
   for (; n > 8; n -= 8)
-    {
+     { IACA_START
       cp[0] = TIFFBitRevTable[cp[0]];
       cp[1] = TIFFBitRevTable[cp[1]];
       cp[2] = TIFFBitRevTable[cp[2]];
@@ -22,5 +22,5 @@ fn (uint8 * cp, const unsigned char TIFFBitRevTable[256], tmsize_t n)
       cp[6] = TIFFBitRevTable[cp[6]];
       cp[7] = TIFFBitRevTable[cp[7]];
       cp += 8;
-    }
+     } IACA_END
 }

@@ -12,9 +12,9 @@ fn (const int r, int i, const double gc, double *gain, double num)
 {
   double den = 0.;
   for (int j = -r; j <= r; j++)
-    {
+     { IACA_START
       const double g = gain[i + j];
       const double d = 1. - fabs (g - gc);
       num += g * d;
       den += d;
-}}
+} IACA_END }

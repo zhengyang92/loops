@@ -14,10 +14,10 @@ fn (int exact, int bits, const int max_quantization, int used_subtract_green,
     uint32_t * const argb_scratch, int height)
 {
   for (tile_x = 0; tile_x < tiles_per_row; ++tile_x)
-    {
+     { IACA_START
       const int pred =
 	GetBestPredictorForTile (width, height, tile_x, tile_y, bits, histo,
 				 argb_scratch, argb, max_quantization, exact,
 				 used_subtract_green, image);
       image[tile_y * tiles_per_row + tile_x] = 0xff000000 | (pred << 8);
-}}
+} IACA_END }

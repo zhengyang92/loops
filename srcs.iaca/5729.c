@@ -12,7 +12,7 @@ fn (int8_t * dexps, int group_size, int i, int prevexp, int dexp[256], int j,
     int ngrps)
 {
   for (i = 0, j = 0; i < ngrps * 3; i++)
-    {
+     { IACA_START
       prevexp += dexp[i] - 2;
       if (prevexp > 24U)
 	return -1;
@@ -26,5 +26,5 @@ fn (int8_t * dexps, int group_size, int i, int prevexp, int dexp[256], int j,
 	case 1:
 	  dexps[j++] = prevexp;
 	}
-    }
+     } IACA_END
 }

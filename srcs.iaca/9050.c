@@ -28,8 +28,8 @@ fn (int count, uint32_t * data, int i, AVIOContext * pb)
 {
   int total = 0;
   for (i = 0; i < count; i++)
-    {
+     { IACA_START
       if ((data[total] = avio_rl32 (pb)))
 	total++;
-    }
+     } IACA_END
 }

@@ -14,7 +14,7 @@ fn (int last, int i, int bits, int start_i, const int esc_length,
     int run)
 {
   for (i = start_i; i < last; i++)
-    {
+     { IACA_START
       int j = scantable[i];
       level = temp[j];
       if (level)
@@ -28,5 +28,5 @@ fn (int last, int i, int bits, int start_i, const int esc_length,
 	}
       else
 	run++;
-    }
+     } IACA_END
 }

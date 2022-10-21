@@ -27,10 +27,10 @@ int
 fn (unsigned int v, uint32_t * palette, int i, AVIOContext * pb)
 {
   for (i = 0; i < 256; i++)
-    {
+     { IACA_START
       v = palette[i];
       avio_w8 (pb, (v >> 16) & 0xff);
       avio_w8 (pb, (v >> 8) & 0xff);
       avio_w8 (pb, (v) & 0xff);
-    }
+     } IACA_END
 }

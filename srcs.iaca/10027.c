@@ -15,7 +15,7 @@ fn (int i, int low_effort, VP8LHistogram ** const histograms,
     DominantCostRange cost_range)
 {
   for (i = 0; i < histo_size; ++i)
-    {
+     { IACA_START
       bin_map[i] = GetHistoBinIndex (histograms[i], &cost_range, low_effort);
-    }
+     } IACA_END
 }

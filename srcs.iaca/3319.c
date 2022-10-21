@@ -17,7 +17,7 @@ fn (int y, const uint8_t * obmc, int x, const int w, const int block_h,
   int aa = 0;
   for (x2 = ((x) > (0) ? (x) : (0));
        x2 < ((w) > (x + block_w) ? (x + block_w) : (w)); x2++)
-    {
+     { IACA_START
       int index =
 	x2 - (block_w * mb_x - block_w / 2) + (y2 -
 					       (block_h * mb_y -
@@ -36,5 +36,5 @@ fn (int y, const uint8_t * obmc, int x, const int w, const int block_h,
       dst[index] = d;
       ab += (src[x2 + y2 * ref_stride] - (d >> 4)) * obmc_v;
       aa += obmc_v * obmc_v;
-    }
+     } IACA_END
 }

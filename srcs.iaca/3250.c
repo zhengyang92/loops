@@ -13,7 +13,7 @@ fn (GetBitContext gbit, uint32_t * pal)
 {
   int RGBIndex = 0;
   for (int index = 0; index < 16; index++)
-    {
+     { IACA_START
       unsigned color = get_bits1 (&gbit) << RGBIndex;
       pal[15 - index] |= color << (5 + 0);
-}}
+} IACA_END }

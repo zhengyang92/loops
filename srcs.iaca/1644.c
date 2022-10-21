@@ -14,11 +14,11 @@ fn (int error_sign, int d, uint32_t * pred, int lpc_quant,
 {
   int val = 0;
   for (j = 0; j < lpc_order && (int) (error_val * error_sign) > 0; j++)
-    {
+     { IACA_START
       int sign;
       val = d - pred[j];
       sign = sign_only (val) * error_sign;
       lpc_coefs[j] -= sign;
       val *= (unsigned) sign;
       error_val -= (val >> lpc_quant) * (j + 1U);
-}}
+} IACA_END }

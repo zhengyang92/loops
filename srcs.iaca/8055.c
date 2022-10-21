@@ -14,7 +14,7 @@ fn (int k, float *d1, const float *h2, int len4, const float *t3,
     float *s2, float *s3, float *s1, const float *h0)
 {
   for (i = 0; i < (len4 - 1) >> 1; i++)
-    {
+     { IACA_START
       *d1++ =
 	s0[j + 0] * t0[k + 0] - s0[j + 1] * t0[k + 1] + s1[j + 0] * t1[k +
 								       0] -
@@ -41,5 +41,5 @@ fn (int k, float *d1, const float *h2, int len4, const float *t3,
 	s3[j + 0] * h3[k + 1] + s3[j + 1] * h3[k + 0];;
       j += 2;
       k += 2 * step;
-    }
+     } IACA_END
 }

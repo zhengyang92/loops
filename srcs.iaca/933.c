@@ -11,7 +11,7 @@ int
 fn (int w, int components, const uint8_t * src, uint8_t * dst, int step)
 {
   for (int x = 0; x < w; x++)
-    {
+     { IACA_START
       switch (step)
 	{
 	case 4:
@@ -25,5 +25,5 @@ fn (int w, int components, const uint8_t * src, uint8_t * dst, int step)
 	}
       src += step;
       dst += step;
-    }
+     } IACA_END
 }

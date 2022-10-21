@@ -75,11 +75,11 @@ int
 fn (struct sbg_script *s, int i, int64_t now)
 {
   for (i = 0; i < s->nb_tseq; i++)
-    {
+     { IACA_START
       if (s->tseq[i].ts.type == 'N')
 	{
 	  s->tseq[i].ts.t += now;
 	  s->tseq[i].ts.type = 'T';
 	}
-    }
+     } IACA_END
 }

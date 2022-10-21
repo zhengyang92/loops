@@ -12,7 +12,7 @@ fn (int y, int x, const int w, IDWTELEM * prev, int use_median,
     IDWTELEM * line)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       if (x)
 	{
 	  if (use_median)
@@ -37,5 +37,5 @@ fn (int y, int x, const int w, IDWTELEM * prev, int use_median,
 	  if (y)
 	    line[x] += prev[x];
 	}
-    }
+     } IACA_END
 }

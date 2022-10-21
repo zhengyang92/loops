@@ -13,7 +13,7 @@ fn (int w, int x, const int16_t (*filters)[8], int ioff, int dx, int imx,
     uint16_t * tmp_ptr, const uint16_t * src)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       tmp_ptr[x] =
 	av_clip_uintp2_c ((filters[imx][0] * src[ioff + -3 * 1] +
 			   filters[imx][1] * src[ioff + -2 * 1] +
@@ -27,5 +27,5 @@ fn (int w, int x, const int16_t (*filters)[8], int ioff, int dx, int imx,
       imx += dx;
       ioff += imx >> 4;
       imx &= 0xf;
-    }
+     } IACA_END
 }

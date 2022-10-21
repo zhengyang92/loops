@@ -14,7 +14,7 @@ fn (int i, int d1, int b, int d, int16_t * left, int c,
     int rnd1, int flags, ptrdiff_t left_stride)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       a = left[6];
       b = left[7];
       c = right[0];
@@ -32,5 +32,5 @@ fn (int i, int d1, int b, int d, int16_t * left, int c,
 	  rnd2 = 7 - rnd2;
 	  rnd1 = 7 - rnd1;
 	}
-    }
+     } IACA_END
 }

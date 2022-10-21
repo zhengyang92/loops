@@ -14,10 +14,10 @@ fn (const uint8_t * tpy, float *ycf, float *ycy,
     const uint8_t * tcy, float *ypf, float *ypy, float *xcy)
 {
   for (int x = 0; x < slice_end - slice_start; x++)
-    {
+     { IACA_START
       uint8_t dr = abs ((*tcy++) - (*tpy++));
       int range_dist = dr;
       float alpha_ = range_table[range_dist];
       *ycy++ = inv_alpha_ * (*xcy++) + alpha_ * (*ypy++);
       *ycf++ = inv_alpha_ * (*xcf++) + alpha_ * (*ypf++);
-}}
+} IACA_END }

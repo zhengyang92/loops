@@ -13,7 +13,7 @@ fn (const uint8_t x_offset[2], int i, int temp[8], int qmul, int32_t * block,
     const int stride)
 {
   for (i = 0; i < 2; i++)
-    {
+     { IACA_START
       const int offset = x_offset[i];
       const int z0 = temp[2 * 0 + i] + temp[2 * 2 + i];
       const int z1 = temp[2 * 0 + i] - temp[2 * 2 + i];
@@ -23,4 +23,4 @@ fn (const uint8_t x_offset[2], int i, int temp[8], int qmul, int32_t * block,
       block[stride * 1 + offset] = ((z1 + z2) * qmul + 128) >> 8;
       block[stride * 2 + offset] = ((z1 - z2) * qmul + 128) >> 8;
       block[stride * 3 + offset] = ((z0 - z3) * qmul + 128) >> 8;
-}}
+} IACA_END }

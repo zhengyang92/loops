@@ -12,7 +12,7 @@ fn (int g, int i, int min_width, int r, const uint8_t * src, int a,
     uint8_t * dst, int b)
 {
   for (i = 0; i < min_width; i++)
-    {
+     { IACA_START
       const int rt = src[i * 4 + 2];
       const int gt = src[i * 4 + 1];
       const int bt = src[i * 4 + 0];
@@ -25,4 +25,4 @@ fn (int g, int i, int min_width, int r, const uint8_t * src, int a,
       g = gt;
       b = bt;
       a = at;
-}}
+} IACA_END }

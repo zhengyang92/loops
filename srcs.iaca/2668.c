@@ -12,7 +12,7 @@ fn (const float imc_exp_tab[32], int i, float tmp, int *levlCoeffBuf,
     float *flcoeffs2, int level, float *flcoeffs1, float tmp2)
 {
   for (i = 1; i < 32; i++)
-    {
+     { IACA_START
       level = levlCoeffBuf[i];
       if (level == 16)
 	{
@@ -32,5 +32,5 @@ fn (const float imc_exp_tab[32], int i, float tmp, int *levlCoeffBuf,
 	  flcoeffs1[i] = tmp;
 	  flcoeffs2[i] = tmp2;
 	}
-    }
+     } IACA_END
 }

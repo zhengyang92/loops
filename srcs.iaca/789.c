@@ -12,7 +12,7 @@ fn (int w, int x, float f, const int max, uint16_t * dst,
     const uint16_t * src)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       dst[x] = av_clip_c (src[x] * f, 0, max);
-    }
+     } IACA_END
 }

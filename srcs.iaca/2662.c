@@ -12,9 +12,9 @@ fn (int length, int absolute, int i, const int16_t * vector)
 {
   int maximum = 0;
   for (i = 0; i < length; i++)
-    {
+     { IACA_START
       absolute = ((vector[i]) >= 0 ? (vector[i]) : (-(vector[i])));
       if (absolute > maximum)
 	maximum = absolute;
-    }
+     } IACA_END
 }

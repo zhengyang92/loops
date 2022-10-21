@@ -12,7 +12,7 @@ int
 fn (int y, uint8_t * top, ptrdiff_t stride, const uint8_t * cm, uint8_t * src)
 {
   for (y = 0; y < 8; y++)
-    {
+     { IACA_START
       const uint8_t *cm_in = cm + src[-1];
       src[0] = cm_in[top[0]];
       src[1] = cm_in[top[1]];
@@ -23,4 +23,4 @@ fn (int y, uint8_t * top, ptrdiff_t stride, const uint8_t * cm, uint8_t * src)
       src[6] = cm_in[top[6]];
       src[7] = cm_in[top[7]];
       src += stride;
-}}
+} IACA_END }

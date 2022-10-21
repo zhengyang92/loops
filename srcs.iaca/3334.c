@@ -11,7 +11,7 @@ int
 fn (int slice_number, const uint8_t * buf, int end, int slice_offsets[5])
 {
   for (slice_number = 1; slice_number < 4; slice_number++)
-    {
+     { IACA_START
       uint32_t last_offset, slice_len;
       last_offset = slice_offsets[slice_number - 1];
       slice_len =
@@ -30,4 +30,4 @@ fn (int slice_number, const uint8_t * buf, int end, int slice_offsets[5])
 	return (-(int)
 		(('I') | (('N') << 8) | (('D') << 16) |
 		 ((unsigned) ('A') << 24)));
-}}
+} IACA_END }

@@ -13,7 +13,7 @@ fn (int i, int dstStride, int srcStride, const uint8_t * src,
 {
   const int w = 8;
   for (i = 0; i < w; i++)
-    {
+     { IACA_START
       const int srcB = src[-2 * srcStride];
       const int srcA = src[-1 * srcStride];
       const int src0 = src[0 * srcStride];
@@ -53,4 +53,4 @@ fn (int i, int dstStride, int srcStride, const uint8_t * src,
 	    16) >> 5];
       dst++;
       src++;
-}}
+} IACA_END }

@@ -13,7 +13,7 @@ fn (OPJ_FLOAT32 * __restrict c1, OPJ_UINT32 n, OPJ_FLOAT32 * __restrict c2,
     OPJ_UINT32 i, OPJ_FLOAT32 * __restrict c0)
 {
   for (i = 0; i < n; ++i)
-    {
+     { IACA_START
       OPJ_FLOAT32 y = c0[i];
       OPJ_FLOAT32 u = c1[i];
       OPJ_FLOAT32 v = c2[i];
@@ -23,5 +23,5 @@ fn (OPJ_FLOAT32 * __restrict c1, OPJ_UINT32 n, OPJ_FLOAT32 * __restrict c2,
       c0[i] = r;
       c1[i] = g;
       c2[i] = b;
-    }
+     } IACA_END
 }

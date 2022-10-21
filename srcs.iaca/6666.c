@@ -36,7 +36,7 @@ fn (uint8_t * rgb_dst, int i, int p, ptrdiff_t stride, int width,
     uint8_t * dst, PixContext * pctx)
 {
   for (i = 0; i < width; i++)
-    {
+     { IACA_START
       if (!i && !j)
 	p = decode_pixel (acoder, pctx, ((void *) 0), 0, 0);
       else
@@ -52,5 +52,5 @@ fn (uint8_t * rgb_dst, int i, int p, ptrdiff_t stride, int width,
 	    ((uint8_t *) (rgb_dst + i * 3))[0] = (pal[p]) >> 16;
 	  }
 	while (0);
-    }
+     } IACA_END
 }

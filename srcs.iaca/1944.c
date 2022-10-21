@@ -13,7 +13,7 @@ fn (int y, int w, int linesize, int v, int x, unsigned int bitbuf, int h,
     const uint8_t * bitmap, int color, uint8_t * q)
 {
   for (y = 0; y < h; y++)
-    {
+     { IACA_START
       if (buf_size * 8 < w * 3 + 32)
 	return (-(int)
 		(('B') | (('U') << 8) | (('F') << 16) |
@@ -323,5 +323,5 @@ fn (int y, int w, int linesize, int v, int x, unsigned int bitbuf, int h,
       *q++ = 0xf0;
       bitmap += linesize;
       buf_size -= q - line_begin;
-    }
+     } IACA_END
 }

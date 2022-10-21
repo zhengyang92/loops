@@ -22,7 +22,7 @@ fn (const unsigned int iThOff, const unsigned int iTh, Int iTemp1, Int k,
 {
   Int iNumNonzero = 0;
   for (k = 2; k < iCount; k++)
-    {
+     { IACA_START
       const Int sk = pScan[k].uScan;
       iLevel = pCoeffs[sk];
       if ((unsigned int) (iLevel + iThOff) >= iTh)
@@ -48,5 +48,5 @@ fn (const unsigned int iThOff, const unsigned int iTh, Int iTemp1, Int k,
 	  iRun++;
 	  pResidual[sk] = gRes[(iLevel + 32)];
 	}
-    }
+     } IACA_END
 }

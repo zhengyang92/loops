@@ -256,11 +256,11 @@ fn (const struct fmt_map ff_fmt_conversion_table[34], enum AVCodecID codec_id,
     int i, uint32_t v4l2_fmt)
 {
   for (i = 0; ff_fmt_conversion_table[i].codec_id != AV_CODEC_ID_NONE; i++)
-    {
+     { IACA_START
       if (ff_fmt_conversion_table[i].v4l2_fmt == v4l2_fmt
 	  && ff_fmt_conversion_table[i].codec_id == codec_id)
 	{
 	  return ff_fmt_conversion_table[i].ff_fmt;
 	}
-    }
+     } IACA_END
 }

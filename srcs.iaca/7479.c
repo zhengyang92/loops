@@ -14,7 +14,7 @@ fn (uint8_t * ptr, const int step, const uint8_t roffset, const float scale,
     const float rcw, const float by, const float byw, const float gm)
 {
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       float g = ptr[x * step + goffset];
       float b = ptr[x * step + boffset];
       float r = ptr[x * step + roffset];
@@ -67,4 +67,4 @@ fn (uint8_t * ptr, const int step, const uint8_t roffset, const float scale,
       ptr[x * step + goffset] = av_clip_uint8_c (ng);
       ptr[x * step + boffset] = av_clip_uint8_c (nb);
       ptr[x * step + roffset] = av_clip_uint8_c (nr);
-}}
+} IACA_END }

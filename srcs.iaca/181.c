@@ -12,7 +12,7 @@ fn (const float mult, const float *src, const float scale,
     const int nb_samples, float *dst, float *prv)
 {
   for (int n = 0; n < nb_samples; n++)
-    {
+     { IACA_START
       float current = src[n];
       if (1)
 	{
@@ -28,5 +28,5 @@ fn (const float mult, const float *src, const float scale,
 	{
 	  dst[n] = av_clipf_sse (dst[n], -1.f, 1.f);
 	}
-    }
+     } IACA_END
 }

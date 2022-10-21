@@ -13,7 +13,7 @@ fn (uint16_t * yptr, uint16_t * vptr, uint16_t * uptr, const float r,
     const float size, const int subw, const float b, const float imax)
 {
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       const int cx = x >> subw;
       float y = yptr[x] * imax;
       float u = uptr[cx] * imax - .5f;
@@ -24,4 +24,4 @@ fn (uint16_t * yptr, uint16_t * vptr, uint16_t * uptr, const float r,
       t = tt + (1.f - tt) * ihigh;
       ny = (1.f - t) * y + t * ny * y;
       yptr[x] = av_clip_uintp2_c (lrintf (ny * max), depth);
-}}
+} IACA_END }

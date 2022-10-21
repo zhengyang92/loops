@@ -11,7 +11,7 @@ int
 fn (float *bptr, int x, uint16_t * dst16, const int width)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       dst16[x] = bptr[x];
-    }
+     } IACA_END
 }

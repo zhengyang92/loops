@@ -14,9 +14,9 @@ fn (OPJ_UINT32 pNbComps, OPJ_UINT32 i, OPJ_UINT32 j, OPJ_UINT32 lIndex,
     OPJ_FLOAT64 * lNorms, OPJ_FLOAT32 * lMatrix, OPJ_FLOAT32 lCurrentValue)
 {
   for (j = 0; j < pNbComps; ++j)
-    {
+     { IACA_START
       lCurrentValue = lMatrix[lIndex];
       lIndex += pNbComps;
       lNorms[i] += lCurrentValue * lCurrentValue;
-    }
+     } IACA_END
 }

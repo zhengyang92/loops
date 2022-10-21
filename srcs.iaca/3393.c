@@ -13,7 +13,7 @@ fn (const uint8_t * block, int y, int mu[3], ptrdiff_t stride, int x,
     int cov[6])
 {
   for (x = 0; x < 4; x++)
-    {
+     { IACA_START
       int r = block[x * 4 + stride * y + 0] - mu[0];
       int g = block[x * 4 + stride * y + 1] - mu[1];
       int b = block[x * 4 + stride * y + 2] - mu[2];
@@ -23,4 +23,4 @@ fn (const uint8_t * block, int y, int mu[3], ptrdiff_t stride, int x,
       cov[3] += g * g;
       cov[4] += g * b;
       cov[5] += b * b;
-}}
+} IACA_END }

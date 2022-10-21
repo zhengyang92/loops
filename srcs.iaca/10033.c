@@ -11,7 +11,7 @@ int
 fn (const int in_size, uint16_t * const symbols, int i)
 {
   for (i = 0; i < in_size; ++i)
-    {
+     { IACA_START
       symbols[i] = 0;
-    }
+     } IACA_END
 }

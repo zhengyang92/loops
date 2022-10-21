@@ -13,10 +13,10 @@ fn (uint32_t b, uint32_t * palette, int i, uint32_t r, uint32_t color_count,
     uint32_t g, const uint8_t * color_table)
 {
   for (i = 0; i < color_count; i++)
-    {
+     { IACA_START
       r = color_table[i * 3 + 0];
       g = color_table[i * 3 + 1];
       b = color_table[i * 3 + 2];
       palette[i] = (0xFFU << 24) | (r << 16) | (g << 8) | (b);
-    }
+     } IACA_END
 }

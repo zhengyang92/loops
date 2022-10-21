@@ -12,11 +12,11 @@ fn (const float *bottom, float *dst, ptrdiff_t width, const float opacity,
     const float *top)
 {
   for (int j = 0; j < width; j++)
-    {
+     { IACA_START
       dst[j] =
 	top[j] +
 	((top[j] == 0
 	  && bottom[j] ==
 	  0 ? 0 : 2LL * top[j] * bottom[j] / (top[j] + bottom[j])) -
 	 top[j]) * opacity;
-}}
+} IACA_END }

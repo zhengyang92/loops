@@ -14,7 +14,7 @@ fn (int i, int16_t * tmp, int dstStride, const int pad, int tmpStride,
 {
   const int w = 2;
   for (i = 0; i < w; i++)
-    {
+     { IACA_START
       const int tmpB = tmp[-2 * tmpStride] - pad;
       const int tmpA = tmp[-1 * tmpStride] - pad;
       const int tmp0 = tmp[0 * tmpStride] - pad;
@@ -30,4 +30,4 @@ fn (int i, int16_t * tmp, int dstStride, const int pad, int tmpStride,
 			    (tmpA + tmp4)) + 512) >> 10, 10);
       dst++;
       tmp++;
-}}
+} IACA_END }

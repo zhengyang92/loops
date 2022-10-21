@@ -12,9 +12,9 @@ int
 fn (int16_t * vector_ptr, int64_t sum, int t, int tmp[120], int shift, int j)
 {
   for (j = 0; j < 60 * 2; j++)
-    {
+     { IACA_START
       t = vector_ptr[j] >> shift;
       sum += t * t;
       tmp[j] = t;
-    }
+     } IACA_END
 }

@@ -19,8 +19,8 @@ fn (int y, uint16_t tmp_codes[512], int x, uint8_t tmp_bits[512], int j,
     int xsize, const HuffTable * h)
 {
   for (y = 0; y < xsize; y++)
-    {
+     { IACA_START
       tmp_bits[(x << 5) | y | ((x && y) << 4)] = h->bits[j];
       tmp_codes[(x << 5) | y | ((x && y) << 4)] = h->codes[j++];
-    }
+     } IACA_END
 }

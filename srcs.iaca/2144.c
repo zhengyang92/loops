@@ -12,12 +12,12 @@ fn (unsigned int i, int transparent_color_index, const uint32_t * palette,
     unsigned int smallest_alpha)
 {
   for (i = 0; i < 256; i++)
-    {
+     { IACA_START
       const uint32_t v = palette[i];
       if (v >> 24 < smallest_alpha)
 	{
 	  smallest_alpha = v >> 24;
 	  transparent_color_index = i;
 	}
-    }
+     } IACA_END
 }

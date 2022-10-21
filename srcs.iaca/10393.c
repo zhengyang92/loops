@@ -12,7 +12,7 @@ fn (char c, int j, float *board)
 {
   int count = 0;
   for (j = 0; j < 4; ++j)
-    {
+     { IACA_START
       int me = (c >> (2 * j)) & 1;
       int you = (c >> (2 * j + 1)) & 1;
       if (me)
@@ -22,5 +22,5 @@ fn (char c, int j, float *board)
       ++count;
       if (count >= 19 * 19)
 	break;
-    }
+     } IACA_END
 }

@@ -14,7 +14,7 @@ fn (const uint8_t * const g_ptr, int i, int width,
     const uint8_t * const a_ptr, int j, uint16_t * dst)
 {
   for (i = 0, j = 0; i < (width >> 1); i += 1, j += 2 * 4, dst += 4)
-    {
+     { IACA_START
       const uint32_t a =
 	(((a_ptr + j)[0] + (a_ptr + j)[rgb_stride]) +
 	 (((a_ptr + j) + 4)[0] + ((a_ptr + j) + 4)[rgb_stride]));
@@ -47,5 +47,5 @@ fn (const uint8_t * const g_ptr, int i, int width,
       dst[1] = g;
       dst[2] = b;
       dst[3] = a;
-    }
+     } IACA_END
 }

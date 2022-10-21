@@ -11,8 +11,8 @@ int
 fn (uint8_t * ptr, int j, const uint8_t * buf, int n)
 {
   for (j = 0; j < n; j++)
-    {
+     { IACA_START
       ptr[j * 2 + 0] = (buf[j] >> 4) & 0xF;
       ptr[j * 2 + 1] = buf[j] & 0xF;
-    }
+     } IACA_END
 }

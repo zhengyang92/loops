@@ -11,7 +11,7 @@ int
 fn (int16_t (*src)[8], int i)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       const int a0 = 3 * src[i][1] - 2 * src[i][7];
       const int a1 = 3 * src[i][3] + 2 * src[i][5];
       const int a2 = 2 * src[i][3] - 3 * src[i][5];
@@ -36,4 +36,4 @@ fn (int16_t (*src)[8], int i)
       src[i][5] = (b2 - b6) >> 3;
       src[i][6] = (b1 - b5) >> 3;
       src[i][7] = (b0 - b4) >> 3;
-}}
+} IACA_END }

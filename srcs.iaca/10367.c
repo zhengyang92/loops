@@ -12,7 +12,7 @@ fn (int j, float *in, int i, int c, int w, int forward, int k, float scale,
     float *out, int b, int stride, int h)
 {
   for (i = 0; i < w * stride; ++i)
-    {
+     { IACA_START
       int in_index =
 	b * w * h * c + k * w * h + (j / stride) * w + i / stride;
       int out_index =
@@ -22,5 +22,5 @@ fn (int j, float *in, int i, int c, int w, int forward, int k, float scale,
 	out[out_index] = scale * in[in_index];
       else
 	in[in_index] += scale * out[out_index];
-    }
+     } IACA_END
 }

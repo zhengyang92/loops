@@ -14,10 +14,10 @@ fn (const uint8_t * lens, int i, int max_bits, int prefix, int j,
 {
   int idx = 0;
   for (j = 0; j < lens[i]; j++)
-    {
+     { IACA_START
       bits[idx] = i + 1;
       codes[idx] = prefix++;
       max_bits = i + 1;
       idx++;
-    }
+     } IACA_END
 }

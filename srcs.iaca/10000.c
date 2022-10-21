@@ -12,7 +12,7 @@ fn (const int16_t * src, int len, const int16_t * ref, int16_t * dst)
 {
   int i = 0;
   for (; i < len; ++i)
-    {
+     { IACA_START
       const int diff_uv = ref[i] - src[i];
       dst[i] += diff_uv;
-}}
+} IACA_END }

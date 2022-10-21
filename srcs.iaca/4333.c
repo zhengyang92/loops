@@ -19,7 +19,7 @@ fn (uint16_t * const pixels, int UCS, const float (*m)[3], int y,
     const int h, int LUV)
 {
   for (x = leftEdge; x <= rightEdge; ++x)
-    {
+     { IACA_START
       float cx, cy, cz, jr, jg, jb, jmax;
       int r, g, b, mx = maxval;
       if (cie == LUV)
@@ -78,5 +78,5 @@ fn (uint16_t * const pixels, int UCS, const float (*m)[3], int y,
       pixels[y * linesize + x * 4 + 1] = g;
       pixels[y * linesize + x * 4 + 2] = b;
       pixels[y * linesize + x * 4 + 3] = 65535;
-    }
+     } IACA_END
 }

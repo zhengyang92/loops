@@ -11,7 +11,7 @@ int
 fn (char *res, char *start, int i, char *end)
 {
   for (i = 0; res[i]; ++i)
-    {
+     { IACA_START
       if (res[i] == '(')
 	{
 	  start = res + i + 1;
@@ -21,5 +21,5 @@ fn (char *res, char *start, int i, char *end)
 	  end = res + i;
 	  break;
 	}
-    }
+     } IACA_END
 }

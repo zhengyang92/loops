@@ -13,9 +13,9 @@ fn (int i, int *dstStride, int srcSliceH, uint8_t * dstPtr, int *srcStride,
 {
   int length = 0;
   for (i = 0; i < srcSliceH; i++)
-    {
+     { IACA_START
       memcpy (dstPtr, srcPtr, length);
       srcPtr += srcStride[0];
       dstPtr += dstStride[0];
-    }
+     } IACA_END
 }

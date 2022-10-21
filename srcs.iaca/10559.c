@@ -12,10 +12,13 @@ int
 fn (Int32 alphaSize, UChar * length, Int32 i, Int32 vec, Int32 * code,
     Int32 n)
 {
-  for (i = 0; i < alphaSize; i++)
+  for (i = 0; i < alphaSize; i++) {
+	  IACA_START
     if (length[i] == n)
       {
 	code[i] = vec;
 	vec++;
       }
+  }
+  IACA_END
 }

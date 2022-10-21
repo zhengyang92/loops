@@ -13,9 +13,9 @@ fn (int i, const uint8_t * src2, intptr_t w, uint8_t * dst,
     const uint8_t * src1, uint8_t lt, uint8_t l)
 {
   for (i = 0; i < w; i++)
-    {
+     { IACA_START
       const int pred = mid_pred (l, src1[i], (l + src1[i] - lt) & 0xFF);
       lt = src1[i];
       l = src2[i];
       dst[i] = l - pred;
-}}
+} IACA_END }

@@ -26,7 +26,7 @@ int
 fn (char header[90], int i, AVIOContext * pb)
 {
   for (i = 0; i < 80; i++)
-    {
+     { IACA_START
       header[i] = avio_r8 (pb);
       if (header[i] == '\n')
 	{
@@ -34,5 +34,5 @@ fn (char header[90], int i, AVIOContext * pb)
 	  header[i + 2] = 0;
 	  break;
 	}
-    }
+     } IACA_END
 }

@@ -14,7 +14,7 @@ fn (int i, INTFLOAT (*transient_gain)[32], INTFLOAT * power_smooth, int n0,
 {
   int nL = 0;
   for (n = n0; n < nL; n++)
-    {
+     { IACA_START
       int decayed_peak;
       decayed_peak =
 	(int) (((int64_t) peak_decay_factor * peak_decay_nrg[i] +
@@ -34,5 +34,5 @@ fn (int i, INTFLOAT (*transient_gain)[32], INTFLOAT * power_smooth, int n0,
 	}
       else
 	transient_gain[i][n] = 1 << 16;
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ int
 fn (OPJ_INT32 * dst, OPJ_UINT32 j, OPJ_INT32 * src, OPJ_UINT32 max)
 {
   for (j = 0; j < max; ++j)
-    {
+     { IACA_START
       dst[j] = src[j];
-    }
+     } IACA_END
 }

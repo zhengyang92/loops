@@ -11,7 +11,7 @@ int
 fn (uint16_t * src, int is_alpha_plane, int box_width, int j, uint16_t * dst)
 {
   for (j = 0; j < box_width; ++j)
-    {
+     { IACA_START
       if (!is_alpha_plane)
 	{
 	  dst[j] = src[j];
@@ -20,5 +20,5 @@ fn (uint16_t * src, int is_alpha_plane, int box_width, int j, uint16_t * dst)
 	{
 	  dst[j] = src[j] << 6;
 	}
-    }
+     } IACA_END
 }

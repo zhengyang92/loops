@@ -15,9 +15,9 @@ fn (uint8_t * ptr, int x, int y2, int x2, int stride)
   int count = 0;
   for (x2 = ((x - 1) > (0) ? (x - 1) : (0));
        x2 < ((8) > (x + 2) ? (x + 2) : (8)); x2++)
-    {
+     { IACA_START
       int v = ptr[x2 + y2 * stride];
       sum += v;
       sqr += v * v;
       count++;
-}}
+} IACA_END }

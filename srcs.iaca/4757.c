@@ -19,8 +19,8 @@ fn (int i, const uint8_t ccitt_codes_bits[2][104],
     VLC ccitt_vlc[2])
 {
   for (i = 0; i < 2; i++)
-    {
+     { IACA_START
       ff_init_vlc_sparse (&ccitt_vlc[i], 9, 104, ccitt_codes_lens[i], 1, 1,
 			  ccitt_codes_bits[i], 1, 1, ccitt_syms, 2, 2, 4);
-    }
+     } IACA_END
 }

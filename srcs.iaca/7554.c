@@ -12,7 +12,7 @@ int
 fn (int w, uint64_t sum, const uint16_t * img1, int j, const uint16_t * img2)
 {
   for (j = 0; j < w; j++)
-    {
+     { IACA_START
       sum += abs (img1[j] - img2[j]);
-    }
+     } IACA_END
 }

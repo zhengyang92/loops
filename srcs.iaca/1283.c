@@ -13,7 +13,7 @@ fn (uint32_t * lace_size, uint8_t temp, int *laces, uint32_t total, int n,
     int size, uint8_t * data)
 {
   for (n = 0; n < *laces - 1; n++)
-    {
+     { IACA_START
       lace_size[n] = 0;
       do
 	{
@@ -28,5 +28,5 @@ fn (uint32_t * lace_size, uint8_t temp, int *laces, uint32_t total, int n,
 	  size -= 1;
 	}
       while (temp == 0xff);
-    }
+     } IACA_END
 }

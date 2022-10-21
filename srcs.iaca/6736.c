@@ -14,7 +14,7 @@ fn (ptrdiff_t stride, int16_t * __restrict block, const uint8_t * pixels,
     int i)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       block[0] = pixels[0];
       block[1] = pixels[1];
       block[2] = pixels[2];
@@ -25,5 +25,5 @@ fn (ptrdiff_t stride, int16_t * __restrict block, const uint8_t * pixels,
       block[7] = pixels[7];
       pixels += stride / sizeof (uint8_t);
       block += 8;
-    }
+     } IACA_END
 }

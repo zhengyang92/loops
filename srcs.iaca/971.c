@@ -12,10 +12,10 @@ fn (int w, const float *asrc, const float *msrc, int x, float *dst,
     float offsetf)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       if (asrc[x] > 0.0f)
 	dst[x] = (msrc[x] - offsetf) / asrc[x] + offsetf;
       else
 	dst[x] = msrc[x];
-    }
+     } IACA_END
 }

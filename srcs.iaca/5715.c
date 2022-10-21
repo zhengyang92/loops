@@ -13,8 +13,8 @@ fn (float (*X)[38][64], const int i_Temp, int i, const float (*Y1)[64][2],
 {
   const int i_f = 32;
   for (i = i_Temp; i < i_f; i++)
-    {
+     { IACA_START
       X[0][i][k] = Y1[i][k][0];
       X[1][i][k] = Y1[i][k][1];
-    }
+     } IACA_END
 }

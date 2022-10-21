@@ -13,7 +13,7 @@ fn (INTFLOAT (*in)[2], int i, const INTFLOAT (*filter)[8][2],
     INT64FLOAT sum_re, INT64FLOAT sum_im, int j)
 {
   for (j = 0; j < 6; j++)
-    {
+     { IACA_START
       INT64FLOAT in0_re = in[j][0];
       INT64FLOAT in0_im = in[j][1];
       INT64FLOAT in1_re = in[12 - j][0];
@@ -24,5 +24,5 @@ fn (INTFLOAT (*in)[2], int i, const INTFLOAT (*filter)[8][2],
       sum_im +=
 	(INT64FLOAT) filter[i][j][0] * (in0_im + in1_im) +
 	(INT64FLOAT) filter[i][j][1] * (in0_re - in1_re);
-    }
+     } IACA_END
 }

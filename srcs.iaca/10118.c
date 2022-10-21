@@ -14,7 +14,7 @@ fn (int x, const int width, uint8_t in_use[1024], uint32_t last_pix,
 {
   int num_colors = 0;
   for (x = 0; x < width; ++x)
-    {
+     { IACA_START
       int key;
       if (argb[x] == last_pix)
 	{
@@ -45,5 +45,5 @@ fn (int x, const int width, uint8_t in_use[1024], uint32_t last_pix,
 	      key &= ((256 * 4) - 1);
 	    }
 	}
-    }
+     } IACA_END
 }

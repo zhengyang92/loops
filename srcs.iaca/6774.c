@@ -17,7 +17,7 @@ fn (int16_t * blocks, int run_cb, const uint8_t ff_prores_lev_to_cb_index[10],
 {
   int bits = 0;
   for (idx = scan[i]; idx < max_coeffs; idx += 64)
-    {
+     { IACA_START
       level = blocks[idx] / qmat[scan[i]];
       *error +=
 	((blocks[idx]) >=
@@ -38,5 +38,5 @@ fn (int16_t * blocks, int run_cb, const uint8_t ff_prores_lev_to_cb_index[10],
 	{
 	  run++;
 	}
-    }
+     } IACA_END
 }

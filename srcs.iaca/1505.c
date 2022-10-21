@@ -13,8 +13,8 @@ fn (int *quants, const uint8_t aac_cb_range[12], const int dim, int off,
 {
   int curidx = 0;
   for (j = 0; j < dim; j++)
-    {
+     { IACA_START
       curidx *= aac_cb_range[cb];
       curidx += quants[j] + off;
-    }
+     } IACA_END
 }

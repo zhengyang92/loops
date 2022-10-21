@@ -12,7 +12,7 @@ int
 fn (uint16_t * basetable, uint8_t * shifttable)
 {
   for (int i = 0; i < 256; i++)
-    {
+     { IACA_START
       int e = i - 127;
       if (e < -24)
 	{
@@ -49,5 +49,5 @@ fn (uint16_t * basetable, uint8_t * shifttable)
 	  shifttable[i | 0x000] = 13;
 	  shifttable[i | 0x100] = 13;
 	}
-    }
+     } IACA_END
 }

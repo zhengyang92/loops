@@ -12,7 +12,7 @@ fn (unsigned char *pp, uint32 w, uint32 * cp, uint32 _x, uint32 ** PALmap,
     uint32 * bw)
 {
   for (_x = w; _x >= 8; _x -= 8)
-    {
+     { IACA_START
       bw = PALmap[*pp++];
       *cp++ = *bw++;
       *cp++ = *bw++;
@@ -22,5 +22,5 @@ fn (unsigned char *pp, uint32 w, uint32 * cp, uint32 _x, uint32 ** PALmap,
       *cp++ = *bw++;
       *cp++ = *bw++;
       *cp++ = *bw++;
-    }
+     } IACA_END
 }

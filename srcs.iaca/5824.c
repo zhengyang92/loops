@@ -14,7 +14,7 @@ fn (const uint8_t binkb_den[16], double s[64],
     const uint8_t binkb_inter_seed[64], int j, const uint8_t binkb_num[16])
 {
   for (i = 0; i < 64; i++)
-    {
+     { IACA_START
       int k = inv_bink_scan[i];
       if (s[i] == 1.0)
 	{
@@ -31,4 +31,4 @@ fn (const uint8_t binkb_den[16], double s[64],
 	  binkb_inter_quant[j][k] =
 	    (1L << 12) * binkb_inter_seed[i] * s[i] * binkb_num[j] /
 	    (double) binkb_den[j];
-}}}
+} IACA_END }}

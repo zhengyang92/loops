@@ -14,9 +14,9 @@ int
 fn (float *bc, int i, float fs, EqParameter * param, const float bands[17])
 {
   for (i = 0; i <= 17; i++)
-    {
+     { IACA_START
       param[i].lower = i == 0 ? 0 : bands[i - 1];
       param[i].upper = i == 17 ? fs : bands[i];
       param[i].gain = bc[i];
-    }
+     } IACA_END
 }

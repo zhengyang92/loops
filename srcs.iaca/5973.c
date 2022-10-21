@@ -13,7 +13,7 @@ int
 fn (int32_t im, uint64_t * hcode, int32_t iM, BitstreamContext bc)
 {
   for (; im <= iM; im++)
-    {
+     { IACA_START
       uint64_t l = hcode[im] = bitstream_read (&bc, 6);
       if (l == 63)
 	{
@@ -33,5 +33,5 @@ fn (int32_t im, uint64_t * hcode, int32_t iM, BitstreamContext bc)
 	    hcode[im++] = 0;
 	  im--;
 	}
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ fn (int attacks[9], float energy_short[9], int i)
 {
   int att_sum = 0;
   for (i = 1; i < 8 + 1; i++)
-    {
+     { IACA_START
       const float u = energy_short[i - 1];
       const float v = energy_short[i];
       const float m = ((u) > (v) ? (u) : (v));
@@ -26,5 +26,5 @@ fn (int attacks[9], float energy_short[9], int i)
 	    }
 	}
       att_sum += attacks[i];
-    }
+     } IACA_END
 }

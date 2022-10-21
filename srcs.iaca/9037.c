@@ -13,10 +13,10 @@ fn (int i, int palette_scale, unsigned char r,
     unsigned char g)
 {
   for (i = 0; i < 256; i++)
-    {
+     { IACA_START
       r = palette_buffer[i * 3] << palette_scale;
       g = palette_buffer[i * 3 + 1] << palette_scale;
       b = palette_buffer[i * 3 + 2] << palette_scale;
       palette[i] = (r << 16) | (g << 8) | (b);
-    }
+     } IACA_END
 }

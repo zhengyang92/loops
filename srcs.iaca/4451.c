@@ -13,11 +13,11 @@ fn (const int t0, const int slicew_end, uint8_t * dst1,
     uint8_t * dst0, const int bg, const int step)
 {
   for (x = slicew_start * step; x < slicew_end * step; x++)
-    {
+     { IACA_START
       if (src[x] != bg)
 	{
 	  dst0[x] = t0;
 	  dst1[x] = t1;
 	}
-    }
+     } IACA_END
 }

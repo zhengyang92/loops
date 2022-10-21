@@ -12,7 +12,7 @@ fn (uint16_t * block, int stride, int y, int offset, int weight, int height,
     int log2_denom)
 {
   for (y = 0; y < height; y++, block += stride)
-    {
+     { IACA_START
       block[0] =
 	av_clip_uintp2_c ((block[0] * weight + offset) >> log2_denom, 9);
       block[1] =
@@ -51,5 +51,5 @@ fn (uint16_t * block, int stride, int y, int offset, int weight, int height,
 	av_clip_uintp2_c ((block[14] * weight + offset) >> log2_denom, 9);
       block[15] =
 	av_clip_uintp2_c ((block[15] * weight + offset) >> log2_denom, 9);
-    }
+     } IACA_END
 }

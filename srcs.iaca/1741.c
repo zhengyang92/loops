@@ -14,7 +14,7 @@ fn (ptrdiff_t srcStride, const uint8_t * src1, int16_t * tmp, int i)
 {
   const int h = 8;
   for (i = 0; i < h + 5; i++)
-    {
+     { IACA_START
       tmp[0] =
 	-1 * src1[-2] + -2 * src1[-1] + 96 * src1[0] + 42 * src1[1] +
 	-7 * src1[2] + 0 * src1[3];
@@ -41,5 +41,5 @@ fn (ptrdiff_t srcStride, const uint8_t * src1, int16_t * tmp, int i)
 	-7 * src1[9] + 0 * src1[10];
       tmp += 8;
       src1 += srcStride;
-    }
+     } IACA_END
 }

@@ -15,7 +15,7 @@ fn (const float *const weight_lut, const uint32_t * const iib, int endx,
     float *total_weight, int max_meaningful_diff)
 {
   for (int x = startx; x < endx; x++)
-    {
+     { IACA_START
       const uint32_t a = iia[x];
       const uint32_t b = iib[x];
       const uint32_t d = iid[x];
@@ -26,4 +26,4 @@ fn (const float *const weight_lut, const uint32_t * const iib, int endx,
       const float weight = weight_lut[patch_diff_sq];
       total_weight[x] += weight;
       sum[x] += weight * src[x];
-}}
+} IACA_END }

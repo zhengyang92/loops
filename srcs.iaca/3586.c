@@ -12,7 +12,8 @@ int
 fn (int w, int x, const int16_t * filter, uint16_t * tmp_ptr, uint16_t * dst,
     int avg)
 {
-  for (x = 0; x < w; x++)
+  for (x = 0; x < w; x++) {
+	  IACA_START
     if (avg)
       {
 	dst[x] =
@@ -39,4 +40,6 @@ fn (int w, int x, const int16_t * filter, uint16_t * tmp_ptr, uint16_t * dst,
 			     filter[6] * tmp_ptr[x + +3 * 64] +
 			     filter[7] * tmp_ptr[x + +4 * 64] + 64) >> 7, 12);
       }
+  }
+  IACA_END
 }

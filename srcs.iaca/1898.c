@@ -12,8 +12,8 @@ int
 fn (uint8_t * obmc_weight, int xblen, int x, int dc, uint16_t * dst)
 {
   for (x = 0; x < xblen; x += 2)
-    {
+     { IACA_START
       dst[x] += dc * obmc_weight[x];
       dst[x + 1] += dc * obmc_weight[x + 1];
-    }
+     } IACA_END
 }

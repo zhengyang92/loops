@@ -11,9 +11,9 @@ int
 fn (double *r, const int n, int i, double (*matrix)[3])
 {
   for (i = 1; i < n; i++)
-    {
+     { IACA_START
       const double den = matrix[i][1] - matrix[i][0] * matrix[i - 1][2];
       const double k = den ? 1. / den : 1.;
       matrix[i][2] *= k;
       r[i] = (r[i] - matrix[i][0] * r[i - 1]) * k;
-}}
+} IACA_END }

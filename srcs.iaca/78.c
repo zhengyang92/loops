@@ -16,8 +16,8 @@ fn (uint8_t ** outs, int i, int *route_cur, struct amerge_input *in, int c,
     uint8_t ** ins, int bps)
 {
   for (c = 0; c < in[i].nb_ch; c++)
-    {
+     { IACA_START
       memcpy ((*outs) + bps * *(route_cur++), ins[i], bps);
       ins[i] += bps;
-    }
+     } IACA_END
 }

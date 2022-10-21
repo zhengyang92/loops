@@ -12,7 +12,7 @@ fn (int count, int upper, int x, int u, const uint8_t * dp, int tpitch)
 {
   int lower = 0;
   for (count = 0, u = x - 1; u < x + 2 && count < 6; u++)
-    {
+     { IACA_START
       if (dp[u - tpitch] > 19)
 	{
 	  count++;
@@ -25,5 +25,5 @@ fn (int count, int upper, int x, int u, const uint8_t * dp, int tpitch)
 	  count++;
 	  lower = 1;
 	}
-    }
+     } IACA_END
 }

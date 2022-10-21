@@ -11,9 +11,9 @@ int
 fn (int count, int x, int u, const uint8_t * dp, int tpitch)
 {
   for (count = 0, u = x - 1; u < x + 2 && count < 2; u++)
-    {
+     { IACA_START
       count += dp[u - tpitch] > 3;
       count += dp[u] > 3;
       count += dp[u + tpitch] > 3;
-    }
+     } IACA_END
 }

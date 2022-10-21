@@ -12,11 +12,11 @@ fn (int i, uint8_t * alpha, int nb_opaque_colors, uint8_t * colormap,
     uint8_t color_used[16])
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       if (alpha[i] != 0 && !color_used[colormap[i]])
 	{
 	  color_used[colormap[i]] = 1;
 	  nb_opaque_colors++;
 	}
-    }
+     } IACA_END
 }

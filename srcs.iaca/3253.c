@@ -11,7 +11,7 @@ int
 fn (int16_t * ptr, int i)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       {
 	int a0, a1;
 	a0 = ptr[0];
@@ -69,4 +69,4 @@ fn (int16_t * ptr, int i)
 	ptr[8 + 7] = a0 - a1;
       };
       ptr += 2 * 8;
-}}
+} IACA_END }

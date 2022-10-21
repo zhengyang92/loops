@@ -16,7 +16,7 @@ fn (PutBitContext * ac_pb, int i, int last_non_zero, int16_t * block,
     uint32_t * bits_tab)
 {
   for (; i < last_index; i++)
-    {
+     { IACA_START
       int level = block[scan_table[i]];
       if (level)
 	{
@@ -35,5 +35,5 @@ fn (PutBitContext * ac_pb, int i, int last_non_zero, int16_t * block,
 	    }
 	  last_non_zero = i;
 	}
-    }
+     } IACA_END
 }

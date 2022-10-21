@@ -12,7 +12,7 @@ fn (int dim, int16_t * lsf)
 {
   int m = 0;
   for (int k = 0; k < dim - 1; k++)
-    {
+     { IACA_START
       int i = m * dim + k;
       if ((lsf[i + 1] - lsf[i]) < 319)
 	{
@@ -28,5 +28,5 @@ fn (int dim, int16_t * lsf)
 	    }
 	}
       lsf[i] = av_clip_c (lsf[i], 82, 25723);
-    }
+     } IACA_END
 }

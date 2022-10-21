@@ -25,10 +25,10 @@ fn (int16_t ** samples_p, PutBitContext pb, ADPCMChannelStatus * status)
 {
   int ch = 0;
   for (int i = 0; i < 64; i += 2)
-    {
+     { IACA_START
       int t1, t2;
       t1 = adpcm_ima_qt_compress_sample (status, samples_p[ch][i]);
       t2 = adpcm_ima_qt_compress_sample (status, samples_p[ch][i + 1]);
       put_bits (&pb, 4, t2);
       put_bits (&pb, 4, t1);
-}}
+} IACA_END }

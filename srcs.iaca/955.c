@@ -11,10 +11,10 @@ int
 fn (int sum[3], int x, int x0, int skip, int x1, const uint8_t * p)
 {
   for (x = x0; x < x1; x += skip)
-    {
+     { IACA_START
       sum[0] += p[0];
       sum[1] += p[1];
       sum[2] += p[2];
       p += 3 * skip;
-    }
+     } IACA_END
 }

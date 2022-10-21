@@ -13,7 +13,7 @@ fn (const double *const spectral, double floor, int len, double num)
   double den = 0.;
   int size = 0;
   for (int n = 0; n < len; n++)
-    {
+     { IACA_START
       const double v = spectral[n];
       if (v > floor)
 	{
@@ -21,5 +21,5 @@ fn (const double *const spectral, double floor, int len, double num)
 	  den += v;
 	  size++;
 	}
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ int
 fn (int i, const int8_t * noise, const uint8_t * src, int len, uint8_t * dst)
 {
   for (i = 0; i < len; i++)
-    {
+     { IACA_START
       int v = src[i] + noise[i];
       dst[i] = av_clip_uint8_c (v);
-}}
+} IACA_END }

@@ -11,7 +11,7 @@ int
 fn (uint16_t * uptr, const int half, const int width, uint16_t * vptr)
 {
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       uptr[x] = half;
       vptr[x] = half;
-}}
+} IACA_END }

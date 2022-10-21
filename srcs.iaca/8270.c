@@ -13,7 +13,7 @@ fn (int dst_stride, int i, int width, const uint8_t * src, int src_stride,
     uint16_t * dst)
 {
   for (i = 2; i < width - 2; i += 2)
-    {
+     { IACA_START
       dst[(0) * dst_stride + (0) * 3 + 0] =
 	((unsigned int) (src[(-1) * src_stride + 1 * (0)]) +
 	 (unsigned int) (src[(1) * src_stride + 1 * (0)])) >> 1;
@@ -52,4 +52,4 @@ fn (int dst_stride, int i, int width, const uint8_t * src, int src_stride,
 	 (unsigned int) (src[(2) * src_stride + 1 * (1)])) >> 1;
       src += 2 * 1;
       dst += 6;
-}}
+} IACA_END }

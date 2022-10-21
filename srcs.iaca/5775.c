@@ -11,10 +11,10 @@ int
 fn (const int32_t * par, int32_t * cof, int i, unsigned int k, int j)
 {
   for (i = 0, j = k - 1; i < j; i++, j--)
-    {
+     { IACA_START
       int tmp1 =
 	((((int64_t) (par[k]) * (int64_t) (cof[j])) + (1 << 19)) >> 20);
       cof[j] +=
 	((((int64_t) (par[k]) * (int64_t) (cof[i])) + (1 << 19)) >> 20);
       cof[i] += tmp1;
-}}
+} IACA_END }

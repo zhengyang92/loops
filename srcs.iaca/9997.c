@@ -11,7 +11,7 @@ int
 fn (int i, int width, const uint8_t * bgr, int YUV_HALF, uint8_t * y)
 {
   for (; i < width; ++i, bgr += 3)
-    {
+     { IACA_START
       y[i] = VP8RGBToY (bgr[2], bgr[1], bgr[0], YUV_HALF);
-    }
+     } IACA_END
 }

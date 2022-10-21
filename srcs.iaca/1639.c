@@ -12,7 +12,7 @@ int
 fn (int cb[8], uint8_t lens[256], GetBitContext * gb)
 {
   for (int i = 0; i < 256; i++)
-    {
+     { IACA_START
       int idx = get_bits (gb, 3);
       lens[i] = cb[idx];
-}}
+} IACA_END }

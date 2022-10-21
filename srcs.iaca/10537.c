@@ -14,7 +14,7 @@ fn (size_t i, _Bool is_encoder, uint32_t now_pos, size_t size,
     uint8_t * buffer)
 {
   for (i = 0; i + 4 <= size; i += 4)
-    {
+     { IACA_START
       if ((buffer[i] == 0x40 && (buffer[i + 1] & 0xC0) == 0x00)
 	  || (buffer[i] == 0x7F && (buffer[i + 1] & 0xC0) == 0xC0))
 	{
@@ -40,5 +40,5 @@ fn (size_t i, _Bool is_encoder, uint32_t now_pos, size_t size,
 	  buffer[i + 2] = (uint8_t) (dest >> 8);
 	  buffer[i + 3] = (uint8_t) (dest);
 	}
-    }
+     } IACA_END
 }

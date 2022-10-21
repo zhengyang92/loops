@@ -11,7 +11,7 @@ int
 fn (const uint8_t * in, int w, uint8_t * out)
 {
   for (int j = 0; j < w; j++, out += 3, in -= 3)
-    {
+     { IACA_START
       int32_t v =
 	((((const uint8_t *) (in))[0] << 16) |
 	 (((const uint8_t *) (in))[1] << 8) | ((const uint8_t *) (in))[2]);
@@ -22,5 +22,5 @@ fn (const uint8_t * in, int w, uint8_t * out)
 	  ((uint8_t *) (out))[0] = (v) >> 16;
 	}
       while (0);
-    }
+     } IACA_END
 }

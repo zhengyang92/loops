@@ -12,7 +12,7 @@ fn (int w, int x, const uint16_t * msrc, int half, const uint16_t * asrc,
     int max, uint16_t * dst)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       if (asrc[x] > 0 && asrc[x] < max)
 	dst[x] =
 	  (((((msrc[x] - half) * max / asrc[x]) >
@@ -25,5 +25,5 @@ fn (int w, int x, const uint16_t * msrc, int half, const uint16_t * asrc,
 	  half;
       else
 	dst[x] = msrc[x];
-    }
+     } IACA_END
 }

@@ -14,10 +14,10 @@ fn (int i, int frac_pos, const int16_t * in, int n,
   int idx = 0;
   int v = 0x4000;
   for (i = 0; i < filter_length;)
-    {
+     { IACA_START
       v += in[n + i] * filter_coeffs[idx + frac_pos];
       idx += precision;
       i++;
       v += in[n - i] * filter_coeffs[idx - frac_pos];
-    }
+     } IACA_END
 }

@@ -42,12 +42,12 @@ fn (const char *str, AVChannelLayout * channel_layout, int i,
   for (i = 0;
        i < (sizeof (channel_layout_map) / sizeof ((channel_layout_map)[0]));
        i++)
-    {
+     { IACA_START
       if (channel_layout_map[i].name
 	  && !strcmp (str, channel_layout_map[i].name))
 	{
 	  *channel_layout = channel_layout_map[i].layout;
 	  return 0;
 	}
-    }
+     } IACA_END
 }

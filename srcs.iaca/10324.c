@@ -12,7 +12,7 @@ fn (unsigned char *scratch, int width, int c, stbi__write_context * s, int x,
     int r)
 {
   for (c = 0; c < 4; c++)
-    {
+     { IACA_START
       unsigned char *comp = &scratch[width * c];
       x = 0;
       while (x < width)
@@ -48,5 +48,5 @@ fn (unsigned char *scratch, int width, int c, stbi__write_context * s, int x,
 		}
 	    }
 	}
-    }
+     } IACA_END
 }

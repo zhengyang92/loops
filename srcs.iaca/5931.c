@@ -11,7 +11,7 @@ int
 fn (int i, int gain, int32_t * vector)
 {
   for (i = 0; i < 72; i++)
-    {
+     { IACA_START
       int tmp = gain * vector[i] >> 11;
       vector[i] = av_clip_int16_c (tmp);
-}}
+} IACA_END }

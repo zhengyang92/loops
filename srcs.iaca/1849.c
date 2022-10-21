@@ -12,9 +12,9 @@ fn (int sample, const int32_t * in, int len)
 {
   int32_t m = 0;
   for (sample = 0; sample < len; sample++)
-    {
+     { IACA_START
       int32_t s = abs (in[sample]);
       if (m < s)
 	m = s;
-    }
+     } IACA_END
 }

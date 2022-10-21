@@ -39,11 +39,11 @@ int
 fn (int32_t vt[7], int i, struct wavesynth_context *ws, int j, int32_t v)
 {
   for (j = 0; j < 7; j++)
-    {
+     { IACA_START
       if ((i >> j) & 1)
 	break;
       v -= vt[j];
       vt[j] = (int32_t) lcg_next (&ws->pink_state) >> 3;
       v += vt[j];
-    }
+     } IACA_END
 }

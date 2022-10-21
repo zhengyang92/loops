@@ -12,9 +12,9 @@ fn (int i, int v, int mask, const char *txt, uint8_t * p,
     const uint8_t * font, float o1, int font_height, float o2, int char_y)
 {
   for (mask = 0x80; mask; mask >>= 1)
-    {
+     { IACA_START
       if (font[txt[i] * font_height + char_y] & mask)
 	p[0] = p[0] * o2 + (v - p[0]) * o1;
       p++;
-    }
+     } IACA_END
 }

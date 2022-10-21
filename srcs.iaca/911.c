@@ -11,12 +11,12 @@ int
 fn (uint16_t coarse[128], int k, const int t, int sum)
 {
   for (k = 0; k < (1 << ((14 + 1) / 2)); k++)
-    {
+     { IACA_START
       sum += coarse[k];
       if (sum > t)
 	{
 	  sum -= coarse[k];
 	  break;
 	}
-    }
+     } IACA_END
 }

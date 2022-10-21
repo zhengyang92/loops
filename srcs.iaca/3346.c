@@ -12,12 +12,12 @@ fn (float maxcorr, int maxj, float corr[4][7], int maxi)
 {
   int i = 0;
   for (int j = 0; j < 7; j++)
-    {
+     { IACA_START
       if (corr[i][j] > maxcorr)
 	{
 	  maxcorr = corr[i][j];
 	  maxi = i;
 	  maxj = j;
 	}
-    }
+     } IACA_END
 }

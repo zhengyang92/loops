@@ -12,7 +12,7 @@ fn (unsigned int d, unsigned int a, uint32_t block[80], unsigned int i,
     unsigned int b, unsigned int c, unsigned int e)
 {
   for (; i < 60; i += 5)
-    {
+     { IACA_START
       e += (((b | c) & d) | (b & c)) + (block[0 + i] =
 					(((block[0 + i - 3] ^ block[0 + i - 8]
 					   ^ block[0 + i - 14] ^ block[0 + i -
@@ -73,5 +73,5 @@ fn (unsigned int d, unsigned int a, uint32_t block[80], unsigned int i,
 									  (1)))))
 	+ 0x8F1BBCDC + (((b) << (5)) | ((b) >> (32 - (5))));
       c = (((c) << (30)) | ((c) >> (32 - (30))));;
-    }
+     } IACA_END
 }

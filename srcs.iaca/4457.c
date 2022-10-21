@@ -20,7 +20,7 @@ fn (const int c1_shift_h, const uint16_t * c2_data,
     const int limit, const int d1_linesize, const int intensity)
 {
   for (y = 0; y < src_h; y++)
-    {
+     { IACA_START
       const int c0 =
 	((c0_data[x >> c0_shift_w]) >
 	 (limit) ? (limit) : (c0_data[x >> c0_shift_w])) + mid;
@@ -46,5 +46,5 @@ fn (const int c1_shift_h, const uint16_t * c2_data,
       d0_data += d0_linesize;
       d1_data += d1_linesize;
       d2_data += d2_linesize;
-    }
+     } IACA_END
 }

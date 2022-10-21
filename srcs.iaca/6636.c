@@ -11,7 +11,7 @@ int
 fn (int dc, int16_t * orig, int i, int16_t rem[64])
 {
   for (i = 0; i < 64; i++)
-    {
+     { IACA_START
       rem[i] = dc - (orig[i] << 6);
-    }
+     } IACA_END
 }

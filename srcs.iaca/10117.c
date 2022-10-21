@@ -12,7 +12,7 @@ int
 fn (uint8_t map[256], const size_t data_size, uint8_t * const data, size_t n)
 {
   for (n = 0; n < data_size; ++n)
-    {
+     { IACA_START
       data[n] = map[data[n]];
-    }
+     } IACA_END
 }

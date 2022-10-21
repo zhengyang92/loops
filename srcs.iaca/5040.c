@@ -14,7 +14,7 @@ fn (int i, int t6, int t3, int t8, int t5, ptrdiff_t pitch, int t7,
     int16_t * out, int t0, int t1, int t4, const int32_t * src, int t2)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       if (!src[0] && !src[1] && !src[2] && !src[3] && !src[4] && !src[5]
 	  && !src[6] && !src[7])
 	{
@@ -58,5 +58,5 @@ fn (int i, int t6, int t3, int t8, int t5, ptrdiff_t pitch, int t7,
 	}
       src += 8;
       out += pitch;
-    }
+     } IACA_END
 }

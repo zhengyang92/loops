@@ -13,7 +13,7 @@ fn (int y, int w, const unsigned int wide_filter_row_mask[2], int m_row_4,
     int m_col, uint8_t (*mask)[8][4])
 {
   for (y = row_and_7; y < h + row_and_7; y++)
-    {
+     { IACA_START
       int col_mask_id = 2 - !(y & wide_filter_row_mask[ss_v]);
       mask[0][y][1] |= m_row_8;
       mask[0][y][2] |= m_row_4;
@@ -34,5 +34,5 @@ fn (int y, int w, const unsigned int wide_filter_row_mask[2], int m_row_4,
 	  else
 	    mask[1][y][3] |= m_col;
 	}
-    }
+     } IACA_END
 }

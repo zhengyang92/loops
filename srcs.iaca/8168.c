@@ -13,7 +13,7 @@ fn (int16_t * bottom, int i, int d1, int d, int16_t * top, int c, int a,
 {
   int rnd2 = 4;
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       a = top[48];
       b = top[56];
       c = bottom[0];
@@ -28,5 +28,5 @@ fn (int16_t * bottom, int i, int d1, int d, int16_t * top, int c, int a,
       top++;
       rnd2 = 7 - rnd2;
       rnd1 = 7 - rnd1;
-    }
+     } IACA_END
 }

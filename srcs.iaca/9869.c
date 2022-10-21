@@ -14,7 +14,7 @@ fn (const int8_t kYModesIntra4[18], int ymode, int x, VP8BitReader * const br,
     uint8_t * const top, const uint8_t kBModesProba[10][10][9])
 {
   for (x = 0; x < 4; ++x)
-    {
+     { IACA_START
       const uint8_t *const prob = kBModesProba[top[x]][ymode];
       int i = kYModesIntra4[VP8GetBit (br, prob[0])];
       while (i > 0)
@@ -23,5 +23,5 @@ fn (const int8_t kYModesIntra4[18], int ymode, int x, VP8BitReader * const br,
 	}
       ymode = -i;
       top[x] = ymode;
-    }
+     } IACA_END
 }

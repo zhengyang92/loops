@@ -107,7 +107,7 @@ int
 fn (long i)
 {
   for (i = 0; i < spaces_.N; i++)
-    {
+     { IACA_START
       spacer_.Ar = space2_.Cx[i][4];
       spacer_.Br = spacer_.Ar - space2_.Px[i][4];
       space2_.Px[i][4] = spacer_.Ar;
@@ -127,5 +127,5 @@ fn (long i)
       space2_.Px[i][11] = spacer_.Br;
       space2_.Px[i][13] = spacer_.Cr - space2_.Px[i][12];
       space2_.Px[i][12] = spacer_.Cr;
-    }
+     } IACA_END
 }

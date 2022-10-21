@@ -12,7 +12,7 @@ fn (uint8_t histogram[6], int k)
 {
   int min = 255;
   for (k = 0; k < 4; k++)
-    {
+     { IACA_START
       min = ((min) > (histogram[k]) ? (histogram[k]) : (min));
-    }
+     } IACA_END
 }

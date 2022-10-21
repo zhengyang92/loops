@@ -13,11 +13,11 @@ fn (unsigned int *palette32, int i, unsigned char *raw_palette,
 {
   int palette_index = 0;
   for (i = 0; i < 256; i++)
-    {
+     { IACA_START
       r = raw_palette[palette_index++] * 4;
       g = raw_palette[palette_index++] * 4;
       b = raw_palette[palette_index++] * 4;
       palette32[i] = 0xFFU << 24 | (r << 16) | (g << 8) | (b);
       palette32[i] |= palette32[i] >> 6 & 0x30303;
-    }
+     } IACA_END
 }

@@ -15,10 +15,10 @@ fn (int i, int k, int j, premultiplied_coeffs * data,
   int id = 0;
   int32_t t = 0;
   for (k = j; k < 4; k++)
-    {
+     { IACA_START
       t = (int32_t) ff_dca_adpcm_vb[i][j] * (int32_t) ff_dca_adpcm_vb[i][k];
       if (j != k)
 	t *= 2;
       (*data)[id++] = t;
-    }
+     } IACA_END
 }

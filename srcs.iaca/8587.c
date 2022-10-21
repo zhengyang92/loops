@@ -11,8 +11,8 @@ int
 fn (int16_t * quant_energy, int log2_ma_pred_order, int i, int avg_gain)
 {
   for (i = (1 << log2_ma_pred_order) - 1; i > 0; i--)
-    {
+     { IACA_START
       avg_gain += quant_energy[i - 1];
       quant_energy[i] = quant_energy[i - 1];
-    }
+     } IACA_END
 }

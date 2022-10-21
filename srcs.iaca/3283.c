@@ -13,7 +13,7 @@ fn (int y, int b_h, ptrdiff_t stride, const unsigned int color4,
     uint8_t * dst)
 {
   for (y = 0; y < b_h; y++)
-    {
+     { IACA_START
       *(uint32_t *) & dst[0 + y * stride] = color4;
       *(uint32_t *) & dst[4 + y * stride] = color4;
       *(uint32_t *) & dst[8 + y * stride] = color4;
@@ -22,5 +22,5 @@ fn (int y, int b_h, ptrdiff_t stride, const unsigned int color4,
       *(uint32_t *) & dst[20 + y * stride] = color4;
       *(uint32_t *) & dst[24 + y * stride] = color4;
       *(uint32_t *) & dst[28 + y * stride] = color4;
-    }
+     } IACA_END
 }

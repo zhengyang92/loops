@@ -16,7 +16,7 @@ fn (int w, const int rnd, int cgu, int cgv, const int16_t * yuv_offset,
     int *(*rnd_scratch)[2], int cburv, const int uv_offset, int cbv)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int r00 = rgb0[x << 0], g00 = rgb1[x << 0], b00 = rgb2[x << 0];
       int y00;
       int u, v, diff;
@@ -47,4 +47,4 @@ fn (int w, const int rnd, int cgu, int cgv, const int16_t * yuv_offset,
       rnd_scratch[2][!(y & 1)][x + 0] += (diff * 5 + 8) >> 4;
       rnd_scratch[2][!(y & 1)][x + 1] += (diff * 1 + 8) >> 4;
       rnd_scratch[2][(y & 1)][x + 0] = rnd;
-}}
+} IACA_END }

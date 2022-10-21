@@ -13,7 +13,7 @@ fn (int offset, int x, int width, int wx, int16_t * src, int ox,
     uint8_t * dst, int log2Wd)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       if (log2Wd >= 1)
 	{
 	  dst[x] = av_clip_uint8_c (((src[x] * wx + offset) >> log2Wd) + ox);
@@ -22,5 +22,5 @@ fn (int offset, int x, int width, int wx, int16_t * src, int ox,
 	{
 	  dst[x] = av_clip_uint8_c (src[x] * wx + ox);
 	}
-    }
+     } IACA_END
 }

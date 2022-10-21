@@ -11,7 +11,7 @@ int
 fn (int x, int w, const uint16_t * src, float *histogram)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       histogram[src[x]] += 1;
-    }
+     } IACA_END
 }

@@ -11,7 +11,7 @@ int
 fn (int i, int nCoeffs, int16_t * block, int qadd, int qmul, int level)
 {
   for (i = 1; i <= nCoeffs; i++)
-    {
+     { IACA_START
       level = block[i];
       if (level)
 	{
@@ -25,5 +25,5 @@ fn (int i, int nCoeffs, int16_t * block, int qadd, int qmul, int level)
 	    }
 	  block[i] = level;
 	}
-    }
+     } IACA_END
 }

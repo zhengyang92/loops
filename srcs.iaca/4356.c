@@ -13,7 +13,7 @@ fn (int gth, int max, int bth, int dth, int x, int ath, int block,
     ptrdiff_t dst_linesize, uint8_t * dst)
 {
   for (x = 0; x < block; x++)
-    {
+     { IACA_START
       int A, B, C, D, E, F, a, b, c, d, e, f;
       int delta = dst[x] - dst[x - dst_linesize];
       if (((delta) >= 0 ? (delta) : (-(delta))) >= ath
@@ -54,5 +54,5 @@ fn (int gth, int max, int bth, int dth, int x, int ath, int block,
       dst[x + 0 * dst_linesize] = av_clip_c (d, 0, max);
       dst[x + 1 * dst_linesize] = av_clip_c (e, 0, max);
       dst[x + 2 * dst_linesize] = av_clip_c (f, 0, max);
-    }
+     } IACA_END
 }

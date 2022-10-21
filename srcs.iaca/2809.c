@@ -22,7 +22,7 @@ fn (struct microdvd_tag tags[8], int i, int sidx)
   int italic = 0;
   int bold = 0;
   for (sidx = 0; sidx < sizeof ("ibus") - 1; sidx++)
-    {
+     { IACA_START
       if (tags[i].data1 & (1 << sidx))
 	{
 	  switch ("ibus"[sidx])
@@ -38,5 +38,5 @@ fn (struct microdvd_tag tags[8], int i, int sidx)
 	      break;
 	    }
 	}
-    }
+     } IACA_END
 }

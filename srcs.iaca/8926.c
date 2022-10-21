@@ -14,7 +14,7 @@ fn (int y, int w, int h, int x0, int x1, int len, const uint8_t * bitmap,
 {
   int color = 0;
   for (y = 0; y < h; y++)
-    {
+     { IACA_START
       x0 = 0;
       while (x0 < w)
 	{
@@ -50,5 +50,5 @@ fn (int y, int w, int h, int x0, int x1, int len, const uint8_t * bitmap,
 	put_xsub_rle (pb, 0 + (w & 1), 0);
       align_put_bits (pb);
       bitmap += linesize;
-    }
+     } IACA_END
 }

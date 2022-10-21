@@ -12,7 +12,7 @@ int
 fn (uint32 nc, float *value, int32 * m, uint32 count, int32 * nb, float *na)
 {
   for (na = value, nb = m, nc = 0; nc < count; na++, nb += 2, nc++)
-    {
+     { IACA_START
       if (*na < 0.0)
 	{
 	  if (*na == (int32) (*na))
@@ -46,4 +46,4 @@ fn (uint32 nc, float *value, int32 * m, uint32 count, int32 * nb, float *na)
 	    {
 	      nb[0] = 0x7FFFFFFF;
 	      nb[1] = (int32) ((double) 0x7FFFFFFF / (*na));
-}}}}
+} IACA_END }}}

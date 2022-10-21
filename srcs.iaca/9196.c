@@ -11,9 +11,9 @@ int
 fn (int i, int n, int a, const int32_t * smp, int32_t * res, int order)
 {
   for (i = order; i < n; i += 2)
-    {
+     { IACA_START
       int b = smp[i] - smp[i - 1];
       res[i] = b - a;
       a = smp[i + 1] - smp[i];
       res[i + 1] = a - b;
-}}
+} IACA_END }

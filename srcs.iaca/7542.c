@@ -14,7 +14,7 @@ fn (const int iwd, const uint8_t * spd, const int dlinesize,
     const int intensity)
 {
   for (j = 0; j < w; j++)
-    {
+     { IACA_START
       const int x = spx[iwx + j];
       const int y = spy[iwy + j];
       const int z = spd[iwd + j];
@@ -23,5 +23,5 @@ fn (const int iwd, const uint8_t * spd, const int dlinesize,
 	continue;
       dpd[pos] =
 	((dpd[pos] + intensity) > (255) ? (255) : (dpd[pos] + intensity));
-    }
+     } IACA_END
 }

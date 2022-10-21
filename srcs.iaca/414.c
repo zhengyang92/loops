@@ -13,11 +13,11 @@ fn (ptrdiff_t width, const float opacity, const uint8_t * top, uint8_t * dst,
     const uint8_t * bottom)
 {
   for (int j = 0; j < width; j++)
-    {
+     { IACA_START
       dst[j] =
 	top[j] +
 	((255 -
 	  ((255 - top[j] - bottom[j]) >=
 	   0 ? (255 - top[j] - bottom[j]) : (-(255 - top[j] - bottom[j])))) -
 	 top[j]) * opacity;
-}}
+} IACA_END }

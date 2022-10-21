@@ -25,7 +25,7 @@ int
 fn (int idx, int32_t * map, vorbis_floor0 * vf, int n)
 {
   for (idx = 0; idx < n; ++idx)
-    {
+     { IACA_START
       map[idx] =
 	floor ((13.1f * atan (0.00074f * ((vf->rate * idx) / (2.0f * n))) +
 		2.24f * atan (1.85e-8f * ((vf->rate * idx) / (2.0f * n)) *
@@ -38,5 +38,5 @@ fn (int idx, int32_t * map, vorbis_floor0 * vf, int n)
 		 1e-4f * (vf->rate / 2.0f))));
       if (vf->bark_map_size - 1 < map[idx])
 	map[idx] = vf->bark_map_size - 1;
-    }
+     } IACA_END
 }

@@ -13,11 +13,11 @@ fn (uint8_t * clear, size_t clear_size, int i)
 {
   int same = 1;
   for (i = 0; i < clear_size; i++)
-    {
+     { IACA_START
       if (clear[i] != clear[0])
 	{
 	  same = 0;
 	  break;
 	}
-    }
+     } IACA_END
 }

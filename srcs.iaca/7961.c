@@ -12,9 +12,9 @@ int
 fn (int32_t tmp, int32_t f[2][6], int i, int16_t * a)
 {
   for (i = 5; i > 0; i--)
-    {
+     { IACA_START
       tmp = f[0][6 - i] + (unsigned) f[1][6 - i] + 4096;
       a[6 - i] = tmp >> 13;
       tmp = f[0][6 - i] - (unsigned) f[1][6 - i] + 4096;
       a[5 + i] = tmp >> 13;
-}}
+} IACA_END }

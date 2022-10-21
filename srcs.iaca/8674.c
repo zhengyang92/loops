@@ -13,9 +13,9 @@ fn (int16_t vq_2nd_low, int16_t * quantizer_output,
     const int16_t cb_lsp_2nd[32][10], int16_t vq_1st)
 {
   for (i = 0; i < 5; i++)
-    {
+     { IACA_START
       quantizer_output[i] = cb_lsp_1st[vq_1st][i] + cb_lsp_2nd[vq_2nd_low][i];
       quantizer_output[i + 5] =
 	cb_lsp_1st[vq_1st][i + 5] + cb_lsp_2nd[vq_2nd_high][i + 5];
-    }
+     } IACA_END
 }

@@ -21,7 +21,7 @@ fn (int16_t vlc_buf[3958][2],
     const uint8_t * const ff_aac_spectral_bits[11])
 {
   for (unsigned i = 0, offset = 0; i < 11; i++)
-    {
+     { IACA_START
       vlc_spectral[i].table = &vlc_buf[offset];
       vlc_spectral[i].table_allocated =
 	(sizeof (vlc_buf) / sizeof ((vlc_buf)[0])) - offset;
@@ -36,5 +36,5 @@ fn (int16_t vlc_buf[3958][2],
 			  sizeof (ff_aac_codebook_vector_idx[i][0]),
 			  sizeof (ff_aac_codebook_vector_idx[i][0]), (1 | 4));
       offset += vlc_spectral[i].table_size;
-    }
+     } IACA_END
 }

@@ -11,7 +11,7 @@ int
 fn (uint8_t * rgba, int w, int i, int alpha_first)
 {
   for (; i < w; ++i)
-    {
+     { IACA_START
       uint8_t *const rgb = rgba + (alpha_first ? 1 : 0);
       const uint8_t *const alpha = rgba + (alpha_first ? 0 : 3);
       const uint32_t a = alpha[4 * i];
@@ -22,4 +22,4 @@ fn (uint8_t * rgba, int w, int i, int alpha_first)
 	  rgb[4 * i + 1] = (((rgb[4 * i + 1]) * (mult)) >> 23);
 	  rgb[4 * i + 2] = (((rgb[4 * i + 2]) * (mult)) >> 23);
 	}
-}}
+} IACA_END }

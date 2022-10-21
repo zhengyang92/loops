@@ -82,8 +82,8 @@ int
 fn (long k)
 {
   for (k = 0; k < spaces_.N; k++)
-    {
+     { IACA_START
       space1_.Rh[ispace_.Ir[k] - 1] += 1.0 - space1_.Rx[k];
       space1_.Rh[ispace_.Ir[k]] += space1_.Rx[k];
-    }
+     } IACA_END
 }

@@ -13,7 +13,7 @@ int
 fn (ptrdiff_t stride, uint8_t * dst, int16_t (*src)[8], int i)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       const int a0 = 3 * src[1][i] - 2 * src[7][i];
       const int a1 = 3 * src[3][i] + 2 * src[5][i];
       const int a2 = 2 * src[3][i] - 3 * src[5][i];
@@ -46,4 +46,4 @@ fn (ptrdiff_t stride, uint8_t * dst, int16_t (*src)[8], int i)
 	av_clip_uint8_c (dst[i + 6 * stride] + ((b1 - b5) >> 7));
       dst[i + 7 * stride] =
 	av_clip_uint8_c (dst[i + 7 * stride] + ((b0 - b4) >> 7));
-}}
+} IACA_END }

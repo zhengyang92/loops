@@ -14,11 +14,11 @@ fn (int i, const int cbp_masks[3], int t, int code,
 {
   int cbp = 0;
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       t = (modulo_three_table[code] >> (6 - 2 * i)) & 3;
       if (t == 1)
 	cbp |= cbp_masks[get_bits1 (gb)] << i;
       if (t == 2)
 	cbp |= cbp_masks[2] << i;
-    }
+     } IACA_END
 }

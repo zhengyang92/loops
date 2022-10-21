@@ -11,7 +11,7 @@ int
 fn (int *block)
 {
   for (int i = 0; i < 2; i++)
-    {
+     { IACA_START
       if ((block[0x08 + i]) == 0)
 	{
 	  block[0x08 + i] = block[i];
@@ -26,5 +26,5 @@ fn (int *block)
 	{
 	  idct2_1d (block + i, 8);
 	}
-    }
+     } IACA_END
 }

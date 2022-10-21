@@ -74,8 +74,8 @@ int
 fn (long k)
 {
   for (k = 1; k < spaces_.N; k++)
-    {
+     { IACA_START
       if (space1_.X[k] < space1_.X[spaces_.M])
 	spaces_.M = k;
-    }
+     } IACA_END
 }

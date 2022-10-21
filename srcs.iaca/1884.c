@@ -11,7 +11,7 @@ int
 fn (int i, int width, int32_t * b2, int32_t * b1, int32_t * b0)
 {
   for (i = 0; i < width; i++)
-    {
+     { IACA_START
       b1[i] =
 	(b1[i] + (unsigned) ((int) (b0[i] + (unsigned) (b2[i]) + 1) >> 1));
-}}
+} IACA_END }

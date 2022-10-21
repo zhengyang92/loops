@@ -12,7 +12,7 @@ fn (int i, int16_t * basis, unsigned int sum, int16_t * rem, int16_t * weight,
     int scale)
 {
   for (i = 0; i < 8 * 8; i++)
-    {
+     { IACA_START
       int b = rem[i] + ((basis[i] * scale + (1 << (16 - 6 - 1))) >> (16 - 6));
       int w = weight[i];
       b >>= 6;
@@ -22,4 +22,4 @@ fn (int i, int16_t * basis, unsigned int sum, int16_t * rem, int16_t * weight,
 						  __extension__
 						  __PRETTY_FUNCTION__));
       sum += (w * b) * (w * b) >> 4;
-}}
+} IACA_END }

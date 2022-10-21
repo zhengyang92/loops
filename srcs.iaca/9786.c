@@ -13,8 +13,8 @@ fn (int numcolors, INT32 minmaxdist, int ncolors, int i, JSAMPLE * colorlist,
     INT32 mindist[256])
 {
   for (i = 0; i < numcolors; i++)
-    {
+     { IACA_START
       if (mindist[i] <= minmaxdist)
 	colorlist[ncolors++] = (JSAMPLE) i;
-    }
+     } IACA_END
 }

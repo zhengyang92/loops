@@ -15,11 +15,11 @@ fn (int b_y, uint32_t (*dist)[4], ptrdiff_t stride, int b_x,
     int64_t weight_sum, int j, int16_t (*col)[4], int64_t guess)
 {
   for (j = 0; j < 4; j++)
-    {
+     { IACA_START
       int64_t weight =
 	256 * 256 * 256 * 16 / ((dist[b_x + b_y * stride][j]) >
 				(1) ? (dist[b_x + b_y * stride][j]) : (1));
       guess += weight * (int64_t) col[b_x + b_y * stride][j];
       weight_sum += weight;
-    }
+     } IACA_END
 }

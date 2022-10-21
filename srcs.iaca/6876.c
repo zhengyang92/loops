@@ -12,8 +12,8 @@ fn (const float (*X_high)[40][2], const float *g_filt, float (*Y)[2], int m,
     int m_max, intptr_t ixh)
 {
   for (m = 0; m < m_max; m++)
-    {
+     { IACA_START
       Y[m][0] = X_high[m][ixh][0] * g_filt[m];
       Y[m][1] = X_high[m][ixh][1] * g_filt[m];
-    }
+     } IACA_END
 }

@@ -13,8 +13,8 @@ fn (int i, uint32_t alpha_mask, const int mb_w, uint8_t * alpha_dst,
     const uint8_t * alpha)
 {
   for (i = 0; i < mb_w; ++i)
-    {
+     { IACA_START
       const uint32_t alpha_value = alpha[i] >> 4;
       alpha_dst[2 * i] = (alpha_dst[2 * i] & 0xf0) | alpha_value;
       alpha_mask &= alpha_value;
-}}
+} IACA_END }

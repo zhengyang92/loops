@@ -42,7 +42,7 @@ int
 fn (long k, double sum)
 {
   for (k = 0; k < alpha_.Mk; k++)
-    {
+     { IACA_START
       sum += space0_.Time[k];
-    }
+     } IACA_END
 }

@@ -16,7 +16,7 @@ fn (int16_t * blocks, int prev_dc, int i, int delta, int blocks_per_slice,
 {
   int new_sign = 3;
   for (i = 1; i < blocks_per_slice; i++, blocks += 64)
-    {
+     { IACA_START
       dc = (blocks[0] - 0x4000) / scale;
       delta = dc - prev_dc;
       new_sign = ((delta) >> 31);
@@ -27,5 +27,5 @@ fn (int16_t * blocks, int prev_dc, int i, int delta, int blocks_per_slice,
       codebook = ((codebook) > (3) ? (3) : (codebook));
       sign = new_sign;
       prev_dc = dc;
-    }
+     } IACA_END
 }

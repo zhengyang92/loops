@@ -13,7 +13,7 @@ fn (int i, int16_t * mask, uint8_t * dba_lengths, int seg, int delta,
     int band)
 {
   for (i = 0; i < dba_lengths[seg]; i++)
-    {
+     { IACA_START
       mask[band++] += delta;
-    }
+     } IACA_END
 }

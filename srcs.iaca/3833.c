@@ -14,6 +14,6 @@ fn (int i, const int16_t * filter, int filterSize, const uint8_t * src, int j,
 {
   int val = 0;
   for (j = 0; j < filterSize; j++)
-    {
+     { IACA_START
       val += ((int) src[srcPos + j]) * filter[filterSize * i + j];
-}}
+} IACA_END }

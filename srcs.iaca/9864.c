@@ -11,7 +11,7 @@ int
 fn (int j, uint8_t * const y_dst)
 {
   for (j = -1; j < 16; ++j)
-    {
+     { IACA_START
       Copy32b (&y_dst[j * 32 - 4], &y_dst[j * 32 + 12]);
-    }
+     } IACA_END
 }

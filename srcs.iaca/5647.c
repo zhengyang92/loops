@@ -13,7 +13,7 @@ fn (int z11, int z10, int tmp1, int tmp11, int tmp5, int tmp3, int tmp13,
     int z12, int z13, int tmp12, int z5, int i, int16_t * block)
 {
   for (i = 0; i < 8 * 8; i += 8)
-    {
+     { IACA_START
       tmp10 = temp[0 + i] + temp[4 + i];
       tmp11 = temp[0 + i] - temp[4 + i];
       tmp13 = temp[2 + i] + temp[6 + i];
@@ -42,5 +42,5 @@ fn (int z11, int z10, int tmp1, int tmp11, int tmp5, int tmp3, int tmp13,
       block[5 + i] = (tmp2 - tmp5) >> 6;
       block[4 + i] = (tmp3 + tmp4) >> 6;
       block[3 + i] = (tmp3 - tmp4) >> 6;
-    }
+     } IACA_END
 }

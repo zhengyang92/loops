@@ -15,7 +15,7 @@ fn (FLOAT tmp0, FLOAT tmp3, FLOAT tmp12, FLOAT tmp10, FLOAT tmp5, FLOAT tmp13,
     FLOAT tmp6)
 {
   for (i = 0; i < 8 * 8; i += 8)
-    {
+     { IACA_START
       tmp0 = data[0 + i] + data[7 + i];
       tmp7 = data[0 + i] - data[7 + i];
       tmp1 = data[1 + i] + data[6 + i];
@@ -50,5 +50,5 @@ fn (FLOAT tmp0, FLOAT tmp3, FLOAT tmp12, FLOAT tmp10, FLOAT tmp5, FLOAT tmp13,
       temp[3 + i] = z13 - z2;
       temp[1 + i] = z11 + z4;
       temp[7 + i] = z11 - z4;
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ fn (const float *bottom, float *dst, ptrdiff_t width, const float opacity,
     const float *top)
 {
   for (int j = 0; j < width; j++)
-    {
+     { IACA_START
       dst[j] =
 	top[j] +
 	((((top[j] > bottom[j]) ? (bottom[j] ==
@@ -22,4 +22,4 @@ fn (const float *bottom, float *dst, ptrdiff_t width, const float opacity,
 	   : (bottom[j] ==
 	      0) ? 0 : (bottom[j] - top[j]) * 1.f / bottom[j])) -
 	 top[j]) * opacity;
-}}
+} IACA_END }

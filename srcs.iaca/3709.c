@@ -13,7 +13,7 @@ fn (uint8_t * bitmap, int w, int x, const uint8_t ff_log2_tab[256],
     GetBitContext gb)
 {
   for (x = 0; x < w;)
-    {
+     { IACA_START
       int log2 = ff_log2_tab[show_bits (&gb, 8)];
       int run = get_bits (&gb, 14 - 4 * (log2 >> 1));
       int color = get_bits (&gb, 2);
@@ -23,5 +23,5 @@ fn (uint8_t * bitmap, int w, int x, const uint8_t ff_log2_tab[256],
       memset (bitmap, color, run);
       bitmap += run;
       x += run;
-    }
+     } IACA_END
 }

@@ -21,7 +21,7 @@ fn (unsigned int iThOff, Int k, const Int iModelBits, CAdaptiveScan * pScan,
 {
   Int iNumNonzero = 1;
   for (k = 2; k < iCount; k++)
-    {
+     { IACA_START
       iRun++;
       iLevel = pCoeffs[pScan[k].uScan];
       if ((unsigned int) (iLevel + iThOff) >= iTh)
@@ -39,5 +39,5 @@ fn (unsigned int iThOff, Int k, const Int iModelBits, CAdaptiveScan * pScan,
 	  iNumNonzero++;
 	  iRun = 0;
 	}
-    }
+     } IACA_END
 }

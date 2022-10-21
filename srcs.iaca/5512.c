@@ -18,7 +18,7 @@ fn (x86_reg imm8OfPShufW2A, int numSplits, int16_t * filter, int i,
     x86_reg imm8OfPShufW2B, int xInc, int dstW, x86_reg fragmentLengthA)
 {
   for (i = 0; i < dstW / numSplits; i++)
-    {
+     { IACA_START
       int xx = xpos >> 16;
       if ((i & 3) == 0)
 	{
@@ -63,5 +63,5 @@ fn (x86_reg imm8OfPShufW2A, int numSplits, int16_t * filter, int i,
 	    filterCode[fragmentPos] = 0xC3;
 	}
       xpos += xInc;
-    }
+     } IACA_END
 }

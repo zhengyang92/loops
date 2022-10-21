@@ -11,8 +11,8 @@ int
 fn (int i, uint8_t * srcU, int k, uint8_t * srcV, uint8_t * lut1)
 {
   for (i = 0; i < k; i++)
-    {
+     { IACA_START
       srcU[i] = lut1[srcU[i]];
       srcV[i] = lut1[srcV[i]];
-    }
+     } IACA_END
 }

@@ -12,9 +12,9 @@ int
 fn (int dc2, int i, ptrdiff_t stride, int dc0, uint16_t * src, int dc1)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       dc0 += src[-1 + i * stride] + src[i - stride];
       dc1 += src[4 + i - stride];
       dc2 += src[-1 + (i + 4) * stride];
-    }
+     } IACA_END
 }

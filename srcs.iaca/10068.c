@@ -12,7 +12,7 @@ fn (const int kPredLowEffort, int i, const int tiles_per_col,
     const int tiles_per_row, uint32_t * const image)
 {
   for (i = 0; i < tiles_per_row * tiles_per_col; ++i)
-    {
+     { IACA_START
       image[i] = 0xff000000 | (kPredLowEffort << 8);
-    }
+     } IACA_END
 }

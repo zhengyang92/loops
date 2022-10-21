@@ -13,7 +13,7 @@ fn (int z1, int tmp10, int tmp13, int tmp0, int tmp4, int tmp7, int tmp2,
     int tmp12, int ctr)
 {
   for (ctr = 8 - 1; ctr >= 0; ctr--)
-    {
+     { IACA_START
       tmp0 = dataptr[8 * 0] + dataptr[8 * 1];
       tmp1 = dataptr[8 * 2] + dataptr[8 * 3];
       tmp2 = dataptr[8 * 4] + dataptr[8 * 5];
@@ -53,5 +53,5 @@ fn (int z1, int tmp10, int tmp13, int tmp0, int tmp4, int tmp7, int tmp2,
 	(((z1 + ((tmp12) * (-((int32_t) 15137)))) +
 	  (1 << ((13 + (1 + 1)) - 1))) >> (13 + (1 + 1)));
       dataptr++;
-    }
+     } IACA_END
 }

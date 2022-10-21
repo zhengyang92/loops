@@ -11,7 +11,7 @@ int
 fn (const uint8_t * __restrict end, const uint8_t * __restrict p)
 {
   for (; p < end; p += 2)
-    {
+     { IACA_START
       if (!*p)
 	{
 	  if (!p[-1] && p[1])
@@ -19,5 +19,5 @@ fn (const uint8_t * __restrict end, const uint8_t * __restrict p)
 	  else if (!p[1] && p[2])
 	    return p;
 	}
-    }
+     } IACA_END
 }

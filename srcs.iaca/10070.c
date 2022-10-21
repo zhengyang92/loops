@@ -17,7 +17,7 @@ fn (VP8LMultipliers prev_x, const int *accumulated_blue_histo,
   int red_to_blue_best = 0;
   int green_to_blue_best = 0;
   for (axis = 0; axis < 8; ++axis)
-    {
+     { IACA_START
       const int green_to_blue_cur =
 	offset[axis][0] * delta + green_to_blue_best;
       const int red_to_blue_cur = offset[axis][1] * delta + red_to_blue_best;
@@ -36,5 +36,5 @@ fn (VP8LMultipliers prev_x, const int *accumulated_blue_histo,
 	{
 	  break;
 	}
-    }
+     } IACA_END
 }

@@ -14,8 +14,8 @@ fn (int code_length_code_lengths[19], int i, const int num_codes,
     const uint8_t kCodeLengthCodeOrder[19], VP8LBitReader * const br)
 {
   for (i = 0; i < num_codes; ++i)
-    {
+     { IACA_START
       code_length_code_lengths[kCodeLengthCodeOrder[i]] =
 	VP8LReadBits (br, 3);
-    }
+     } IACA_END
 }

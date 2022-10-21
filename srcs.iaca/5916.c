@@ -12,7 +12,7 @@ fn (int sl, int i, float v, int r, int c, float (*coef)[2], float t, float u,
     int sr, int l, float **samples)
 {
   for (i = 0; i < 256; i++)
-    {
+     { IACA_START
       t = samples[c][i];
       u = samples[l][i];
       v = samples[r][i];
@@ -22,5 +22,5 @@ fn (int sl, int i, float v, int r, int c, float (*coef)[2], float t, float u,
 	samples[sl][i] * coef[3][0] + samples[sr][i] * coef[3 + 1][0];
       samples[1][i] +=
 	samples[sl][i] * coef[3][1] + samples[sr][i] * coef[3 + 1][1];
-    }
+     } IACA_END
 }

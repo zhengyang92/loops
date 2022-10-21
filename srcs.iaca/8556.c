@@ -13,7 +13,7 @@ fn (int data_len[256], int j, int num_data, uint8_t * p)
   int xd_size = 1;
   int offset = 1;
   for (j = 0; j < num_data - 1; j++)
-    {
+     { IACA_START
       unsigned delta = av_xiphlacing (&p[offset], data_len[j]);
       do
 	{
@@ -26,5 +26,5 @@ fn (int data_len[256], int j, int num_data, uint8_t * p)
 	}
       while (0);
       offset += delta;
-    }
+     } IACA_END
 }

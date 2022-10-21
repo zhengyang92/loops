@@ -15,7 +15,7 @@ fn (int idx_max, uint8_t (*path)[35768], int i, float (*opt)[35768],
 {
   int c = 0;
   for (j = 0; j < 32; j++)
-    {
+     { IACA_START
       idx = i + ff_nelly_delta_table[j];
       if (idx > idx_max)
 	break;
@@ -29,5 +29,5 @@ fn (int idx_max, uint8_t (*path)[35768], int i, float (*opt)[35768],
 	      c = 1;
 	    }
 	}
-    }
+     } IACA_END
 }

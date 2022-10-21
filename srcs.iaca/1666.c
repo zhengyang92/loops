@@ -13,8 +13,8 @@ fn (int32_t sign, int32_t dotprod, uint32_t coeffs[8], int32_t delay[8],
     int j)
 {
   for (j = 7; j >= 0; j--)
-    {
+     { IACA_START
       dotprod += delay[j] * coeffs[j];
       coeffs[j] += ((delay[j] >> 31) | 1) * sign;
-    }
+     } IACA_END
 }

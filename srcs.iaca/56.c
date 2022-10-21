@@ -11,11 +11,11 @@ int
 fn (ptrdiff_t len, int n, const double *t, const double *c, double *sum)
 {
   for (n = 0; n < len; n++)
-    {
+     { IACA_START
       const double cre = c[2 * n];
       const double cim = c[2 * n + 1];
       const double tre = t[2 * n];
       const double tim = t[2 * n + 1];
       sum[2 * n] += tre * cre - tim * cim;
       sum[2 * n + 1] += tre * cim + tim * cre;
-}}
+} IACA_END }

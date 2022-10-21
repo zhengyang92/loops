@@ -13,7 +13,7 @@ fn (const int *c, int i, const uint8_t * log8, uint32_t (*tbl)[256],
     const uint8_t * alog8, const uint8_t * sbox)
 {
   for (i = 0; i < 256; i++)
-    {
+     { IACA_START
       int x = sbox[i];
       if (x)
 	{
@@ -29,4 +29,4 @@ fn (const int *c, int i, const uint8_t * log8, uint32_t (*tbl)[256],
 	  tbl[2][i] = ((tbl[0][i] << 16) | (tbl[0][i] >> (32 - 16)));
 	  tbl[3][i] = ((tbl[0][i] << 24) | (tbl[0][i] >> (32 - 24)));
 	}
-}}
+} IACA_END }

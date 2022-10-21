@@ -22,8 +22,8 @@ fn (struct Decorr *dpp)
 {
   int i = 0;
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       dpp->samplesA[i] = wp_exp2 (log2s (dpp->samplesA[i]));
       dpp->samplesB[i] = wp_exp2 (log2s (dpp->samplesB[i]));
-    }
+     } IACA_END
 }

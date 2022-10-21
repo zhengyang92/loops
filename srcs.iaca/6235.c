@@ -11,7 +11,7 @@ int
 fn (int stride, int H, uint16_t * src, int a, int j, int V)
 {
   for (j = 8; j > 0; --j)
-    {
+     { IACA_START
       int b = a;
       a += V;
       src[0] = av_clip_uintp2_c ((b) >> 5, 9);
@@ -23,4 +23,4 @@ fn (int stride, int H, uint16_t * src, int a, int j, int V)
       src[6] = av_clip_uintp2_c ((b + 6 * H) >> 5, 9);
       src[7] = av_clip_uintp2_c ((b + 7 * H) >> 5, 9);
       src += stride;
-}}
+} IACA_END }

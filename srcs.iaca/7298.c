@@ -12,7 +12,7 @@ fn (const char *in, int i, const uint8_t map2[80], int out_size,
     unsigned int v, uint8_t * dst, uint8_t * out)
 {
   for (i = 0; in[i] && in[i] != '='; i++)
-    {
+     { IACA_START
       unsigned int index = in[i] - 43;
       if (index >= (sizeof (map2) / sizeof ((map2)[0]))
 	  || map2[index] == 0xff)
@@ -25,5 +25,5 @@ fn (const char *in, int i, const uint8_t map2[80], int out_size,
 	      *dst++ = v >> (6 - 2 * (i & 3));
 	    }
 	}
-    }
+     } IACA_END
 }

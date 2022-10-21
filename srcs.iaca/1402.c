@@ -11,7 +11,7 @@ int
 fn (const char *p, int v, int c, int len, uint8_t * data)
 {
   for (;;)
-    {
+     { IACA_START
       p += strspn (p, " \t\r\n");
       if (*p == '\0')
 	break;
@@ -30,5 +30,5 @@ fn (const char *p, int v, int c, int len, uint8_t * data)
 	  len++;
 	  v = 1;
 	}
-    }
+     } IACA_END
 }

@@ -13,7 +13,7 @@ int
 fn (int16_t temp[64], ptrdiff_t linesize, int i, uint8_t * dest)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       const int a1 = ((&temp[8 * i]))[1] + ((&temp[8 * i]))[7];
       const int a7 = ((&temp[8 * i]))[1] - ((&temp[8 * i]))[7];
       const int a5 = ((&temp[8 * i]))[5] + ((&temp[8 * i]))[3];
@@ -36,4 +36,4 @@ fn (int16_t temp[64], ptrdiff_t linesize, int i, uint8_t * dest)
       ((&dest[i * linesize]))[5] = av_clip_uint8_c ((a4 - a6 - b2) >> 4);
       ((&dest[i * linesize]))[6] = av_clip_uint8_c ((a4 + a6 - b1) >> 4);
       ((&dest[i * linesize]))[7] = av_clip_uint8_c ((a0 + a2 + a6 - b0) >> 4);
-}}
+} IACA_END }

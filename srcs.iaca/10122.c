@@ -21,8 +21,8 @@ fn (struct tagPostProcInfo *pMBa, Int dc[5][5], size_t j, U8 texture[5][5],
     size_t i)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       dc[j][i] = pMBa->iBlockDC[j][i];
       texture[j][i] = pMBa->ucBlockTexture[j][i];
-    }
+     } IACA_END
 }

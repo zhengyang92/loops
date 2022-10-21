@@ -14,7 +14,7 @@ fn (const uint8_t * top_pred, int x, const uint8_t * preds,
     VP8BitWriter * const bw, const uint8_t kBModesProba[10][10][9], int left)
 {
   for (x = 0; x < 4; ++x)
-    {
+     { IACA_START
       const uint8_t *const probas = kBModesProba[top_pred[x]][left];
       left = PutI4Mode (bw, preds[x], probas);
-}}
+} IACA_END }

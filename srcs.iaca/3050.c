@@ -11,7 +11,7 @@ int
 fn (int width, uint8_t * dst, const uint8_t * src)
 {
   for (int x = width - 4; x >= 0; x -= 2)
-    {
+     { IACA_START
       dst[x] = src[x >> 1];
       dst[x + 1] = (src[x >> 1] + src[(x >> 1) + 1] + 1) >> 1;
-}}
+} IACA_END }

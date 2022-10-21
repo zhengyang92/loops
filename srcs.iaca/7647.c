@@ -13,7 +13,7 @@ fn (const float *const ff_aac_codebook_vectors[], int i, const float Q,
 {
   int curidx = 0;
   for (j = 0; j < 2; j++)
-    {
+     { IACA_START
       if (ff_aac_codebook_vectors[cb - 1][curidx * 2 + j] == 64.0f)
 	{
 	  int coef =
@@ -22,4 +22,4 @@ fn (const float *const ff_aac_codebook_vectors[], int i, const float Q,
 	  put_bits (pb, len - 4 + 1, (1 << (len - 4 + 1)) - 2);
 	  put_sbits (pb, len, coef);
 	}
-}}
+} IACA_END }

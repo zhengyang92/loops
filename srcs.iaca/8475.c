@@ -11,6 +11,6 @@ int
 fn (uint8_t codes[19], int j, int bit, int run)
 {
   for (int k = 0; j < 19 && k < run; k++)
-    {
+     { IACA_START
       codes[j++] = bit;
-}}
+} IACA_END }

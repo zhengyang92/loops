@@ -11,7 +11,7 @@ int
 fn (uint8_t * buf, int i, int ff_count, int size)
 {
   for (; i < size - 15; i += 16)
-    {
+     { IACA_START
       int acc, v;
       v = *(uint32_t *) (&buf[i]);
       acc = (((v & (v >> 4)) & 0x0F0F0F0F) + 0x01010101) & 0x10101010;
@@ -25,4 +25,4 @@ fn (uint8_t * buf, int i, int ff_count, int size)
       acc += (acc >> 16);
       acc += (acc >> 8);
       ff_count += acc & 0xFF;
-}}
+} IACA_END }

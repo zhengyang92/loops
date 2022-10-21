@@ -11,7 +11,7 @@ int
 fn (int w, int i, int src_linesize, const uint8_t * src, uint8_t * dst)
 {
   for (i = 2; i < w - 2; i++)
-    {
+     { IACA_START
       dst[i] =
 	((src[-2 * src_linesize + i - 2] +
 	  src[2 * src_linesize + i - 2]) * 2 + (src[-2 * src_linesize + i -
@@ -31,5 +31,5 @@ fn (int w, int i, int src_linesize, const uint8_t * src, uint8_t * dst)
 	 (src[-src_linesize + i + 2] + src[src_linesize + i + 2]) * 4 +
 	 src[i - 2] * 5 + src[i - 1] * 12 + src[i] * 15 + src[i + 1] * 12 +
 	 src[i + 2] * 5) / 159;
-    }
+     } IACA_END
 }

@@ -13,12 +13,12 @@ fn (int i, const int num, const float *arr, float quant_min_err,
 {
   int index = 0;
   for (i = 0; i < num; i++)
-    {
+     { IACA_START
       float error = (val - arr[i]) * (val - arr[i]);
       if (error < quant_min_err)
 	{
 	  quant_min_err = error;
 	  index = i;
 	}
-    }
+     } IACA_END
 }

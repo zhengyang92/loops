@@ -11,10 +11,10 @@ int
 fn (float max_val, float *vec, float min_val, int len)
 {
   for (int i = 0; i < len; i++)
-    {
+     { IACA_START
       if (!__builtin_isnormal (vec[i]) || fabsf (vec[i]) < 1e-8f)
 	vec[i] = 0.f;
       else
 	vec[i] = av_clipf_sse (vec[i], min_val, max_val);
-    }
+     } IACA_END
 }

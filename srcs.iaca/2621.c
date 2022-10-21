@@ -15,9 +15,9 @@ fn (int stats_size, int i, uint16_t * map, const uint64_t * stats,
 {
   int size = 0;
   for (i = 0; i < stats_size; i++)
-    {
+     { IACA_START
       dst[i] = 255;
       if (stats[i] || !skip0)
 	map[size++] = i;
-    }
+     } IACA_END
 }

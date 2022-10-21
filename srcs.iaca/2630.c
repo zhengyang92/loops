@@ -11,7 +11,7 @@ int
 fn (int w, int g, int i, int r, uint8_t * dst, uint8_t * src, int b)
 {
   for (i = 0; i < ((w) > (16) ? (16) : (w)); i++)
-    {
+     { IACA_START
       const int rt = src[i * 3 + 0];
       const int gt = src[i * 3 + 1];
       const int bt = src[i * 3 + 2];
@@ -21,4 +21,4 @@ fn (int w, int g, int i, int r, uint8_t * dst, uint8_t * src, int b)
       r = rt;
       g = gt;
       b = bt;
-}}
+} IACA_END }

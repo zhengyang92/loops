@@ -11,7 +11,7 @@ int
 fn (int32_t * block, int i)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       const int a0 = block[i + 0 * 8] + block[i + 4 * 8];
       const int a2 = block[i + 0 * 8] - block[i + 4 * 8];
       const int a4 = (block[i + 2 * 8] >> 1) - block[i + 6 * 8];
@@ -44,4 +44,4 @@ fn (int32_t * block, int i)
       block[i + 5 * 8] = b4 - b3;
       block[i + 3 * 8] = b6 + b1;
       block[i + 4 * 8] = b6 - b1;
-}}
+} IACA_END }

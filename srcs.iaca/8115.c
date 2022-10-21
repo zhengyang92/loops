@@ -13,7 +13,7 @@ fn (int max_rate_categories[28], int temp, int offset, int number_of_regions,
     int *absolute_region_power_index)
 {
   for (region = 0; region < number_of_regions; region++)
-    {
+     { IACA_START
       if (max_rate_categories[region] > 0)
 	{
 	  temp =
@@ -25,5 +25,5 @@ fn (int max_rate_categories[28], int temp, int offset, int number_of_regions,
 	      raw_max_idx = region;
 	    }
 	}
-    }
+     } IACA_END
 }

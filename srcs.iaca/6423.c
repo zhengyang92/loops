@@ -12,7 +12,7 @@ fn (int i, int *levlCoeffBuf, float *flcoeffs2, float *flcoeffs1,
     const float *const imc_exp_tab2, float *old_floor)
 {
   for (i = 0; i < 32; i++)
-    {
+     { IACA_START
       flcoeffs1[i] = 0;
       if (levlCoeffBuf[i] < 16)
 	{
@@ -23,5 +23,5 @@ fn (int i, int *levlCoeffBuf, float *flcoeffs2, float *flcoeffs1,
 	{
 	  flcoeffs1[i] = old_floor[i];
 	}
-    }
+     } IACA_END
 }

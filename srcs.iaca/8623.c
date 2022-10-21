@@ -13,7 +13,7 @@ fn (float out1, float old_out2, const float *filter_coeffs, float old_out1,
     float out2, float old_out3, float val, float out0)
 {
   for (i = 5; i < filter_length; i += 2)
-    {
+     { IACA_START
       old_out3 = out[-i];
       val = filter_coeffs[i - 1];
       out0 -= val * old_out3;
@@ -34,5 +34,5 @@ fn (float out1, float old_out2, const float *filter_coeffs, float old_out1,
 	}
       while (0);
       old_out1 = old_out3;
-    }
+     } IACA_END
 }

@@ -13,7 +13,7 @@ fn (int last, const int first, int n, int16_t * in, const int thresh,
     const uint8_t kZigzag[16])
 {
   for (n = 15; n >= first; --n)
-    {
+     { IACA_START
       const int j = kZigzag[n];
       const int err = in[j] * in[j];
       if (err > thresh)
@@ -21,5 +21,5 @@ fn (int last, const int first, int n, int16_t * in, const int thresh,
 	  last = n;
 	  break;
 	}
-    }
+     } IACA_END
 }

@@ -13,10 +13,10 @@ fn (double num, const double xm, const double ym, int size, const double *x,
 {
   double den1 = 0.0;
   for (int i = 0; i < size; i++)
-    {
+     { IACA_START
       double xd = x[i] - xm;
       double yd = y[i] - ym;
       num += xd * yd;
       den0 += xd * xd;
       den1 += yd * yd;
-}}
+} IACA_END }

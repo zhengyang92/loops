@@ -12,10 +12,10 @@ fn (const int16_t isf_mean[16], int i, float tmp, float *isf_q,
     float *isf_past)
 {
   for (i = 0; i < 16; i++)
-    {
+     { IACA_START
       tmp = isf_q[i];
       isf_q[i] += isf_mean[i] * (1.0f / (1 << 15));
       isf_q[i] += (1.0 / 3.0) * isf_past[i];
       isf_past[i] = tmp;
-    }
+     } IACA_END
 }

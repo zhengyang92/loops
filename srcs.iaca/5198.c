@@ -13,9 +13,9 @@ fn (int i, uint8_t random_dequant_type24[128][3], uint64_t random_seed, int j,
     uint32_t ldw)
 {
   for (j = 0; j < 3; j++)
-    {
+     { IACA_START
       random_dequant_type24[i][j] = ldw / random_seed;
       ldw %= random_seed;
       random_seed /= 5;
-    }
+     } IACA_END
 }

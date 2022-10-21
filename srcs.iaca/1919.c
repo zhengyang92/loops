@@ -14,7 +14,7 @@ fn (const uint8_t * pixels, int16_t * __restrict block, int i,
     ptrdiff_t line_size)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       block[0] = pixels[0];
       block[1] = pixels[1];
       block[2] = pixels[2];
@@ -25,5 +25,5 @@ fn (const uint8_t * pixels, int16_t * __restrict block, int i,
       block[7] = pixels[7];
       pixels += line_size;
       block += 8;
-    }
+     } IACA_END
 }

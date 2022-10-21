@@ -13,7 +13,7 @@ fn (int i, int level_tab[65], int start_i, const uint8_t * perm_scantable,
     int run_tab[65], int16_t * block)
 {
   for (; i > start_i; i -= run_tab[i] + 1)
-    {
+     { IACA_START
       block[perm_scantable[i - 1]] = level_tab[i];
-    }
+     } IACA_END
 }

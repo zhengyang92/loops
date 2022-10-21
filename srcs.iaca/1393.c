@@ -11,8 +11,8 @@ int
 fn (const uint8_t * header, int count, int search_len, const uint8_t * buffer)
 {
   for (count = 0; count < search_len; count++)
-    {
+     { IACA_START
       if (!memcmp (&buffer[count], header, 4))
 	return count;
-    }
+     } IACA_END
 }

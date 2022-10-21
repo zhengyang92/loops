@@ -13,7 +13,7 @@ fn (double a1, int *clippings, double dry, double w2, double wet, double out,
     double b0, double in, double w0, int disabled, double b2)
 {
   for (int i = 0; i < len; i++)
-    {
+     { IACA_START
       in = ibuf[i];
       w0 = in + a1 * w1 + a2 * w2;
       out = b0 * w0 + b1 * w1 + b2 * w2;
@@ -38,5 +38,5 @@ fn (double a1, int *clippings, double dry, double w2, double wet, double out,
 	{
 	  obuf[i] = out;
 	}
-    }
+     } IACA_END
 }

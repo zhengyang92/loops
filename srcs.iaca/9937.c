@@ -12,7 +12,7 @@ fn (int tmp[16], int i, const uint16_t * w)
 {
   int sum = 0;
   for (i = 0; i < 4; ++i, ++w)
-    {
+     { IACA_START
       const int a0 = tmp[0 + i] + tmp[8 + i];
       const int a1 = tmp[4 + i] + tmp[12 + i];
       const int a2 = tmp[4 + i] - tmp[12 + i];
@@ -25,4 +25,4 @@ fn (int tmp[16], int i, const uint16_t * w)
       sum += w[4] * abs (b1);
       sum += w[8] * abs (b2);
       sum += w[12] * abs (b3);
-}}
+} IACA_END }

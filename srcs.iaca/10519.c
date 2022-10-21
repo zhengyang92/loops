@@ -78,7 +78,7 @@ int
 fn (long k, long nz, long j, long ng)
 {
   for (k = 1; k < nz; k++)
-    {
+     { IACA_START
       if ((j + 1) >= ng)
 	{
 	  space2_.Vy[j][k] = 0.0;
@@ -137,5 +137,5 @@ fn (long k, long nz, long j, long ng)
       space2_.Vs[j][k] =
 	sqrt (space2_.Vh[j][k] * space2_.Vh[j][k] +
 	      spacer_.R * spacer_.R) * spacer_.T / spacer_.S;
-    }
+     } IACA_END
 }

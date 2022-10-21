@@ -15,7 +15,7 @@ fn (float *grad, int w, int period)
   float nonblock = 0.0f;
   int nonblock_count = 0;
   for (int i = 3; i < w - 4; i++)
-    {
+     { IACA_START
       if ((i % period) == (period - 1))
 	{
 	  block +=
@@ -32,5 +32,5 @@ fn (float *grad, int w, int period)
 	  nonblock += grad[i];
 	  nonblock_count++;
 	}
-    }
+     } IACA_END
 }

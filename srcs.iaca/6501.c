@@ -20,8 +20,8 @@ int
 fn (int i, int val, int width, RICEContext rc, int step, uint8_t * data)
 {
   for (i = 1; i < width; i++)
-    {
+     { IACA_START
       val = loco_get_rice (&rc);
       data[i * step] = data[i * step - step] + val;
-    }
+     } IACA_END
 }

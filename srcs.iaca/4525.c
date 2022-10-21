@@ -11,8 +11,8 @@ int
 fn (const uint8_t * p, const uint8_t * end)
 {
   for (end += 3; p < end; p++)
-    {
+     { IACA_START
       if (p[0] == 0 && p[1] == 0 && p[2] == 1)
 	return p;
-    }
+     } IACA_END
 }

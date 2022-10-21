@@ -12,7 +12,7 @@ int
 fn (uint16_t * dst2, int i, uint16_t * dst1, const uint8_t * src)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       dst1[i] = dst2[i] = src[i] * 0x0101;
-    }
+     } IACA_END
 }

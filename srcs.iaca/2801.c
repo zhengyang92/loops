@@ -12,7 +12,7 @@ fn (int temp[64], int i)
 {
   int sum = 0;
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       {
 	int a, b;
 	a = temp[8 * 0 + i];
@@ -158,4 +158,4 @@ fn (int temp[64], int i)
 								   (temp
 								    [8 * 7 +
 								     i])))));
-}}
+} IACA_END }

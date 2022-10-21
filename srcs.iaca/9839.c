@@ -11,7 +11,7 @@ int
 fn (OPJ_INT32 * bj, OPJ_INT32 k, OPJ_INT32 w, OPJ_INT32 rh, OPJ_INT32 * aj)
 {
   for (k = 0; k < rh; ++k)
-    {
+     { IACA_START
       bj[k] = aj[k * w];
-    }
+     } IACA_END
 }

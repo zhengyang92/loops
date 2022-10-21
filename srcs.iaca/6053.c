@@ -11,8 +11,8 @@ int
 fn (const int16_t dc_lsp[10], int i, int16_t * lsp, int16_t * prev_lsp)
 {
   for (i = 0; i < 10; i++)
-    {
+     { IACA_START
       lsp[i] -=
 	dc_lsp[i] + (((prev_lsp[i] - dc_lsp[i]) * 12288 + (1 << 14)) >> 15);
-    }
+     } IACA_END
 }

@@ -13,7 +13,7 @@ fn (const double scale, int v, uint32_t kLinearToGammaTabS[34])
   const double a = 0.09929682680944;
   const double thresh = 0.018053968510807;
   for (v = 0; v <= (1 << (12 - 7)); ++v)
-    {
+     { IACA_START
       const double g = scale * v;
       double value;
       if (g <= thresh)
@@ -26,5 +26,5 @@ fn (const double scale, int v, uint32_t kLinearToGammaTabS[34])
 	}
       kLinearToGammaTabS[v] =
 	(uint32_t) (((256 << 2) - 1) * value) + (1 << 14 >> 1);
-    }
+     } IACA_END
 }

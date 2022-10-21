@@ -13,7 +13,7 @@ fn (int i, int64_t * sum, const uint16_t * src1, int be, int len,
     int64_t * sum2)
 {
   for (i = 0; i < len / 2; i++)
-    {
+     { IACA_START
       if ((0 && !be) || (!0 && be))
 	{
 	  *sum += av_bswap16 (src1[i]);
@@ -25,5 +25,5 @@ fn (int i, int64_t * sum, const uint16_t * src1, int be, int len,
 	  *sum += src1[i];
 	  *sum2 += (uint32_t) src1[i] * (uint32_t) src1[i];
 	}
-    }
+     } IACA_END
 }

@@ -10,5 +10,5 @@ typedef __uint16_t uint16_t;
 int
 fn (unsigned int i, uint16_t t, uint16_t * l)
 {
-  for (i = 0; l[i] != t; i++);
+  for (i = 0; l[i] != t; i++) {IACA_START} ; IACA_END
 }

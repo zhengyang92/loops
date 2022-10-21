@@ -11,7 +11,7 @@ int
 fn (const uint8_t * s1, int w, const uint8_t * s2, int width, uint8_t * d)
 {
   for (w = width; w >= 4; w -= 4)
-    {
+     { IACA_START
       d[0] = (s1[0] + s1[1] + s2[0] + s2[1] + 2) >> 2;
       d[1] = (s1[2] + s1[3] + s2[2] + s2[3] + 2) >> 2;
       d[2] = (s1[4] + s1[5] + s2[4] + s2[5] + 2) >> 2;
@@ -19,5 +19,5 @@ fn (const uint8_t * s1, int w, const uint8_t * s2, int width, uint8_t * d)
       s1 += 8;
       s2 += 8;
       d += 4;
-    }
+     } IACA_END
 }

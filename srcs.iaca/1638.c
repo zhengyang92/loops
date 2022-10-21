@@ -14,7 +14,7 @@ fn (const uint8_t * bitlen, uint8_t symbols[256], uint32_t new_codes[256],
 {
   int nb_codes = 0;
   for (int i = 0; i < 256; i++)
-    {
+     { IACA_START
       if (bitlen[i])
 	{
 	  bits[nb_codes] = bitlen[i];
@@ -22,5 +22,5 @@ fn (const uint8_t * bitlen, uint8_t symbols[256], uint32_t new_codes[256],
 	  symbols[nb_codes] = i;
 	  nb_codes++;
 	}
-    }
+     } IACA_END
 }

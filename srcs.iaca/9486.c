@@ -12,7 +12,7 @@ int
 fn (size_t len, const int16_t * src, int i, int16_t * dst)
 {
   for (i = 0; i < len; i++)
-    {
+     { IACA_START
       int val = dst[i] + src[i];
       dst[i] = av_clip_int16_c (val);
-}}
+} IACA_END }

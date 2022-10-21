@@ -14,7 +14,7 @@ fn (const uint8_t * const g_ptr, uint8_t * const dst_y, int i, int width,
     VP8Random * const rg, int j, int step)
 {
   for (i = 0, j = 0; i < width; i += 1, j += step)
-    {
+     { IACA_START
       dst_y[i] = RGBToY (r_ptr[j], g_ptr[j], b_ptr[j], rg);
-    }
+     } IACA_END
 }

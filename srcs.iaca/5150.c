@@ -11,7 +11,7 @@ int
 fn (float *buf, int i)
 {
   for (i = 0; i < 256; i++)
-    {
+     { IACA_START
       do
 	{
 	  float SWAP_tmp = buf[1023 - i];
@@ -19,5 +19,5 @@ fn (float *buf, int i)
 	  buf[i + 512] = SWAP_tmp;
 	}
       while (0);
-    }
+     } IACA_END
 }

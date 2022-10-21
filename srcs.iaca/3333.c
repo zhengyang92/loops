@@ -12,7 +12,7 @@ fn (uint8_t block[128], int x, uint8_t * last_alpha)
 {
   int y = 0;
   for (x = 0; x < 16; x++)
-    {
+     { IACA_START
       last_alpha[x] -= block[y * 16 + x];
-    }
+     } IACA_END
 }

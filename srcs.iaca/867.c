@@ -12,7 +12,7 @@ fn (int w, const uint16_t * source, uint16_t * dst, const uint16_t * filtered,
     int thr2, const uint16_t * reference, int thr1, int depth)
 {
   for (int x = 0; x < w; x++)
-    {
+     { IACA_START
       const int diff = filtered[x] - source[x];
       const int diff_ref =
 	((filtered[x] - reference[x]) >=
@@ -25,5 +25,5 @@ fn (int w, const uint16_t * source, uint16_t * dst, const uint16_t * filtered,
 	dst[x] =
 	  av_clip_uintp2_c (source[x] +
 			    diff * (thr2 - diff_ref) / (thr2 - thr1), depth);
-    }
+     } IACA_END
 }

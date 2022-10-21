@@ -14,12 +14,12 @@ fn (unsigned int j, int16_t * dst, size_t width, ptrdiff_t stride,
     unsigned int k, int rlen)
 {
   for (k = 0; k < rlen; k++)
-    {
+     { IACA_START
       dst[j++] = 0;
       if (j == width)
 	{
 	  j = 0;
 	  dst += stride;
 	}
-    }
+     } IACA_END
 }

@@ -17,7 +17,7 @@ fn (const uint8_t ** srcf, unsigned int rdiff, int thrb, unsigned int ldiff,
   float wsum = 1.f;
   int x = 0;
   for (int j = mid - 1, i = mid + 1; j >= 0 && i < size; j--, i++)
-    {
+     { IACA_START
       srcjx = srcf[j][x];
       ldiff = ((srcx - srcjx) >= 0 ? (srcx - srcjx) : (-(srcx - srcjx)));
       lsumdiff += ldiff;
@@ -34,5 +34,5 @@ fn (const uint8_t ** srcf, unsigned int rdiff, int thrb, unsigned int ldiff,
       r++;
       sum += srcix * weights[i];
       wsum += weights[i];
-    }
+     } IACA_END
 }

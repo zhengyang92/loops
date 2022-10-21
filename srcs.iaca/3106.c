@@ -11,6 +11,6 @@ int
 fn (const uint32_t * src, uint32_t * dst, int stride)
 {
   for (int j = 0; j < stride >> 2; j++)
-    {
+     { IACA_START
       dst[j] = (((src[j] >> 3) + (0x3F3F3F3F & dst[j])) << 3) & 0xFCFCFCFC;
-}}
+} IACA_END }

@@ -11,10 +11,10 @@ int
 fn (int i, int width, int B, int C, const int stride2, int A, uint8_t * bsrc)
 {
   for (i = 1; i < width; i++)
-    {
+     { IACA_START
       B = bsrc[i - stride2];
       bsrc[i] += mid_pred (A, B, (uint8_t) (A + B - C));
       C = B;
       A = bsrc[i];
-    }
+     } IACA_END
 }

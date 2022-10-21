@@ -12,9 +12,9 @@ int
 fn (uint8_t buf[8190], int channels, PutBitContext pb, const int n)
 {
   for (int i = 0; i < n; i++)
-    {
+     { IACA_START
       put_bits (&pb, 4, buf[i]);
       if (channels == 2)
 	put_bits (&pb, 4, buf[n + i]);
-    }
+     } IACA_END
 }

@@ -11,11 +11,11 @@ int
 fn (int w, int i, int acc, const uint8_t * src, uint8_t * dst)
 {
   for (i = 0; i < w - 1; i++)
-    {
+     { IACA_START
       acc += src[i];
       dst[i] = acc;
       i++;
       acc += src[i];
       dst[i] = acc;
-    }
+     } IACA_END
 }

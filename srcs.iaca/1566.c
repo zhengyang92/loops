@@ -12,9 +12,9 @@ fn (int present, int num_bands, int k, int previous, int prod,
     int16_t * bands, int base)
 {
   for (k = 0; k < num_bands - 1; k++)
-    {
+     { IACA_START
       prod = (int) (((int64_t) prod * base + 0x400000) >> 23);
       present = (prod + 0x400000) >> 23;
       bands[k] = present - previous;
       previous = present;
-}}
+} IACA_END }

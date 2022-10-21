@@ -14,7 +14,7 @@ fn (unsigned int s2, unsigned int t3, int i, unsigned int s3, unsigned int s0,
     int *win, const int icos36[9])
 {
   for (j = 0; j < 4; j++)
-    {
+     { IACA_START
       t0 = tmp[i];
       t1 = tmp[i + 2];
       s0 = t1 + t0;
@@ -46,4 +46,4 @@ fn (unsigned int s2, unsigned int t3, int i, unsigned int s3, unsigned int s0,
 	MULH ((1) * (t0),
 	      win[(((36) + (2 * 4) - 1) & ~((2 * 4) - 1)) / 2 + j]);
       i += 4;
-}}
+} IACA_END }

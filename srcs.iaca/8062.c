@@ -30,7 +30,7 @@ fn (OpusRangeCoder * rc, int i, int active, int voiced,
     int qoffset_high, uint8_t pulsecount[20])
 {
   for (i = 0; i < shellblocks << 4; i++)
-    {
+     { IACA_START
       if (excitation[i] != 0)
 	{
 	  int sign =
@@ -43,5 +43,5 @@ fn (OpusRangeCoder * rc, int i, int active, int voiced,
 	  if (sign == 0)
 	    excitation[i] *= -1;
 	}
-    }
+     } IACA_END
 }

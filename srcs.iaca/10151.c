@@ -11,7 +11,7 @@ int
 fn (U32 cNumTile, U32 i, U32 cNumMB, U32 cMBs, U32 * pTile)
 {
   for (i = cMBs = 0; i + 1 < cNumTile; i++)
-    {
+     { IACA_START
       if (pTile[i] == 0 || pTile[i] > 65535)
 	{
 	  cNumTile = setUniformTiling (pTile, cNumTile, cNumMB);
@@ -23,5 +23,5 @@ fn (U32 cNumTile, U32 i, U32 cNumMB, U32 cMBs, U32 * pTile)
 	  cNumTile = i + 1;
 	  break;
 	}
-    }
+     } IACA_END
 }

@@ -11,9 +11,9 @@ int
 fn (float *pred, int i, float *delta, int n, float *truth, float *error)
 {
   for (i = 0; i < n; ++i)
-    {
+     { IACA_START
       float t = truth[i];
       float p = pred[i];
       error[i] = (t) ? -log (p) : 0;
       delta[i] = t - p;
-}}
+} IACA_END }

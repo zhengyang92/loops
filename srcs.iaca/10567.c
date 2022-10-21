@@ -14,10 +14,10 @@ fn (Int32 ftabCopy[256], UInt32 * fmap, Int32 i, Int32 j, UChar * eclass8,
     Int32 nblock)
 {
   for (i = 0; i < nblock; i++)
-    {
+     { IACA_START
       while (ftabCopy[j] == 0)
 	j++;
       ftabCopy[j]--;
       eclass8[fmap[i]] = (UChar) j;
-    }
+     } IACA_END
 }

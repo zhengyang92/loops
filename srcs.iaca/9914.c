@@ -13,7 +13,7 @@ fn (__m128i p2, int thresh, __m128i p3, uint8_t * p, int ithresh, int k,
     __m128i p0, int hev_thresh, __m128i p1, int stride)
 {
   for (k = 3; k > 0; --k)
-    {
+     { IACA_START
       __m128i mask, tmp1, tmp2;
       uint8_t *const b = p + 2 * stride;
       p += 4 * stride;
@@ -62,5 +62,5 @@ fn (__m128i p2, int thresh, __m128i p3, uint8_t * p, int ithresh, int k,
       _mm_storeu_si128 ((__m128i *) & b[3 * stride], p2);
       p1 = tmp1;
       p0 = tmp2;
-    }
+     } IACA_END
 }

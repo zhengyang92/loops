@@ -24,7 +24,7 @@ fn (int32_t * in_right, int32_t * out_left, int nb_samples,
 {
   int i = 0;
   for (i = 0; i < nb_samples; i++)
-    {
+     { IACA_START
       int32_t sam, tmp;
       sam = dpp->samplesA[0] + ((dpp->samplesA[0] - dpp->samplesA[1]) >> 1);
       dpp->samplesA[1] = dpp->samplesA[0];
@@ -46,5 +46,5 @@ fn (int32_t * in_right, int32_t * out_left, int nb_samples,
 	  int32_t s = (int32_t) ((sam) ^ (tmp)) >> 31;
 	  dpp->weightB = ((dpp->delta) ^ s) + ((dpp->weightB) - s);
 	};
-    }
+     } IACA_END
 }

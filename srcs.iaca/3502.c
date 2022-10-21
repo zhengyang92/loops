@@ -14,7 +14,7 @@ fn (float codebook_delta_value, float codebook_minimum_value,
     unsigned int i, unsigned int codebook_lookup_values, GetBitContext * gb)
 {
   for (i = 0; i < codebook_lookup_values; ++i)
-    {
+     { IACA_START
       codebook_multiplicands[i] = get_bits (gb, codebook_value_bits);
       do
 	{
@@ -31,5 +31,5 @@ fn (float codebook_delta_value, float codebook_minimum_value,
 		    codebook_multiplicands[i]);
 	}
       while (0);
-    }
+     } IACA_END
 }

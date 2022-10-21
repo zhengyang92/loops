@@ -11,7 +11,7 @@ int
 fn (int j, int block_size, float *dst, const uint8_t * src)
 {
   for (j = 0; j < block_size; j++)
-    {
+     { IACA_START
       dst[j] = src[j];
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ fn (const float sigma, float *buff, const int block, const int method,
     const float limit)
 {
   for (int j = 0; j < block; j++)
-    {
+     { IACA_START
       float factor, power, re, im;
       re = buff[j * 2];
       im = buff[j * 2 + 1];
@@ -28,5 +28,5 @@ fn (const float sigma, float *buff, const int block, const int method,
 	}
       buff[j * 2] *= factor;
       buff[j * 2 + 1] *= factor;
-    }
+     } IACA_END
 }

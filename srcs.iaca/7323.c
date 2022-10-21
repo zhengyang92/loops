@@ -14,9 +14,9 @@ fn (const char *name, const char *spherical_projection_names[3], int i)
        i <
        (sizeof (spherical_projection_names) /
 	sizeof ((spherical_projection_names)[0])); i++)
-    {
+     { IACA_START
       size_t len = strlen (spherical_projection_names[i]);
       if (!strncmp (spherical_projection_names[i], name, len))
 	return i;
-    }
+     } IACA_END
 }

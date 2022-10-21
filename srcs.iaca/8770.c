@@ -14,7 +14,7 @@ fn (const int32_t * in, int i, int t6, int t3, int t4, int t8, int t5, int t7,
     int16_t * out, int t0, int t1, ptrdiff_t pitch, int t2)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       if (!in[0] && !in[1] && !in[2] && !in[3] && !in[4] && !in[5] && !in[6]
 	  && !in[7])
 	{
@@ -74,5 +74,5 @@ fn (const int32_t * in, int i, int t6, int t3, int t4, int t8, int t5, int t7,
 	}
       in += 8;
       out += pitch;
-    }
+     } IACA_END
 }

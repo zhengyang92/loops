@@ -13,8 +13,8 @@ fn (ptrdiff_t stride, int j, const uint8_t * top, uint8_t * dst,
     uint8_t v[15])
 {
   for (j = 0; j < 16; j++)
-    {
+     { IACA_START
       memcpy (dst + j * stride, v + j, 16 - 1 - j);
       memset (dst + j * stride + 16 - 1 - j, top[16 - 1], j + 1);
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ int
 fn (ptrdiff_t stride, int dc, int i, uint8_t * dest)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       dest[0] = av_clip_uint8_c (dest[0] + dc);
       dest[1] = av_clip_uint8_c (dest[1] + dc);
       dest[2] = av_clip_uint8_c (dest[2] + dc);
@@ -22,5 +22,5 @@ fn (ptrdiff_t stride, int dc, int i, uint8_t * dest)
       dest[6] = av_clip_uint8_c (dest[6] + dc);
       dest[7] = av_clip_uint8_c (dest[7] + dc);
       dest += stride;
-    }
+     } IACA_END
 }

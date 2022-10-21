@@ -24,9 +24,9 @@ int
 fn (int j, const int16_t * smp, ADPCMChannelStatus * status, uint8_t * dst)
 {
   for (j = 0; j < 8; j += 2)
-    {
+     { IACA_START
       uint8_t v = adpcm_ima_compress_sample (status, smp[j]);
       v |= adpcm_ima_compress_sample (status, smp[j + 1]) << 4;
       *dst++ = v;
-    }
+     } IACA_END
 }

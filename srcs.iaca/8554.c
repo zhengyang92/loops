@@ -12,8 +12,8 @@ int
 fn (const uint8_t * src, uint32_t * dst, int i)
 {
   for (i = 0; i < 120; i += 2)
-    {
+     { IACA_START
       unsigned sample =
 	((unsigned) src[i + 0] << 25) + ((unsigned) src[i + 1] << 18);
       dst[i / 2] = sample;
-}}
+} IACA_END }

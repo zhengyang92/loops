@@ -12,6 +12,6 @@ fn (const uint8_t * block, int w)
 {
   int sum = 0;
   for (int x = 0; x < w; x++)
-    {
+     { IACA_START
       sum += block[x];
-}}
+} IACA_END }

@@ -15,7 +15,7 @@ fn (const uint8_t ** srcf, unsigned int rdiff, int thrb, unsigned int sum,
   int r = 0;
   int x = 0;
   for (int i = mid + 1; i < size; i++)
-    {
+     { IACA_START
       srcix = srcf[i][x];
       rdiff = ((srcx - srcix) >= 0 ? (srcx - srcix) : (-(srcx - srcix)));
       rsumdiff += rdiff;
@@ -23,5 +23,5 @@ fn (const uint8_t ** srcf, unsigned int rdiff, int thrb, unsigned int sum,
 	break;
       r++;
       sum += srcix;
-    }
+     } IACA_END
 }

@@ -13,11 +13,11 @@ fn (int x_end, int y_end, const int linesize, const uint8_t * buf,
 {
   int is_trans = 1;
   for (int i = *y_start; i < y_end; i++)
-    {
+     { IACA_START
       if (buf[linesize * i + x_end] != trans)
 	{
 	  is_trans = 0;
 	  break;
 	}
-    }
+     } IACA_END
 }

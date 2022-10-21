@@ -11,6 +11,6 @@ int
 fn (const int *alphas, int min_a, int n)
 {
   for (n = 255; n > min_a && alphas[n] == 0; --n)
-    {
-    }
+     { IACA_START
+     } IACA_END
 }

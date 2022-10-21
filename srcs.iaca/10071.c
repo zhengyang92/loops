@@ -12,7 +12,7 @@ fn (int ix, uint32_t * const argb, int width, const int ix_end,
     int accumulated_blue_histo[256], int accumulated_red_histo[256])
 {
   for (; ix < ix_end; ++ix)
-    {
+     { IACA_START
       const uint32_t pix = argb[ix];
       if (ix >= 2 && pix == argb[ix - 2] && pix == argb[ix - 1])
 	{
@@ -25,5 +25,5 @@ fn (int ix, uint32_t * const argb, int width, const int ix_end,
 	}
       ++accumulated_red_histo[(pix >> 16) & 0xff];
       ++accumulated_blue_histo[(pix >> 0) & 0xff];
-    }
+     } IACA_END
 }

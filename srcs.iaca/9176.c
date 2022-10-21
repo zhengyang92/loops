@@ -13,7 +13,7 @@ fn (int bottom_damage, int offset, int top_damage, ptrdiff_t stride, int x,
     const uint8_t * cm, uint8_t * dst)
 {
   for (x = 0; x < 8; x++)
-    {
+     { IACA_START
       int a, b, c, d;
       a = dst[offset + x + 7 * stride] - dst[offset + x + 6 * stride];
       b = dst[offset + x + 8 * stride] - dst[offset + x + 7 * stride];
@@ -51,5 +51,5 @@ fn (int bottom_damage, int offset, int top_damage, ptrdiff_t stride, int x,
 	  dst[offset + x + 11 * stride] =
 	    cm[dst[offset + x + 11 * stride] - ((d * 1) >> 4)];
 	}
-    }
+     } IACA_END
 }

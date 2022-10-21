@@ -12,7 +12,7 @@ fn (int i, uint32_t * idx_map, uint32_t * sorted, int num_colors,
     const uint32_t * palette)
 {
   for (i = 0; i < num_colors; ++i)
-    {
+     { IACA_START
       idx_map[SearchColorNoIdx (sorted, palette[i], num_colors)] = i;
-    }
+     } IACA_END
 }

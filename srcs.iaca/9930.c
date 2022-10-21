@@ -12,7 +12,7 @@ int
 fn (int32_t tmp[16], int i, int16_t * out)
 {
   for (i = 0; i < 4; ++i)
-    {
+     { IACA_START
       const int a0 = (tmp[0 + i] + tmp[8 + i]);
       const int a1 = (tmp[4 + i] + tmp[12 + i]);
       const int a2 = (tmp[4 + i] - tmp[12 + i]);
@@ -25,4 +25,4 @@ fn (int32_t tmp[16], int i, int16_t * out)
       out[4 + i] = b1 >> 1;
       out[8 + i] = b2 >> 1;
       out[12 + i] = b3 >> 1;
-}}
+} IACA_END }

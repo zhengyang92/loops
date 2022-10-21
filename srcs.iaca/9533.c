@@ -15,7 +15,7 @@ fn (const ptrdiff_t stride, const int beta, int i, int u, int t,
     const int filter_p1, const int step)
 {
   for (i = 0; i < 4; i++, src += stride)
-    {
+     { IACA_START
       int diff_p1p0 = src[-2 * step] - src[-1 * step];
       int diff_q1q0 = src[1 * step] - src[0 * step];
       int diff_p1p2 = src[-2 * step] - src[-3 * step];
@@ -46,5 +46,5 @@ fn (const ptrdiff_t stride, const int beta, int i, int u, int t,
 	  src[1 * step] =
 	    cm[src[1 * step] - av_clip_c (t, -(lim_q1), lim_q1)];
 	}
-    }
+     } IACA_END
 }

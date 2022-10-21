@@ -13,11 +13,11 @@ fn (const int t0, int x, uint8_t * dst1, const uint8_t * src, const int t1,
 {
   const int dst_w = 256;
   for (x = 0; x < dst_w; x++)
-    {
+     { IACA_START
       if (src[x] != bg)
 	{
 	  dst0[x] = t0;
 	  dst1[x] = t1;
 	}
-    }
+     } IACA_END
 }

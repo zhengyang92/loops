@@ -13,7 +13,7 @@ fn (int y, int x, uint8_t * cmkpnn, const int cmk_linesizeUV, const int width,
     uint8_t * cmkpn)
 {
   for (x = 1; x < width - 1; x++)
-    {
+     { IACA_START
       if ((cmkpV[x] == 0xff
 	   && (cmkpV[(x) - 1 - (cmk_linesizeUV)] == 0xff
 	       || cmkpV[(x) - (cmk_linesizeUV)] == 0xff
@@ -38,5 +38,5 @@ fn (int y, int x, uint8_t * cmkpnn, const int cmk_linesizeUV, const int width,
 	  else
 	    ((uint16_t *) cmkpnn)[x] = 0xffff;
 	}
-    }
+     } IACA_END
 }

@@ -12,9 +12,9 @@ fn (int i, const uint8_t * src, int src_wrap)
 {
   int tmp = 0;
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       tmp +=
 	src[0] + src[1] + src[2] + src[3] + src[4] + src[5] + src[6] + src[7];
       src += src_wrap;
-    }
+     } IACA_END
 }

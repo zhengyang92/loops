@@ -12,7 +12,7 @@ fn (int i, int p, int width, int code, uint8_t * dst, int height, int stride)
 {
   int filled = 0;
   for (i = 0; i <= code; i++)
-    {
+     { IACA_START
       dst[filled++] = p;
       if (filled >= width)
 	{
@@ -22,5 +22,5 @@ fn (int i, int p, int width, int code, uint8_t * dst, int height, int stride)
 	  if (height < 0)
 	    break;
 	}
-    }
+     } IACA_END
 }

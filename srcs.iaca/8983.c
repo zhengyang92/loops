@@ -14,8 +14,8 @@ fn (unsigned int tmp, unsigned int shift, const uint8_t * dither,
     const int dst_depth)
 {
   for (; j < length; j++)
-    {
+     { IACA_START
       tmp = ((srcPtr2[j]) + dither[j & 7]) >> shift;
       dstPtr[j] = (tmp - (tmp >> dst_depth));
-    }
+     } IACA_END
 }

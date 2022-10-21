@@ -12,7 +12,7 @@ fn (int stride, int y, uint8_t * data, int ai, uint8_t * buf, unsigned int ci,
     int x, int color, unsigned int ri, int b)
 {
   for (x = 0; x < 6; x++)
-    {
+     { IACA_START
       if (!((data[4 + y] >> (5 - x)) & 0x01))
 	color = data[0] & 0x0F;
       else
@@ -21,5 +21,5 @@ fn (int stride, int y, uint8_t * data, int ai, uint8_t * buf, unsigned int ci,
       if (b)
 	color ^= buf[ai];
       buf[ai] = color;
-    }
+     } IACA_END
 }

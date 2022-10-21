@@ -13,7 +13,7 @@ fn (const float scale, const float preserve, const float rc, const int width,
     const float rcw, const float by, const float byw, const float gm)
 {
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       float g = gptr[x];
       float b = bptr[x];
       float r = rptr[x];
@@ -66,4 +66,4 @@ fn (const float scale, const float preserve, const float rc, const int width,
       gptr[x] = av_clip_uint8_c (ng);
       bptr[x] = av_clip_uint8_c (nb);
       rptr[x] = av_clip_uint8_c (nr);
-}}
+} IACA_END }

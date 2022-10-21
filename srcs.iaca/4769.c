@@ -13,12 +13,12 @@ fn (int i, int max_param, int64_t bestbits, int k, uint64_t (*sums)[256])
 {
   int bestk = 0;
   for (k = 0; k <= max_param; k++)
-    {
+     { IACA_START
       int64_t bits = sums[k][i];
       if (bits < bestbits)
 	{
 	  bestbits = bits;
 	  bestk = k;
 	}
-    }
+     } IACA_END
 }

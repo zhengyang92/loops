@@ -13,7 +13,7 @@ fn (const unsigned char *src, int yoffset, int i, unsigned char *dst,
     int j, int height)
 {
   for (i = x; i < x + 4; i++)
-    {
+     { IACA_START
       if (i + xoffset >= 0 && i + xoffset < width && j + yoffset >= 0
 	  && j + yoffset < height)
 	{
@@ -24,5 +24,5 @@ fn (const unsigned char *src, int yoffset, int i, unsigned char *dst,
 	{
 	  dst[j * dst_stride + i] = 0;
 	}
-    }
+     } IACA_END
 }

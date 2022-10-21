@@ -13,7 +13,7 @@ fn (int i, uint8_t * dst_color, int int_y1, int int_x1, int src_linestep,
     int int_x)
 {
   for (i = 0; i < src_linestep; i++)
-    {
+     { IACA_START
       int s00 = src[src_linestep * int_x + i + src_linesize * int_y];
       int s01 = src[src_linestep * int_x1 + i + src_linesize * int_y];
       int s10 = src[src_linestep * int_x + i + src_linesize * int_y1];
@@ -22,4 +22,4 @@ fn (int i, uint8_t * dst_color, int int_y1, int int_x1, int src_linestep,
       int s1 = (((1 << 16) - frac_x) * s10 + frac_x * s11);
       dst_color[i] =
 	((int64_t) ((1 << 16) - frac_y) * s0 + (int64_t) frac_y * s1) >> 32;
-}}
+} IACA_END }

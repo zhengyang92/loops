@@ -11,7 +11,7 @@ int
 fn (int i, int bb, int bg, const int rct_y_coeff[15][2], int br, int stat[15])
 {
   for (i = 0; i < 15; i++)
-    {
+     { IACA_START
       stat[i] +=
 	((bg + ((br * rct_y_coeff[i][0] + bb * rct_y_coeff[i][1]) >> 2)) >=
 	 0 ? (bg +
@@ -21,5 +21,5 @@ fn (int i, int bb, int bg, const int rct_y_coeff[15][2], int br, int stat[15])
 						      bb *
 						      rct_y_coeff[i][1]) >>
 						     2))));
-    }
+     } IACA_END
 }

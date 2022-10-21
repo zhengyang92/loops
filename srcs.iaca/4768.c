@@ -12,9 +12,9 @@ int
 fn (int i, uint64_t count, int n, const int32_t * res, int k)
 {
   for (i = 0; i < n; i++)
-    {
+     { IACA_START
       int32_t v = -2 * res[i] - 1;
       v ^= v >> 31;
       count += (v >> k) + 1 + k;
-    }
+     } IACA_END
 }

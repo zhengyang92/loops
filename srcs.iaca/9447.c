@@ -20,11 +20,11 @@ fn (const MqcCxState cx_states[47], int i, uint8_t ff_mqc_nmps[94],
     uint8_t ff_mqc_nlps[94], uint16_t ff_mqc_qe[94])
 {
   for (i = 0; i < 47; i++)
-    {
+     { IACA_START
       ff_mqc_qe[2 * i] = ff_mqc_qe[2 * i + 1] = cx_states[i].qe;
       ff_mqc_nlps[2 * i] = 2 * cx_states[i].nlps + cx_states[i].sw;
       ff_mqc_nlps[2 * i + 1] = 2 * cx_states[i].nlps + 1 - cx_states[i].sw;
       ff_mqc_nmps[2 * i] = 2 * cx_states[i].nmps;
       ff_mqc_nmps[2 * i + 1] = 2 * cx_states[i].nmps + 1;
-    }
+     } IACA_END
 }

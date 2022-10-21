@@ -12,7 +12,7 @@ int
 fn (int x, uint32_t avg, int y, const uint8_t * ref)
 {
   for (x = 0; x < 4; ++x)
-    {
+     { IACA_START
       avg += ref[x + y * 32];
-    }
+     } IACA_END
 }

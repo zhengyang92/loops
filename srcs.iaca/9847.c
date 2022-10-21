@@ -15,11 +15,11 @@ fn (OPJ_INT32 top_k, OPJ_INT32 * src, OPJ_INT32 * dst, OPJ_UINT32 * entries,
     OPJ_UINT32 j)
 {
   for (j = 0; j < max; ++j)
-    {
+     { IACA_START
       if ((k = src[j]) < 0)
 	k = 0;
       else if (k > top_k)
 	k = top_k;
       dst[j] = (OPJ_INT32) entries[k * nr_channels + pcol];
-    }
+     } IACA_END
 }

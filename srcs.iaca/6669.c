@@ -13,7 +13,7 @@ fn (int w, int i, int maskcolor, const uint8_t * mask, const uint8_t * srcv,
     const uint8_t * srcy)
 {
   for (i = 0, j = 0, k = 0; i < w; j += (i & 1), i++, k += 3)
-    {
+     { IACA_START
       if (!use_mask || mask[i] == maskcolor)
 	{
 	  if (gray)
@@ -30,4 +30,4 @@ fn (int w, int i, int maskcolor, const uint8_t * mask, const uint8_t * srcv,
 		av_clip_uint8_c (y + (-22554 * u - 46802 * v + 32768 >> 16));
 	      dst[k + 2] = av_clip_uint8_c (y + (116130 * u + 32768 >> 16));
 	}}
-}}
+} IACA_END }

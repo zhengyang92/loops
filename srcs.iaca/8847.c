@@ -14,7 +14,7 @@ fn (const int chroma, const ptrdiff_t stride, const uint8_t rv40_dither_r[16],
     uint8_t * src, const int dmode, const int step)
 {
   for (i = 0; i < 4; i++, src += stride)
-    {
+     { IACA_START
       int sflag, p0, q0, p1, q1;
       int t = src[0 * step] - src[-1 * step];
       if (!t)
@@ -60,5 +60,5 @@ fn (const int chroma, const ptrdiff_t stride, const uint8_t rv40_dither_r[16],
 	    (25 * src[0 * step] + 26 * src[1 * step] + 51 * src[2 * step] +
 	     26 * src[3 * step] + 64) >> 7;
 	}
-    }
+     } IACA_END
 }

@@ -14,8 +14,8 @@ fn (OPJ_FLOAT32 * lMct, OPJ_INT32 * lCurrentMatrix, OPJ_UINT32 lNbMatCoeff,
     OPJ_UINT32 lMultiplicator, OPJ_UINT32 i)
 {
   for (i = 0; i < lNbMatCoeff; ++i)
-    {
+     { IACA_START
       lCurrentMatrix[i] =
 	(OPJ_INT32) (*(lMct++) * (OPJ_FLOAT32) lMultiplicator);
-    }
+     } IACA_END
 }

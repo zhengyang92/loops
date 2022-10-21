@@ -12,7 +12,7 @@ fn (int rc, int fbits, int32_t * row, int k, int j, int32_t * prevrow,
     int gain)
 {
   for (j = 0; j < k; j++)
-    {
+     { IACA_START
       int x =
 	av_sat_sub32_c (prevrow[j],
 			(((((int64_t) (prevrow[k - j - 1]) *
@@ -22,5 +22,5 @@ fn (int rc, int fbits, int32_t * row, int k, int j, int32_t * prevrow,
       if (tmp < (-2147483647 - 1) || tmp > (2147483647))
 	return 0;
       row[j] = (int32_t) tmp;
-    }
+     } IACA_END
 }

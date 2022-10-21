@@ -13,7 +13,7 @@ fn (uint8_t a, int i, uint8_t g, intptr_t w, uint8_t * dst,
     const uint8_t * src, uint8_t r, uint8_t b)
 {
   for (i = 0; i < w; i++)
-    {
+     { IACA_START
       b += src[4 * i + 0];
       g += src[4 * i + 1];
       r += src[4 * i + 2];
@@ -22,5 +22,5 @@ fn (uint8_t a, int i, uint8_t g, intptr_t w, uint8_t * dst,
       dst[4 * i + 1] = g;
       dst[4 * i + 2] = r;
       dst[4 * i + 3] = a;
-    }
+     } IACA_END
 }

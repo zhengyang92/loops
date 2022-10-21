@@ -12,7 +12,7 @@ int
 fn (int i, int val, uint8_t * dst, int repeat, GetBitContext * gb)
 {
   for (i = 0; i < 256;)
-    {
+     { IACA_START
       repeat = get_bits (gb, 3);
       val = get_bits (gb, 5);
       if (repeat == 0)
@@ -24,5 +24,5 @@ fn (int i, int val, uint8_t * dst, int repeat, GetBitContext * gb)
 	}
       while (repeat--)
 	dst[i++] = val;
-    }
+     } IACA_END
 }

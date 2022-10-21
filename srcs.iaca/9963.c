@@ -14,7 +14,7 @@ fn (int i, const int *X, __m128i sumXY_128, int32_t tmp[4], const int *Y,
 {
   double retval = 0.;
   for (i = 0; i < 256; i += 4)
-    {
+     { IACA_START
       const __m128i x = _mm_loadu_si128 ((const __m128i *) (X + i));
       const __m128i y = _mm_loadu_si128 ((const __m128i *) (Y + i));
       if (_mm_movemask_epi8 (_mm_cmpeq_epi32 (x, zero)) != 0xFFFF)
@@ -108,5 +108,5 @@ fn (int i, const int *X, __m128i sumXY_128, int32_t tmp[4], const int *Y,
 	    }
 	  while (0);
 	}
-    }
+     } IACA_END
 }

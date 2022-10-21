@@ -25,11 +25,11 @@ fn (ptrdiff_t dstep, const int16_t * src0, int i, int16_t * dst0,
     const struct FFIIRFilterCoeffs *c, int size)
 {
   for (i = 0; i < size; i++)
-    {
+     { IACA_START
       float in = *src0 * c->gain + s->x[0] * c->cy[0] + s->x[1] * c->cy[1];
       *dst0 = av_clip_int16_c (lrintf (s->x[0] + in + s->x[1] * c->cx[1]));
       s->x[0] = s->x[1];
       s->x[1] = in;
       src0 += sstep;
       dst0 += dstep;
-}}
+} IACA_END }

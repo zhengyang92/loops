@@ -13,7 +13,7 @@ fn (int16_t impulse_corr[60], int max_amp_index,
     const int16_t fixed_cb_gain[24], int min, int amp, int64_t temp, int j)
 {
   for (j = max_amp_index; j >= 2; j--)
-    {
+     { IACA_START
       temp =
 	av_clipl_int32_c ((int64_t) fixed_cb_gain[j] * impulse_corr[0] << 1);
       temp = ((temp - amp) >= 0 ? (temp - amp) : (-(temp - amp)));
@@ -22,5 +22,5 @@ fn (int16_t impulse_corr[60], int max_amp_index,
 	  min = temp;
 	  max_amp_index = j;
 	}
-    }
+     } IACA_END
 }

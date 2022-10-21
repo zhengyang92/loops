@@ -15,7 +15,7 @@ fn (ptrdiff_t alpha_step, int alpha, int w, int y, unsigned int max,
     int y_subsample, unsigned int off)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       if (y_subsample)
 	{
 	  alpha =
@@ -29,5 +29,5 @@ fn (ptrdiff_t alpha_step, int alpha, int w, int y, unsigned int max,
 	av_bswap16 (s[x]) * alpha +
 	target_table[((x ^ y) >> 5) & 1][plane] * (max - alpha) + off;
       d[x] = av_clip_c ((u + (u >> shift)) >> shift, 0, max);
-    }
+     } IACA_END
 }

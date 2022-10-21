@@ -17,7 +17,7 @@ fn (uint64_t control, uint16_t * dsta, unsigned int alpha1, int alinesize,
   int by = 0;
   int i = 0;
   for (int j = 0; j < 4; j++)
-    {
+     { IACA_START
       dsta[x + (i + by * 4) * alinesize + bx * 4 + j] =
 	(alpha0 + (alpha1 - alpha0) * (control & 7)) << 4;
-}}
+} IACA_END }

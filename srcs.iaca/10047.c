@@ -11,7 +11,7 @@ int
 fn (int w, fixed_y_t * y, const fixed_y_t * rgb, int i)
 {
   for (i = 0; i < w; ++i)
-    {
+     { IACA_START
       y[i] = RGBToGray (rgb[0 * w + i], rgb[1 * w + i], rgb[2 * w + i]);
-    }
+     } IACA_END
 }

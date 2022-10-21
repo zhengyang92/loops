@@ -11,7 +11,7 @@ int
 fn (int num_pixels, uint16_t * s, int i, uint16_t * d)
 {
   for (i = 0; i < num_pixels; i++)
-    {
+     { IACA_START
       unsigned rgb = s[i];
       d[i] = (rgb << 8 | rgb & 0xF0 | rgb >> 8) & 0xFFF;
-}}
+} IACA_END }

@@ -13,9 +13,9 @@ fn (int type, int i, int sy, const int scale[2][2][4][4], int sx,
     int s, int stride)
 {
   for (j = 0; j < size; j++)
-    {
+     { IACA_START
       int v =
 	tmp[sx + sy + i * stride + j] * scale[type][dec_count -
 						    3][level][ori];
       s += ((v) >= 0 ? (v) : (-(v)));
-}}
+} IACA_END }

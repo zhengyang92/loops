@@ -18,12 +18,12 @@ fn (int sizeFactor, const ScaleAlgorithm scale_algorithms[11], int i,
 {
   for (i = 0;
        i < (sizeof (scale_algorithms) / sizeof ((scale_algorithms)[0])); i++)
-    {
+     { IACA_START
       if (flags & scale_algorithms[i].flag
 	  && scale_algorithms[i].size_factor > 0)
 	{
 	  sizeFactor = scale_algorithms[i].size_factor;
 	  break;
 	}
-    }
+     } IACA_END
 }

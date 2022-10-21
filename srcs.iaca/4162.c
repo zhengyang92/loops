@@ -12,7 +12,7 @@ fn (const double scale, const double *src, double *prv, const int nb_samples,
     int c, const int channels, const double mult, double *dst)
 {
   for (int n = 0; n < nb_samples; n++)
-    {
+     { IACA_START
       double current = src[c];
       if (0)
 	{
@@ -30,5 +30,5 @@ fn (const double scale, const double *src, double *prv, const int nb_samples,
 	}
       dst += channels;
       src += channels;
-    }
+     } IACA_END
 }

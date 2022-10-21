@@ -11,10 +11,10 @@ int
 fn (int x, const uint32_t * ptr, int size)
 {
   for (x = 0; x < size; ++x)
-    {
+     { IACA_START
       if (ptr[x] & 0xff000000u)
 	{
 	  return 0;
 	}
-    }
+     } IACA_END
 }

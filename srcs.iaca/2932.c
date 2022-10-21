@@ -13,7 +13,7 @@ fn (int s, const uint32_t * sq, uint8_t * pix)
 {
   int j = 0;
   for (j = 0; j < 16; j += 8)
-    {
+     { IACA_START
       register uint64_t x = *(uint64_t *) pix;
       s += sq[x & 0xff];
       s += sq[(x >> 8) & 0xff];
@@ -24,4 +24,4 @@ fn (int s, const uint32_t * sq, uint8_t * pix)
       s += sq[(x >> 48) & 0xff];
       s += sq[(x >> 56) & 0xff];
       pix += 8;
-}}
+} IACA_END }

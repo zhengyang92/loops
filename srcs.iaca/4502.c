@@ -12,8 +12,8 @@ fn (int y, int v, float o1, float o2, int linesize, uint16_t * dst, int step,
     int height)
 {
   for (y = 0; y < height; y += step)
-    {
+     { IACA_START
       dst[0] = v * o1 + dst[0] * o2;
       dst += (linesize / 2) * step;
-    }
+     } IACA_END
 }

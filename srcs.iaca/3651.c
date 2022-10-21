@@ -23,7 +23,7 @@ fn (int32_t * samples_l, int i, int32_t * samples_r, int nb_samples,
     struct Decorr *dpp)
 {
   for (i = 0; i < nb_samples; i++)
-    {
+     { IACA_START
       int32_t sam, tmp;
       sam = dpp->samplesA[0] + ((dpp->samplesA[0] - dpp->samplesA[1]) >> 1);
       dpp->samplesA[1] = dpp->samplesA[0];
@@ -39,5 +39,5 @@ fn (int32_t * samples_l, int i, int32_t * samples_r, int nb_samples,
 					      512) >> 10);
       if (sam && tmp)
 	dpp->weightB -= (((sam ^ tmp) >> 29) & 4) - 2;;
-    }
+     } IACA_END
 }

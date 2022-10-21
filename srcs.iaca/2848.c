@@ -14,7 +14,7 @@ fn (int i, int last_non_zero, int16_t * block, const int last_index,
 {
   int len = 0;
   for (; i < last_index; i++)
-    {
+     { IACA_START
       int level = block[scan_table[i]];
       if (level)
 	{
@@ -31,5 +31,5 @@ fn (int i, int last_non_zero, int16_t * block, const int last_index,
 	    }
 	  last_non_zero = i;
 	}
-    }
+     } IACA_END
 }

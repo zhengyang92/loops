@@ -15,7 +15,7 @@ fn (const uint8_t * obmc4, int y, int dst_stride, const uint8_t * obmc2,
     uint8_t * block[4])
 {
   for (x = 0; x < b_w; x++)
-    {
+     { IACA_START
       int v =
 	obmc1[x] * block[3][x + y * src_stride] + obmc2[x] * block[2][x +
 								      y *
@@ -40,5 +40,5 @@ fn (const uint8_t * obmc4, int y, int dst_stride, const uint8_t * obmc2,
 	{
 	  dst[x + y * dst_stride] -= v;
 	}
-    }
+     } IACA_END
 }

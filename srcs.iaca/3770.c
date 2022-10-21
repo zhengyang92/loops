@@ -13,6 +13,6 @@ fn (int i, const int32_t ** src, int val, const int16_t * filter,
     int filterSize, int j)
 {
   for (j = 0; j < filterSize; ++j)
-    {
+     { IACA_START
       val += src[j][i] * (unsigned) filter[j];
-}}
+} IACA_END }

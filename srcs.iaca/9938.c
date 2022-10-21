@@ -11,7 +11,7 @@ int
 fn (int distribution[32], int k, int16_t out[16])
 {
   for (k = 0; k < 16; ++k)
-    {
+     { IACA_START
       ++distribution[out[k]];
-    }
+     } IACA_END
 }

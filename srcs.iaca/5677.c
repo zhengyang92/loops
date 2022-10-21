@@ -13,7 +13,7 @@ fn (float c, float c2, const float acos_icc_invq[8], int icc,
     int iid)
 {
   for (icc = 0; icc < 8; icc++)
-    {
+     { IACA_START
       {
 	float alpha = 0.5f * acos_icc_invq[icc];
 	float beta = alpha * (c1 - c2) * (float) 0.70710678118654752440;
@@ -41,5 +41,5 @@ fn (float c, float c2, const float acos_icc_invq[8], int icc,
 	HB[iid][icc][2] = -1.41421356237309504880 * alpha_s * gamma_s;
 	HB[iid][icc][3] = 1.41421356237309504880 * alpha_c * gamma_s;
       }
-    }
+     } IACA_END
 }

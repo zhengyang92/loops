@@ -11,6 +11,6 @@ int
 fn (int length, uint8_t * dst, int offset)
 {
   for (int j = 0; j < length; j++)
-    {
+     { IACA_START
       dst[j] = dst[j - offset];
-}}
+} IACA_END }

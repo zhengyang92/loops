@@ -17,7 +17,7 @@ fn (float *peak_decay_nrg, int i, float *power_smooth,
   const float peak_decay_factor = 0.76592833836465f;
   int nL = 0;
   for (n = n0; n < nL; n++)
-    {
+     { IACA_START
       float decayed_peak = peak_decay_factor * peak_decay_nrg[i];
       float denom;
       peak_decay_nrg[i] =
@@ -29,4 +29,4 @@ fn (float *peak_decay_nrg, int i, float *power_smooth,
       denom = transient_impact * peak_decay_diff_smooth[i];
       transient_gain[i][n] =
 	(denom > power_smooth[i]) ? power_smooth[i] / denom : 1.0f;
-}}
+} IACA_END }

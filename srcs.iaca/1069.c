@@ -14,7 +14,7 @@ fn (int i, int radius, int h, const uint16_t * filter, int k, int filt_w,
 {
   int sum = 0;
   for (k = 0; k < filt_w; k++)
-    {
+     { IACA_START
       int i_tap =
 	((i - radius + k) >= 0 ? (i - radius + k) : (-(i - radius + k)));
       if (i_tap >= h)
@@ -22,5 +22,5 @@ fn (int i, int radius, int h, const uint16_t * filter, int k, int filt_w,
 	  i_tap = h - (i_tap - h + 1);
 	}
       sum += filter[k] * src[i_tap * src_stride + j];
-    }
+     } IACA_END
 }

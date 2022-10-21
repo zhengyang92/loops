@@ -15,7 +15,7 @@ fn (ptrdiff_t incr, MPA_INT * synth_buf, const MPA_INT * w, int j, float sum,
     OUT_INT * samples2)
 {
   for (j = 1; j < 16; j++)
-    {
+     { IACA_START
       sum2 = 0;
       p = synth_buf + 16 + j;
       {
@@ -80,4 +80,4 @@ fn (ptrdiff_t incr, MPA_INT * synth_buf, const MPA_INT * w, int j, float sum,
       samples2 -= incr;
       w++;
       w2--;
-}}
+} IACA_END }

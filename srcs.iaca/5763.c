@@ -14,7 +14,7 @@ fn (int val, int16_t * dst, int idx, BitstreamContext * bc, int coeff_bits,
     const int num_coeffs, int coeff_type, const uint8_t * scan)
 {
   for (idx = 0; idx < num_coeffs; idx++)
-    {
+     { IACA_START
       do
 	{
 	  if (coeff_type)
@@ -28,5 +28,5 @@ fn (int val, int16_t * dst, int idx, BitstreamContext * bc, int coeff_bits,
       if (val >= 0x10000 || val < 0)
 	return (-0x3ebbb1b7);
       dst[scan[idx]] = val;
-    }
+     } IACA_END
 }

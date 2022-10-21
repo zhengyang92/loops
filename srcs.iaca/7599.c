@@ -12,11 +12,11 @@ fn (const int height, int y, int zw, const uint8_t * xf0, const uint8_t * xf1,
     float progress, const int width, int zh, uint8_t * dst, const int bg)
 {
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       int dist =
 	((x - width / 2) >= 0 ? (x - width / 2) : (-(x - width / 2))) < zw
 	&& ((y - height / 2) >= 0 ? (y - height / 2) : (-(y - height / 2))) <
 	zh;
       int val = progress < 0.5f ? xf1[x] : xf0[x];
       dst[x] = !dist ? bg : val;
-}}
+} IACA_END }

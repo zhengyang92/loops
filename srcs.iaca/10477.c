@@ -13,8 +13,8 @@ fn (int j, int h2, float s1, int i, int w1, int k, int w2, float *add, int b,
     float s2)
 {
   for (i = 0; i < minw; ++i)
-    {
+     { IACA_START
       int out_index = i * sample + w2 * (j * sample + h2 * (k + c2 * b));
       int add_index = i * stride + w1 * (j * stride + h1 * (k + c1 * b));
       out[out_index] = s1 * out[out_index] + s2 * add[add_index];
-}}
+} IACA_END }

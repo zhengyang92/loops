@@ -17,7 +17,7 @@ fn (const uint16_t ff_mpeg12_vlc_dc_lum_code[12], int i,
     uint32_t mpeg1_chr_dc_uni[512])
 {
   for (i = -255; i < 256; i++)
-    {
+     { IACA_START
       int adiff, index;
       int bits, code;
       int diff = i;
@@ -35,5 +35,5 @@ fn (const uint16_t ff_mpeg12_vlc_dc_lum_code[12], int i,
 	(ff_mpeg12_vlc_dc_chroma_code[index] << index) +
 	(diff & ((1 << index) - 1));
       mpeg1_chr_dc_uni[i + 255] = bits + (code << 8);
-    }
+     } IACA_END
 }

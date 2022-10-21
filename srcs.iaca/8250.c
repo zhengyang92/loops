@@ -15,10 +15,10 @@ fn (int32_t gv, int32_t gu, int i, int32_t bu, const uint8_t ** src,
     int32_t rv)
 {
   for (i = 0; i < width; i++)
-    {
+     { IACA_START
       int g = src[0][i];
       int b = src[1][i];
       int r = src[2][i];
       dstU[i] = (ru * r + gu * g + bu * b + (0x4001 << (15 - 7))) >> (15 - 6);
       dstV[i] = (rv * r + gv * g + bv * b + (0x4001 << (15 - 7))) >> (15 - 6);
-}}
+} IACA_END }

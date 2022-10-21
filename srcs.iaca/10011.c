@@ -13,7 +13,7 @@ fn (int displaced, const int nb, int accum[4], int dist_accum[4], int n,
 {
   int weighted_average = 0;
   for (n = 0; n < nb; ++n)
-    {
+     { IACA_START
       if (accum[n])
 	{
 	  const int new_center = (dist_accum[n] + accum[n] / 2) / accum[n];
@@ -22,4 +22,4 @@ fn (int displaced, const int nb, int accum[4], int dist_accum[4], int n,
 	  weighted_average += new_center * accum[n];
 	  total_weight += accum[n];
 	}
-}}
+} IACA_END }

@@ -13,7 +13,7 @@ fn (int offset, int i, const uint8_t * dither, const int16_t * src, int dstW,
     uint8_t * dest)
 {
   for (i = 0; i < dstW; i++)
-    {
+     { IACA_START
       int val = (src[i] + dither[(i + offset) & 7]) >> 7;
       dest[i] = av_clip_uint8_c (val);
-}}
+} IACA_END }

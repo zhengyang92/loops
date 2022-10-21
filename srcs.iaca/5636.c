@@ -26,9 +26,9 @@ int
 fn (char *str, int nb_comments, int i, AVIOContext * pb)
 {
   for (i = 0; i < nb_comments; i++)
-    {
+     { IACA_START
       if (avio_read (pb, str + 65 * i, 64) != 64)
 	break;
       str[65 * i + 64] = '\n';
-    }
+     } IACA_END
 }

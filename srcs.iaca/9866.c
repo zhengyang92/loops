@@ -15,7 +15,7 @@ fn (const uint16_t kScan[16], const int16_t * const coeffs, int n,
     uint8_t * const y_dst, uint32_t bits)
 {
   for (n = 0; n < 16; ++n, bits <<= 2)
-    {
+     { IACA_START
       DoTransform (bits, coeffs + n * 16, y_dst + kScan[n]);
-    }
+     } IACA_END
 }

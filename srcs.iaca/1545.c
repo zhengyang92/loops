@@ -11,7 +11,7 @@ int
 fn (int num_env, int full, int e, int8_t (*par)[34], int8_t (*par_mapped)[34])
 {
   for (e = 0; e < num_env; e++)
-    {
+     { IACA_START
       map_idx_10_to_20 (par_mapped[e], par[e], full);
-    }
+     } IACA_END
 }

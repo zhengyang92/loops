@@ -12,8 +12,8 @@ fn (IDWTELEM * b3, IDWTELEM * b2, int width, int x, IDWTELEM * b1,
     IDWTELEM * b0)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       b2[x] -= (b1[x] + b3[x] + 2) >> 2;
       b1[x] += (b0[x] + b2[x]) >> 1;
-    }
+     } IACA_END
 }

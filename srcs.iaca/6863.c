@@ -13,7 +13,7 @@ fn (const uint8_t ff_reverse[256], int buf_size, const uint8_t * buf,
     uint32_t * o)
 {
   for (; buf_size > 6; buf_size -= 7)
-    {
+     { IACA_START
       *o++ =
 	(ff_reverse[buf[2]] << 24) | (ff_reverse[buf[1]] << 16) |
 	(ff_reverse[buf[0]] << 8);
@@ -21,5 +21,5 @@ fn (const uint8_t ff_reverse[256], int buf_size, const uint8_t * buf,
 	(ff_reverse[buf[6] & 0xf0] << 28) | (ff_reverse[buf[5]] << 20) |
 	(ff_reverse[buf[4]] << 12) | (ff_reverse[buf[3] & 0x0f] << 4);
       buf += 7;
-    }
+     } IACA_END
 }

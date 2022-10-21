@@ -11,8 +11,8 @@ int
 fn (int w, int i, uint8_t * dst, uint8_t * src, int left)
 {
   for (i = 0; i < w; i++)
-    {
+     { IACA_START
       const int temp = src[i];
       dst[i] = temp - left;
       left = temp;
-}}
+} IACA_END }

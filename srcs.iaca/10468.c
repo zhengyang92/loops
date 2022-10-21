@@ -12,7 +12,7 @@ fn (int j, int best, int i, unsigned char *bestloc, int n,
     unsigned char *data, unsigned char **hlist, int data_len)
 {
   for (j = 0; j < n; ++j)
-    {
+     { IACA_START
       if (hlist[j] - data > i - 32767)
 	{
 	  int e =
@@ -23,5 +23,5 @@ fn (int j, int best, int i, unsigned char *bestloc, int n,
 	      break;
 	    }
 	}
-    }
+     } IACA_END
 }

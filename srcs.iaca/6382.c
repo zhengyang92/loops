@@ -15,7 +15,7 @@ fn (uint16_t * dst, int width, int x, int pos_1_0, uint16_t * src, int init_x,
     ptrdiff_t y_stride_1_1, int *sao_offset_val, const uint8_t edge_idx[5])
 {
   for (x = init_x; x < width; x++)
-    {
+     { IACA_START
       int diff0 =
 	((src[x + y_stride]) >
 	 (src[x + pos_0_0 + y_stride_0_1]) ? 1 : ((src[x + y_stride]) ==
@@ -31,4 +31,4 @@ fn (uint16_t * dst, int width, int x, int pos_1_0, uint16_t * src, int init_x,
       int offset_val = edge_idx[2 + diff0 + diff1];
       dst[x + y_stride] =
 	av_clip_uintp2_c (src[x + y_stride] + sao_offset_val[offset_val], 10);
-}}
+} IACA_END }

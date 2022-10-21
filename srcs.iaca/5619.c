@@ -14,7 +14,7 @@ fn (int i, int packet_size, const uint8_t * buf, int probe, int stat[204],
   int best_score = 0;
   int x = 0;
   for (x = i = 0; i < size - 3; i++)
-    {
+     { IACA_START
       if (buf[i] == 0x47
 	  && (!probe || (!(buf[i + 1] & 0x80) && (buf[i + 3] & 0x30))))
 	{
@@ -29,5 +29,5 @@ fn (int i, int packet_size, const uint8_t * buf, int probe, int stat[204],
       x++;
       if (x == packet_size)
 	x = 0;
-    }
+     } IACA_END
 }

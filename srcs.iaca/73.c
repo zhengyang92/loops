@@ -11,7 +11,7 @@ int
 fn (const double *b, double imagp, double w, int nb_b, double realp)
 {
   for (int x = 0; x < nb_b; x++)
-    {
+     { IACA_START
       realp += cos (-x * w) * b[x];
       imagp += sin (-x * w) * b[x];
-}}
+} IACA_END }

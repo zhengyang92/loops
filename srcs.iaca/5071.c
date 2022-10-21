@@ -14,10 +14,10 @@ fn (ptrdiff_t stride, int width, int interlaced, int lefttop,
     int left)
 {
   for (k = 1 + interlaced; k < height; k++)
-    {
+     { IACA_START
       magicyuv_median_pred16 (dst, dst - fake_stride, dst, width, &left,
 			      &lefttop, max);
       lefttop = left = dst[0];
       dst += stride;
-    }
+     } IACA_END
 }

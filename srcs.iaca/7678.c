@@ -15,7 +15,7 @@ fn (int skip_bits, int slice_width, int16_t * dst, unsigned int val, int idx,
     int skip_type, const uint8_t * scan, GetBitContext * gb)
 {
   for (mb = 0; mb < slice_width; mb++)
-    {
+     { IACA_START
       idx = -1;
       do
 	{
@@ -55,5 +55,5 @@ fn (int skip_bits, int slice_width, int16_t * dst, unsigned int val, int idx,
 	}
       while (idx < num_coeffs - 1);
       dst += num_coeffs;
-    }
+     } IACA_END
 }

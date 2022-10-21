@@ -11,7 +11,7 @@ int
 fn (int16_t * block, int i)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       const unsigned int a0 = block[i + 0 * 8] + (unsigned) block[i + 4 * 8];
       const unsigned int a2 = block[i + 0 * 8] - (unsigned) block[i + 4 * 8];
       const unsigned int a4 =
@@ -46,4 +46,4 @@ fn (int16_t * block, int i)
       block[i + 5 * 8] = b4 - b3;
       block[i + 3 * 8] = b6 + b1;
       block[i + 4 * 8] = b6 - b1;
-}}
+} IACA_END }

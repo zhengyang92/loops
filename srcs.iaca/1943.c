@@ -12,7 +12,7 @@ fn (int x, int y, uint8_t list[256], int (*counttab2)[256])
 {
   int scorev = 0;
   for (y = 0; y < 256; y++)
-    {
+     { IACA_START
       scorev += list[y] * counttab2[y + 1][x];
-    }
+     } IACA_END
 }

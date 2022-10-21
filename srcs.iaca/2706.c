@@ -14,7 +14,7 @@ fn (const int32_t * in, int i, int t3, int t4, int16_t * out, int t0, int t1,
     ptrdiff_t pitch, int t2)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       if (!in[0] && !in[1] && !in[2] && !in[3])
 	{
 	  memset (out, 0, 4 * sizeof (out[0]));
@@ -42,5 +42,5 @@ fn (const int32_t * in, int i, int t3, int t4, int16_t * out, int t0, int t1,
 	}
       in += 4;
       out += pitch;
-    }
+     } IACA_END
 }

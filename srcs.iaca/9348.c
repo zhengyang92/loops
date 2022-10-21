@@ -13,8 +13,8 @@ fn (const uint8_t * ref, int fact, int y, ptrdiff_t stride, int x, int idx,
     int size, uint8_t * src)
 {
   for (x = 0; x < size; x++)
-    {
+     { IACA_START
       src[(x) + stride * (y)] =
 	((32 - fact) * ref[x + idx + 1] + fact * ref[x + idx + 2] + 16) >> 5;
-    }
+     } IACA_END
 }

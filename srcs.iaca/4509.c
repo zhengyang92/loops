@@ -14,7 +14,7 @@ fn (float cnt, const uint8_t * xf0, const uint8_t * xf1, const int size,
   float sum1 = 0.f;
   float sum0 = 0.f;
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       dst[x] = mix (sum0 / cnt, sum1 / cnt, progress);
       if (x + size < width)
 	{
@@ -27,5 +27,5 @@ fn (float cnt, const uint8_t * xf0, const uint8_t * xf1, const int size,
 	  sum1 -= xf1[x];
 	  cnt--;
 	}
-    }
+     } IACA_END
 }

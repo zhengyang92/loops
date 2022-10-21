@@ -13,7 +13,7 @@ int
 fn (const ACTIVATION a, int i, float *delta, const float *x, const int n)
 {
   for (i = 0; i < n; ++i)
-    {
+     { IACA_START
       delta[i] *= gradient (x[i], a);
-    }
+     } IACA_END
 }

@@ -13,7 +13,7 @@ fn (const stbi_uc length_dezigzag[19], int i, stbi_uc codelength_sizes[19],
     int hclen, stbi__zbuf * a)
 {
   for (i = 0; i < hclen; ++i)
-    {
+     { IACA_START
       int s = stbi__zreceive (a, 3);
       codelength_sizes[length_dezigzag[i]] = (stbi_uc) s;
-}}
+} IACA_END }

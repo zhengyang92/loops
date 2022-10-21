@@ -12,7 +12,7 @@ int
 fn (int32_t * coef, int i, uint8_t * exp, int nb_coefs)
 {
   for (i = 0; i < nb_coefs; i++)
-    {
+     { IACA_START
       int v = abs (coef[i]);
       exp[i] = v ? 23 - (31 - __builtin_clz ((v) | 1)) : 24;
-}}
+} IACA_END }

@@ -12,9 +12,9 @@ fn (int w, int offset, const uint16_t * msrc, int x, int half, int shift,
     const uint16_t * asrc, uint16_t * dst)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       dst[x] =
 	((((msrc[x] - offset) * (int64_t) (((asrc[x] >> 1) & 1) + asrc[x])) +
 	  half) >> shift) + offset;
-    }
+     } IACA_END
 }

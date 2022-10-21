@@ -16,7 +16,7 @@ fn (float *X, int i, int *y, int max_idx, int N)
   float max_den = 1.0f;
   float max_num = 0.0f;
   for (i = 0; i < N; i++)
-    {
+     { IACA_START
       const int ca = 1 ^ ((y[i] == 0) & (phase < 0));
       const int y_new =
 	y_norm + 2 * phase * ((y[i]) >= 0 ? (y[i]) : (-(y[i])));
@@ -28,5 +28,5 @@ fn (float *X, int i, int *y, int max_idx, int N)
 	  max_num = xy_new;
 	  max_idx = i;
 	}
-    }
+     } IACA_END
 }

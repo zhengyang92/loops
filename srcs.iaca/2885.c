@@ -13,7 +13,7 @@ fn (unsigned int *in1, unsigned int t3, unsigned int *tmp1, unsigned int t0,
     int j)
 {
   for (j = 0; j < 2; j++)
-    {
+     { IACA_START
       tmp1 = tmp + j;
       in1 = in + j;
       t2 = in1[2 * 4] + in1[2 * 8] - in1[2 * 2];
@@ -53,4 +53,4 @@ fn (unsigned int *in1, unsigned int t3, unsigned int *tmp1, unsigned int t0,
       tmp1[0] = t2 + t3 + t0;
       tmp1[12] = t2 + t1 - t0;
       tmp1[8] = t3 - t1 - t0;
-}}
+} IACA_END }

@@ -13,7 +13,7 @@ fn (int i, int bits, unsigned int val, int16_t * out, int pos, int is_signed,
     int num_coeffs, GetBitContext * gb, int cf)
 {
   for (i = 0; i < num_coeffs; i++)
-    {
+     { IACA_START
       cf = av_mod_uintp2_c (val, bits);
       if (is_signed)
 	cf = sign_extend (cf, bits);
@@ -21,5 +21,5 @@ fn (int i, int bits, unsigned int val, int16_t * out, int pos, int is_signed,
 	cf = -cf;
       out[pos++] = cf;
       val >>= bits;
-    }
+     } IACA_END
 }

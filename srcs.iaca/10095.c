@@ -13,7 +13,7 @@ int
 fn (size_t length, const uint8_t * const start, vp8l_val_t value, size_t i)
 {
   for (i = 0; i < length; ++i)
-    {
+     { IACA_START
       value |= (vp8l_val_t) start[i] << (8 * i);
-    }
+     } IACA_END
 }

@@ -11,7 +11,7 @@ int
 fn (int x, int w, uint64_t * dst64)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       dst64[x] = (dst64[x] << 3) & 0xFCFCFCFCFCFCFCFCULL;
-    }
+     } IACA_END
 }

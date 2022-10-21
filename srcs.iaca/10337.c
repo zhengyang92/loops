@@ -13,11 +13,11 @@ fn (const int UVQT[64], int i, unsigned char UVTable[64],
     const unsigned char stbiw__jpg_ZigZag[64])
 {
   for (i = 0; i < 64; ++i)
-    {
+     { IACA_START
       int uvti, yti = (YQT[i] * quality + 50) / 100;
       YTable[stbiw__jpg_ZigZag[i]] =
 	(unsigned char) (yti < 1 ? 1 : yti > 255 ? 255 : yti);
       uvti = (UVQT[i] * quality + 50) / 100;
       UVTable[stbiw__jpg_ZigZag[i]] =
 	(unsigned char) (uvti < 1 ? 1 : uvti > 255 ? 255 : uvti);
-}}
+} IACA_END }

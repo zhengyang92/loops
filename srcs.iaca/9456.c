@@ -12,8 +12,8 @@ fn (float *pptr, float pval, int i, float val,
     const uint8_t ff_nelly_band_sizes_table[23], float *bptr, int j)
 {
   for (j = 0; j < ff_nelly_band_sizes_table[i]; j++)
-    {
+     { IACA_START
       *bptr++ = val;
       *pptr++ = pval;
-    }
+     } IACA_END
 }

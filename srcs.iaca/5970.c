@@ -13,10 +13,10 @@ fn (unsigned int difference_selector, const uint8_t offset_table[4], int i,
     unsigned int sign_selector)
 {
   for (i = 0; i < 4; i++)
-    {
+     { IACA_START
       y[i] =
 	av_clip_c (y_avg +
 		   offset_table[difference_selector] *
 		   sign_table[sign_selector][i], 0, 63);
-    }
+     } IACA_END
 }

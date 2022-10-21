@@ -13,7 +13,7 @@ fn (float xx1[352], float y2, const int M2, float y0, float x10, float x20,
 {
   int i = 0;
   for (int j = 0; j < M2; j += 2)
-    {
+     { IACA_START
       float x11, x21;
       float a0, a1;
       a0 = a[2 * j];
@@ -32,4 +32,4 @@ fn (float xx1[352], float y2, const int M2, float y0, float x10, float x20,
       y1 += a1 * (x10 + x20);
       y2 += a0 * (x11 - x21);
       y3 += a1 * (x11 + x21);
-}}
+} IACA_END }

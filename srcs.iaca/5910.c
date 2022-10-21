@@ -21,11 +21,11 @@ fn (int i, unsigned int bits4ABIT, int num_param_sets,
     struct coding_params *params, GetBitContext * gb)
 {
   for (i = 0; i < num_param_sets; i++)
-    {
+     { IACA_START
       params->rice_code_flag[i] = get_bits (gb, 1);
       if (!params->seg_type && params->rice_code_flag[i] && get_bits (gb, 1))
 	params->pancAuxABIT[i] = get_bits (gb, bits4ABIT) + 1;
       else
 	params->pancAuxABIT[i] = 0;
-    }
+     } IACA_END
 }

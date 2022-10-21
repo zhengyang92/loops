@@ -14,7 +14,7 @@ fn (uint16_t * ptr, const int step, const float *color, const float mix,
     const uint8_t goffset, const uint8_t boffset, const uint8_t roffset)
 {
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       float g = ptr[x * step + goffset];
       float b = ptr[x * step + boffset];
       float r = ptr[x * step + roffset];
@@ -46,4 +46,4 @@ fn (uint16_t * ptr, const int step, const float *color, const float mix,
       ptr[x * step + goffset] = av_clip_uintp2_c (ng, depth);
       ptr[x * step + boffset] = av_clip_uintp2_c (nb, depth);
       ptr[x * step + roffset] = av_clip_uintp2_c (nr, depth);
-}}
+} IACA_END }

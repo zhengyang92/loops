@@ -14,7 +14,7 @@ fn (int i, uint16_t codes[256], const uint8_t * cb, uint8_t bits[256],
 {
   int index = 0;
   for (i = *cb++; i > 0; i--)
-    {
+     { IACA_START
       do
 	{
 	  if (!(index < 256))
@@ -28,5 +28,5 @@ fn (int i, uint16_t codes[256], const uint8_t * cb, uint8_t bits[256],
       bits[index] = b;
       codes[index] = code++;
       index++;
-    }
+     } IACA_END
 }

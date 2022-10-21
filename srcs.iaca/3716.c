@@ -13,7 +13,7 @@ fn (int i, int bw_bytes, uint8_t * src2, uint16_t histogram[256],
     uint8_t * src)
 {
   for (i = 0; i < bw_bytes; i++)
-    {
+     { IACA_START
       int t = src[i] ^ src2[i];
       histogram[t]++;
-}}
+} IACA_END }

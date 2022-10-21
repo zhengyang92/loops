@@ -12,8 +12,8 @@ fn (int i, float lpc_d[10], const float *gamma_n, const float *gamma_d,
     float *lpc, float lpc_n[10])
 {
   for (i = 0; i < 10; i++)
-    {
+     { IACA_START
       lpc_n[i] = lpc[i] * gamma_n[i];
       lpc_d[i] = lpc[i] * gamma_d[i];
-    }
+     } IACA_END
 }

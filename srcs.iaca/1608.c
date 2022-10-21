@@ -11,11 +11,11 @@ int
 fn (int i, int nb_groups, int k, uint8_t * exp, int cpl)
 {
   for (i = 1, k = 1 - cpl; i <= nb_groups; i++)
-    {
+     { IACA_START
       uint8_t exp_min = exp[k];
       if (exp[k + 1] < exp_min)
 	exp_min = exp[k + 1];
       exp[i - cpl] = exp_min;
       k += 2;
-    }
+     } IACA_END
 }

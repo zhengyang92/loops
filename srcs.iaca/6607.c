@@ -12,7 +12,7 @@ int
 fn (MPA_INT * window, int i, const int32_t ff_mpa_enwindow[257])
 {
   for (i = 0; i < 257; i++)
-    {
+     { IACA_START
       float v;
       v = ff_mpa_enwindow[i];
       v *= 1.0 / (1LL << (16 + 23));
@@ -21,5 +21,5 @@ fn (MPA_INT * window, int i, const int32_t ff_mpa_enwindow[257])
 	v = -v;
       if (i != 0)
 	window[512 - i] = v;
-    }
+     } IACA_END
 }

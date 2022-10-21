@@ -13,10 +13,10 @@ int
 fn (const I32 iWidth, U16 * piDstPixel, I32 x, const U8 * piSrcPixel)
 {
   for (x = 0; x < iWidth; x++)
-    {
+     { IACA_START
       const unsigned int r = piSrcPixel[3 * x];
       const unsigned int g = piSrcPixel[3 * x + 1];
       const unsigned int b = piSrcPixel[3 * x + 2];
       piDstPixel[x] =
 	(U16) (((r & 0xF8) << 8) | ((g & 0xFC) << 3) | (b >> 3));
-}}
+} IACA_END }

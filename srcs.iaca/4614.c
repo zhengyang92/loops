@@ -15,7 +15,7 @@ fn (int16_t * dst, int idx, unsigned int val, int coeff_bits,
     GetBitContext * gb)
 {
   for (idx = 0; idx < num_coeffs; idx++)
-    {
+     { IACA_START
       do
 	{
 	  if (coeff_type)
@@ -31,4 +31,4 @@ fn (int16_t * dst, int idx, unsigned int val, int coeff_bits,
 		(('I') | (('N') << 8) | (('D') << 16) |
 		 ((unsigned) ('A') << 24)));
       dst[scan[idx]] = val;
-}}
+} IACA_END }

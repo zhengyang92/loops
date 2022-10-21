@@ -107,7 +107,7 @@ int
 fn (long i)
 {
   for (i = 0; i < spaces_.N; i++)
-    {
+     { IACA_START
       space2_.Px[i][0] =
 	spacer_.Dm28 * space2_.Px[i][12] + spacer_.Dm27 * space2_.Px[i][11] +
 	spacer_.Dm26 * space2_.Px[i][10] + spacer_.Dm25 * space2_.Px[i][9] +
@@ -115,5 +115,5 @@ fn (long i)
 	spacer_.Dm22 * space2_.Px[i][6] + spacer_.C0 * (space2_.Px[i][4] +
 							space2_.Px[i][5]) +
 	space2_.Px[i][2];
-    }
+     } IACA_END
 }

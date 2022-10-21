@@ -16,7 +16,7 @@ fn (int32_t tmp12, int32_t z1, int32_t d0, int32_t d5, int32_t z5,
     int32_t tmp11, int32_t d4, int32_t tmp2)
 {
   for (rowctr = 8 - 1; rowctr >= 0; rowctr--)
-    {
+     { IACA_START
       register int *idataptr = (int *) dataptr;
       d0 = dataptr[0];
       d2 = dataptr[1];
@@ -371,5 +371,5 @@ fn (int32_t tmp12, int32_t z1, int32_t d0, int32_t d5, int32_t z5,
 	(int16_t) (((tmp13 - tmp0) +
 		    (((int32_t) 1) << ((13 - 2) - 1))) >> (13 - 2));
       dataptr += 8;
-    }
+     } IACA_END
 }

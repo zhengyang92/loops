@@ -11,8 +11,8 @@ int
 fn (float v, int i, int v_list_size, const float *v_list)
 {
   for (i = 0; i < v_list_size; i++)
-    {
+     { IACA_START
       if (v < (v_list[i] + 0.01) && v > (v_list[i] - 0.01))
 	break;
-    }
+     } IACA_END
 }

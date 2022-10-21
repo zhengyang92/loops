@@ -45,11 +45,11 @@ int
 fn (long k, long i, long ipnt, long ipntp)
 {
   for (k = ipnt + 1; k < ipntp; k = k + 2)
-    {
+     { IACA_START
       i++;
       space1_.X[i] =
 	space1_.X[k] - space1_.V[k] * space1_.X[k - 1] - space1_.V[k +
 								   1] *
 	space1_.X[k + 1];
-    }
+     } IACA_END
 }

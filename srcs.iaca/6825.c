@@ -11,8 +11,8 @@ int
 fn (int bias, int i, uint8_t * yuvClusters, int *points, int max)
 {
   for (i = 0; i < max * 24; i++)
-    {
+     { IACA_START
       bias = ((i % 6) < 4) ? 1 : 1;
       points[i] = bias * yuvClusters[i];
-    }
+     } IACA_END
 }

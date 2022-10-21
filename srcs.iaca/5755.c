@@ -23,8 +23,8 @@ int
 fn (short *samples, ADPCMChannelStatus * cs, GetByteContext gb, int m)
 {
   for (m = 0; m < 64; m += 2)
-    {
+     { IACA_START
       int byte = bytestream2_get_byteu (&gb);
       samples[m] = adpcm_ima_qt_expand_nibble (cs, byte & 0x0F, 3);
       samples[m + 1] = adpcm_ima_qt_expand_nibble (cs, byte >> 4, 3);
-}}
+} IACA_END }

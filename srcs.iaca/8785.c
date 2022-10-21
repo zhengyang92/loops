@@ -15,12 +15,12 @@ fn (ptrdiff_t stride, int h, const uint32_t * sq, uint8_t * pix1,
 {
   int i = 0;
   for (i = 0; i < h; i++)
-    {
+     { IACA_START
       s += sq[pix1[0] - pix2[0]];
       s += sq[pix1[1] - pix2[1]];
       s += sq[pix1[2] - pix2[2]];
       s += sq[pix1[3] - pix2[3]];
       pix1 += stride;
       pix2 += stride;
-    }
+     } IACA_END
 }

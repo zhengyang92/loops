@@ -15,7 +15,7 @@ fn (uint16_t flags, const int stride, uint8_t value,
   int shift = 15;
   int y = 0;
   for (int x = 0; x < 4; x++)
-    {
+     { IACA_START
       flags |= (value == pixel_ptr[x + y * stride]) << shift;
       shift--;
-}}
+} IACA_END }

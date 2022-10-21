@@ -12,11 +12,11 @@ fn (int dstride, int i, int soff, int doff, int size, uint8_t * sbuf,
     int sstride, uint8_t * dbuf)
 {
   for (i = 0; i < size; i++)
-    {
+     { IACA_START
       uint8_t *dptr = &dbuf[doff];
       uint8_t *sptr = &sbuf[soff];
       memcpy (dptr, sptr, size);
       doff += dstride;
       soff += sstride;
-    }
+     } IACA_END
 }

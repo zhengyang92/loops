@@ -13,7 +13,7 @@ fn (int w2, int i, float nzslope, float nzl, const float ethresh,
 {
   float maxval = 0.0f;
   for (i = 0; i < swb_size; i++)
-    {
+     { IACA_START
       float s = fabsf (scaled[w2 * 128 + i]);
       maxval = ((maxval) > (s) ? (maxval) : (s));
       e += s;
@@ -29,5 +29,5 @@ fn (int w2, int i, float nzslope, float nzl, const float ethresh,
 	  else
 	    nzl += ff_fast_powf (s / ethresh, nzslope);
 	}
-    }
+     } IACA_END
 }

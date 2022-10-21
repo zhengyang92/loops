@@ -13,9 +13,9 @@ fn (int i, int32_t ** filterPos, int64_t * filter, int filterSize,
     const int64_t fone, int xDstInSrc, int xInc, int dstW)
 {
   for (i = 0; i < dstW; i++)
-    {
+     { IACA_START
       int xx = (xDstInSrc - ((filterSize - 1) << 15) + (1 << 15)) >> 16;
       (*filterPos)[i] = xx;
       filter[i] = fone;
       xDstInSrc += xInc;
-}}
+} IACA_END }

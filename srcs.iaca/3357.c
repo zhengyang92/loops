@@ -12,9 +12,9 @@ fn (int stages, const uint32_t * codebook, uint32_t n1, uint32_t n3,
     uint32_t n2, int j, int entries[6])
 {
   for (j = 0; j < stages; j++)
-    {
+     { IACA_START
       n3 = codebook[entries[j]] ^ 0x80808080;
       n1 += (n3 & 0xFF00FF00) >> 8;
       n2 += n3 & 0x00FF00FF;
-    }
+     } IACA_END
 }

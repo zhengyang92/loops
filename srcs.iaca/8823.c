@@ -12,8 +12,8 @@ int
 fn (int16_t lpc[16], int32_t lpc32[16], int k, int order)
 {
   for (k = 0; k < order; k++)
-    {
+     { IACA_START
       int x = (lpc32[k] + 16) >> 5;
       lpc[k] = av_clip_int16_c (x);
       lpc32[k] = lpc[k] << 5;
-}}
+} IACA_END }

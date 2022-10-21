@@ -17,7 +17,7 @@ fn (int w, const int rnd, const uint8_t * yuv2, int crv, int cgu, int cgv,
     int16_t * rgb0)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int y00 = yuv0[x << 1] - yuv_offset[0];
       int y01 = yuv0[2 * x + 1] - yuv_offset[0];
       int y10 =
@@ -45,4 +45,4 @@ fn (int w, const int rnd, const uint8_t * yuv2, int crv, int cgu, int cgv,
 	av_clip_int16_c ((y10 * cy + cbu * u + rnd) >> sh);
       rgb2[2 * x + rgb_stride + 1] =
 	av_clip_int16_c ((y11 * cy + cbu * u + rnd) >> sh);
-}}
+} IACA_END }

@@ -11,10 +11,10 @@ int
 fn (const uint16_t ifd_tags[3], int i, unsigned int tag)
 {
   for (i = 0; i < (sizeof (ifd_tags) / sizeof ((ifd_tags)[0])); i++)
-    {
+     { IACA_START
       if (ifd_tags[i] == tag)
 	{
 	  return i + 1;
 	}
-    }
+     } IACA_END
 }

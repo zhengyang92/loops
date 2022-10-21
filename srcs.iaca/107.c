@@ -14,7 +14,7 @@ int
 fn (float rf[481], AVComplexFloat * X, const AVComplexFloat * P)
 {
   for (int i = 0; i < ((120 << 2) + 1); i++)
-    {
+     { IACA_START
       X[i].re += rf[i] * P[i].re;
       X[i].im += rf[i] * P[i].im;
-}}
+} IACA_END }

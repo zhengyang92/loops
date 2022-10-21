@@ -22,7 +22,7 @@ fn (const Int iTrimBits, const unsigned int iThOff, const unsigned int iTh,
 {
   Int iNumNonzero = 0;
   for (k = 2; k < iCount; k++)
-    {
+     { IACA_START
       const Int sk = pScan[k].uScan;
       iLevel = pCoeffs[sk];
       if ((unsigned int) (iLevel + iThOff) >= iTh)
@@ -50,5 +50,5 @@ fn (const Int iTrimBits, const unsigned int iThOff, const unsigned int iTh,
 	  iTemp = -(iLevel < 0);
 	  pResidual[sk] = (iLevel ^ iTemp) * 4 + (6 & iTemp) + (iLevel != 0);
 	}
-    }
+     } IACA_END
 }

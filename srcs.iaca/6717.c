@@ -29,7 +29,7 @@ fn (OpusRangeCoder * rc, int i, int ratelevel, uint8_t lsbcount[20],
     const uint16_t silk_model_pulse_count[11][19])
 {
   for (i = 0; i < shellblocks; i++)
-    {
+     { IACA_START
       pulsecount[i] =
 	opus_rc_getsymbol (rc, silk_model_pulse_count[ratelevel]);
       if (pulsecount[i] == 17)
@@ -40,5 +40,5 @@ fn (OpusRangeCoder * rc, int i, int ratelevel, uint8_t lsbcount[20],
 	    pulsecount[i] =
 	      opus_rc_getsymbol (rc, silk_model_pulse_count[10]);
 	}
-    }
+     } IACA_END
 }

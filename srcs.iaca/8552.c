@@ -19,9 +19,9 @@ int
 fn (int offset, struct oggvorbis_private *priv, int i, unsigned char *ptr)
 {
   for (i = 0; i < 3; i++)
-    {
+     { IACA_START
       memcpy (&ptr[offset], priv->packet[i], priv->len[i]);
       offset += priv->len[i];
       av_freep (&priv->packet[i]);
-    }
+     } IACA_END
 }

@@ -11,8 +11,8 @@ int
 fn (int j, int32_t * ptr, const int pred_id, int len)
 {
   for (j = 0; j < len; j++)
-    {
+     { IACA_START
       int32_t x = ff_dcaadpcm_predict (pred_id, ptr + j - 4);
       ptr[j] = clip23 (ptr[j] + x);
-    }
+     } IACA_END
 }

@@ -12,7 +12,7 @@ fn (int y, int x, int block_size, uint8_t * src, int stride)
 {
   int sum = 0;
   for (x = 0; x < block_size; x++)
-    {
+     { IACA_START
       sum += src[x + y * stride];
-    }
+     } IACA_END
 }

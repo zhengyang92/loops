@@ -13,7 +13,7 @@ fn (const int uv_width, int do_store, uint8_t * v, int i, int YUV_HALF,
     const uint32_t * argb, uint8_t * u)
 {
   for (i = 0; i < uv_width; ++i)
-    {
+     { IACA_START
       const uint32_t v0 = argb[2 * i + 0];
       const uint32_t v1 = argb[2 * i + 1];
       const int r = ((v0 >> 15) & 0x1fe) + ((v1 >> 15) & 0x1fe);
@@ -31,5 +31,5 @@ fn (const int uv_width, int do_store, uint8_t * v, int i, int YUV_HALF,
 	  u[i] = (u[i] + tmp_u + 1) >> 1;
 	  v[i] = (v[i] + tmp_v + 1) >> 1;
 	}
-    }
+     } IACA_END
 }

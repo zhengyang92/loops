@@ -12,7 +12,7 @@ fn (int signed_stride, int i, unsigned char *z, signed char *line_buffer,
     int type, int n)
 {
   for (i = 0; i < n; ++i)
-    {
+     { IACA_START
       switch (type)
 	{
 	case 0:
@@ -38,5 +38,5 @@ fn (int signed_stride, int i, unsigned char *z, signed char *line_buffer,
 	  line_buffer[i] = z[i];
 	  break;
 	}
-    }
+     } IACA_END
 }

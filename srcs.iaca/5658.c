@@ -14,7 +14,7 @@ fn (const float CLIPPED_ESCAPE, int i, const float *vec, int curbits,
 {
   float rd = 0.0f;
   for (j = 0; j < dim; j++)
-    {
+     { IACA_START
       float t = fabsf (in[i + j]);
       float di;
       if (BT_ESC && vec[j] == 64.0f)
@@ -37,5 +37,5 @@ fn (const float CLIPPED_ESCAPE, int i, const float *vec, int curbits,
       if (vec[j] != 0.0f)
 	curbits++;
       rd += di * di;
-    }
+     } IACA_END
 }

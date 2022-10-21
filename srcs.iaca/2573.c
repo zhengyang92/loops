@@ -14,7 +14,7 @@ fn (int offset, int x, int width, const int8_t * filter, uint16_t * src,
     int wx, int ox, ptrdiff_t srcstride, int shift, uint16_t * dst)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       dst[x] =
 	av_clip_uintp2_c (((((filter[0] * src[x - srcstride] +
 			      filter[1] * src[x] + filter[2] * src[x +
@@ -22,5 +22,5 @@ fn (int offset, int x, int width, const int8_t * filter, uint16_t * src,
 			      + filter[3] * src[x + 2 * srcstride]) >> (9 -
 									8)) *
 			    wx + offset) >> shift) + ox, 9);
-    }
+     } IACA_END
 }

@@ -14,7 +14,7 @@ fn (const float *const range_table, float fp, float fc,
     const uint16_t * in_x, float *temp_x)
 {
   for (int x = width - 2; x >= 0; x--)
-    {
+     { IACA_START
       uint16_t tcr = *--texture_x;
       uint16_t dr = abs (tcr - tpr);
       int range_dist = dr;
@@ -28,4 +28,4 @@ fn (const float *const range_table, float fp, float fc,
       --temp_factor_x;
       *temp_factor_x = ((*temp_factor_x) + fc);
       fp = fc;
-}}
+} IACA_END }

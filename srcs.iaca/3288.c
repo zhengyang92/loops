@@ -12,9 +12,9 @@ fn (int y, int w, uint8_t * (*halfpel)[4], int p, int x, int ls,
     uint8_t * src)
 {
   for (x = 0; x < w; x++)
-    {
+     { IACA_START
       int i = y * ls + x;
       halfpel[1][p][i] =
 	(20 * (src[i] + src[i + 1]) - 5 * (src[i - 1] + src[i + 2]) +
 	 (src[i - 2] + src[i + 3]) + 16) >> 5;
-}}
+} IACA_END }

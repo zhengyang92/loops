@@ -11,7 +11,7 @@ int
 fn (int b2, int16_t * temp, int b1, int x, const int w2, int16_t * b, int b0)
 {
   for (x = 1; x < w2; x++)
-    {
+     { IACA_START
       b2 =
 	((unsigned) (temp[x]) +
 	 ((int) (217 * (temp[x + w2 - 1] + (unsigned) temp[x + w2]) + 2048) >>
@@ -22,4 +22,4 @@ fn (int b2, int16_t * temp, int b1, int x, const int w2, int16_t * b, int b0)
       b[2 * x - 1] = ~((~b1) >> 1);
       b[2 * x] = ~((~b2) >> 1);
       b0 = b2;
-}}
+} IACA_END }

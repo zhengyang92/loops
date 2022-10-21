@@ -13,7 +13,7 @@ fn (int sumX, const int *X, const int *Y, int i)
   double retval = 0.;
   int sumXY = 0;
   for (i = 0; i < 256; ++i)
-    {
+     { IACA_START
       const int x = X[i];
       if (x != 0)
 	{
@@ -28,5 +28,5 @@ fn (int sumX, const int *X, const int *Y, int i)
 	  sumXY += Y[i];
 	  retval -= VP8LFastSLog2 (Y[i]);
 	}
-    }
+     } IACA_END
 }

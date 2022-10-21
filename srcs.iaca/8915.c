@@ -13,7 +13,7 @@ fn (int tl, int y, ptrdiff_t stride, const uint8_t * left,
     const uint8_t * top, uint8_t * dst)
 {
   for (y = 0; y < 8; y++)
-    {
+     { IACA_START
       int l_m_tl = left[7 - y] - tl;
       dst[0] = av_clip_uint8_c (top[0] + l_m_tl);
       dst[1] = av_clip_uint8_c (top[1] + l_m_tl);
@@ -24,4 +24,4 @@ fn (int tl, int y, ptrdiff_t stride, const uint8_t * left,
       dst[6] = av_clip_uint8_c (top[6] + l_m_tl);
       dst[7] = av_clip_uint8_c (top[7] + l_m_tl);
       dst += stride;
-}}
+} IACA_END }

@@ -11,8 +11,8 @@ int
 fn (int buf_b[32], int k, int i, int32_t * output)
 {
   for (i = 0, k = 31; i < 16; i++, k--)
-    {
+     { IACA_START
       output[i] = clip23 (buf_b[i] - buf_b[k]);
       output[16 + i] = clip23 (buf_b[i] + buf_b[k]);
-    }
+     } IACA_END
 }

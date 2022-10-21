@@ -13,7 +13,7 @@ fn (int mrefs, int w, uint8_t * cur, int x, int prefs, uint8_t * next,
     uint8_t * next2)
 {
   for (x = w - edge; x < w - 3; x++)
-    {
+     { IACA_START
       int c = cur[mrefs];
       int d = (prev2[0] + next2[0]) >> 1;
       int e = cur[prefs];
@@ -198,5 +198,5 @@ fn (int mrefs, int w, uint8_t * cur, int x, int prefs, uint8_t * next,
       next++;
       prev2++;
       next2++;
-    }
+     } IACA_END
 }

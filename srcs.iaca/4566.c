@@ -13,7 +13,7 @@ fn (int i, const float Q, const float ROUNDING, PutBitContext * pb, int cb,
 {
   int curidx = 0;
   for (j = 0; j < 2; j++)
-    {
+     { IACA_START
       if (ff_aac_codebook_vectors[cb - 1][curidx * 2 + j] == 64.0f)
 	{
 	  int coef =
@@ -22,4 +22,4 @@ fn (int i, const float Q, const float ROUNDING, PutBitContext * pb, int cb,
 	  put_bits (pb, len - 4 + 1, (1 << (len - 4 + 1)) - 2);
 	  put_sbits (pb, len, coef);
 	}
-}}
+} IACA_END }

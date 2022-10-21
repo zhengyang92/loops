@@ -16,7 +16,7 @@ fn (int32_t lsp[16], const int16_t ff_silk_cosine[],
     int order)
 {
   for (k = 0; k < order; k++)
-    {
+     { IACA_START
       int index = nlsf[k] >> 8;
       int offset = nlsf[k] & 255;
       int k2 =
@@ -25,4 +25,4 @@ fn (int32_t lsp[16], const int16_t ff_silk_cosine[],
       lsp[k2] = ff_silk_cosine[index] * 256;
       lsp[k2] += (ff_silk_cosine[index + 1] - ff_silk_cosine[index]) * offset;
       lsp[k2] = (lsp[k2] + 4) >> 3;
-}}
+} IACA_END }

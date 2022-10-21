@@ -54,7 +54,7 @@ fn (char *p, int i, char *end, AVIOContext * pb, int len,
     const uint32_t mac_to_unicode[128])
 {
   for (i = 0; i < len; i++)
-    {
+     { IACA_START
       uint8_t t, c = avio_r8 (pb);
       if (p >= end)
 	continue;
@@ -86,5 +86,5 @@ fn (char *p, int i, char *end, AVIOContext * pb, int len,
 		}
 	    }
 	};
-    }
+     } IACA_END
 }

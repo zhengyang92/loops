@@ -26,7 +26,7 @@ fn (int use_alpha, int i, uint64_t a, uint64_t r, const int n, uint64_t b,
     uint64_t div)
 {
   for (i = 0; i < n; i++)
-    {
+     { IACA_START
       const struct color_ref *ref = refs[box->start + i];
       if (use_alpha)
 	a += (ref->color >> 24 & 0xff) * ref->count;
@@ -34,5 +34,5 @@ fn (int use_alpha, int i, uint64_t a, uint64_t r, const int n, uint64_t b,
       g += (ref->color >> 8 & 0xff) * ref->count;
       b += (ref->color & 0xff) * ref->count;
       div += ref->count;
-    }
+     } IACA_END
 }

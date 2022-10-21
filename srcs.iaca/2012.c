@@ -12,7 +12,7 @@ fn (const uint8_t * rgb[3], int c, const uint8_t * channel_buffer[4],
     int rgb_channel_count)
 {
   for (c = 0; c < rgb_channel_count; c++)
-    {
+     { IACA_START
       rgb[c] = channel_buffer[c];
-    }
+     } IACA_END
 }

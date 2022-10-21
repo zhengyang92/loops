@@ -11,9 +11,9 @@ int
 fn (uint16_t ff_scale_factor_modshift[64])
 {
   for (int i = 0; i < 64; i++)
-    {
+     { IACA_START
       int shift, mod;
       shift = i / 3;
       mod = i % 3;
       ff_scale_factor_modshift[i] = mod | (shift << 2);
-}}
+} IACA_END }

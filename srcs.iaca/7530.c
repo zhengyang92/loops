@@ -13,7 +13,7 @@ fn (float *lut, int y, int width, int x, float opacity, ptrdiff_t ilinesize,
     const uint16_t * index, int max, uint16_t * dst, const uint16_t * src)
 {
   for (x = 0; x < width; x++)
-    {
+     { IACA_START
       int v = lut[index[(y >> 1) * ilinesize + (x >> 1)]];
       if (v >= 0 && v <= max)
 	{
@@ -23,5 +23,5 @@ fn (float *lut, int y, int width, int x, float opacity, ptrdiff_t ilinesize,
 	{
 	  dst[x] = src[x];
 	};
-    }
+     } IACA_END
 }

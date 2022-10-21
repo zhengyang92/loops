@@ -14,7 +14,7 @@ fn (int i, uint16_t pix16, uint8_t pix[3], int depth, uint32_t pix32,
     uint8_t * output, int p1)
 {
   for (i = 0; i < p1; i++)
-    {
+     { IACA_START
       switch (depth)
 	{
 	case 8:
@@ -34,5 +34,5 @@ fn (int i, uint16_t pix16, uint8_t pix[3], int depth, uint32_t pix32,
 	  output += 4;
 	  break;
 	}
-    }
+     } IACA_END
 }

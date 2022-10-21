@@ -11,7 +11,7 @@ int
 fn (const int16_t * src, int width, int16_t * dst)
 {
   for (int j = 0; j < width; j++)
-    {
+     { IACA_START
       int alpha = src[j];
       if (alpha > 0 && alpha < 4080)
 	{
@@ -21,5 +21,5 @@ fn (const int16_t * src, int width, int16_t * dst)
 	  alpha += 256;
 	}
       dst[j] = av_clip_uintp2_c (alpha, 12);
-    }
+     } IACA_END
 }

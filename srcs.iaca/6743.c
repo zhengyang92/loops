@@ -13,7 +13,7 @@ fn (int i, int hsize, int64_t scale, int16_t * low, int16_t * dest,
     int16_t * high, int64_t value)
 {
   for (i = 0; i < hsize; i++)
-    {
+     { IACA_START
       value =
 	(int64_t) low[i + 2] * -65078576L + (int64_t) low[i +
 							  1] * 1583578880L +
@@ -23,5 +23,5 @@ fn (int i, int hsize, int64_t scale, int16_t * low, int16_t * dest,
 							    0] *
 	-3644400640L + (int64_t) high[i - 1] * 303700064L;
       dest[i * 2 + 1] = av_clip_int16_c (((value >> 32) * scale) >> 32);
-    }
+     } IACA_END
 }

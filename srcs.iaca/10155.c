@@ -17,12 +17,12 @@ fn (PixelI * pY, const size_t cShift, const PixelI iOffset, size_t iPos,
     PixelI * pU)
 {
   for (iColumn = 0; iColumn < cColumn; iColumn++, pSrc += cStride)
-    {
+     { IACA_START
       PixelI r = ((PixelI) pSrc[0] >> nLen) << cShift, g =
 	((PixelI) pSrc[1] >> nLen) << cShift, b =
 	((PixelI) pSrc[2] >> nLen) << cShift;
       (b -= r, r += ((b + 1) >> 1) - g, g += ((r + 0) >> 1));
       iPos = ((iColumn >> 4) << 8) + idxCC[iRow][iColumn & 0xf];
       pU[iPos] = -r, pV[iPos] = b, pY[iPos] = g - iOffset;
-    }
+     } IACA_END
 }

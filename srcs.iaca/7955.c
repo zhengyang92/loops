@@ -15,7 +15,7 @@ fn (int dst_size, unsigned int ofsdst, int i, unsigned int x,
     int dstpitch, int k, int ncolumns, int j, uint8_t * dst)
 {
   for (j = 0; j < ncolumns; j++)
-    {
+     { IACA_START
       ofsdst = j + k * ncolumns;
       i = bytestream2_get_byte (&gb);
       while (i > 0)
@@ -66,5 +66,5 @@ fn (int dst_size, unsigned int ofsdst, int i, unsigned int x,
 	    }
 	  i--;
 	}
-    }
+     } IACA_END
 }

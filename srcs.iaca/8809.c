@@ -14,7 +14,7 @@ fn (int i, int D, ptrdiff_t stride, int t3, int *block, int block_size,
     int t2)
 {
   for (i = 0; i < hsize; i++)
-    {
+     { IACA_START
       A = block[i];
       B = block[i + hsize];
       C = block[i + hsize * block_size];
@@ -27,5 +27,5 @@ fn (int i, int D, ptrdiff_t stride, int t3, int *block, int block_size,
       dst[i * 2 + stride] = av_clip_uint8_c (t1 + t2);
       dst[i * 2 + 1] = av_clip_uint8_c (t3 - t4);
       dst[i * 2 + 1 + stride] = av_clip_uint8_c (t3 + t4);
-    }
+     } IACA_END
 }

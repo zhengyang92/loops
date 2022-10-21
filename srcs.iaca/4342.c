@@ -12,7 +12,7 @@ fn (const float mix, const float preserve, const int depth, uint16_t * rptr,
     const int width, uint16_t * bptr, uint16_t * gptr, const float *color)
 {
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       float g = gptr[x];
       float b = bptr[x];
       float r = rptr[x];
@@ -44,4 +44,4 @@ fn (const float mix, const float preserve, const int depth, uint16_t * rptr,
       gptr[x] = av_clip_uintp2_c (ng, depth);
       bptr[x] = av_clip_uintp2_c (nb, depth);
       rptr[x] = av_clip_uintp2_c (nr, depth);
-}}
+} IACA_END }

@@ -11,7 +11,7 @@ int
 fn (uint32_t * dst_line[2], const int width, const uint32_t * src_line[3])
 {
   for (int x = 0; x < width; x++)
-    {
+     { IACA_START
       uint32_t E0, E1, E2, E3;
       uint32_t B, D, E, F, H;
       B = src_line[0][x];
@@ -37,5 +37,5 @@ fn (uint32_t * dst_line[2], const int width, const uint32_t * src_line[3])
       dst_line[0][x * 2 + 1] = E1;
       dst_line[1][x * 2] = E2;
       dst_line[1][x * 2 + 1] = E3;
-    }
+     } IACA_END
 }

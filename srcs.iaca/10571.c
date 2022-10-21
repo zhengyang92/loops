@@ -14,7 +14,7 @@ int
 fn (UInt16 s, UInt32 * ftab, UInt32 * ptr, Int32 i, Int32 j, UChar * block)
 {
   for (; i >= 3; i -= 4)
-    {
+     { IACA_START
       s = (s >> 8) | (block[i] << 8);
       j = ftab[s] - 1;
       ftab[s] = j;
@@ -31,5 +31,5 @@ fn (UInt16 s, UInt32 * ftab, UInt32 * ptr, Int32 i, Int32 j, UChar * block)
       j = ftab[s] - 1;
       ftab[s] = j;
       ptr[j] = i - 3;
-    }
+     } IACA_END
 }

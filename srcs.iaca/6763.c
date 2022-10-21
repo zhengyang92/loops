@@ -11,8 +11,8 @@ int
 fn (const uint8_t * buf, char signature[41], int i)
 {
   for (i = 0; i < 8; i++)
-    {
+     { IACA_START
       av_strlcatf (signature + i * 5, sizeof (signature) - i * 5, " 0x%02x",
 		   buf[i]);
-    }
+     } IACA_END
 }

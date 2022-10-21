@@ -14,7 +14,7 @@ fn (int stride, int y, uint32_t mask, int i, int d, int x, int k,
     uint8_t * data)
 {
   for (k = 0; k < 4; k++)
-    {
+     { IACA_START
       d = ((k & 1) << 1) + ((k & 2) * stride);
       d2 = ((k & 1) << 1) + ((k & 2) * stride);
       tmp2 = ref + i + d2;
@@ -49,5 +49,5 @@ fn (int stride, int y, uint32_t mask, int i, int d, int x, int k,
 	  break;
 	}
       mask <<= 2;
-    }
+     } IACA_END
 }

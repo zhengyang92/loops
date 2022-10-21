@@ -27,8 +27,8 @@ int
 fn (const uint8_t * buf, int i, AVIOContext * pb, int size)
 {
   for (i = 0; i < size; i += 2)
-    {
+     { IACA_START
       avio_w8 (pb, buf[i + 1]);
       avio_w8 (pb, buf[i]);
-    }
+     } IACA_END
 }

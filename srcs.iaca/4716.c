@@ -12,10 +12,10 @@ int
 fn (int x, int width, uint16_t * dst, int32_t * src)
 {
   for (x = 0; x < width; x += 4)
-    {
+     { IACA_START
       dst[x] = av_clip_uintp2_c (src[x] + (1U << (12 - 1)), 12);
       dst[x + 1] = av_clip_uintp2_c (src[x + 1] + (1U << (12 - 1)), 12);
       dst[x + 2] = av_clip_uintp2_c (src[x + 2] + (1U << (12 - 1)), 12);
       dst[x + 3] = av_clip_uintp2_c (src[x + 3] + (1U << (12 - 1)), 12);
-    }
+     } IACA_END
 }

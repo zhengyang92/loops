@@ -13,7 +13,7 @@ fn (const int *qmat, int16_t * block, const uint8_t * scantable, int i)
 {
   int last_non_zero = 0;
   for (i = 1; i < 64; ++i)
-    {
+     { IACA_START
       int j = scantable[i];
       int sign = (block[j] >> 8 * sizeof (block[j]) - 1);
       int level = (block[j] ^ sign) - sign;
@@ -21,5 +21,5 @@ fn (const int *qmat, int16_t * block, const uint8_t * scantable, int i)
       block[j] = (level ^ sign) - sign;
       if (level)
 	last_non_zero = i;
-    }
+     } IACA_END
 }

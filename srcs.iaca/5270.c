@@ -13,7 +13,7 @@ fn (const unsigned int color, int y, ptrdiff_t stride, int x, int b_w,
     uint8_t * dst)
 {
   for (x = 0; x < b_w; x++)
-    {
+     { IACA_START
       dst[x + y * stride] = color;
-    }
+     } IACA_END
 }

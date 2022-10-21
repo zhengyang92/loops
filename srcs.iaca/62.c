@@ -13,9 +13,9 @@ fn (double thigh, int buff_idx, const double *hp, int buffer_length,
 {
   double tlow = 0.0;
   for (int j = 0; j < wavelet_length; j++)
-    {
+     { IACA_START
       const int idx = ((-j + buff_idx - 1) & ((buffer_length) - 1));
       const double btemp = buffer[idx];
       thigh += btemp * hp[j];
       tlow += btemp * lp[j];
-}}
+} IACA_END }

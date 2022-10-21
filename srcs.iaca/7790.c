@@ -13,7 +13,7 @@ fn (const uint32_t * res_end, int parts, const uint32_t * res, int i, int n,
     int kmax, int k, uint64_t (*sums)[256], int pmax)
 {
   for (i = 0; i < parts; i++)
-    {
+     { IACA_START
       if (kmax)
 	{
 	  uint64_t sum = (1LL + k) * (res_end - res);
@@ -29,5 +29,5 @@ fn (const uint32_t * res_end, int parts, const uint32_t * res, int i, int n,
 	  sums[k][i] = sum;
 	}
       res_end += n >> pmax;
-    }
+     } IACA_END
 }

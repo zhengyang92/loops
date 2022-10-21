@@ -36,7 +36,7 @@ int
 fn (long k, long jn, long j)
 {
   for (j = 1; j < jn; j++)
-    {
+     { IACA_START
       space2_.Za[k][j] =
 	(space2_.Zp[k + 1][j - 1] + space2_.Zq[k + 1][j - 1] -
 	 space2_.Zp[k][j - 1] - space2_.Zq[k][j - 1]) * (space2_.Zr[k][j] +
@@ -48,5 +48,5 @@ fn (long k, long jn, long j)
 	 space2_.Zq[k][j]) * (space2_.Zr[k][j] + space2_.Zr[k -
 							    1][j]) /
 	(space2_.Zm[k][j] + space2_.Zm[k][j - 1]);
-    }
+     } IACA_END
 }
