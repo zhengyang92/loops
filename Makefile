@@ -32,28 +32,28 @@ CFLAGS = -O3 -march=native
 loops.minotaur.obj/%.o: srcs.iaca/%.c
 	$(CC) $(CFLAGS) -c  -o $@ $<
 
-loops.minotaur.asm/%.S: srcs.iaca/%.c
+loops.minotaur.asm/%.S: srcs/%.c
 	$(CC) $(CFLAGS) -S  -o $@ $<
 
-loops.minotaur.llvm/%.ll : srcs.iaca/%.c
+loops.minotaur.llvm/%.ll : srcs/%.c
 	$(CC) $(CFLAGS) -S -emit-llvm  -o $@ $<
 
 loops.baseline.obj/%.o: srcs.iaca/%.c
 	$(CC) $(CFLAGS) -c  -o $@ $<
 
-loops.baseline.asm/%.S: srcs.iaca/%.c
+loops.baseline.asm/%.S: srcs/%.c
 	$(CC) $(CFLAGS) -S  -o $@ $<
 
-loops.baseline.llvm/%.ll: srcs.iaca/%.c
+loops.baseline.llvm/%.ll: srcs/%.c
 	$(CC) $(CFLAGS) -S -emit-llvm -o $@ $<
 
 loops.vegen.obj/%.o: srcs.iaca/%.c
 	$(CC) $(CFLAGS) -c  -o $@ $<
 
-loops.vegen.asm/%.S: srcs.iaca/%.c
+loops.vegen.asm/%.S: srcs/%.c
 	$(CC) $(CFLAGS) -S  -o $@ $<
 
-loops.vegen.llvm/%.ll: srcs.iaca/%.c
+loops.vegen.llvm/%.ll: srcs/%.c
 	$(CC) $(CFLAGS) -S -emit-llvm -o $@ $<
 
 
