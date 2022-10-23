@@ -26,7 +26,8 @@ vegen.asm: $(VEG_PROGS)
 vegen.ll: $(VEG_LLVMS)
 vegen.obj: $(VEG_OBJS)
 
-CFLAGS = -O3 -march=native -mllvm -force-vector-width=4 -mllvm -force-vector-interleave=1
+CFLAGS = -O3 -march=native 
+#CFLAGS = -O3 -march=native -mllvm -force-vector-width=4 -mllvm -force-vector-interleave=1
 
 loops.minotaur.obj/%.o: srcs.iaca/%.c
 	$(CC) $(CFLAGS) -c  -o $@ $<
