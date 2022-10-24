@@ -23,4 +23,5 @@ fn (int next_code, int i, uint32_t codes[270], uint8_t bits[270],
 	bits[i] = current_length;
 	codes[i] = next_code++;
       }
+  IACA_END
 }

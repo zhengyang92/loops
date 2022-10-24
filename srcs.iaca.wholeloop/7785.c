@@ -19,4 +19,5 @@ fn (uint32_t occ[256], int i, uint32_t l2tab[256], int m, uint64_t len)
 	   ((i * (uint64_t) l2tab[m] +
 	     (256 - i) * (uint64_t) l2tab[256 - m]) >> 8)) >> 8;
       }
+  IACA_END
 }

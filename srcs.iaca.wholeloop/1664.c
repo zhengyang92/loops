@@ -11,4 +11,5 @@ int
 fn (int cf, const uint16_t * counts, int symbol)
 {
   IACA_START for (symbol = 0; counts[symbol + 1] <= cf; symbol++);
+  IACA_END
 }

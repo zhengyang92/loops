@@ -26,4 +26,5 @@ fn (uint8_t * in_buf, int x, unsigned int width, uint8_t * encode_buf,
 	encode_buf[x] = in_buf[depth * x];
 	encode_buf[x + 1] = in_buf[depth * x + 1];
       }
+  IACA_END
 }

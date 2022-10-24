@@ -11,4 +11,5 @@ int
 fn (int z, uint32_t x[128])
 {
   IACA_START for (; !x[z - 1]; z--);
+  IACA_END
 }

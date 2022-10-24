@@ -29,4 +29,5 @@ fn (int i, struct elem_to_channel e2c_vec[64], int n)
 	while (0);
 	next_n = i;
       }
+  IACA_END
 }

@@ -17,4 +17,5 @@ fn (Int32 bc, UInt16 cost[6], Int32 bt, Int32 t, Int32 nGroups)
 	bc = cost[t];
 	bt = t;
       }
+  IACA_END
 }

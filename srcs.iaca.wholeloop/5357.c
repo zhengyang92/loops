@@ -11,4 +11,5 @@ int
 fn (unsigned int num, unsigned int i, uint8_t * bits, unsigned int p)
 {
   IACA_START for (i = p; (i < num) && (bits[i] == 0); ++i);
+  IACA_END
 }

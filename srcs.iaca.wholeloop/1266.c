@@ -16,4 +16,5 @@ fn (int i, unsigned char palette_buffer[768], int palette_scale)
 	palette_scale = 0;
 	break;
       }
+  IACA_END
 }

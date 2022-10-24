@@ -18,4 +18,5 @@ fn (AVDictionary ** metadata, const char months[12][4], int i, int day,
 		  day, time);
 	av_dict_set (metadata, "creation_time", buffer, 0);
       }
+  IACA_END
 }

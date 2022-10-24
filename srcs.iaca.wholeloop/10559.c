@@ -18,4 +18,5 @@ fn (Int32 alphaSize, UChar * length, Int32 i, Int32 vec, Int32 * code,
 	code[i] = vec;
 	vec++;
       }
+  IACA_END
 }

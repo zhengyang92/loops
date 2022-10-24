@@ -40,4 +40,5 @@ fn (const uint16_t * src, int w, int x, const int16_t * filter, ptrdiff_t ds,
 			     filter[6] * src[x + +3 * ds] +
 			     filter[7] * src[x + +4 * ds] + 64) >> 7, 12);
       }
+  IACA_END
 }

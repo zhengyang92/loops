@@ -15,4 +15,5 @@ fn (float *samples, int i)
       {
 	return 1;
       }
+  IACA_END
 }

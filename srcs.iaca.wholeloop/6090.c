@@ -28,4 +28,5 @@ fn (int left_samples_available, const uint8_t scan8[51], int i, void *logctx,
 	    pred_mode_cache[scan8[0] + 8 * i] = status;
 	  }
       }
+  IACA_END
 }

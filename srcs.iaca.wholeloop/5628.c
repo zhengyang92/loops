@@ -11,4 +11,5 @@ int
 fn (const uint8_t * buf, int len, int frames)
 {
   IACA_START for (frames = 1; frames < len && (buf[frames] & 0x80); frames++);
+  IACA_END
 }

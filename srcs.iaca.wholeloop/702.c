@@ -13,4 +13,5 @@ fn (uint16_t * const pixels, const int leftEdge, const int linesize,
 {
   IACA_START for (j = w - 1; j >= leftEdge && pixels[row * linesize + j * 4 + 0] == 0;
        j--);
+  IACA_END
 }

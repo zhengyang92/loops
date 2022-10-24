@@ -11,4 +11,5 @@ int
 fn (const char *str, int i)
 {
   IACA_START for (++i; str[i] && str[i] != ']'; i++);
+  IACA_END
 }

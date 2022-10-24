@@ -11,4 +11,5 @@ int
 fn (unsigned int i, uint8_t * l, uint8_t t)
 {
   IACA_START for (i = 0; l[i] != t; i++);
+  IACA_END
 }

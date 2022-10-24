@@ -19,4 +19,5 @@ fn (int16_t * quant_table, int i, uint8_t state[32], RangeCoder * c)
 	put_symbol (c, state, i - last - 1, 0);
 	last = i;
       }
+  IACA_END
 }

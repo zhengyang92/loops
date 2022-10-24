@@ -19,4 +19,5 @@ fn (uint32_t newocc[256], uint32_t occ[256], int i, int m,
 	newocc[256 - one_state[256 - m]] +=
 	  occ[m] * (uint64_t) (256 - i) >> 8;
       }
+  IACA_END
 }

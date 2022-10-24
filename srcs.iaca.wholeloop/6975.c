@@ -17,4 +17,5 @@ fn (int *a, int t1, int i)
 	t2 = i;
 	break;
       }
+  IACA_END
 }

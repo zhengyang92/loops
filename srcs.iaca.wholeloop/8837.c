@@ -29,4 +29,5 @@ fn (int j, int8_t (*coding_method)[30][64], int sb, int ch)
 	      coding_method[ch][sb][j] = 30;
 	  }
       }
+  IACA_END
 }

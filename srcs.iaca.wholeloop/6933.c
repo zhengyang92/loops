@@ -17,4 +17,5 @@ fn (int i, float *lsp, float min_dist, float min_dist2, int order)
 	lsp[i - 1] = avg - min_dist2;
 	lsp[i] = avg + min_dist2;
       }
+  IACA_END
 }

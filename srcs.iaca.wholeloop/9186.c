@@ -15,4 +15,5 @@ fn (double p, double l2tab[256], double occ[256], int m, double len)
       {
 	len -= occ[m] * (p * l2tab[m] + (1 - p) * l2tab[256 - m]);
       }
+  IACA_END
 }

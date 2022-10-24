@@ -18,4 +18,5 @@ fn (int buf_size, const uint8_t * buf, int current_pos, int i)
 	startcode_found = !(buf[i + 4] & 0x40);
 	break;
       }
+  IACA_END
 }

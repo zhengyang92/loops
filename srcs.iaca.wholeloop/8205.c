@@ -39,4 +39,5 @@ fn (int w, uint16_t * dst, int x, const int16_t * filter, uint16_t * tmp_ptr,
 			     filter[6] * tmp_ptr[x + +3 * 64] +
 			     filter[7] * tmp_ptr[x + +4 * 64] + 64) >> 7, 10);
       }
+  IACA_END
 }

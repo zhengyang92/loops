@@ -23,4 +23,5 @@ fn (int w, int mxy, int x, ptrdiff_t ds, int avg, uint16_t * dst,
       {
 	dst[x] = (src[x] + ((mxy * (src[x + ds] - src[x]) + 8) >> 4));
       }
+  IACA_END
 }

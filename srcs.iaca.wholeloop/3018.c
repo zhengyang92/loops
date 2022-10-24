@@ -37,4 +37,5 @@ fn (OpusRangeCoder * rc, int i, int coded_channels,
 			      40 ? ff_silk_model_lbrr_flags_40 :
 			      ff_silk_model_lbrr_flags_60);
       }
+  IACA_END
 }

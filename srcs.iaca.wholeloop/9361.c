@@ -11,4 +11,5 @@ int
 fn (unsigned int k, const uint16_t * cdf, unsigned int symbol)
 {
   IACA_START for (k = 0; cdf[k] <= symbol; k++);
+  IACA_END
 }

@@ -23,4 +23,5 @@ fn (int w, uint16_t * dst, int x, uint16_t * tmp_ptr, int avg, int my)
 	dst[x] =
 	  (tmp_ptr[x] + ((my * (tmp_ptr[x + 64] - tmp_ptr[x]) + 8) >> 4));
       }
+  IACA_END
 }

@@ -11,4 +11,5 @@ int
 fn (unsigned int i, uint16_t t, uint16_t * l)
 {
   IACA_START for (i = 0; l[i] != t; i++);
+  IACA_END
 }

@@ -17,4 +17,5 @@ fn (Int32 pp, Int32 * perm, Int32 alphaSize, UChar * length, Int32 i, Int32 j)
 	perm[pp] = j;
 	pp++;
       }
+  IACA_END
 }
