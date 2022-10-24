@@ -1,0 +1,28 @@
+#include "../iacaMarks.h"
+#include <stdint.h>
+#include <stdio.h>
+
+
+
+
+typedef long int ptrdiff_t;
+typedef __uint8_t uint8_t;
+
+int
+fn (int i, ptrdiff_t linesize, uint8_t * b, uint8_t * d, uint8_t * c_ptr)
+{
+  IACA_START for (i = 0; i < 8; i++)
+    {
+      d = c_ptr + (linesize << 3);
+      b[0] = c_ptr[0];
+      b[1] = c_ptr[1];
+      b[2] = c_ptr[2];
+      b[3] = c_ptr[3];
+      b[4] = d[0];
+      b[5] = d[1];
+      b[6] = d[2];
+      b[7] = d[3];
+      c_ptr += linesize;
+      b += 16;
+     } IACA_END
+}

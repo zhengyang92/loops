@@ -1,0 +1,25 @@
+#include "../iacaMarks.h"
+#include <stdint.h>
+#include <stdio.h>
+
+
+
+
+typedef unsigned char stbi_uc;
+typedef stbi__context;
+
+int
+fn (int channel, stbi_uc * dest, stbi__context * s, int mask)
+{
+  int i = 0x80;
+  IACA_START for (i = 0; i < 4; ++i, mask >>= 1)
+    {
+      if (channel & mask)
+	{
+	  if (stbi__at_eof (s))
+	    return ((unsigned char *) (size_t) (stbi__err ("bad file")
+						? ((void *) 0) : ((void *)
+								  0)));
+	  dest[i] = stbi__get8 (s);
+	}
+}IACA_END}

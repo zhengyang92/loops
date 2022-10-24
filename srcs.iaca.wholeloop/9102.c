@@ -1,0 +1,22 @@
+#include "../iacaMarks.h"
+#include <stdint.h>
+#include <stdio.h>
+
+
+
+
+typedef __uint8_t uint8_t;
+typedef __int16_t int16_t;
+
+int
+fn (int16_t * output_samples, const uint8_t * buf, int scale[2])
+{
+  int i = 0;
+  IACA_START for (i = 0; i < 32; i++)
+    {
+      *output_samples++ =
+	av_clip_int16_c ((scale[0] * (int8_t) * buf++) >> 5);
+      *output_samples++ =
+	av_clip_int16_c ((scale[1] * (int8_t) * buf++) >> 5);
+     } IACA_END
+}

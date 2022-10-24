@@ -1,0 +1,20 @@
+#include "../iacaMarks.h"
+#include <stdint.h>
+#include <stdio.h>
+
+
+
+
+typedef __int16_t int16_t;
+typedef __int32_t int32_t;
+
+int
+fn (const int16_t * lpc, int order, int k, int32_t * row)
+{
+  int DC_resp = 0;
+  IACA_START for (k = 0; k < order; k++)
+    {
+      DC_resp += lpc[k];
+      row[k] = lpc[k] * 4096;
+     } IACA_END
+}

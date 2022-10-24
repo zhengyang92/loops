@@ -1,0 +1,24 @@
+#include "../iacaMarks.h"
+#include <stdint.h>
+#include <stdio.h>
+
+
+
+
+
+
+int
+fn (int t1, int i, int *in, int t3, int *q, int t0, int tblk[16], int t2)
+{
+  IACA_START for (i = 0; i < 4; i++)
+    {
+      t0 = (((in[0 * 4 + i]) * (q[0 + (i & 1)]) + 0x80) >> 8);
+      t1 = (((in[1 * 4 + i]) * (q[1 + (i & 1)]) + 0x80) >> 8);
+      t2 = (((in[2 * 4 + i]) * (q[0 + (i & 1)]) + 0x80) >> 8);
+      t3 = (((in[3 * 4 + i]) * (q[1 + (i & 1)]) + 0x80) >> 8);
+      tblk[0 * 4 + i] = (5 * ((t0) + (t1) + (t2)) + 2 * (t3));
+      tblk[1 * 4 + i] = (5 * ((t0) - (t2) - (t3)) + 2 * (t1));
+      tblk[2 * 4 + i] = (5 * ((t0) - (t2) + (t3)) - 2 * (t1));
+      tblk[3 * 4 + i] = (5 * ((t0) - (t1) + (t2)) - 2 * (t3));;
+     } IACA_END
+}

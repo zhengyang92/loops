@@ -1,0 +1,18 @@
+#include "../iacaMarks.h"
+#include <stdint.h>
+#include <stdio.h>
+
+
+
+
+typedef __uint8_t uint8_t;
+
+int
+fn (uint8_t block[128], int x, uint8_t * last_alpha)
+{
+  int y = 0;
+  IACA_START for (x = 0; x < 16; x++)
+    {
+      last_alpha[x] -= block[y * 16 + x];
+     } IACA_END
+}

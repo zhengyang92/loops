@@ -1,0 +1,22 @@
+#include "../iacaMarks.h"
+#include <stdint.h>
+#include <stdio.h>
+
+
+
+
+typedef __int64_t int64_t;
+typedef __uint32_t uint32_t;
+
+int
+fn (int64_t cy, int i, int needAlpha, int gbase, int abase, int rbase,
+    uint32_t * y_table32, int bbase, int64_t yb)
+{
+  IACA_START for (i = 0; i < 1024; i++)
+    {
+      unsigned yval = av_clip_uint8_c ((yb + 0x8000) >> 16);
+      y_table32[i] = (yval << rbase) + (needAlpha ? 0 : (255u << abase));
+      y_table32[i + 1024] = yval << gbase;
+      y_table32[i + 2048] = yval << bbase;
+      yb += cy;
+}IACA_END}

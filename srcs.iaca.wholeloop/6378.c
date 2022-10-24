@@ -1,0 +1,21 @@
+#include "../iacaMarks.h"
+#include <stdint.h>
+#include <stdio.h>
+
+
+
+
+typedef __uint16_t uint16_t;
+typedef long int ptrdiff_t;
+
+int
+fn (ptrdiff_t x_stride, int offset_val, ptrdiff_t stride, int x,
+    uint16_t * src, uint16_t * dst)
+{
+  int height = 0;
+  IACA_START for (x = 0; x < height; x++)
+    {
+      dst[x_stride] = av_clip_uintp2_c (src[x_stride] + offset_val, 10);
+      x_stride += stride;
+     } IACA_END
+}

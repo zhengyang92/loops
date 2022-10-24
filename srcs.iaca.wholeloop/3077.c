@@ -1,0 +1,27 @@
+#include "../iacaMarks.h"
+#include <stdint.h>
+#include <stdio.h>
+
+
+
+
+typedef __uint8_t uint8_t;
+
+int
+fn (int g, int i, uint8_t * last, int r, int a, int size, uint8_t * dst,
+    uint8_t * src, int b)
+{
+  IACA_START for (; i <= size - 3; i += 3)
+    {
+      dst[i + 0] = r = (((((r) + (last[i + 0])) >> 1) + (src[i + 0])) & 0xff);
+      if (3 == 1)
+	continue;
+      dst[i + 1] = g = (((((g) + (last[i + 1])) >> 1) + (src[i + 1])) & 0xff);
+      if (3 == 2)
+	continue;
+      dst[i + 2] = b = (((((b) + (last[i + 2])) >> 1) + (src[i + 2])) & 0xff);
+      if (3 == 3)
+	continue;
+      dst[i + 3] = a = (((((a) + (last[i + 3])) >> 1) + (src[i + 3])) & 0xff);
+     } IACA_END
+}

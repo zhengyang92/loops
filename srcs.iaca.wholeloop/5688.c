@@ -1,0 +1,17 @@
+#include "../iacaMarks.h"
+#include <stdint.h>
+#include <stdio.h>
+
+
+
+
+typedef __int8_t int8_t;
+
+int
+fn (const int8_t * par, int8_t * par_mapped, int b)
+{
+  IACA_START for (; b >= 0; b--)
+    {
+      par_mapped[2 * b + 1] = par_mapped[2 * b] = par[b];
+     } IACA_END
+}

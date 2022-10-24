@@ -1,0 +1,19 @@
+#include "../iacaMarks.h"
+#include <stdint.h>
+#include <stdio.h>
+
+
+
+
+
+
+int
+fn (int i, uint8_t ungroup_3_in_7_bits_tab[128][3])
+{
+  IACA_START for (i = 0; i < 128; i++)
+    {
+      ungroup_3_in_7_bits_tab[i][0] = i / 25;
+      ungroup_3_in_7_bits_tab[i][1] = (i % 25) / 5;
+      ungroup_3_in_7_bits_tab[i][2] = (i % 25) % 5;
+     } IACA_END
+}

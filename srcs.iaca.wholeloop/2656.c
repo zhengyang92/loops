@@ -1,0 +1,18 @@
+#include "../iacaMarks.h"
+#include <stdint.h>
+#include <stdio.h>
+
+
+
+
+typedef __int16_t int16_t;
+
+int
+fn (int i, int coefficients_length, int16_t * data_out, int j,
+    const int16_t * coefficients)
+{
+  int sum = 0;
+  IACA_START for (j = coefficients_length - 1; j > 0; j--)
+    {
+      sum += (unsigned) (coefficients[j] * data_out[i - j]);
+}IACA_END}

@@ -1,0 +1,19 @@
+#include "../iacaMarks.h"
+#include <stdint.h>
+#include <stdio.h>
+
+
+
+
+typedef __uint8_t uint8_t;
+
+int
+fn (uint8_t * ptr, const int right, const int height, const int top,
+    const int bottom, const int linesize, const int width, const int left)
+{
+  IACA_START for (int y = top; y < height - bottom; y++)
+    {
+      memset (ptr + linesize * y, ptr[linesize * y + left], left);
+      memset (ptr + linesize * y + width - right,
+	      (ptr + linesize * y + width - right)[-1], right);
+}IACA_END}

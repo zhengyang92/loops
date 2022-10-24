@@ -1,0 +1,18 @@
+#include "../iacaMarks.h"
+#include <stdint.h>
+#include <stdio.h>
+
+
+
+
+typedef __uint16_t uint16_t;
+typedef __uint64_t uint64_t;
+
+int
+fn (int w, uint64_t sum, const uint16_t * img1, int j, const uint16_t * img2)
+{
+  IACA_START for (j = 0; j < w; j++)
+    {
+      sum += abs (img1[j] - img2[j]);
+     } IACA_END
+}
