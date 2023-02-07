@@ -29,7 +29,7 @@ vegen.obj: $(VEG_OBJS)
 CFLAGS = -O3 -march=native 
 #CFLAGS = -O3 -march=native -mllvm -force-vector-width=4 -mllvm -force-vector-interleave=1
 
-loops.minotaur.obj/%.o: srcs.iaca/%.c
+loops.minotaur.obj/%.o: srcs/%.c
 	$(CC) $(CFLAGS) -c  -o $@ $<
 
 loops.minotaur.asm/%.S: srcs/%.c
