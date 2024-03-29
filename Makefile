@@ -1,5 +1,5 @@
 
-SRCS = $(shell cat integer)
+SRCS = $(shell cat compilable)
 
 OPT_OBJS  = $(patsubst %.c,loops.minotaur.obj/%.o,$(SRCS))
 OPT_PROGS = $(patsubst %.c,loops.minotaur.asm/%.S,$(SRCS))
